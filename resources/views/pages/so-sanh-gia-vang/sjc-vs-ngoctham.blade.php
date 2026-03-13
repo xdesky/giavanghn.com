@@ -36,6 +36,30 @@
 <script type="application/ld+json">
 {
     "@@context": "https://schema.org",
+    "@@type": "WebPage",
+    "name": "{{ $title }}",
+    "description": "{{ $description }}",
+    "url": "{{ url('/' . $path) }}",
+    "inLanguage": "vi",
+    "dateModified": "{{ now()->toIso8601String() }}",
+    "publisher": {
+        "@@type": "Organization",
+        "name": "GiaVangHN",
+        "url": "{{ url('/') }}"
+    },
+    "breadcrumb": {
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "{{ url('/') }}"},
+            {"@@type": "ListItem", "position": 2, "name": "So sánh giá vàng", "item": "{{ url('/so-sanh-gia-vang') }}"},
+            {"@@type": "ListItem", "position": 3, "name": "{{ $title }}", "item": "{{ url('/' . $path) }}"}
+        ]
+    }
+}
+</script>
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
     "@@type": "FAQPage",
     "mainEntity": [
         {"@@type":"Question","name":"Giá vàng SJC và Ngọc Thẩm hôm nay chênh nhau bao nhiêu?","acceptedAnswer":{"@@type":"Answer","text":"Giá bán vàng tại SJC và Ngọc Thẩm thường chênh lệch 0-500.000 VND/lượng. Ngọc Thẩm có giá vàng nhẫn 9999, vàng ta 990 và vàng 18K khá cạnh tranh tại khu vực TP.HCM."}},
@@ -209,6 +233,33 @@
             </summary>
             <p class="mt-2 text-sm leading-relaxed text-slate-600">Nếu đầu tư vàng miếng SJC, chọn nơi giá rẻ hơn. Nếu cần sản phẩm đa dạng (vàng ta, vàng 18K, trang sức), Ngọc Thẩm có lợi thế hơn SJC.</p>
         </details>
+    </div>
+</div>
+
+@php
+$compareLinks = [
+    ['slug' => 'sjc-vs-doji', 'label' => 'SJC vs DOJI'],
+    ['slug' => 'sjc-vs-btmc', 'label' => 'SJC vs BTMC'],
+    ['slug' => 'sjc-vs-pnj', 'label' => 'SJC vs PNJ'],
+    ['slug' => 'sjc-vs-phuquy', 'label' => 'SJC vs Phú Quý'],
+    ['slug' => 'sjc-vs-mihong', 'label' => 'SJC vs Mi Hồng'],
+    ['slug' => 'sjc-vs-btmh', 'label' => 'SJC vs Bảo Tín MH'],
+    ['slug' => 'sjc-vs-ngoctham', 'label' => 'SJC vs Ngọc Thẩm'],
+    ['slug' => 'sjc-vs-the-gioi', 'label' => 'SJC vs Thế giới'],
+    ['slug' => 'vang-vs-usd', 'label' => 'Vàng vs USD'],
+];
+@endphp
+<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+    <h2 class="text-lg font-bold text-[#001061] mb-3" style="font-family: 'Philosopher', serif;">So sánh giá vàng khác</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
+        @foreach($compareLinks as $link)
+            @if(!str_contains($link['slug'], $otherSlug))
+                <a href="/so-sanh-gia-vang/{{ $link['slug'] }}" class="text-blue-700 hover:underline">{{ $link['label'] }}</a>
+            @endif
+        @endforeach
+    </div>
+    <div class="mt-3 pt-3 border-t text-sm">
+        <a href="/so-sanh-gia-vang" class="text-blue-700 hover:underline font-medium">← Tất cả so sánh giá vàng</a>
     </div>
 </div>
 @endsection

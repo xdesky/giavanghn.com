@@ -36,6 +36,30 @@
 <script type="application/ld+json">
 {
     "@@context": "https://schema.org",
+    "@@type": "WebPage",
+    "name": "{{ $title }}",
+    "description": "{{ $description }}",
+    "url": "{{ url('/' . $path) }}",
+    "inLanguage": "vi",
+    "dateModified": "{{ now()->toIso8601String() }}",
+    "publisher": {
+        "@@type": "Organization",
+        "name": "GiaVangHN",
+        "url": "{{ url('/') }}"
+    },
+    "breadcrumb": {
+        "@@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@@type": "ListItem", "position": 1, "name": "Trang chủ", "item": "{{ url('/') }}"},
+            {"@@type": "ListItem", "position": 2, "name": "So sánh giá vàng", "item": "{{ url('/so-sanh-gia-vang') }}"},
+            {"@@type": "ListItem", "position": 3, "name": "{{ $title }}", "item": "{{ url('/' . $path) }}"}
+        ]
+    }
+}
+</script>
+<script type="application/ld+json">
+{
+    "@@context": "https://schema.org",
     "@@type": "FAQPage",
     "mainEntity": [
         {"@@type":"Question","name":"Giá vàng SJC và Bảo Tín Minh Châu chênh nhau bao nhiêu?","acceptedAnswer":{"@@type":"Answer","text":"Giá vàng miếng SJC tại SJC và BTMC thường chênh lệch từ 0 đến 500.000 VND/lượng. Giá vàng nhẫn 9999 giữa hai nơi cũng có mức chênh tương tự. BTMC thường có giá cạnh tranh cho vàng nhẫn Rồng Thăng Long."}},
@@ -205,6 +229,33 @@
             </summary>
             <p class="mt-2 text-sm leading-relaxed text-slate-600">Có, BTMC kinh doanh cả vàng miếng SJC và sản phẩm vàng nhẫn 9999 thương hiệu riêng. Giá vàng miếng SJC tại BTMC thường tương đương các đại lý lớn khác.</p>
         </details>
+    </div>
+</div>
+
+@php
+$compareLinks = [
+    ['slug' => 'sjc-vs-doji', 'label' => 'SJC vs DOJI'],
+    ['slug' => 'sjc-vs-btmc', 'label' => 'SJC vs BTMC'],
+    ['slug' => 'sjc-vs-pnj', 'label' => 'SJC vs PNJ'],
+    ['slug' => 'sjc-vs-phuquy', 'label' => 'SJC vs Phú Quý'],
+    ['slug' => 'sjc-vs-mihong', 'label' => 'SJC vs Mi Hồng'],
+    ['slug' => 'sjc-vs-btmh', 'label' => 'SJC vs Bảo Tín MH'],
+    ['slug' => 'sjc-vs-ngoctham', 'label' => 'SJC vs Ngọc Thẩm'],
+    ['slug' => 'sjc-vs-the-gioi', 'label' => 'SJC vs Thế giới'],
+    ['slug' => 'vang-vs-usd', 'label' => 'Vàng vs USD'],
+];
+@endphp
+<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+    <h2 class="text-lg font-bold text-[#001061] mb-3" style="font-family: 'Philosopher', serif;">So sánh giá vàng khác</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
+        @foreach($compareLinks as $link)
+            @if(!str_contains($link['slug'], $otherSlug))
+                <a href="/so-sanh-gia-vang/{{ $link['slug'] }}" class="text-blue-700 hover:underline">{{ $link['label'] }}</a>
+            @endif
+        @endforeach
+    </div>
+    <div class="mt-3 pt-3 border-t text-sm">
+        <a href="/so-sanh-gia-vang" class="text-blue-700 hover:underline font-medium">← Tất cả so sánh giá vàng</a>
     </div>
 </div>
 @endsection
