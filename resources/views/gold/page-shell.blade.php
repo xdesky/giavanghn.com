@@ -6,7 +6,23 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $title }} - Giá Vàng Hôm Nay | giavanghn.com</title>
     <meta name="description" content="{{ $description }}">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <link rel="canonical" href="{{ url('/' . $path) }}">
+
+    {{-- Open Graph --}}
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:site_name" content="Giá Vàng Hôm Nay - giavanghn.com">
+    <meta property="og:title" content="{{ $title }} - Giá Vàng Hôm Nay">
+    <meta property="og:description" content="{{ $description }}">
+    <meta property="og:url" content="{{ url('/' . $path) }}">
+    <meta property="og:image" content="{{ url('/images/og-gold-price.jpg') }}">
+
+    {{-- Twitter Card --}}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title }} - Giá Vàng Hôm Nay">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:image" content="{{ url('/images/og-gold-price.jpg') }}">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
