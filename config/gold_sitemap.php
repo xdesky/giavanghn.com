@@ -31,13 +31,13 @@ return [
     ],
     'bieu-do-gia-vang' => [
         'title' => 'Biểu đồ giá vàng',
-        'description' => 'Biểu đồ giá vàng hôm nay cập nhật liên tục. Theo dõi biến động giá vàng SJC, DOJI, PNJ, BTMC, Phú Quý, Mi Hồng qua biểu đồ trực quan theo nhiều khung thời gian.',
+        'description' => 'Biểu đồ giá vàng hôm nay cập nhật liên tục. Theo dõi biến động giá vàng SJC, DOJI, PNJ, BTMC, Phú Quý, Mi Hồng, Bảo Tín MH, Ngọc Thẩm và XAU thế giới quy đổi qua biểu đồ trực quan theo nhiều khung thời gian.',
         'children' => [
-            'bieu-do-gia-vang-hom-nay' => ['title' => 'Biểu đồ giá vàng hôm nay', 'description' => 'Biểu đồ giá vàng hôm nay cập nhật theo thời gian thực. Theo dõi biến động giá vàng SJC, DOJI, PNJ, BTMC trong ngày với giá mua vào và bán ra chi tiết.'],
-            'bieu-do-gia-vang-7-ngay' => ['title' => 'Biểu đồ giá vàng 7 ngày', 'description' => 'Biểu đồ giá vàng 7 ngày gần nhất. So sánh xu hướng giá vàng SJC, DOJI, PNJ, BTMC tuần qua với giá mua vào và bán ra từng ngày.'],
-            'bieu-do-gia-vang-30-ngay' => ['title' => 'Biểu đồ giá vàng 30 ngày', 'description' => 'Biểu đồ giá vàng 30 ngày gần nhất. Phân tích xu hướng giá vàng SJC, DOJI, PNJ, BTMC trong tháng với giá mua vào và bán ra chi tiết.'],
-            'bieu-do-gia-vang-1-nam' => ['title' => 'Biểu đồ giá vàng 1 năm', 'description' => 'Biểu đồ giá vàng 1 năm qua. Phân tích biến động dài hạn giá vàng SJC, DOJI, PNJ, BTMC với giá mua vào và bán ra theo từng ngày.'],
-            'bieu-do-gia-vang-10-nam' => ['title' => 'Biểu đồ giá vàng 10 năm', 'description' => 'Biểu đồ giá vàng 10 năm qua. Nhìn lại toàn cảnh biến động giá vàng SJC, DOJI, PNJ, BTMC trong thập kỷ với giá mua vào và bán ra.'],
+            'bieu-do-gia-vang-hom-nay' => ['title' => 'Biểu đồ giá vàng hôm nay', 'description' => 'Biểu đồ giá vàng hôm nay cập nhật theo thời gian thực. Theo dõi biến động giá vàng SJC, DOJI, PNJ, BTMC, Phú Quý, Mi Hồng, Bảo Tín MH, Ngọc Thẩm và XAU quy đổi trong ngày.'],
+            'bieu-do-gia-vang-7-ngay' => ['title' => 'Biểu đồ giá vàng 7 ngày', 'description' => 'Biểu đồ giá vàng 7 ngày gần nhất. So sánh xu hướng giá vàng SJC, DOJI, PNJ, BTMC, Phú Quý, Mi Hồng, Bảo Tín MH, Ngọc Thẩm và XAU quy đổi trong tuần.'],
+            'bieu-do-gia-vang-30-ngay' => ['title' => 'Biểu đồ giá vàng 30 ngày', 'description' => 'Biểu đồ giá vàng 30 ngày gần nhất. Phân tích xu hướng giá vàng SJC, DOJI, PNJ, BTMC, Phú Quý, Mi Hồng, Bảo Tín MH, Ngọc Thẩm và XAU quy đổi trong tháng.'],
+            'bieu-do-gia-vang-1-nam' => ['title' => 'Biểu đồ giá vàng 1 năm', 'description' => 'Biểu đồ giá vàng 1 năm qua. Phân tích biến động dài hạn giá vàng SJC, DOJI, PNJ, BTMC, Phú Quý, Mi Hồng, Bảo Tín MH, Ngọc Thẩm và XAU quy đổi theo từng ngày.'],
+            'bieu-do-gia-vang-10-nam' => ['title' => 'Biểu đồ giá vàng 10 năm', 'description' => 'Biểu đồ giá vàng 10 năm qua. Nhìn lại toàn cảnh biến động giá vàng SJC, DOJI, PNJ, BTMC, Phú Quý, Mi Hồng, Bảo Tín MH, Ngọc Thẩm và XAU quy đổi trong thập kỷ.'],
         ],
     ],
     'so-sanh-gia-vang' => [

@@ -5,14 +5,19 @@
         <i data-lucide="bar-chart-3" class="h-5 w-5 text-amber-500"></i>
         Biểu đồ giá vàng {{ $periodLabel }}
     </h2>
-    <p class="text-xs text-slate-500 mb-4">Đơn vị: triệu VNĐ/lượng · So sánh giá bán ra các thương hiệu</p>
+    <p class="text-xs text-slate-500 mb-4">Đơn vị: triệu VNĐ/lượng · So sánh giá bán các thương hiệu &amp; giá vàng thế giới quy đổi (nét đứt)</p>
 
-    <div class="flex gap-1 mb-3 flex-wrap">
-        <a href="/bieu-do-gia-vang/bieu-do-gia-vang-hom-nay" class="chip {{ $period === 'today' ? 'positive' : '' }}">Hôm nay</a>
-        <a href="/bieu-do-gia-vang/bieu-do-gia-vang-7-ngay" class="chip {{ $period === '7d' ? 'positive' : '' }}">7 ngày</a>
-        <a href="/bieu-do-gia-vang/bieu-do-gia-vang-30-ngay" class="chip {{ $period === '30d' ? 'positive' : '' }}">30 ngày</a>
-        <a href="/bieu-do-gia-vang/bieu-do-gia-vang-1-nam" class="chip {{ $period === '1y' ? 'positive' : '' }}">1 năm</a>
-        <a href="/bieu-do-gia-vang/bieu-do-gia-vang-10-nam" class="chip {{ $period === '10y' ? 'positive' : '' }}">10 năm</a>
+    <div class="flex gap-2 mb-3 flex-wrap">
+        <a href="/bieu-do-gia-vang/bieu-do-gia-vang-hom-nay"
+           class="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-all no-underline border {{ $period === 'today' ? 'bg-[#001061] text-white border-[#001061] shadow-sm' : 'bg-white text-slate-600 border-slate-300 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700' }}">Hôm nay</a>
+        <a href="/bieu-do-gia-vang/bieu-do-gia-vang-7-ngay"
+           class="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-all no-underline border {{ $period === '7d' ? 'bg-[#001061] text-white border-[#001061] shadow-sm' : 'bg-white text-slate-600 border-slate-300 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700' }}">7 ngày</a>
+        <a href="/bieu-do-gia-vang/bieu-do-gia-vang-30-ngay"
+           class="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-all no-underline border {{ $period === '30d' ? 'bg-[#001061] text-white border-[#001061] shadow-sm' : 'bg-white text-slate-600 border-slate-300 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700' }}">30 ngày</a>
+        <a href="/bieu-do-gia-vang/bieu-do-gia-vang-1-nam"
+           class="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-all no-underline border {{ $period === '1y' ? 'bg-[#001061] text-white border-[#001061] shadow-sm' : 'bg-white text-slate-600 border-slate-300 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700' }}">1 năm</a>
+        <a href="/bieu-do-gia-vang/bieu-do-gia-vang-10-nam"
+           class="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-all no-underline border {{ $period === '10y' ? 'bg-[#001061] text-white border-[#001061] shadow-sm' : 'bg-white text-slate-600 border-slate-300 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700' }}">10 năm</a>
     </div>
 
     <div id="allBrandsChart" class="w-full" style="height: 380px;">
@@ -36,7 +41,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var chartRoot = null;
     var brandColors = {
         'SJC': '#b8860b', 'DOJI': '#3b82f6', 'PNJ': '#15803d', 'BTMC': '#dc2626',
-        'Phú Quý': '#7c3aed', 'Mi Hồng': '#ea580c', 'Bảo Tín MH': '#0891b2', 'Ngọc Thẩm': '#be185d'
+        'Phú Quý': '#7c3aed', 'Mi Hồng': '#ea580c', 'Bảo Tín MH': '#0891b2', 'Ngọc Thẩm': '#be185d',
+        'XAU quy đổi': '#f59e0b'
     };
 
     function loadChart() {
@@ -113,6 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Create a series for each brand
         brandKeys.forEach(function (brand) {
             var color = am5.color(brandColors[brand] || '#64748b');
+            var isXau = brand === 'XAU quy đổi';
             var series = chart.series.push(am5xy.LineSeries.new(chartRoot, {
                 name: brand,
                 xAxis: xAxis, yAxis: yAxis,
@@ -126,7 +133,11 @@ document.addEventListener('DOMContentLoaded', function () {
             }));
             series.get('tooltip').get('background').setAll({ fill: am5.color(0x0f172a), fillOpacity: 0.92, stroke: am5.color(0x0f172a) });
             series.get('tooltip').label.setAll({ fill: am5.color(0xffffff), fontSize: 12 });
-            series.strokes.template.setAll({ strokeWidth: 2 });
+            if (isXau) {
+                series.strokes.template.setAll({ strokeWidth: 2.5, strokeDasharray: [6, 3] });
+            } else {
+                series.strokes.template.setAll({ strokeWidth: 2 });
+            }
             series.data.setAll(chartData);
         });
 

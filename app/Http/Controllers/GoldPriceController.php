@@ -296,6 +296,14 @@ class GoldPriceController extends Controller
         $startDate = $isToday ? now()->startOfDay() : now()->subDays($days)->startOfDay();
         $brandLabels = array_keys($configs);
 
+        // XAU/USD → VND/lượng conversion rate
+        $usdVnd = DB::table('exchange_rates')
+            ->where('pair', 'USD/VND')
+            ->orderByDesc('updated_at')
+            ->value('rate') ?? 26300;
+
+        $xauLabel = 'XAU quy đổi';
+
         if ($isToday) {
             // Intraday: each crawl timestamp as a data point
             $timeData = []; // [timestamp_str][brandLabel] = sell (triệu/lượng)
@@ -321,6 +329,19 @@ class GoldPriceController extends Controller
                 }
             }
 
+            // XAU/USD intraday data
+            $worldRows = DB::table('world_prices')
+                ->where('symbol', 'XAU/USD')
+                ->where('created_at', '>=', $startDate)
+                ->orderBy('created_at')
+                ->select('price', 'created_at')
+                ->get();
+            foreach ($worldRows as $row) {
+                $ts = substr($row->created_at, 0, 16);
+                $vndPerLuong = (float) $row->price * 37.5 / 31.1035 * $usdVnd;
+                $timeData[$ts][$xauLabel] = round($vndPerLuong / 1_000_000, 2);
+            }
+
             if (empty($timeData)) {
                 return response()->json([]);
             }
@@ -331,6 +352,7 @@ class GoldPriceController extends Controller
                 $allKeys[] = $label;
                 $allKeys[] = $label . '_buy';
             }
+            $allKeys[] = $xauLabel;
             $lastKnown = array_fill_keys($allKeys, null);
             $result = [];
 
@@ -374,6 +396,19 @@ class GoldPriceController extends Controller
             }
         }
 
+        // XAU/USD daily data
+        $worldRows = DB::table('world_prices')
+            ->where('symbol', 'XAU/USD')
+            ->where('created_at', '>=', $startDate)
+            ->orderBy('created_at')
+            ->select('price', 'created_at')
+            ->get();
+        foreach ($worldRows as $row) {
+            $date = substr($row->created_at, 0, 10);
+            $vndPerLuong = (float) $row->price * 37.5 / 31.1035 * $usdVnd;
+            $dailyData[$date][$xauLabel] = round($vndPerLuong / 1_000_000, 2);
+        }
+
         if (empty($dailyData)) {
             return response()->json([]);
         }
@@ -384,6 +419,7 @@ class GoldPriceController extends Controller
             $allKeys[] = $label;
             $allKeys[] = $label . '_buy';
         }
+        $allKeys[] = $xauLabel;
         $lastKnown = array_fill_keys($allKeys, null);
         $result = [];
 
