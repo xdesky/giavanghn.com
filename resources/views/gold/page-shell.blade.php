@@ -60,11 +60,13 @@
         </nav>
 
         {{-- Page Header --}}
+        @if (!trim($__env->yieldContent('hide-page-header')))
         <div class="mb-6">
             <p class="text-xs font-semibold uppercase tracking-wider text-[#001061]/60">@yield('page-label', 'Chuyên mục')</p>
             <h1 class="mt-1 text-2xl font-bold text-[#001061] md:text-3xl">{{ $title }}</h1>
             <p class="mt-2 text-sm leading-relaxed text-slate-600">{{ $description }}</p>
         </div>
+        @endif
 
         {{-- Two-column layout --}}
         <section class="grid gap-5 lg:grid-cols-[2fr_1fr]">

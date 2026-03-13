@@ -56,8 +56,10 @@ class GoldPriceController extends Controller
             'article' => $article,
             'recentArticles' => $recentArticles,
             'relatedArticles' => $relatedArticles,
+            'snapshot' => $this->dashboard->buildSnapshot(),
             'title' => $article->title,
             'description' => $article->summary ?? 'Phân tích giá vàng chi tiết',
+            'path' => 'phan-tich/' . $article->slug,
             'breadcrumbs' => [
                 ['path' => 'phan-tich', 'title' => 'Phân tích giá vàng'],
                 ['path' => 'phan-tich/' . $article->slug, 'title' => $article->title],
@@ -83,12 +85,16 @@ class GoldPriceController extends Controller
             'gia-vang-btmc' => 'giá vàng BTMC',
             'gia-vang-the-gioi' => 'giá vàng thế giới',
             'xau-usd' => 'XAU/USD',
+            'xauusd' => 'XAU/USD',
+            'trung-lap' => 'trung lập',
         ];
 
         $tagName = $tagMap[$tagSlug] ?? str_replace('-', ' ', $tagSlug);
 
+        // MariaDB stores JSON with unicode escaping — match the encoded form
+        $encoded = trim(json_encode($tagName, JSON_UNESCAPED_SLASHES), '"');
         $articles = AnalysisArticle::whereNotNull('published_at')
-            ->whereJsonContains('tags', $tagName)
+            ->where('tags', 'like', '%' . $encoded . '%')
             ->orderByDesc('published_at')
             ->paginate(12);
 
@@ -96,8 +102,10 @@ class GoldPriceController extends Controller
             'tag' => $tagName,
             'tagSlug' => $tagSlug,
             'articles' => $articles,
+            'snapshot' => $this->dashboard->buildSnapshot(),
             'title' => "Bài viết về: {$tagName}",
             'description' => "Tổng hợp bài phân tích giá vàng theo chủ đề {$tagName}",
+            'path' => 'phan-tich/tag/' . $tagSlug,
             'breadcrumbs' => [
                 ['path' => 'phan-tich', 'title' => 'Phân tích giá vàng'],
                 ['path' => 'phan-tich/tag/' . $tagSlug, 'title' => $tagName],

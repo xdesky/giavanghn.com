@@ -552,6 +552,7 @@ if (snapshotElement) {
 	});
 
 	const renderUSCard = () => {
+		if (!document.getElementById('usPriceText')) return;
 		const selected = usVariantSelect?.value || snapshot.usCard.selected;
 		const variant = snapshot.usCard.variants[selected];
 
@@ -579,6 +580,7 @@ if (snapshotElement) {
 	};
 
 	const renderSJCCard = () => {
+		if (!document.getElementById('sjcPriceText')) return;
 		const selected = sjcVariantSelect?.value || snapshot.sjcCard.selected;
 		const variant = snapshot.sjcCard.variants[selected];
 
@@ -593,6 +595,7 @@ if (snapshotElement) {
 	};
 
 	const renderBtmcCard = () => {
+		if (!document.getElementById('btmcPriceText')) return;
 		const selected = btmcVariantSelect?.value || snapshot.btmcCard.selected;
 		const variant = snapshot.btmcCard.variants[selected];
 
@@ -605,6 +608,7 @@ if (snapshotElement) {
 	};
 
 	const renderPnjCard = () => {
+		if (!document.getElementById('pnjPriceText')) return;
 		const selected = pnjVariantSelect?.value || snapshot.pnjCard.selected;
 		const variant = snapshot.pnjCard.variants[selected];
 
@@ -617,6 +621,7 @@ if (snapshotElement) {
 	};
 
 	const renderDojiCard = () => {
+		if (!document.getElementById('dojiPriceText')) return;
 		const selected = dojiVariantSelect?.value || snapshot.dojiCard.selected;
 		const variant = snapshot.dojiCard.variants[selected];
 
@@ -629,6 +634,7 @@ if (snapshotElement) {
 	};
 
 	const renderPhuquyCard = () => {
+		if (!document.getElementById('phuquyPriceText')) return;
 		const selected = phuquyVariantSelect?.value || snapshot.phuquyCard.selected;
 		const variant = snapshot.phuquyCard.variants[selected];
 
@@ -641,6 +647,7 @@ if (snapshotElement) {
 	};
 
 	const renderMihongCard = () => {
+		if (!document.getElementById('mihongPriceText')) return;
 		const selected = mihongVariantSelect?.value || snapshot.mihongCard.selected;
 		const variant = snapshot.mihongCard.variants[selected];
 
@@ -653,6 +660,7 @@ if (snapshotElement) {
 	};
 
 	const renderBtmhCard = () => {
+		if (!document.getElementById('btmhPriceText')) return;
 		const selected = btmhVariantSelect?.value || snapshot.btmhCard.selected;
 		const variant = snapshot.btmhCard.variants[selected];
 
@@ -665,6 +673,7 @@ if (snapshotElement) {
 	};
 
 	const renderNgocthamCard = () => {
+		if (!document.getElementById('ngocthamPriceText')) return;
 		const selected = ngocthamVariantSelect?.value || snapshot.ngocthamCard.selected;
 		const variant = snapshot.ngocthamCard.variants[selected];
 

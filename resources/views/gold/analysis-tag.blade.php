@@ -48,22 +48,24 @@
     <div class="flex flex-wrap gap-2">
         @php
             $popularTags = [
-                'gia-vang' => 'giá vàng',
-                'phan-tich-gia-vang' => 'phân tích giá vàng',
-                'gia-vang-sjc' => 'giá vàng SJC',
-                'bien-dong-gia-vang' => 'biến động giá vàng',
-                'gia-vang-the-gioi' => 'giá vàng thế giới',
-                'xau-usd' => 'XAU/USD',
-                'ban-tin-gia-vang' => 'bản tin giá vàng',
-                'gia-vang-doji' => 'giá vàng DOJI',
-                'gia-vang-pnj' => 'giá vàng PNJ',
-                'gia-vang-btmc' => 'giá vàng BTMC',
+                'giá vàng',
+                'phân tích giá vàng',
+                'giá vàng SJC',
+                'biến động giá vàng',
+                'giá vàng thế giới',
+                'XAU/USD',
+                'bản tin giá vàng',
+                'giá vàng DOJI',
+                'giá vàng PNJ',
+                'giá vàng BTMC',
+                'trung lập',
             ];
         @endphp
-        @foreach ($popularTags as $slug => $label)
-            <a href="/phan-tich/tag/{{ $slug }}"
+        @foreach ($popularTags as $pTag)
+            @php $pSlug = Str::slug($pTag); @endphp
+            <a href="/phan-tich/tag/{{ $pSlug }}"
                class="inline-block rounded-full border px-3 py-1 text-xs font-medium transition
-                      {{ $tagSlug === $slug ? 'bg-[#001061] text-white border-[#001061]' : 'bg-slate-50 text-slate-700 border-slate-300 hover:bg-[#001061] hover:text-white hover:border-[#001061]' }}">{{ $label }}</a>
+                      {{ $tagSlug === $pSlug ? 'bg-[#001061] text-white border-[#001061]' : 'bg-slate-50 text-slate-700 border-slate-300 hover:bg-[#001061] hover:text-white hover:border-[#001061]' }}">{{ $pTag }}</a>
         @endforeach
     </div>
 </div>

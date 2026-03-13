@@ -209,7 +209,7 @@ class SitemapPageController extends Controller
                 'tag' => 'Phân tích',
                 'impact' => null,
                 'source' => 'giavanghn',
-                'image_url' => null,
+                'image_url' => $a->thumbnail_path ? asset('storage/' . $a->thumbnail_path) : null,
             ]);
 
         // Gather external news
