@@ -4,41 +4,13 @@
 
 @push('head')
 @php
-    $now = now()->format('d/m/Y H:i');
     $thisYear = 2020;
-    $sjcCard = $snapshot['sjcCard'] ?? null;
-    $sjcV = $sjcCard['variants'][$sjcCard['selected'] ?? 'p0'] ?? null;
-    $sjcSell = $sjcV['sell'] ?? 0;
-
-    $monthly = \App\Models\SjcChartPrice::query()
-        ->whereYear('price_date', $thisYear)
-        ->selectRaw('MONTH(price_date) as month_num, MIN(sell_million) as low_v, MAX(sell_million) as high_v, MIN(price_date) as first_day, MAX(price_date) as last_day')
-        ->groupByRaw('MONTH(price_date)')
-        ->orderByRaw('MONTH(price_date)')
-        ->get();
-
-    $monthsData = $monthly->map(function ($row) {
-        $open = \App\Models\SjcChartPrice::whereDate('price_date', $row->first_day)->value('sell_million');
-        $close = \App\Models\SjcChartPrice::whereDate('price_date', $row->last_day)->value('sell_million');
-        $change = ($open && $open > 0 && $close) ? (($close - $open) / $open * 100) : 0;
-        return [
-            'label' => 'Tháng ' . $row->month_num,
-            'open' => (float) $open,
-            'high' => (float) $row->high_v,
-            'low' => (float) $row->low_v,
-            'close' => (float) $close,
-            'changePct' => $change,
-        ];
-    })->all();
-
-    $allRows = \App\Models\SjcChartPrice::whereYear('price_date', $thisYear)
-        ->orderBy('price_date')->get();
+    $allRows = \App\Models\SjcChartPrice::whereYear('price_date', $thisYear)->orderBy('price_date')->get();
     $yearOpen = $allRows->first()->sell_million ?? 0;
     $yearClose = $allRows->last()->sell_million ?? 0;
     $yearHigh = $allRows->max('sell_million') ?: 0;
     $yearLow = $allRows->min('sell_million') ?: 0;
     $yearChangePct = $yearOpen > 0 ? (($yearClose - $yearOpen) / $yearOpen * 100) : 0;
-    $dataPoints = $allRows->count();
 @endphp
 <script type="application/ld+json">
 {
@@ -46,156 +18,34 @@
     "@@type": "FAQPage",
     "mainEntity": [
         {"@@type":"Question","name":"Giá vàng SJC năm 2020 biến động ra sao?","acceptedAnswer":{"@@type":"Answer","text":"Năm 2020, giá SJC mở đầu ở {{ number_format($yearOpen, 2) }} triệu và kết thúc ở {{ number_format($yearClose, 2) }} triệu/lượng ({{ sprintf('%+.2f%%', $yearChangePct) }}). Cao nhất {{ number_format($yearHigh, 2) }} triệu, thấp nhất {{ number_format($yearLow, 2) }} triệu."}},
-        {"@@type":"Question","name":"Giá vàng SJC tháng nào tăng mạnh nhất 2020?","acceptedAnswer":{"@@type":"Answer","text":"Xem bảng giá SJC theo tháng với dữ liệu Open/High/Low/Close và phần trăm thay đổi. Biểu đồ trực quan giúp nhận diện tháng tăng/giảm mạnh nhất năm 2020."}},
-        {"@@type":"Question","name":"Giá vàng SJC cao nhất năm 2020 bao nhiêu?","acceptedAnswer":{"@@type":"Answer","text":"Giá SJC cao nhất năm 2020 đạt {{ number_format($yearHigh, 2) }} triệu/lượng. Thấp nhất {{ number_format($yearLow, 2) }} triệu. Biên động {{ number_format($yearHigh - $yearLow, 2) }} triệu."}}
+        {"@@type":"Question","name":"Giá vàng SJC tháng nào tăng mạnh nhất 2020?","acceptedAnswer":{"@@type":"Answer","text":"Xem bảng giá SJC theo tháng với dữ liệu OHLC và phần trăm thay đổi để xác định tháng biến động mạnh nhất năm 2020."}},
+        {"@@type":"Question","name":"Giá vàng SJC cao nhất năm 2020 bao nhiêu?","acceptedAnswer":{"@@type":"Answer","text":"Giá SJC cao nhất năm 2020 đạt {{ number_format($yearHigh, 2) }} triệu/lượng. Thấp nhất {{ number_format($yearLow, 2) }} triệu. Biên độ dao động {{ number_format($yearHigh - $yearLow, 2) }} triệu."}}
     ]
 }
 </script>
 @endpush
 
 @section('page-content')
-{{-- Hero --}}
-<div class="rounded-sm border border-[#bcbcbc] bg-gradient-to-br from-indigo-50/80 to-white p-4 md:p-6">
-    <div class="flex items-center gap-3 mb-3">
-        <span class="inline-flex items-center gap-2 rounded-full border border-indigo-200 bg-indigo-50 px-3 py-1 text-sm font-semibold text-indigo-700">{{ $thisYear }}</span>
-        <span class="text-sm text-slate-500">{{ $now }}</span>
-    </div>
-    <h2 class="text-2xl font-bold text-[#001061] mb-4">Lịch sử giá vàng SJC năm {{ $thisYear }}</h2>
+@php
+    $thisYear = 2020;
+    $yearEvents = [
+        '<strong>Tháng 1-2:</strong> COVID-19 bùng phát từ Vũ Hán, Trung Quốc. Thị trường tài chính toàn cầu hoảng loạn. Vàng ban đầu tăng nhẹ do trú ẩn, nhưng sau đó giảm mạnh khi nhà đầu tư bán tháo mọi tài sản để giữ tiền mặt (dash for cash).',
+        '<strong>Tháng 3:</strong> WHO tuyên bố COVID-19 là đại dịch (11/03). Chứng khoán Mỹ "circuit breaker" 4 lần trong 10 ngày. Vàng giảm sốc về 1,470 USD/oz trước khi FED cắt lãi suất khẩn cấp về 0% và tung QE không giới hạn.',
+        '<strong>Tháng 4-7:</strong> FED bơm hàng nghìn tỷ USD qua các chương trình QE, PPP, gói kích thích $2.2 nghìn tỷ. USD suy yếu, lợi suất thực âm sâu → vàng tăng liên tục. XAU/USD vượt 1,800 USD/oz lần đầu kể từ 2011.',
+        '<strong>Tháng 8:</strong> Vàng thế giới lập đỉnh lịch sử 2,075 USD/oz (07/08/2020). SJC trong nước phá kỷ lục vượt 62 triệu/lượng. Cả thế giới chạy đua mua vàng trú ẩn giữa đại dịch.',
+        '<strong>Tháng 9-12:</strong> Vàng điều chỉnh sau đỉnh, sideway quanh 1,850-1,950 USD/oz. Vaccine Pfizer/Moderna công bố hiệu quả >90% (tháng 11) → risk-on → vàng giảm. Kết thúc năm quanh 1,900 USD/oz, tăng ~25% cả năm.',
+    ];
+    $yearFactors = [
+        '<strong>Đại dịch COVID-19:</strong> Sự kiện "thiên nga đen" lớn nhất thập kỷ. Lockdown toàn cầu, kinh tế suy thoái sâu → nhu cầu tài sản trú ẩn tăng kỷ lục.',
+        '<strong>FED cắt lãi suất về 0%:</strong> Cắt khẩn cấp 150bps trong 2 tuần (tháng 3). Lãi suất thực âm sâu — yếu tố bullish mạnh nhất cho vàng.',
+        '<strong>QE không giới hạn:</strong> Bảng cân đối FED từ $4.2 nghìn tỷ tăng lên $7.4 nghìn tỷ. Bơm thanh khoản chưa từng có → USD suy yếu → vàng tăng.',
+        '<strong>Kích thích tài khóa khổng lồ:</strong> Tổng cộng $3+ nghìn tỷ gói cứu trợ (CARES Act, PPP, stimulus checks). Lo ngại lạm phát và nợ công → hỗ trợ vàng dài hạn.',
+        '<strong>Lợi suất thực âm:</strong> TIPS 10 năm giảm xuống -1.0% — mức âm sâu nhất lịch sử. Chi phí cơ hội nắm giữ vàng gần như bằng 0.',
+    ];
+    $yearAnalysis = 'Năm 2020 là năm bùng nổ lịch sử của vàng (+25%), phá đỉnh ATH cũ 2011 ($1,921). Xu hướng tăng mạnh mẽ từ đáy tháng 3 ($1,470) lên đỉnh tháng 8 ($2,075) — tăng 41% trong 5 tháng. Sau đỉnh, vàng điều chỉnh về vùng $1,850-$1,950 và sideway Q4. SMA 200 ngày không bị thủng suốt từ tháng 4 đến cuối năm. RSI đạt 80+ vào tháng 7-8 (quá mua cực mạnh) trước khi điều chỉnh. Vùng $1,850 trở thành hỗ trợ then chốt cuối năm.';
+@endphp
 
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5 mb-4">
-        <div class="rounded-sm border border-slate-200 bg-white p-3 text-center">
-            <p class="text-xs font-semibold text-slate-500 uppercase">Mở đầu năm</p>
-            <p class="mt-1 text-lg font-bold text-slate-900 tabular-nums">{{ number_format($yearOpen, 2, ',', '.') }}</p>
-        </div>
-        <div class="rounded-sm border border-emerald-200 bg-emerald-50 p-3 text-center">
-            <p class="text-xs font-semibold text-emerald-700 uppercase">Cao nhất</p>
-            <p class="mt-1 text-lg font-bold text-emerald-800 tabular-nums">{{ number_format($yearHigh, 2, ',', '.') }}</p>
-        </div>
-        <div class="rounded-sm border border-rose-200 bg-rose-50 p-3 text-center">
-            <p class="text-xs font-semibold text-rose-700 uppercase">Thấp nhất</p>
-            <p class="mt-1 text-lg font-bold text-rose-800 tabular-nums">{{ number_format($yearLow, 2, ',', '.') }}</p>
-        </div>
-        <div class="rounded-sm border-2 border-indigo-300 bg-white p-3 text-center">
-            <p class="text-xs font-semibold text-indigo-700 uppercase">Kết thúc năm</p>
-            <p class="mt-1 text-lg font-bold text-indigo-900 tabular-nums">{{ number_format($yearClose, 2, ',', '.') }}</p>
-        </div>
-        <div class="rounded-sm border border-slate-200 bg-white p-3 text-center">
-            <p class="text-xs font-semibold text-slate-500 uppercase">Cả năm</p>
-            <p class="mt-1 text-lg font-bold {{ $yearChangePct >= 0 ? 'text-emerald-700' : 'text-rose-700' }} tabular-nums">{{ sprintf('%+.2f%%', $yearChangePct) }}</p>
-        </div>
-    </div>
-
-    {{-- Year nav --}}
-    <div class="flex flex-wrap gap-2">
-        @foreach ([2026, 2025, 2024, 2023, 2022, 2021, 2020] as $yr)
-        <a href="/lich-su-gia-vang/gia-vang-{{ $yr }}" class="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold no-underline {{ $yr === $thisYear ? 'bg-indigo-100 text-indigo-800' : 'bg-slate-100 text-slate-600 hover:bg-slate-200' }}">{{ $yr }}</a>
-        @endforeach
-        <a href="/lich-su-gia-vang" class="inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold no-underline bg-slate-100 text-slate-600 hover:bg-slate-200">Tổng hợp</a>
-    </div>
-</div>
-
-{{-- Chart --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">Biểu đồ giá vàng SJC năm {{ $thisYear }}</h2>
-    <p class="text-xs text-slate-500 mb-3">Giá bán SJC (triệu/lượng) từ 01/01/{{ $thisYear }} đến 31/12/{{ $thisYear }} · {{ $dataPoints }} phiên giao dịch</p>
-    <div id="historyYearChart" class="w-full" style="height:400px">
-        <div class="flex items-center justify-center h-full text-slate-400">
-            <svg class="animate-spin h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
-            Đang tải biểu đồ...
-        </div>
-    </div>
-</div>
-
-{{-- Monthly Table --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">Giá vàng SJC theo tháng — {{ $thisYear }}</h2>
-    <div class="overflow-x-auto rounded-sm border border-slate-200">
-        <table class="w-full text-sm">
-            <thead class="bg-slate-50">
-                <tr>
-                    <th class="p-3 text-left font-semibold text-slate-700">Tháng</th>
-                    <th class="p-3 text-right font-semibold text-slate-700">Mở cửa</th>
-                    <th class="p-3 text-right font-semibold text-slate-700">Cao nhất</th>
-                    <th class="p-3 text-right font-semibold text-slate-700">Thấp nhất</th>
-                    <th class="p-3 text-right font-semibold text-slate-700">Đóng cửa</th>
-                    <th class="p-3 text-right font-semibold text-slate-700">Thay đổi</th>
-                </tr>
-            </thead>
-            <tbody class="divide-y divide-slate-100">
-                @forelse ($monthsData as $m)
-                <tr>
-                    <td class="p-3 font-medium text-slate-800">{{ $m['label'] }}</td>
-                    <td class="p-3 text-right tabular-nums">{{ number_format($m['open'], 2, ',', '.') }}</td>
-                    <td class="p-3 text-right tabular-nums text-emerald-700 font-semibold">{{ number_format($m['high'], 2, ',', '.') }}</td>
-                    <td class="p-3 text-right tabular-nums text-rose-700 font-semibold">{{ number_format($m['low'], 2, ',', '.') }}</td>
-                    <td class="p-3 text-right tabular-nums font-bold">{{ number_format($m['close'], 2, ',', '.') }}</td>
-                    <td class="p-3 text-right font-bold {{ $m['changePct'] >= 0 ? 'text-emerald-600' : 'text-rose-600' }}">{{ sprintf('%+.2f%%', $m['changePct']) }}</td>
-                </tr>
-                @empty
-                <tr><td colspan="6" class="p-4 text-center text-slate-500">Chưa có dữ liệu lịch sử cho năm {{ $thisYear }}.</td></tr>
-                @endforelse
-            </tbody>
-        </table>
-    </div>
-</div>
-
-{{-- Article --}}
-<article class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6 prose prose-sm max-w-none prose-headings:text-slate-900 prose-p:text-slate-700">
-    <h2 class="!mt-0">Tổng kết giá vàng SJC năm {{ $thisYear }}</h2>
-
-    <h3>Diễn biến giá vàng {{ $thisYear }}</h3>
-    <p>Năm {{ $thisYear }}, giá vàng SJC mở đầu ở mức <strong>{{ number_format($yearOpen, 2) }} triệu/lượng</strong> và kết thúc ở <strong>{{ number_format($yearClose, 2) }} triệu</strong>, tương đương {{ $yearChangePct >= 0 ? 'tăng' : 'giảm' }} <strong>{{ sprintf('%.2f%%', abs($yearChangePct)) }}</strong> trong cả năm. Mức cao nhất đạt {{ number_format($yearHigh, 2) }} triệu, thấp nhất {{ number_format($yearLow, 2) }} triệu.</p>
-
-    <h3>Sự kiện nổi bật ảnh hưởng giá vàng 2020</h3>
-    <ul>
-        <li><strong>Tháng 1-2:</strong> COVID-19 bùng phát từ Vũ Hán, Trung Quốc. Thị trường tài chính toàn cầu hoảng loạn. Vàng ban đầu tăng nhẹ do trú ẩn, nhưng sau đó giảm mạnh khi nhà đầu tư bán tháo mọi tài sản để giữ tiền mặt (dash for cash).</li>
-        <li><strong>Tháng 3:</strong> WHO tuyên bố COVID-19 là đại dịch (11/03). Chứng khoán Mỹ "circuit breaker" 4 lần trong 10 ngày. Vàng giảm sốc về 1,470 USD/oz trước khi FED cắt lãi suất khẩn cấp về 0% và tung QE không giới hạn.</li>
-        <li><strong>Tháng 4-7:</strong> FED bơm hàng nghìn tỷ USD qua các chương trình QE, PPP, gói kích thích $2.2 nghìn tỷ. USD suy yếu, lợi suất thực âm sâu → vàng tăng liên tục. XAU/USD vượt 1,800 USD/oz lần đầu kể từ 2011.</li>
-        <li><strong>Tháng 8:</strong> Vàng thế giới lập đỉnh lịch sử 2,075 USD/oz (07/08/2020). SJC trong nước phá kỷ lục vượt 62 triệu/lượng. Cả thế giới chạy đua mua vàng trú ẩn giữa đại dịch.</li>
-        <li><strong>Tháng 9-12:</strong> Vàng điều chỉnh sau đỉnh, sideway quanh 1,850-1,950 USD/oz. Vaccine Pfizer/Moderna công bố hiệu quả >90% (tháng 11) → risk-on → vàng giảm. Kết thúc năm quanh 1,900 USD/oz, tăng ~25% cả năm.</li>
-    </ul>
-
-    <h3>Yếu tố chi phối giá vàng 2020</h3>
-    <p>Các yếu tố chính ảnh hưởng giá vàng trong năm {{ $thisYear }}:</p>
-    <ul>
-        <li><strong>Đại dịch COVID-19:</strong> Sự kiện "thiên nga đen" lớn nhất thập kỷ. Lockdown toàn cầu, kinh tế suy thoái sâu → nhu cầu tài sản trú ẩn tăng kỷ lục.</li>
-        <li><strong>FED cắt lãi suất về 0%:</strong> Cắt khẩn cấp 150bps trong 2 tuần (tháng 3). Lãi suất thực âm sâu — yếu tố bullish mạnh nhất cho vàng.</li>
-        <li><strong>QE không giới hạn:</strong> Bảng cân đối FED từ $4.2 nghìn tỷ tăng lên $7.4 nghìn tỷ. Bơm thanh khoản chưa từng có → USD suy yếu → vàng tăng.</li>
-        <li><strong>Kích thích tài khóa khổng lồ:</strong> Tổng cộng $3+ nghìn tỷ gói cứu trợ (CARES Act, PPP, stimulus checks). Lo ngại lạm phát và nợ công → hỗ trợ vàng dài hạn.</li>
-        <li><strong>Lợi suất thực âm:</strong> TIPS 10 năm giảm xuống -1.0% — mức âm sâu nhất lịch sử. Chi phí cơ hội nắm giữ vàng gần như bằng 0.</li>
-    </ul>
-
-    <h3>Phân tích kỹ thuật năm 2020</h3>
-    <p>Năm 2020 là năm bùng nổ lịch sử của vàng (+25%), phá đỉnh ATH cũ 2011 ($1,921). Xu hướng tăng mạnh mẽ từ đáy tháng 3 ($1,470) lên đỉnh tháng 8 ($2,075) — tăng 41% trong 5 tháng. Sau đỉnh, vàng điều chỉnh về vùng $1,850-$1,950 và sideway Q4. SMA 200 ngày không bị thủng suốt từ tháng 4 đến cuối năm. RSI đạt 80+ vào tháng 7-8 (quá mua cực mạnh) trước khi điều chỉnh. Vùng $1,850 trở thành hỗ trợ then chốt cuối năm.</p>
-</article>
-
-{{-- FAQ --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">Câu hỏi thường gặp</h2>
-    <div class="divide-y divide-slate-200">
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
-                <span>Giá vàng SJC năm {{ $thisYear }} biến động ra sao?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">SJC mở đầu {{ number_format($yearOpen, 1) }} triệu, kết thúc {{ number_format($yearClose, 1) }} triệu ({{ sprintf('%+.2f%%', $yearChangePct) }}). Cao nhất {{ number_format($yearHigh, 1) }} triệu, thấp nhất {{ number_format($yearLow, 1) }} triệu.</p>
-        </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
-                <span>Giá vàng SJC tháng nào tăng mạnh nhất năm {{ $thisYear }}?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Xem bảng giá SJC theo tháng phía trên với dữ liệu Open/High/Low/Close và phần trăm thay đổi để xác định tháng biến động mạnh nhất.</p>
-        </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
-                <span>Giá vàng SJC cao nhất năm {{ $thisYear }} bao nhiêu?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-            </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Cao nhất {{ number_format($yearHigh, 2) }} triệu/lượng. Biên độ dao động trong năm: {{ number_format($yearHigh - $yearLow, 2) }} triệu.</p>
-        </details>
-    </div>
-</div>
+@include('gold.sections.history-year')
 @endsection
 
 @push('scripts')
@@ -205,11 +55,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
     fetch('/api/v1/sjc-chart?period=all').then(function(r){ return r.json(); }).then(function(res) {
         var raw = (Array.isArray(res) ? res : res.data || []);
-        var yearStart = new Date('{{ $thisYear }}-01-01').getTime();
-        var yearEnd = new Date('{{ $thisYear }}-12-31').getTime();
+        var yearStart = new Date('2020-01-01').getTime();
+        var yearEnd = new Date('2020-12-31').getTime();
         var data = raw.filter(function(d){ return d.sell > 0 && new Date(d.date).getTime() >= yearStart && new Date(d.date).getTime() <= yearEnd; })
             .map(function(d){ return { dateTs: new Date(d.date).getTime(), value: d.sell }; });
-        if (!data.length) { document.getElementById('historyYearChart').innerHTML = '<p class="text-center text-slate-400 py-8">Không có dữ liệu cho năm {{ $thisYear }}</p>'; return; }
+        if (!data.length) { document.getElementById('historyYearChart').innerHTML = '<p class="text-center text-slate-400 py-8">Không có dữ liệu cho năm 2020</p>'; return; }
 
         document.getElementById('historyYearChart').innerHTML = '';
         var root = am5.Root.new('historyYearChart');
