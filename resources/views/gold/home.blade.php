@@ -336,7 +336,7 @@
                 <div id="newsList" class="grid gap-3">
                     @forelse ($snapshot['news'] as $news)
                         @php
-                            $isOwn = ($news['source'] ?? '') === 'giavanghn';
+                            $isExternal = !empty($news['url']) && !str_starts_with($news['url'], '/');
                             $emoji = match($news['impact'] ?? 'neutral') {
                                 'positive' => '📈',
                                 'negative' => '📉',
@@ -344,15 +344,17 @@
                             };
                         @endphp
                         <article class="flex items-start gap-3 bg-white">
-                            @if ($isOwn && !empty($news['image_url']))
-                                <img src="{{ $news['image_url'] }}" alt="" class="shrink-0 w-16 h-16 rounded-sm object-cover">
+                            @if (!empty($news['image_url']))
+                                <a href="{{ $news['url'] ?? '#' }}"@if($isExternal) target="_blank" rel="noopener"@endif class="shrink-0">
+                                    <img src="{{ $news['image_url'] }}" alt="" class="shrink-0 w-16 h-16 rounded-sm object-cover">
+                                </a>
                             @else
                                 <div class="shrink-0 w-16 h-16 rounded-sm bg-linear-to-br from-slate-100 to-slate-200 grid place-items-center text-xl">{{ $emoji }}</div>
                             @endif
                             <div class="flex-1">
                                 <h3 class="text-base font-semibold text-slate-900 m-0">
-                                    @if ($isOwn && !empty($news['url']))
-                                        <a href="{{ $news['url'] }}" class="hover:text-[#b8860b] transition">{{ $news['title'] }}</a>
+                                    @if (!empty($news['url']))
+                                        <a href="{{ $news['url'] }}"@if($isExternal) target="_blank" rel="noopener"@endif class="hover:text-[#b8860b] transition">{{ $news['title'] }}</a>
                                     @else
                                         {{ $news['title'] }}
                                     @endif

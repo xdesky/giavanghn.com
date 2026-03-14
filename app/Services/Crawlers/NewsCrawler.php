@@ -24,7 +24,7 @@ class NewsCrawler extends BaseCrawler
     {
         $count = 0;
 
-        // VnExpress kinh-doanh RSS contains gold-related articles
+        // VnExpress kinh-doanh RSS — filter for "giá vàng" keyword
         $rss = $this->fetch('https://vnexpress.net/rss/kinh-doanh.rss');
 
         // Handle both CDATA and plain titles
@@ -39,6 +39,7 @@ class NewsCrawler extends BaseCrawler
             $title = trim(strip_tags(html_entity_decode($m[1])));
             $url = trim($m[2]);
             $desc = $m[3];
+            $descText = trim(strip_tags(html_entity_decode($desc)));
             $pubDate = $m[4];
             $imageUrl = $this->extractImage($desc);
 
@@ -46,8 +47,9 @@ class NewsCrawler extends BaseCrawler
                 continue;
             }
 
-            // Only keep gold-related news
-            if (!preg_match('/vàng|gold|kim loại|quý|XAU|SJC|giá vàng/iu', $title)) {
+            // Only keep articles with "giá vàng" in title or description
+            $haystack = mb_strtolower($title . ' ' . $descText);
+            if (!str_contains($haystack, 'giá vàng') && !preg_match('/\bXAU\b|\bSJC\b/i', $title)) {
                 continue;
             }
 
@@ -70,55 +72,6 @@ class NewsCrawler extends BaseCrawler
             ]);
 
             $count++;
-        }
-
-        // Also try VnExpress general latest news for more gold coverage
-        try {
-            $rss2 = $this->fetch('https://vnexpress.net/rss/tin-moi-nhat.rss');
-            preg_match_all(
-                '/<item>.*?<title>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/title>.*?<link>(.*?)<\/link>.*?<description>(?:<!\[CDATA\[)?(.*?)(?:\]\]>)?<\/description>.*?<pubDate>(.*?)<\/pubDate>.*?<\/item>/si',
-                $rss2,
-                $matches2,
-                PREG_SET_ORDER
-            );
-
-            foreach ($matches2 as $m) {
-                $title = trim(strip_tags(html_entity_decode($m[1])));
-                $url = trim($m[2]);
-                $desc2 = $m[3];
-                $pubDate = $m[4];
-                $imageUrl = $this->extractImage($desc2);
-
-                if (empty($title) || mb_strlen($title) < 15) {
-                    continue;
-                }
-
-                if (!preg_match('/vàng|gold|XAU|SJC|giá vàng/iu', $title)) {
-                    continue;
-                }
-
-                if (NewsArticle::where('title', $title)->exists()) {
-                    continue;
-                }
-
-                if (!$imageUrl && $url) {
-                    $imageUrl = $this->fetchOgImage($url);
-                }
-
-                NewsArticle::create([
-                    'tag' => $this->detectTag($title),
-                    'title' => $title,
-                    'url' => $url,
-                    'image_url' => $imageUrl,
-                    'source' => 'vnexpress',
-                    'impact' => $this->detectImpact($title),
-                    'published_at' => \Carbon\Carbon::parse($pubDate),
-                ]);
-
-                $count++;
-            }
-        } catch (\Throwable) {
-            // ok
         }
 
         return $count;

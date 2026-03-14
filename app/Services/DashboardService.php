@@ -37,7 +37,7 @@ class DashboardService
         $exchangeRates = ExchangeRate::latestByPair()->get();
         $macroIndicators = MacroIndicator::latestByIndicator()->get();
         $news = NewsArticle::goldRelated()
-            ->whereIn('source', ['vnexpress', 'dantri'])
+            ->where('source', 'vnexpress')
             ->orderByDesc('published_at')->limit(6)->get();
         $analysisArticles = AnalysisArticle::whereNotNull('published_at')
             ->orderByDesc('published_at')->limit(2)->get();
