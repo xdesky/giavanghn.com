@@ -6,7 +6,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $page['title'] }} - GoldPrice</title>
     <meta name="description" content="{{ $page['description'] }}">
+    <meta name="robots" content="index, follow">
     <link rel="canonical" href="{{ url($path ?? '/') }}">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
 
     {{-- Open Graph --}}
     <meta property="og:type" content="website">
@@ -24,7 +26,6 @@
     <link rel="preload" href="/images/logo.svg" as="image" type="image/svg+xml">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="https://unpkg.com/lucide@0.477.0" defer></script>
 
     {{-- BreadcrumbList Schema --}}
     <script type="application/ld+json">
@@ -95,8 +96,5 @@
         </section>
     </main>
 
-    @include('gold.partials.footer')
-
-    <script>document.addEventListener('DOMContentLoaded', () => lucide.createIcons());</script>
-</body>
+    @include('gold.partials.footer')</body>
 </html>

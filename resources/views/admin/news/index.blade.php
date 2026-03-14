@@ -7,7 +7,6 @@
     <title>Quản lý tin tức - Admin</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body class="m-0 font-sans text-[#333] bg-white min-h-screen">
     @include('gold.partials.header')
@@ -112,8 +111,6 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-        lucide.createIcons();
-
         const selectAll = document.getElementById('selectAll');
         const bulkBar = document.getElementById('bulkBar');
         const selectedCount = document.getElementById('selectedCount');

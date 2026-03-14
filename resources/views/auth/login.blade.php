@@ -7,7 +7,6 @@
     <title>Đăng nhập - Giá Vàng Hôm Nay</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="https://unpkg.com/lucide@0.477.0" defer></script>
 </head>
 <body class="m-0 font-sans text-[#333] bg-white min-h-screen flex flex-col">
     @include('gold.partials.header')
@@ -97,8 +96,5 @@
     </div>
     </main>
 
-    @include('gold.partials.footer')
-
-    <script>document.addEventListener('DOMContentLoaded', () => lucide.createIcons());</script>
-</body>
+    @include('gold.partials.footer')</body>
 </html>

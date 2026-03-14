@@ -10,7 +10,7 @@
     $offers = [];
     foreach ($variants as $v) {
         if (($v['sell'] ?? 0) <= 0) continue;
-        $offers[] = ['@@type' => 'Offer', 'name' => $v['label'], 'price' => round($v['sell'] * 1000000), 'priceCurrency' => 'VND', 'priceValidUntil' => now()->endOfDay()->toIso8601String()];
+        $offers[] = ['@type' => 'Offer', 'name' => $v['label'], 'price' => round($v['sell'] * 1000000), 'priceCurrency' => 'VND', 'priceValidUntil' => now()->endOfDay()->toIso8601String()];
     }
 @endphp
 <script type="application/ld+json">

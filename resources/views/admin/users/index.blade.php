@@ -7,7 +7,6 @@
     <title>Quản lý người dùng - Admin</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="https://unpkg.com/lucide@latest" defer></script>
 </head>
 <body class="m-0 font-sans text-[#333] bg-white min-h-screen">
     @include('gold.partials.header')
@@ -146,8 +145,5 @@
         </div>
     </div>
 
-    @include('gold.partials.footer')
-
-    <script>document.addEventListener('DOMContentLoaded', () => lucide.createIcons());</script>
-</body>
+    @include('gold.partials.footer')</body>
 </html>

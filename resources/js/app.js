@@ -1,4 +1,8 @@
 import './bootstrap';
+import { initIcons } from './icons';
+
+// Initialize icons on all pages
+document.addEventListener('DOMContentLoaded', () => initIcons());
 
 const snapshotElement = document.getElementById('snapshot-data');
 
@@ -801,7 +805,7 @@ if (snapshotElement) {
 		renderStats();
 		drawMainChart();
 		renderSjcYearAmChart();
-		if (window.lucide) lucide.createIcons();
+		initIcons();
 	};
 
 	const syncClock = () => {

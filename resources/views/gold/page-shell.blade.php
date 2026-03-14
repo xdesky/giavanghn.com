@@ -8,6 +8,7 @@
     <meta name="description" content="{{ $description }}">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <link rel="canonical" href="{{ url('/' . $path) }}">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
 
     {{-- Open Graph --}}
     <meta property="og:type" content="website">
@@ -16,15 +17,14 @@
     <meta property="og:title" content="{{ $title }} - Giá Vàng Hôm Nay">
     <meta property="og:description" content="{{ $description }}">
     <meta property="og:url" content="{{ url('/' . $path) }}">
-    <meta property="og:image" content="{{ url('/images/og-gold-price.jpg') }}">
 
     {{-- Twitter Card --}}
-    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="{{ $title }} - Giá Vàng Hôm Nay">
     <meta name="twitter:description" content="{{ $description }}">
-    <meta name="twitter:image" content="{{ url('/images/og-gold-price.jpg') }}">
 
     <link rel="preload" href="/images/logo.svg" as="image" type="image/svg+xml">
+    <link rel="preconnect" href="https://cdn.amcharts.com" crossorigin>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <script>
@@ -33,7 +33,7 @@
     }if('requestIdleCallback' in window){requestIdleCallback(l)}else{setTimeout(l,1500)}
     ['scroll','touchstart','mouseover','keydown'].forEach(function(e){document.addEventListener(e,l,{once:true,passive:true})})})();
     </script>
-    <script src="https://unpkg.com/lucide@0.477.0" defer></script>
+
 
     @stack('head')
 </head>
@@ -95,11 +95,6 @@
     {{-- FOOTER --}}
     @include('gold.partials.footer')
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            if (window.lucide) lucide.createIcons();
-        });
-    </script>
     @stack('scripts')
 </body>
 </html>

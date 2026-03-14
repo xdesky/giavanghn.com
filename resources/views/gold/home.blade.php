@@ -6,7 +6,9 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Giá vàng hôm nay - Cập nhật giá vàng SJC, 9999, PNJ mới nhất | giavanghn.com</title>
     <meta name="description" content="Giá vàng hôm nay cập nhật liên tục: vàng SJC, vàng 9999, PNJ, DOJI và giá vàng thế giới. Xem biểu đồ giá vàng realtime, phân tích xu hướng và dự báo thị trường vàng mới nhất.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <link rel="canonical" href="{{ url('/') }}">
+    <link rel="icon" href="/images/favicon.png" type="image/png">
 
     {{-- Open Graph --}}
     <meta property="og:type" content="website">
@@ -21,6 +23,8 @@
     <meta name="twitter:title" content="Giá vàng hôm nay - Cập nhật giá vàng SJC, 9999, PNJ mới nhất | giavanghn.com">
     <meta name="twitter:description" content="Giá vàng hôm nay cập nhật liên tục: vàng SJC, vàng 9999, PNJ, DOJI và giá vàng thế giới. Xem biểu đồ giá vàng realtime, phân tích xu hướng và dự báo thị trường vàng mới nhất.">
 
+    <link rel="preconnect" href="https://cdn.amcharts.com" crossorigin>
+    <link rel="preconnect" href="https://s3.tradingview.com" crossorigin>
     <link rel="preload" href="/images/logo.svg" as="image" type="image/svg+xml">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -30,14 +34,14 @@
     }if('requestIdleCallback' in window){requestIdleCallback(l)}else{setTimeout(l,1500)}
     ['scroll','touchstart','mouseover','keydown'].forEach(function(e){document.addEventListener(e,l,{once:true,passive:true})})})();
     </script>
-    <script src="https://unpkg.com/lucide@0.477.0" defer></script>
+
 
     {{-- Organization + WebSite Schema --}}
     <script type="application/ld+json">
     {
         "@@context": "https://schema.org",
         "@@type": "Organization",
-        "name": "Giá Vàng Hôm Nay"
+        "name": "Giá Vàng Hôm Nay",
         "url": "{{ url('/') }}",
         "description": "Giá vàng hôm nay cập nhật liên tục: vàng SJC, vàng 9999, PNJ, DOJI và giá vàng thế giới. Xem biểu đồ giá vàng realtime, phân tích xu hướng và dự báo thị trường vàng mới nhất."
     }
@@ -46,9 +50,9 @@
     {
         "@@context": "https://schema.org",
         "@@type": "WebSite",
-        "name": "Giá Vàng Hôm Nay"
+        "name": "Giá Vàng Hôm Nay",
         "url": "{{ url('/') }}",
-        "description": "Giá vàng hôm nay cập nhật liên tục: vàng SJC, vàng 9999, PNJ, DOJI và giá vàng thế giới. Xem biểu đồ giá vàng realtime, phân tích xu hướng và dự báo thị trường vàng mới nhất."
+        "description": "Giá vàng hôm nay cập nhật liên tục: vàng SJC, vàng 9999, PNJ, DOJI và giá vàng thế giới. Xem biểu đồ giá vàng realtime, phân tích xu hướng và dự báo thị trường vàng mới nhất.",
         "inLanguage": "vi"
     }
     </script>
@@ -266,59 +270,26 @@
                 <div class="grid gap-5 lg:grid-rows-3">
                     {{-- XAU/USD --}}
                     <div class="rounded border border-slate-200 overflow-hidden">
-                        <div class="tradingview-widget-container h-[250px] sm:h-[350px]">
+                        <div class="tradingview-widget-container h-[250px] sm:h-[350px]" data-tv-symbol="OANDA:XAUUSD">
                             <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
-                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-                            {
-                                "symbol": "OANDA:XAUUSD",
-                                "width": "100%",
-                                "height": "100%",
-                                "locale": "vi_VN",
-                                "dateRange": "1M",
-                                "colorTheme": "light",
-                                "isTransparent": true,
-                                "autosize": true,
-                                "largeChartUrl": ""
-                            }
-                            </script>
+                            <p class="flex h-full items-center justify-center text-sm text-slate-400">Đang tải biểu đồ XAU/USD...</p>
                         </div>
                     </div>
                     {{-- XAG/USD --}}
                     <div class="rounded border border-slate-200 overflow-hidden">
-                        <div class="tradingview-widget-container h-[250px] sm:h-[350px]">
+                        <div class="tradingview-widget-container h-[250px] sm:h-[350px]" data-tv-symbol="OANDA:XAGUSD">
                             <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
-                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-                            {
-                                "symbol": "OANDA:XAGUSD",
-                                "width": "100%",
-                                "height": "100%",
-                                "locale": "vi_VN",
-                                "dateRange": "1M",
-                                "colorTheme": "light",
-                                "isTransparent": true,
-                                "autosize": true,
-                                "largeChartUrl": ""
-                            }
-                            </script>
+                            <p class="flex h-full items-center justify-center text-sm text-slate-400">Đang tải biểu đồ XAG/USD...</p>
                         </div>
                     </div>
                     {{-- XAU/EUR --}}
                     <div class="rounded border border-slate-200 overflow-hidden">
-                        <div class="tradingview-widget-container h-[250px] sm:h-[350px]">
+                        <div class="tradingview-widget-container h-[250px] sm:h-[350px]" data-tv-symbol="OANDA:XAUEUR">
                             <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
-                            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
-                            {
-                                "symbol": "OANDA:XAUEUR",
-                                "width": "100%",
-                                "height": "100%",
-                                "locale": "vi_VN",
-                                "dateRange": "1M",
-                                "colorTheme": "light",
-                                "isTransparent": true,
-                                "autosize": true,
-                                "largeChartUrl": ""
-                            }
-                            </script>
+                            <p class="flex h-full items-center justify-center text-sm text-slate-400">Đang tải biểu đồ XAU/EUR...</p>
+                        </div>
+                    </div>
+                </div>
                         </div>
                     </div>
                 </div>
@@ -1066,7 +1037,28 @@
     </dialog>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => lucide.createIcons());
+        // Lazy-load TradingView widgets when they enter viewport
+        (function() {
+            const containers = document.querySelectorAll('[data-tv-symbol]');
+            if (!containers.length) return;
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    const el = entry.target;
+                    const symbol = el.dataset.tvSymbol;
+                    observer.unobserve(el);
+                    const placeholder = el.querySelector('p');
+                    if (placeholder) placeholder.remove();
+                    const s = document.createElement('script');
+                    s.type = 'text/javascript';
+                    s.src = 'https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js';
+                    s.async = true;
+                    s.textContent = JSON.stringify({symbol:symbol,width:"100%",height:"100%",locale:"vi_VN",dateRange:"1M",colorTheme:"light",isTransparent:true,autosize:true,largeChartUrl:""});
+                    el.appendChild(s);
+                });
+            }, { rootMargin: '200px' });
+            containers.forEach(c => observer.observe(c));
+        })();
     </script>
 </body>
 </html>
