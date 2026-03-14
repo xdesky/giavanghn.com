@@ -88,7 +88,7 @@
     <div id="mobileOverlay" class="absolute inset-0 bg-slate-900/60"></div>
     <aside class="absolute right-0 top-0 h-full w-80 max-w-[85vw] overflow-y-auto bg-white shadow-2xl">
         <div class="flex items-center justify-between border-b border-slate-200 px-4 py-3">
-            <span class="text-lg font-bold text-slate-900">Menu</span>
+            <span class="text-lg font-bold text-slate-900"></span>
             <button id="mobileCloseBtn" class="grid h-9 w-9 place-items-center rounded-sm transition hover:bg-slate-100" aria-label="Đóng">
                 <i data-lucide="x" class="h-5 w-5"></i>
             </button>
