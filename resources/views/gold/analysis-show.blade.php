@@ -83,7 +83,7 @@ if ($article->thumbnail_path) {
                 @endif
                 <div class="p-4">
                     <h3 class="text-sm font-semibold text-slate-800 group-hover:text-blue-600 transition line-clamp-2">{{ Str::limit($related->title, 90) }}</h3>
-                    <p class="text-xs text-slate-500 mt-2">{{ $related->published_at?->diffForHumans() }} · {{ number_format($related->word_count) }} từ</p>
+                    <p class="text-xs text-slate-500 mt-2">{{ $related->published_at?->diffForHumans() }} · bởi: giavanghn</p>
                 </div>
             </a>
         @endforeach

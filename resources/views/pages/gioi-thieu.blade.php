@@ -1,6 +1,6 @@
 @extends('gold.page-shell')
 
-@section('page-label', 'Gioi thieu')
+@section('page-label', 'Giới thiệu')
 
 @section('page-content')
 @include('gold.sections.about')

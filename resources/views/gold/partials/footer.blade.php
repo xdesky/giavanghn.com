@@ -8,7 +8,7 @@
             {{-- Brand --}}
             <div class="xl:col-span-2">
                 <a href="/" class="inline-flex items-center gap-2 no-underline">
-                    <img src="/images/logo.svg" alt="giavang.hn" class="h-9">
+                    <img src="/images/logo.svg" alt="giavanghn.com" class="h-9">
                 </a>
                 <p class="mt-3 text-sm leading-relaxed text-slate-300">GiaVangHN là website cập nhật giá vàng SJC, giá vàng DOJI, giá vàng PNJ, giá vàng Phú Quý, Bảo Tín Minh Châu, giá vàng Thế Giới nhanh và chính xác số 1 tại Việt Nam.</p>
                 {{-- Social icons --}}

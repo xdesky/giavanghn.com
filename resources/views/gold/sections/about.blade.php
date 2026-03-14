@@ -1,7 +1,7 @@
 <div class="glass-card p-4 md:p-6 article-body">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">Về GoldPrice</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Về GiaVangHN</h2>
     <div class="text-sm leading-relaxed text-slate-700 space-y-4">
-        <p><strong>GoldPrice</strong> là nền tảng cập nhật giá vàng trực tuyến hàng đầu tại Việt Nam, cung cấp thông tin giá vàng SJC, DOJI, PNJ và thế giới (XAU/USD) theo thời gian thực.</p>
+        <p><strong>GiaVangHN</strong> là nền tảng cập nhật giá vàng trực tuyến hàng đầu tại Việt Nam, cung cấp thông tin giá vàng SJC, DOJI, PNJ và thế giới (XAU/USD) theo thời gian thực.</p>
         <p>Chúng tôi tổng hợp dữ liệu từ các thương hiệu vàng chính hãng, sàn giao dịch quốc tế và nguồn tin tài chính uy tín để mang đến cho người dùng góc nhìn toàn diện về thị trường vàng.</p>
         <h3 class="text-lg font-bold text-[#001061] mt-6!">Sứ mệnh</h3>
         <p>Giúp người dùng Việt Nam tiếp cận thông tin giá vàng chính xác, nhanh chóng và miễn phí, hỗ trợ đưa ra quyết định đầu tư sáng suốt.</p>
