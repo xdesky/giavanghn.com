@@ -595,7 +595,7 @@ w("$sec/about.blade.php", <<<'BLADE'
             <li>API dữ liệu cho nhà phát triển</li>
         </ul>
         <h3 class="text-lg font-bold text-[#001061] mt-6!">Liên hệ hợp tác</h3>
-        <p>Email: <a href="mailto:contact@goldprice.vn" class="text-blue-600 hover:underline">contact@goldprice.vn</a></p>
+        <p>Email: <a href="mailto:giavanghnoffical@gmail.com" class="text-blue-600 hover:underline">giavanghnoffical@gmail.com</a></p>
     </div>
 </div>
 BLADE);
@@ -607,7 +607,7 @@ w("$sec/contact.blade.php", <<<'BLADE'
     <div class="grid gap-5 sm:grid-cols-2 mb-4">
         <div class="rounded-sm border border-slate-200 p-4">
             <h3 class="font-bold text-sm">Email</h3>
-            <p class="mt-1 text-sm text-blue-600">contact@goldprice.vn</p>
+            <p class="mt-1 text-sm text-blue-600">giavanghnoffical@gmail.com</p>
         </div>
         <div class="rounded-sm border border-slate-200 p-4">
             <h3 class="font-bold text-sm">Hotline</h3>

@@ -8,6 +8,7 @@ if (snapshotElement) {
 	const toast = document.getElementById('toast');
 	const usVariantSelect = document.getElementById('usVariantSelect');
 	const sjcVariantSelect = document.getElementById('sjcVariantSelect');
+	const sjcBrandVariantSelect = document.getElementById('sjcBrandVariantSelect');
 	const btmcVariantSelect = document.getElementById('btmcVariantSelect');
 	const pnjVariantSelect = document.getElementById('pnjVariantSelect');
 	const dojiVariantSelect = document.getElementById('dojiVariantSelect');
@@ -594,6 +595,19 @@ if (snapshotElement) {
 		renderBuySellMiniChart(snapshot.sjcCard, 'sjcHeroPointsText', 'sjcHeroMiniChart', '#15803d', '#dc2626');
 	};
 
+	const renderSjcBrandCard = () => {
+		if (!document.getElementById('sjcBrandPriceText')) return;
+		const selected = sjcBrandVariantSelect?.value || snapshot.sjcCard.selected;
+		const variant = snapshot.sjcCard.variants[selected];
+
+		document.getElementById('sjcBrandPriceText').textContent = variant.price.toFixed(1);
+		document.getElementById('sjcBrandUnitText').textContent = variant.unit;
+		document.getElementById('sjcBrandBuySellText').textContent = `Mua: ${variant.buy.toFixed(2)}tr | Bán: ${variant.sell.toFixed(2)}tr`;
+		applyDayChangeColor(document.getElementById('sjcBrandDayChangeText'), variant.dayChangeLabel);
+		document.getElementById('sjcBrandTrendPercent').textContent = `${snapshot.sjcCard.trendPercent >= 0 ? '+' : ''}${snapshot.sjcCard.trendPercent.toFixed(2)}%`;
+		renderBuySellMiniChart(snapshot.sjcCard, 'sjcBrandPointsText', 'sjcBrandMiniChart', '#15803d', '#dc2626');
+	};
+
 	const renderBtmcCard = () => {
 		if (!document.getElementById('btmcPriceText')) return;
 		const selected = btmcVariantSelect?.value || snapshot.btmcCard.selected;
@@ -774,6 +788,7 @@ if (snapshotElement) {
 	const renderAll = () => {
 		renderUSCard();
 		renderSJCCard();
+		renderSjcBrandCard();
 		renderBtmcCard();
 		renderPnjCard();
 		renderDojiCard();
@@ -893,6 +908,7 @@ if (snapshotElement) {
 
 	usVariantSelect?.addEventListener('change', renderUSCard);
 	sjcVariantSelect?.addEventListener('change', renderSJCCard);
+	sjcBrandVariantSelect?.addEventListener('change', renderSjcBrandCard);
 	btmcVariantSelect?.addEventListener('change', renderBtmcCard);
 	pnjVariantSelect?.addEventListener('change', renderPnjCard);
 	dojiVariantSelect?.addEventListener('change', renderDojiCard);
@@ -979,6 +995,7 @@ if (snapshotElement) {
 		snapshot.ngocthamCard = JSON.parse(JSON.stringify(originalSnapshot.ngocthamCard));
 		snapshot.statCards = JSON.parse(JSON.stringify(originalSnapshot.statCards));
 		rebuildSelect(sjcVariantSelect, snapshot.sjcCard.variants, snapshot.sjcCard.selected);
+		rebuildSelect(sjcBrandVariantSelect, snapshot.sjcCard.variants, snapshot.sjcCard.selected);
 		rebuildSelect(btmcVariantSelect, snapshot.btmcCard.variants, snapshot.btmcCard.selected);
 		rebuildSelect(pnjVariantSelect, snapshot.pnjCard.variants, snapshot.pnjCard.selected);
 		rebuildSelect(dojiVariantSelect, snapshot.dojiCard.variants, snapshot.dojiCard.selected);
@@ -988,6 +1005,7 @@ if (snapshotElement) {
 		rebuildSelect(ngocthamVariantSelect, snapshot.ngocthamCard.variants, snapshot.ngocthamCard.selected);
 		renderUSCard();
 		renderSJCCard();
+		renderSjcBrandCard();
 		renderBtmcCard();
 		renderPnjCard();
 		renderDojiCard();
@@ -1078,11 +1096,13 @@ if (snapshotElement) {
 				snapshot.sjcCard.variants = newVariants;
 				snapshot.sjcCard.selected = 'p0';
 				rebuildSelect(sjcVariantSelect, newVariants, 'p0');
+				rebuildSelect(sjcBrandVariantSelect, newVariants, 'p0');
 
 				if (data.sjcWeekSellPoints?.length) snapshot.sjcCard.weekSellPoints = data.sjcWeekSellPoints;
 				if (data.sjcWeekBuyPoints?.length) snapshot.sjcCard.weekBuyPoints = data.sjcWeekBuyPoints;
 				if (data.sjcWeekPoints?.length) snapshot.sjcCard.weekPoints = data.sjcWeekPoints;
 				renderSJCCard();
+				renderSjcBrandCard();
 			}
 
 			// ── Update BTMC Card ──

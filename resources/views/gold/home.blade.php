@@ -126,10 +126,10 @@
                                 <span class="mt-1 text-xs text-[#666]" id="sjcHeroPointsText"></span>
                             </div>
                         </div>
-                        <div class="mt-4 flex items-center justify-end gap-2">
+                        <a href="/gia-vang-hom-nay/gia-vang-sjc" class="mt-4 flex items-center justify-end gap-2">
                             <i data-lucide="external-link" class="h-4 w-4 text-[#155dfc]"></i>
-                            <span class="cursor-pointer text-base font-medium text-[#155dfc]">Xem chi tiết</span>
-                        </div>
+                            <span class="text-base font-medium text-[#155dfc]">Xem chi tiết</span>
+                        </a>
                     </article>
 
                     {{-- US (World Gold) Card --}}
@@ -158,10 +158,10 @@
                                 <span class="mt-1 text-xs text-[#666]" id="usHeroPointsText"></span>
                             </div>
                         </div>
-                        <div class="mt-4 flex items-center justify-end gap-2">
+                        <a href="/gia-vang-the-gioi/xau-usd" class="mt-4 flex items-center justify-end gap-2">
                             <i data-lucide="external-link" class="h-4 w-4 text-[#155dfc]"></i>
-                            <span class="cursor-pointer text-base font-medium text-[#155dfc]">Xem chi tiết</span>
-                        </div>
+                            <span class="text-base font-medium text-[#155dfc]">Xem chi tiết</span>
+                        </a>
                     </article>
                 </div>
 
@@ -565,6 +565,33 @@
 
         {{-- Remaining Brand Cards --}}
         <section class="grid gap-5 px-5 pb-5 md:grid-cols-2 xl:grid-cols-4">
+            {{-- SJC Brand Card --}}
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+                <div class="mb-3 flex items-center justify-between gap-3">
+                    <h2 class="m-0 text-lg font-bold">{{ $snapshot['sjcCard']['title'] }}</h2>
+                    <span id="sjcBrandTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['sjcCard']['trendPercent']) }}</span>
+                </div>
+                <label>
+                    <select id="sjcBrandVariantSelect" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
+                        @foreach ($snapshot['sjcCard']['variants'] as $key => $variant)
+                            <option value="{{ $key }}" @selected($snapshot['sjcCard']['selected'] === $key)>{{ $variant['label'] }}</option>
+                        @endforeach
+                    </select>
+                </label>
+                <p class="mt-3 text-4xl font-bold leading-none text-[#001061] max-sm:text-3xl" id="sjcBrandPriceText"></p>
+                <p class="mt-1 text-sm text-[#001061]" id="sjcBrandUnitText"></p>
+                <p class="mt-1 text-sm text-[#666]" id="sjcBrandBuySellText"></p>
+                <p class="mt-2 font-bold text-[#008236]" id="sjcBrandDayChangeText"></p>
+                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
+                    <div class="mb-2 flex justify-between text-xs text-[#666]">
+                        <span>Biến động 7 ngày</span>
+                        <span id="sjcBrandPointsText"></span>
+                    </div>
+                    <svg id="sjcBrandMiniChart" class="h-14 w-full" viewBox="0 0 500 80" preserveAspectRatio="none"></svg>
+                </div>
+                <a href="/gia-vang-hom-nay/gia-vang-sjc" class="mt-3 block w-full rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-center text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</a>
+            </article>
+
             <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
                 <div class="mb-3 flex items-center justify-between gap-3">
                     <h2 class="m-0 text-lg font-bold">{{ $snapshot['btmcCard']['title'] }}</h2>
@@ -588,7 +615,7 @@
                     </div>
                     <svg id="btmcMiniChart" class="h-14 w-full" viewBox="0 0 500 80" preserveAspectRatio="none"></svg>
                 </div>
-                <button class="mt-3 w-full cursor-pointer rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</button>
+                <a href="/gia-vang-hom-nay/gia-vang-bao-tin-minh-chau" class="mt-3 block w-full rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-center text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</a>
             </article>
 
             <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
@@ -614,7 +641,7 @@
                     </div>
                     <svg id="pnjMiniChart" class="h-14 w-full" viewBox="0 0 500 80" preserveAspectRatio="none"></svg>
                 </div>
-                <button class="mt-3 w-full cursor-pointer rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</button>
+                <a href="/gia-vang-hom-nay/gia-vang-pnj" class="mt-3 block w-full rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-center text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</a>
             </article>
 
             {{-- DOJI Card --}}
@@ -641,7 +668,7 @@
                     </div>
                     <svg id="dojiMiniChart" class="h-14 w-full" viewBox="0 0 500 80" preserveAspectRatio="none"></svg>
                 </div>
-                <button class="mt-3 w-full cursor-pointer rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</button>
+                <a href="/gia-vang-hom-nay/gia-vang-doji" class="mt-3 block w-full rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-center text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</a>
             </article>
 
             {{-- Phú Quý Card --}}
@@ -668,7 +695,7 @@
                     </div>
                     <svg id="phuquyMiniChart" class="h-14 w-full" viewBox="0 0 500 80" preserveAspectRatio="none"></svg>
                 </div>
-                <button class="mt-3 w-full cursor-pointer rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</button>
+                <a href="/gia-vang-hom-nay/gia-vang-phu-quy" class="mt-3 block w-full rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-center text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</a>
             </article>
 
             {{-- Mi Hồng Card --}}
@@ -695,7 +722,7 @@
                     </div>
                     <svg id="mihongMiniChart" class="h-14 w-full" viewBox="0 0 500 80" preserveAspectRatio="none"></svg>
                 </div>
-                <button class="mt-3 w-full cursor-pointer rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</button>
+                <a href="/gia-vang-hom-nay/gia-vang-mi-hong" class="mt-3 block w-full rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-center text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</a>
             </article>
 
             {{-- Bảo Tín Mạnh Hải Card --}}
@@ -722,7 +749,7 @@
                     </div>
                     <svg id="btmhMiniChart" class="h-14 w-full" viewBox="0 0 500 80" preserveAspectRatio="none"></svg>
                 </div>
-                <button class="mt-3 w-full cursor-pointer rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</button>
+                <a href="/gia-vang-hom-nay/gia-vang-bao-tin-manh-hai" class="mt-3 block w-full rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-center text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</a>
             </article>
 
             {{-- Ngọc Thẩm Card --}}
@@ -749,7 +776,7 @@
                     </div>
                     <svg id="ngocthamMiniChart" class="h-14 w-full" viewBox="0 0 500 80" preserveAspectRatio="none"></svg>
                 </div>
-                <button class="mt-3 w-full cursor-pointer rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</button>
+                <a href="/gia-vang-hom-nay/gia-vang-ngoc-tham" class="mt-3 block w-full rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-center text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</a>
             </article>
         </section>
 
@@ -967,7 +994,11 @@
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="zap" class="h-5 w-5 text-[#e17100]"></i> Hành động nhanh</h3>
                 <div class="grid gap-2">
                     @foreach ($snapshot['actions'] as $action)
-                        <button class="cursor-pointer rounded-sm border border-[#bcbcbc] bg-[#f5f5f5] px-3 py-2 text-left text-sm font-semibold text-[#001061] transition hover:bg-[#ebebeb]" data-action="{{ $action }}">{{ $action }}</button>
+                        @if ($action['url'] === '#subscribeDialog')
+                            <button class="cursor-pointer rounded-sm border border-[#bcbcbc] bg-[#f5f5f5] px-3 py-2 text-left text-sm font-semibold text-[#001061] transition hover:bg-[#ebebeb]" onclick="document.getElementById('subscribeModal')?.showModal()">{{ $action['label'] }}</button>
+                        @else
+                            <a href="{{ $action['url'] }}" class="block rounded-sm border border-[#bcbcbc] bg-[#f5f5f5] px-3 py-2 text-left text-sm font-semibold text-[#001061] transition hover:bg-[#ebebeb]">{{ $action['label'] }}</a>
+                        @endif
                     @endforeach
                 </div>
             </article>
@@ -976,10 +1007,10 @@
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="book-open" class="h-5 w-5 text-[#001061]"></i> Kiến thức đầu tư vàng</h3>
                 <div class="grid gap-3 sm:grid-cols-2">
                     @foreach ($snapshot['knowledge'] as $item)
-                        <div class="rounded-sm border border-[#ebebeb] bg-[#f5f5f5] p-3 transition hover:bg-[#ebebeb] cursor-pointer">
+                        <a href="{{ $item['url'] ?? '#' }}" class="block rounded-sm border border-[#ebebeb] bg-[#f5f5f5] p-3 transition hover:bg-[#ebebeb]">
                             <h4 class="m-0 text-sm font-bold">{{ $item['title'] }}</h4>
                             <p class="mt-1 text-xs text-[#666]">{{ $item['desc'] }}</p>
-                        </div>
+                        </a>
                     @endforeach
                 </div>
             </article>
@@ -988,7 +1019,7 @@
 
     <section class="container-site px-6 pb-6">
         <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6 prose prose-sm max-w-none prose-headings:text-slate-900 prose-p:text-slate-700">
-            <h2 class="font-bold text-xl">Giá vàng hôm nay mới nhất</h2>
+            <h2 class="font-bold text-xl mb-1">Giá vàng hôm nay mới nhất</h2>
             <p>Giá vàng hôm nay được cập nhật liên tục từ các thương hiệu lớn như SJC, PNJ, DOJI, Bảo Tín Minh Châu và Phú Quý. Trang web cung cấp bảng giá vàng chi tiết theo từng loại vàng như vàng miếng SJC, vàng nhẫn 9999, vàng 24K và vàng trang sức.</p>
             <p>Ngoài giá vàng trong nước, chúng tôi còn cập nhật giá vàng thế giới (XAU/USD) theo thời gian thực cùng biểu đồ biến động 24h, 7 ngày và dài hạn.</p>
             <p>Thông tin giúp nhà đầu tư theo dõi thị trường, phân tích xu hướng và đưa ra quyết định mua bán vàng hiệu quả.</p>
@@ -999,9 +1030,9 @@
     @include('gold.partials.footer')
 
     {{-- Subscribe Modal --}}
-    <dialog id="subscribeModal" class="w-[min(430px,calc(100%-1rem))] rounded-sm border-0 p-0 backdrop:bg-black/45">
+    <dialog id="subscribeModal" class="m-auto w-[min(430px,calc(100%-1rem))] rounded-sm border-0 p-0 backdrop:bg-black/45">
         <form method="dialog" class="grid gap-3 p-4" id="subscribeForm">
-            <h3 class="m-0">Đăng ký báo giá</h3>
+            <h3 class="m-0 text-xl font-bold">Đăng ký nhận thông tin giá</h3>
             <p class="m-0">Nhập thông tin để nhận biến động giá vàng theo email.</p>
             <label class="text-sm text-[#333]">
                 Họ tên
@@ -1011,12 +1042,25 @@
                 Email
                 <input type="email" name="email" placeholder="you@example.com" required class="mt-1 w-full rounded-sm border border-[#bcbcbc] px-3 py-2">
             </label>
-            <fieldset class="grid grid-cols-2 gap-2 rounded-sm border border-[#bcbcbc] p-3">
-                <legend class="text-sm text-[#333]">Thị trường theo dõi</legend>
-                <label><input type="checkbox" name="markets[]" value="us" checked> Hoa Kỳ</label>
-                <label><input type="checkbox" name="markets[]" value="sjc" checked> SJC</label>
-                <label><input type="checkbox" name="markets[]" value="24k"> 24K</label>
-                <label><input type="checkbox" name="markets[]" value="9999"> 9999</label>
+            <fieldset class="rounded-sm border border-[#bcbcbc] p-3">
+                <legend class="text-sm font-semibold text-[#333]">Thương hiệu vàng trong nước</legend>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <label><input type="checkbox" name="markets[]" value="sjc" checked> SJC</label>
+                    <label><input type="checkbox" name="markets[]" value="doji" checked> DOJI</label>
+                    <label><input type="checkbox" name="markets[]" value="pnj"> PNJ</label>
+                    <label><input type="checkbox" name="markets[]" value="phuquy"> Phú Quý</label>
+                    <label><input type="checkbox" name="markets[]" value="btmc"> Bảo Tín Minh Châu</label>
+                    <label><input type="checkbox" name="markets[]" value="mihong"> Mi Hồng</label>
+                </div>
+            </fieldset>
+            <fieldset class="rounded-sm border border-[#bcbcbc] p-3">
+                <legend class="text-sm font-semibold text-[#333]">Thị trường vàng thế giới</legend>
+                <div class="grid grid-cols-2 gap-2 text-sm">
+                    <label><input type="checkbox" name="markets[]" value="xau-usd" checked> XAU/USD</label>
+                    <label><input type="checkbox" name="markets[]" value="xag-usd"> XAG/USD</label>
+                    <label><input type="checkbox" name="markets[]" value="xpt-usd"> XPT/USD</label>
+                    <label><input type="checkbox" name="markets[]" value="xpd-usd"> XPD/USD</label>
+                </div>
             </fieldset>
             <div class="flex justify-end gap-2">
                 <button value="cancel" class="cursor-pointer rounded-sm border border-[#bcbcbc] bg-white px-4 py-2 text-sm font-semibold text-[#001061] transition hover:bg-[#f5f5f5]" type="button" id="closeSubscribeBtn">Đóng</button>

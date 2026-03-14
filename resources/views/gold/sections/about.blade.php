@@ -15,6 +15,6 @@
             <li>API dữ liệu cho nhà phát triển</li>
         </ul>
         <h3 class="text-lg font-bold text-[#001061] mt-6!">Liên hệ hợp tác</h3>
-        <p>Email: <a href="mailto:contact@goldprice.vn" class="text-blue-600 hover:underline">contact@goldprice.vn</a></p>
+        <p>Email: <a href="mailto:giavanghnoffical@gmail.com" class="text-blue-600 hover:underline">giavanghnoffical@gmail.com</a></p>
     </div>
 </div>
