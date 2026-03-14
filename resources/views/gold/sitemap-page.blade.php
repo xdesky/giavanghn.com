@@ -75,7 +75,7 @@
         @if (!empty($children))
             <section class="mt-4 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6 shadow-lg">
                 <h2 class="text-lg font-bold text-[#001061]">Trang con</h2>
-                <div class="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                <div class="mt-3 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                     @foreach ($children as $child)
                         <a href="/{{ $child['path'] }}" class="rounded-sm border border-[#bcbcbc] bg-white p-3 text-sm font-semibold text-blue-700 hover:bg-blue-50 no-underline">
                             {{ $child['title'] }}
@@ -87,7 +87,7 @@
 
         <section class="mt-4 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6 shadow-lg">
             <h2 class="text-lg font-bold text-[#001061]">Danh mục chính</h2>
-            <div class="mt-3 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="mt-3 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 @foreach ($topLevel as $top)
                     <a href="/{{ $top['path'] }}" class="rounded-sm border border-slate-200 bg-slate-50 p-3 text-sm font-medium text-slate-700 hover:border-blue-200 hover:bg-blue-50 no-underline">
                         {{ $top['title'] }}

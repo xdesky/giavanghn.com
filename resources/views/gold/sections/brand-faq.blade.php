@@ -102,7 +102,7 @@ $faqData = $brandFaqs[$brandKey] ?? null;
 </script>
 @endpush
 
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-xl font-bold text-[#001061] mb-4">{{ $faqData['title'] }}</h2>
     <div class="divide-y divide-slate-200">
         @foreach ($faqData['faqs'] as $faq)

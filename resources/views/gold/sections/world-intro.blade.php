@@ -188,7 +188,7 @@ $data = $introData[$symbolKey] ?? null;
 }
 </script>
 @endpush
-<div class="mt-5 rounded-sm border border-slate-200 bg-white p-4 md:p-6">
+<div class="rounded-sm border border-slate-200 bg-white p-4 md:p-6">
     <h2 class="text-xl font-bold text-[#001061] mb-3">{{ $data['h2'] }}</h2>
     <p class="text-sm leading-relaxed text-slate-700 mb-4">{{ $data['intro'] }}</p>
 
@@ -200,7 +200,7 @@ $data = $introData[$symbolKey] ?? null;
 
 {{-- FAQ Section --}}
 @if (!empty($data['faqs']))
-<div class="mt-5 rounded-sm border border-slate-200 bg-white p-4 md:p-6">
+<div class="rounded-sm border border-slate-200 bg-white p-4 md:p-6">
     <h2 class="text-xl font-bold text-[#001061] mb-4">Câu hỏi thường gặp về {{ $symbolKey }}</h2>
     <div class="divide-y divide-slate-200">
         @foreach ($data['faqs'] as $faq)

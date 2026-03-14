@@ -97,7 +97,7 @@
 </div>
 
 {{-- 3 kịch bản --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2"><i data-lucide="target" class="h-5 w-5 text-amber-500"></i> 3 kịch bản giá vàng SJC tháng {{ $currentMonth }}</h2>
     <div class="grid gap-3 sm:grid-cols-3">
         <div class="rounded-sm border-2 border-emerald-300 bg-emerald-50 p-4 text-center">
@@ -125,7 +125,7 @@
 </div>
 
 {{-- Yếu tố vĩ mô --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2"><i data-lucide="activity" class="h-5 w-5 text-amber-500"></i> Yếu tố vĩ mô tháng {{ $currentMonth }}</h2>
     <div class="overflow-x-auto rounded-lg overflow-hidden">
         <table class="w-full text-sm">
@@ -180,7 +180,7 @@
 </div>
 
 {{-- Biểu đồ 30 ngày --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-1 flex items-center gap-2">
         <i data-lucide="line-chart" class="h-5 w-5 text-amber-500"></i>
         Biểu đồ giá vàng
@@ -206,7 +206,7 @@
 </div>
 
 {{-- Bài phân tích --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-4 flex items-center gap-2"><i data-lucide="file-text" class="h-5 w-5 text-amber-500"></i> Phân tích dự báo giá vàng tháng {{ $currentMonth }}</h2>
     <article class="prose prose-sm max-w-none text-slate-700 space-y-3">
         <p>Giá vàng SJC hiện giao dịch ở mức <strong>{{ number_format($sjcSell, 2) }} triệu VND/lượng</strong>, trong khi XAU/USD quốc tế ở <strong>{{ number_format($xauSpot, 2) }} USD/oz</strong> (quy đổi {{ number_format($xauQuyDoi, 2) }} triệu). Premium SJC so với giá quốc tế: {{ number_format(($sjcSell - $xauQuyDoi), 2) }} triệu/lượng.</p>
@@ -227,7 +227,7 @@
 </div>
 
 {{-- FAQ --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2"><i data-lucide="help-circle" class="h-5 w-5 text-amber-500"></i> Câu hỏi thường gặp</h2>
     <div class="divide-y">
         <details class="group py-3">
@@ -262,7 +262,7 @@
 </div>
 
 {{-- Links --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2"><i data-lucide="link" class="h-5 w-5 text-amber-500"></i> Dự báo khác</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
         <a href="/du-bao-gia-vang" class="text-blue-700 hover:underline">Dự báo tổng hợp</a>

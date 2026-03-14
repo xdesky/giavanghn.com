@@ -1,6 +1,6 @@
 <div class="glass-card p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-4">So sanh {{ $leftName }} va {{ $rightName }}</h2>
-    <div class="grid gap-3 sm:grid-cols-2 mb-4">
+    <div class="grid gap-5 sm:grid-cols-2 mb-4">
         <div class="rounded-sm border-2 border-blue-200 bg-blue-50 p-4 text-center">
             <p class="text-sm font-medium text-blue-700">{{ $leftName }}</p>
             <p class="mt-2 text-3xl font-bold text-blue-900">{{ $leftPrice }}</p>

@@ -73,7 +73,7 @@
     <h2 class="text-2xl font-bold text-[#001061] mb-2">So sánh giá vàng hôm nay — SJC vs các thương hiệu</h2>
     <p class="text-sm text-slate-600 mb-4">Giá bán SJC hiện tại: <span class="font-bold text-amber-900">{{ $sjcSell > 0 ? number_format($sjcSell * 1e6, 0, ',', '.') . ' VNĐ/lượng' : 'Đang cập nhật...' }}</span></p>
 
-    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         @foreach ($brands as $b)
         @php
             $card = $snapshot[$b['key']] ?? null;

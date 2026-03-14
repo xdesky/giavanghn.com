@@ -10,7 +10,7 @@
     @if ($articles->isEmpty())
         <p class="text-slate-500">Chưa có bài viết nào cho tag này.</p>
     @else
-        <div class="grid gap-4">
+        <div class="grid gap-5">
             @foreach ($articles as $article)
                 <a href="/phan-tich/{{ $article->slug }}" class="group flex gap-4 rounded-sm border border-slate-200 bg-white p-4 hover:shadow-md transition">
                     @if ($article->thumbnail_path)

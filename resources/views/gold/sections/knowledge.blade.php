@@ -15,7 +15,7 @@
     @foreach ($sections as $sec)
     <div class="mb-4">
         <h3 class="text-lg font-bold text-[#001061] mb-2">{{ $sec['heading'] }}</h3>
-        <div class="text-sm leading-7 text-slate-700">{!! $sec['body'] !!}</div>
+        <div class="text-sm leading-relaxed text-slate-700">{!! $sec['body'] !!}</div>
     </div>
     @endforeach
 

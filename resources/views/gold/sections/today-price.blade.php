@@ -6,10 +6,10 @@
 @endphp
 
 {{-- Hero Cards: SJC + Thế giới --}}
-<div class="grid gap-4 sm:grid-cols-2">
+<div class="grid gap-5 sm:grid-cols-2">
     {{-- SJC Card --}}
     @if ($sjc)
-    <div class="rounded-sm border border-amber-200 bg-gradient-to-br from-amber-50 to-yellow-50 p-5">
+    <div class="rounded-sm border border-amber-200 bg-amber-50 p-5">
         <div class="flex items-start justify-between">
             <p class="text-sm font-semibold text-amber-800">{{ $sjc['title'] }}</p>
             <span class="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-bold {{ $sjc['trendPercent'] >= 0 ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700' }}">
@@ -30,7 +30,7 @@
 
     {{-- World Gold Card --}}
     @if ($us)
-    <div class="rounded-sm border border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-5">
+    <div class="rounded-sm border border-blue-200 bg-blue-50 p-5">
         <div class="flex items-start justify-between">
             <p class="text-sm font-semibold text-blue-800">{{ $us['title'] }}</p>
             <span class="inline-flex items-center rounded-full px-2 py-0.5 text-xs font-bold {{ $us['trendPercent'] >= 0 ? 'bg-emerald-100 text-emerald-700' : 'bg-rose-100 text-rose-700' }}">
@@ -71,7 +71,7 @@
             </thead>
             <tbody>
                 @foreach ($topBrands as $brand)
-                    <tr class="transition hover:bg-[#f5f5f5]">
+                    <tr class="transition-colors hover:bg-[#f5f5f5]">
                         <td class="border-b border-[#ebebeb] p-3 font-medium">{{ $brand['brand'] }}</td>
                         <td class="border-b border-[#ebebeb] p-3 text-right tabular-nums font-bold">{{ number_format($brand['buy'], 0, ',', '.') }}</td>
                         <td class="border-b border-[#ebebeb] p-3 text-right tabular-nums font-bold">{{ number_format($brand['sell'], 0, ',', '.') }}</td>

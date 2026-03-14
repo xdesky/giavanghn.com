@@ -71,7 +71,7 @@ if ($article->thumbnail_path) {
 @if ($relatedArticles->isNotEmpty())
 <section class="mt-8">
     <h2 class="text-lg font-bold text-slate-900 mb-4">Bài viết liên quan</h2>
-    <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+    <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         @foreach ($relatedArticles as $related)
             <a href="/phan-tich/{{ $related->slug }}" class="group block rounded-sm border border-slate-200 bg-white shadow-sm hover:shadow-md transition overflow-hidden">
                 @if ($related->thumbnail_path)

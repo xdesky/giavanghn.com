@@ -17,7 +17,7 @@
             @endphp
             @foreach ($cats as $c)
                 <a href="{{ $c['path'] }}"
-                   class="px-3 py-1.5 rounded text-[13px] font-semibold no-underline transition-all
+                   class="px-3 py-1.5 rounded text-xs font-semibold no-underline transition-all
                           {{ $category === $c['slug']
                               ? 'bg-[#001061] text-white shadow-sm'
                               : 'text-slate-500 hover:bg-slate-100 hover:text-[#001061]' }}">
@@ -46,7 +46,7 @@
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent"></div>
                     <div class="absolute bottom-0 left-0 right-0 p-4 md:p-5">
                         @if (!empty($a['tag']))
-                            <span class="mb-2 inline-block rounded bg-[#ffc300] px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide text-[#001061]">{{ $a['tag'] }}</span>
+                            <span class="mb-2 inline-block rounded bg-[#ffc300] px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-[#001061]">{{ $a['tag'] }}</span>
                         @endif
                         <h3 class="text-base md:text-lg font-bold text-white leading-snug line-clamp-2 drop-shadow" itemprop="headline">{{ $a['title'] }}</h3>
                         <div class="mt-2 flex items-center gap-2 text-xs text-white/70">
@@ -59,7 +59,7 @@
                                 <span itemprop="publisher">{{ $a['source'] }}</span>
                             @endif
                             @if (!empty($a['impact']))
-                                <span class="ml-auto inline-flex items-center gap-0.5 rounded-full px-2 py-0.5 text-[11px] font-semibold backdrop-blur-sm
+                                <span class="ml-auto inline-flex items-center gap-0.5 rounded-full px-2 py-0.5 text-xs font-semibold backdrop-blur-sm
                                     {{ $a['impact'] === 'positive' ? 'bg-emerald-500/20 text-emerald-300' : ($a['impact'] === 'negative' ? 'bg-rose-500/20 text-rose-300' : 'bg-white/10 text-white/60') }}">
                                     {{ $a['impact'] === 'positive' ? '▲ Tích cực' : ($a['impact'] === 'negative' ? '▼ Tiêu cực' : '— Trung tính') }}
                                 </span>
@@ -89,14 +89,14 @@
 
             {{-- Content --}}
             <div class="min-w-0 flex-1">
-                <h3 class="text-[14px] md:text-[15px] font-semibold leading-snug line-clamp-2" itemprop="headline">
+                <h3 class="text-sm md:text-[15px] font-semibold leading-snug line-clamp-2" itemprop="headline">
                     <a href="{{ $a['url'] ?? '#' }}"@if($isExternal) target="_blank" rel="noopener"@endif
                        class="text-slate-800 no-underline transition-colors group-hover:text-[#001061]">
                         {{ $a['title'] }}
                     </a>
                 </h3>
-                <p class="mt-1 hidden text-[13px] leading-relaxed text-slate-400 line-clamp-1 md:block" itemprop="description">{{ $a['excerpt'] }}</p>
-                <div class="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-[11px] text-slate-400">
+                <p class="mt-1 hidden text-xs leading-relaxed text-slate-400 line-clamp-1 md:block" itemprop="description">{{ $a['excerpt'] }}</p>
+                <div class="mt-1.5 flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-slate-400">
                     @if (!empty($a['date']))
                         <span class="inline-flex items-center gap-1">
                             <i data-lucide="clock" class="h-3 w-3"></i>

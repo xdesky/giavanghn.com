@@ -65,7 +65,7 @@
     </div>
     <h2 class="text-2xl font-bold text-[#001061] mb-4">Phân tích tương quan Vàng (XAU) và USD (DXY)</h2>
 
-    <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 mb-4">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-4">
         <div class="rounded-sm border-2 border-amber-300 bg-white p-4 text-center">
             <p class="text-sm font-semibold text-amber-700 mb-1">Vàng (XAU/USD)</p>
             <p class="text-3xl font-bold text-amber-900 tabular-nums">{{ number_format($xauSpot, 2) }}</p>
@@ -93,7 +93,7 @@
         </div>
     </div>
 
-    <div class="grid gap-3 sm:grid-cols-2">
+    <div class="grid gap-5 sm:grid-cols-2">
         <div class="rounded-sm border border-indigo-200 bg-indigo-50 p-3 text-center">
             <p class="text-xs font-medium text-indigo-700">Tương quan XAU - DXY</p>
             <p class="text-xl font-bold text-indigo-800">Nghịch (Inverse)</p>

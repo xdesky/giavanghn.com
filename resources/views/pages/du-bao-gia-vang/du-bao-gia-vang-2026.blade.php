@@ -99,7 +99,7 @@
 </div>
 
 {{-- 3 kịch bản SJC --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2"><i data-lucide="target" class="h-5 w-5 text-amber-500"></i> 3 kịch bản giá vàng SJC cuối năm 2026</h2>
     <div class="grid gap-3 sm:grid-cols-3">
         <div class="rounded-sm border-2 border-emerald-300 bg-emerald-50 p-4 text-center">
@@ -131,7 +131,7 @@
 </div>
 
 {{-- Nhận định các tổ chức --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2"><i data-lucide="building-2" class="h-5 w-5 text-amber-500"></i> Nhận định từ các tổ chức tài chính</h2>
     <div class="overflow-x-auto rounded-lg overflow-hidden">
         <table class="w-full text-sm">
@@ -180,7 +180,7 @@
 </div>
 
 {{-- Yếu tố dài hạn --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2"><i data-lucide="trending-up" class="h-5 w-5 text-amber-500"></i> Yếu tố chi phối giá vàng năm 2026</h2>
     @php
     $yearFactors = [
@@ -208,7 +208,7 @@
 </div>
 
 {{-- Biểu đồ 1 năm --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-1 flex items-center gap-2">
         <i data-lucide="line-chart" class="h-5 w-5 text-amber-500"></i>
         Biểu đồ giá vàng
@@ -233,7 +233,7 @@
 </div>
 
 {{-- Bài phân tích --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-4 flex items-center gap-2"><i data-lucide="file-text" class="h-5 w-5 text-amber-500"></i> Phân tích & nhận định giá vàng năm 2026</h2>
     <article class="prose prose-sm max-w-none text-slate-700 space-y-3">
         <p>Giá vàng SJC hiện giao dịch ở <strong>{{ number_format($sjcSell, 2) }} triệu VND/lượng</strong>, XAU/USD tại <strong>{{ number_format($xauSpot, 2) }} USD/oz</strong>. Giá vàng thế giới quy đổi {{ number_format($xauQuyDoi, 2) }} triệu/lượng, premium SJC khoảng {{ number_format(($sjcSell - $xauQuyDoi), 2) }} triệu.</p>
@@ -255,7 +255,7 @@
 </div>
 
 {{-- FAQ --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2"><i data-lucide="help-circle" class="h-5 w-5 text-amber-500"></i> Câu hỏi thường gặp</h2>
     <div class="divide-y">
         <details class="group py-3">
@@ -290,7 +290,7 @@
 </div>
 
 {{-- Links --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2"><i data-lucide="link" class="h-5 w-5 text-amber-500"></i> Dự báo khác</h2>
     <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-sm">
         <a href="/du-bao-gia-vang" class="text-blue-700 hover:underline">Dự báo tổng hợp</a>

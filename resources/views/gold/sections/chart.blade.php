@@ -1,7 +1,7 @@
 {{-- All-brands price chart (AmCharts 5) --}}
 @php $period = $period ?? '30d'; $periodLabel = $periodLabel ?? '30 ngày'; @endphp
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="flex items-center gap-2 text-xl font-bold text-[#001061] mb-1">
+    <h2 class="flex items-center gap-2 text-lg font-bold text-[#001061] mb-1">
         <i data-lucide="bar-chart-3" class="h-5 w-5 text-amber-500"></i>
         Biểu đồ giá vàng {{ $periodLabel }}
     </h2>

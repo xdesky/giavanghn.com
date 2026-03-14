@@ -1,6 +1,6 @@
 <div class="glass-card p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-4">{{ $apiTitle }}</h2>
-    <p class="text-sm text-slate-600 mb-4">{{ $apiDesc }}</p>
+    <p class="text-sm leading-relaxed text-slate-600 mb-4">{{ $apiDesc }}</p>
 
     @foreach ($endpoints as $ep)
     <div class="mb-4 rounded-sm border border-slate-200 overflow-hidden">
@@ -9,7 +9,7 @@
             <code class="text-sm font-mono font-semibold text-slate-800">{{ $ep['path'] }}</code>
         </div>
         <div class="p-4">
-            <p class="text-sm text-slate-600">{{ $ep['desc'] }}</p>
+            <p class="text-sm leading-relaxed text-slate-600">{{ $ep['desc'] }}</p>
             @if (!empty($ep['params']))
             <div class="mt-3">
                 <p class="text-xs font-semibold text-slate-500 uppercase mb-2">Tham so</p>

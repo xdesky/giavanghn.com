@@ -5,7 +5,7 @@
 @section('page-content')
 <div class="glass-card p-4 md:p-6">
     <h2 class="text-xl font-bold text-slate-900 mb-4">Tong quan thi truong</h2>
-    <div class="grid gap-3 sm:grid-cols-2">
+    <div class="grid gap-5 sm:grid-cols-2">
         <a href="/thi-truong/gia-xang" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
             <p class="text-2xl mb-2">⛽</p>
             <h3 class="font-bold text-slate-900">Gia xang</h3>

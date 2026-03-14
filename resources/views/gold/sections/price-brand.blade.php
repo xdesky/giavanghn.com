@@ -24,6 +24,6 @@
     </div>
     <div class="mt-4 rounded-sm border border-amber-100 bg-amber-50 p-4">
         <h3 class="font-bold text-amber-900">Gioi thieu {{ $brandName }}</h3>
-        <p class="mt-2 text-sm leading-6 text-amber-800">{{ $brandName }} la mot trong nhung thuong hieu vang uy tin hang dau tai Viet Nam, cung cap da dang san pham vang mieng, vang nhan va vang trang suc chat luong cao. Gia duoc cap nhat lien tuc trong ngay giao dich.</p>
+        <p class="mt-2 text-sm leading-relaxed text-amber-800">{{ $brandName }} la mot trong nhung thuong hieu vang uy tin hang dau tai Viet Nam, cung cap da dang san pham vang mieng, vang nhan va vang trang suc chat luong cao. Gia duoc cap nhat lien tuc trong ngay giao dich.</p>
     </div>
 </div>

@@ -50,7 +50,7 @@
         <span class="text-xs text-slate-400">Cập nhật {{ $now }}</span>
     </div>
 
-    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-5 mb-5">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-5 mb-5">
         <div class="rounded-sm border border-slate-200 bg-slate-50/50 p-3 text-center">
             <p class="text-[11px] font-semibold text-slate-500 uppercase tracking-wide">Mở đầu năm</p>
             <p class="mt-1 text-lg font-bold text-slate-800 tabular-nums">{{ number_format($yearOpen, 2, ',', '.') }}</p>
@@ -90,7 +90,7 @@
 </div>
 
 {{-- Chart --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <div class="flex items-center justify-between mb-3">
         <h2 class="flex items-center gap-2 text-lg font-bold text-[#001061]">
             <i data-lucide="trending-up" class="h-5 w-5 text-[#ffc300]"></i>
@@ -107,7 +107,7 @@
 </div>
 
 {{-- Monthly table --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="flex items-center gap-2 text-lg font-bold text-[#001061] mb-4">
         <i data-lucide="table-2" class="h-5 w-5 text-[#ffc300]"></i>
         Giá vàng SJC theo tháng — {{ $thisYear }}
@@ -147,7 +147,7 @@
 </div>
 
 {{-- Article --}}
-<article class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6 prose prose-sm max-w-none prose-headings:text-[#001061] prose-p:text-slate-700 prose-li:text-slate-700 prose-strong:text-slate-900">
+<article class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6 prose prose-sm max-w-none prose-headings:text-[#001061] prose-p:text-slate-700 prose-li:text-slate-700 prose-strong:text-slate-900">
     <h2 class="!mt-0 !text-lg">Tổng kết giá vàng SJC năm {{ $thisYear }}</h2>
 
     <h3>Diễn biến chung</h3>
@@ -199,7 +199,7 @@
 </article>
 
 {{-- FAQ --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="flex items-center gap-2 text-lg font-bold text-[#001061] mb-4">
         <i data-lucide="help-circle" class="h-5 w-5 text-[#ffc300]"></i>
         Câu hỏi thường gặp

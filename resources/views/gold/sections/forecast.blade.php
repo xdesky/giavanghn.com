@@ -1,6 +1,6 @@
 <div class="glass-card p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-4">Du bao gia vang {{ $periodLabel }}</h2>
-    <div class="grid gap-3 sm:grid-cols-3 mb-4">
+    <div class="grid gap-5 sm:grid-cols-3 mb-4">
         <div class="rounded-sm border-2 border-emerald-200 bg-emerald-50 p-4 text-center">
             <p class="text-xs font-semibold text-emerald-700 uppercase">Kich ban tich cuc</p>
             <p class="mt-2 text-2xl font-bold text-emerald-800">{{ $bullPrice }}</p>
@@ -29,6 +29,6 @@
         </div>
     </div>
     <div class="rounded-sm border border-[#bcbcbc] bg-blue-50 p-4">
-        <p class="text-sm leading-6 text-blue-800">{{ $analysis }}</p>
+        <p class="text-sm leading-relaxed text-blue-800">{{ $analysis }}</p>
     </div>
 </div>

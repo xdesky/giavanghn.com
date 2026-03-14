@@ -25,7 +25,7 @@
         </div>
 
         {{-- Quick Links --}}
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             <a href="{{ route('home') }}" class="group rounded-sm border border-[#bcbcbc] bg-white p-6 no-underline transition hover:shadow-xl hover:border-blue-300">
                 <div class="mb-3 grid h-12 w-12 place-items-center rounded-xl bg-blue-100 text-blue-600">
                     <i data-lucide="bar-chart-3" class="h-6 w-6"></i>

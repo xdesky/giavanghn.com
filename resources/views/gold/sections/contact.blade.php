@@ -1,6 +1,6 @@
 <div class="glass-card p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-4">Lien he voi chung toi</h2>
-    <div class="grid gap-3 sm:grid-cols-2 mb-4">
+    <div class="grid gap-5 sm:grid-cols-2 mb-4">
         <div class="rounded-sm border border-slate-200 p-4">
             <h3 class="font-bold text-sm">Email</h3>
             <p class="mt-1 text-sm text-blue-600">contact@goldprice.vn</p>

@@ -94,7 +94,7 @@
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2">
         <i data-lucide="zap" class="h-5 w-5 text-emerald-500"></i> Tóm tắt biến động giá vàng {{ now()->format('d/m/Y') }}
     </h2>
-    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 text-sm">
         @if ($sjcVariant)
         <div class="flex items-start gap-2">
             <i data-lucide="circle-dot" class="h-4 w-4 text-amber-500 mt-0.5 shrink-0"></i>
@@ -168,7 +168,7 @@
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2">
         <i data-lucide="book-open" class="h-5 w-5"></i> Hướng dẫn đọc biểu đồ giá vàng
     </h2>
-    <div class="grid gap-3 sm:grid-cols-2 text-sm text-slate-700">
+    <div class="grid gap-5 sm:grid-cols-2 text-sm text-slate-700">
         <div class="flex items-start gap-2">
             <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-emerald-100 text-xs font-bold text-emerald-800">1</span>
             <div><strong>Trục ngang (X):</strong> Thời gian — ngày/tháng hoặc giờ:phút tùy khung thời gian. Đọc từ trái (quá khứ) sang phải (hiện tại).</div>

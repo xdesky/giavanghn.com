@@ -79,7 +79,7 @@
     </div>
     <h2 class="text-2xl font-bold text-[#001061] mb-4">So sánh giá vàng SJC và Ngọc Thẩm hôm nay</h2>
 
-    <div class="grid gap-4 sm:grid-cols-2 mb-4">
+    <div class="grid gap-5 sm:grid-cols-2 mb-4">
         <div class="rounded-sm border-2 border-amber-300 bg-white p-4 text-center">
             <p class="text-sm font-semibold text-amber-700 mb-1">SJC (bán ra)</p>
             <p class="text-3xl font-bold text-amber-900 tabular-nums">{{ number_format($sjcSell * 1e6, 0, ',', '.') }}</p>
@@ -100,7 +100,7 @@
         </div>
     </div>
 
-    <div class="grid gap-3 sm:grid-cols-3">
+    <div class="grid gap-5 sm:grid-cols-3">
         <div class="rounded-sm border {{ $diffSell >= 0 ? 'border-rose-200 bg-rose-50' : 'border-emerald-200 bg-emerald-50' }} p-3 text-center">
             <p class="text-xs font-medium {{ $diffSell >= 0 ? 'text-rose-700' : 'text-emerald-700' }}">Chênh lệch bán ra</p>
             <p class="text-xl font-bold {{ $diffSell >= 0 ? 'text-rose-800' : 'text-emerald-800' }} tabular-nums">{{ $diffSell >= 0 ? '+' : '' }}{{ number_format($diffSell, 0, ',', '.') }}</p>
@@ -120,7 +120,7 @@
 </div>
 
 {{-- Bảng so sánh --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-slate-900 mb-3">So sánh chi tiết theo loại sản phẩm</h2>
     <div class="overflow-x-auto rounded-sm border border-slate-200">
         <table class="w-full text-sm">
@@ -159,7 +159,7 @@
 </div>
 
 {{-- Biểu đồ --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-slate-900 mb-2">Biểu đồ giá vàng SJC vs {{ $otherName }} (7 ngày)</h2>
     <p class="text-xs text-slate-500 mb-3">So sánh diễn biến giá bán ra giữa SJC và {{ $otherName }} trong 7 ngày gần nhất</p>
     <div id="brandCompareChart" class="w-full" style="height:360px">
@@ -171,7 +171,7 @@
 </div>
 
 {{-- Phân tích --}}
-<article class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6 prose prose-sm max-w-none prose-headings:text-[#001061] prose-p:text-slate-700">
+<article class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6 prose prose-sm max-w-none prose-headings:text-[#001061] prose-p:text-slate-700">
     <h2 class="!mt-0">Phân tích so sánh giá vàng SJC và Ngọc Thẩm</h2>
 
     <h3>Ngọc Thẩm — Đa dạng sản phẩm vàng TP.HCM</h3>
@@ -202,7 +202,7 @@
 </article>
 
 {{-- FAQ --}}
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-xl font-bold text-[#001061] mb-4">Câu hỏi thường gặp</h2>
     <div class="divide-y divide-slate-200">
         <details class="group py-3">
@@ -249,7 +249,7 @@ $compareLinks = [
     ['slug' => 'vang-vs-usd', 'label' => 'Vàng vs USD'],
 ];
 @endphp
-<div class="mt-5 rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
+<div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-3" style="font-family: 'Philosopher', serif;">So sánh giá vàng khác</h2>
     <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
         @foreach($compareLinks as $link)

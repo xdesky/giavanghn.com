@@ -102,7 +102,7 @@
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2">
         <i data-lucide="zap" class="h-5 w-5 text-amber-500"></i> Tóm tắt giá vàng hôm nay {{ now()->format('d/m/Y') }}
     </h2>
-    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 text-sm">
         @if ($sjcVariant)
         <div class="flex items-start gap-2">
             <i data-lucide="circle-dot" class="h-4 w-4 text-amber-500 mt-0.5 shrink-0"></i>
@@ -174,7 +174,7 @@
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2">
         <i data-lucide="book-open" class="h-5 w-5"></i> Hướng dẫn đọc bảng giá vàng
     </h2>
-    <div class="grid gap-3 sm:grid-cols-2 text-sm text-slate-700">
+    <div class="grid gap-5 sm:grid-cols-2 text-sm text-slate-700">
         <div class="flex items-start gap-2">
             <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-100 text-xs font-bold text-amber-800">1</span>
             <div><strong>Giá mua vào:</strong> Giá mà tiệm vàng mua lại từ bạn. Đây là giá bạn nhận được khi bán vàng.</div>

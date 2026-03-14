@@ -1,7 +1,7 @@
 <div class="glass-card p-4 md:p-6 article-body">
     <h2 class="text-lg font-bold text-[#001061] mb-4">Chinh sach bao mat</h2>
     <p class="text-xs text-slate-400 mb-4">Cap nhat lan cuoi: 01/03/2026</p>
-    <div class="text-sm leading-7 text-slate-700 space-y-4">
+    <div class="text-sm leading-relaxed text-slate-700 space-y-4">
         <h3 class="text-lg font-bold text-[#001061]">1. Thu thap thong tin</h3>
         <p>Chung toi thu thap thong tin ca nhan khi ban dang ky nhan ban tin, su dung API hoac gui form lien he. Thong tin bao gom: ho ten, email va noi dung tin nhan.</p>
         <h3 class="text-lg font-bold text-[#001061]">2. Muc dich su dung</h3>

@@ -7,7 +7,7 @@
     </h2>
     <p class="text-xs text-slate-500 mb-4">Xem riêng biểu đồ giá bán ra của từng thương hiệu vàng — đơn vị: triệu VNĐ/lượng</p>
 
-    <div class="grid gap-4 sm:grid-cols-2">
+    <div class="grid gap-5 sm:grid-cols-2">
         <div class="rounded-sm border border-slate-200 p-3">
             <h3 class="text-sm font-semibold text-[#b8860b] mb-1 flex items-center gap-1"><span class="inline-block w-3 h-0.5 rounded bg-[#b8860b]"></span> SJC</h3>
             <div id="brandChart_SJC" style="height:200px"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>

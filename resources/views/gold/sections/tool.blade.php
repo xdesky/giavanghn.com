@@ -1,6 +1,6 @@
 <div class="glass-card p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-4">{{ $toolTitle }}</h2>
-    <p class="text-sm text-slate-600 mb-4">{{ $toolDesc }}</p>
+    <p class="text-sm leading-relaxed text-slate-600 mb-4">{{ $toolDesc }}</p>
     <div class="rounded-sm border border-[#bcbcbc] bg-slate-50 p-4">
         <div class="grid gap-3">
             @foreach ($fields as $field)
@@ -28,7 +28,7 @@
     @if (!empty($instructions))
     <div class="mt-4 rounded-sm border border-slate-200 p-4">
         <h3 class="font-bold text-sm mb-2">Huong dan su dung</h3>
-        <ul class="space-y-1 text-sm text-slate-600">
+        <ul class="space-y-1 text-sm leading-relaxed text-slate-600">
             @foreach ($instructions as $inst)
             <li>• {{ $inst }}</li>
             @endforeach

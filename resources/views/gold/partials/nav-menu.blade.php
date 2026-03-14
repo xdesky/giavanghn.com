@@ -68,10 +68,10 @@
                 </div>
             </div>
         @else
-            <a href="{{ route('login') }}" class="rounded-sm px-3 py-2 text-sm font-medium text-white no-underline transition hover:text-[#ffc300]">
+            <a href="{{ route('login') }}" class="rounded-sm px-3 py-2 text-sm font-medium text-white no-underline transition hover:text-[#ffc300] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffc300]/50">
                 <i data-lucide="log-in" class="mr-1 inline h-4 w-4"></i>Đăng nhập
             </a>
-            <a href="{{ route('register') }}" class="rounded-sm bg-[#ffc300] px-3 py-2 text-sm font-semibold text-slate-900 no-underline transition hover:bg-yellow-300">
+            <a href="{{ route('register') }}" class="rounded-sm bg-[#ffc300] px-3 py-2 text-sm font-semibold text-slate-900 no-underline transition hover:bg-yellow-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ffc300]/50">
                 Đăng ký
             </a>
         @endauth

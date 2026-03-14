@@ -101,7 +101,7 @@
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2">
         <i data-lucide="zap" class="h-5 w-5 text-blue-500"></i> Tóm tắt thị trường vàng thế giới {{ now()->format('d/m/Y') }}
     </h2>
-    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 text-sm">
         @if ($usVariant)
         <div class="flex items-start gap-2">
             <i data-lucide="circle-dot" class="h-4 w-4 text-blue-500 mt-0.5 shrink-0"></i>

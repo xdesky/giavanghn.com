@@ -1,7 +1,7 @@
 <div class="glass-card p-4 md:p-6 article-body">
     <h2 class="text-lg font-bold text-[#001061] mb-4">Dieu khoan su dung</h2>
     <p class="text-xs text-slate-400 mb-4">Cap nhat lan cuoi: 01/03/2026</p>
-    <div class="text-sm leading-7 text-slate-700 space-y-4">
+    <div class="text-sm leading-relaxed text-slate-700 space-y-4">
         <h3 class="text-lg font-bold text-[#001061]">1. Chap nhan dieu khoan</h3>
         <p>Khi truy cap va su dung GoldPrice, ban dong y tuan thu cac dieu khoan duoi day. Neu khong dong y, vui long ngung su dung dich vu.</p>
         <h3 class="text-lg font-bold text-[#001061]">2. Noi dung va du lieu</h3>

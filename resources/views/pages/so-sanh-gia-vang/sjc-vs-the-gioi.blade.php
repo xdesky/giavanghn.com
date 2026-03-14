@@ -68,7 +68,7 @@
     </div>
     <h2 class="text-2xl font-bold text-[#001061] mb-4">So sánh giá vàng SJC và Thế giới hôm nay</h2>
 
-    <div class="grid gap-4 sm:grid-cols-2 mb-4">
+    <div class="grid gap-5 sm:grid-cols-2 mb-4">
         <div class="rounded-sm border-2 border-amber-300 bg-white p-4 text-center">
             <p class="text-sm font-semibold text-amber-700 mb-1">SJC (bán ra)</p>
             <p class="text-3xl font-bold text-amber-900 tabular-nums">{{ $sjcSell > 0 ? number_format($sjcSell * 1e6, 0, ',', '.') : '—' }}</p>
@@ -89,7 +89,7 @@
         </div>
     </div>
 
-    <div class="grid gap-3 sm:grid-cols-3">
+    <div class="grid gap-5 sm:grid-cols-3">
         <div class="rounded-sm border {{ $premium >= 0 ? 'border-rose-200 bg-rose-50' : 'border-emerald-200 bg-emerald-50' }} p-3 text-center">
             <p class="text-xs font-medium {{ $premium >= 0 ? 'text-rose-700' : 'text-emerald-700' }}">Premium (chênh lệch)</p>
             <p class="text-xl font-bold {{ $premium >= 0 ? 'text-rose-800' : 'text-emerald-800' }} tabular-nums">{{ $premium >= 0 ? '+' : '' }}{{ number_format($premium, 0, ',', '.') }}</p>

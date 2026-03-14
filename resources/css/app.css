@@ -69,19 +69,23 @@
     font-size: 0.8125rem;
     color: rgba(255, 255, 255, 0.8);
     text-decoration: none;
-    transition: background 0.15s, color 0.15s;
+    transition: background 0.2s, color 0.2s;
 }
 .nav-menu a:hover,
 .nav-menu a.is-active {
     background: rgba(255, 255, 255, 0.15);
     color: #fff;
 }
+.nav-menu a:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(255, 195, 0, 0.5);
+}
 
 /* Glass card */
 .glass-card {
     background: #fff;
     border: 1px solid #bcbcbc;
-    border-radius: 0.125rem;
+    border-radius: 0.375rem;
 }
 
 /* Table wrap */
@@ -104,7 +108,7 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 0.125rem;
+    border-radius: 0.375rem;
     background: #001061;
     padding: 0.625rem 1rem;
     font-size: 0.875rem;
@@ -112,14 +116,18 @@
     color: #fff;
     border: none;
     cursor: pointer;
-    transition: background 0.15s;
+    transition: background 0.2s, box-shadow 0.2s;
 }
 .btn-primary:hover {
     background: #001061e6;
 }
-.article-body p  { margin-bottom: 0.75rem; line-height: 1.7; color: #475569; }
+.btn-primary:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 16, 97, 0.3);
+}
+.article-body p  { margin-bottom: 0.75rem; line-height: 1.625; color: #475569; }
 .article-body ul { padding-left: 1.25rem; margin-bottom: 0.75rem; }
-.article-body li { margin-bottom: 0.25rem; line-height: 1.6; color: #475569; }
+.article-body li { margin-bottom: 0.25rem; line-height: 1.625; color: #475569; }
 
 /* Footer */
 .footer-wrap {

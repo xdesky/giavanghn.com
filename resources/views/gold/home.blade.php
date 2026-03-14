@@ -114,7 +114,7 @@
                             </div>
                             <span id="sjcTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-sm text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['sjcCard']['trendPercent']) }}</span>
                         </div>
-                        <div class="mt-5 flex gap-4">
+                        <div class="flex gap-4">
                             <div class="flex flex-col gap-2">
                                 <p class="text-2xl font-bold leading-none text-[#001061] md:text-3xl xl:text-[40px]" id="sjcPriceText"></p>
                                 <p class="text-base font-medium text-[#001061] md:text-lg xl:text-[22px]" id="sjcUnitText"></p>
@@ -147,7 +147,7 @@
                             </div>
                             <span id="usTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-sm text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['usCard']['trendPercent']) }}</span>
                         </div>
-                        <div class="mt-5 flex gap-4">
+                        <div class="flex gap-4">
                             <div class="flex flex-col gap-2">
                                 <p class="text-2xl font-bold leading-none text-[#001061] md:text-3xl xl:text-[40px]" id="usPriceText"></p>
                                 <p class="text-base font-medium text-[#001061] md:text-lg xl:text-[22px]" id="usUnitText"></p>
@@ -219,7 +219,7 @@
         </section>
 
         {{-- Stat Cards — 6 cols --}}
-        <section class="grid gap-4 px-5 pb-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6" id="statsGrid">
+        <section class="grid gap-5 px-5 pb-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6" id="statsGrid">
             @foreach ($snapshot['statCards'] as $card)
                 <article class="rounded-sm border border-[#bcbcbc] bg-white p-4 shadow-lg">
                     <h3 class="m-0 text-xs font-medium text-[#666] uppercase tracking-wide">{{ $card['title'] }}</h3>
@@ -229,7 +229,7 @@
                 </article>
             @endforeach
         </section>
-        <section class="grid gap-4 px-5 pb-5 lg:grid-cols-3 lg:grid-rows-[1fr]">
+        <section class="grid gap-5 px-5 pb-5 lg:grid-cols-3 lg:grid-rows-[1fr]">
             {{-- Bản tin cập nhật giá vàng --}}
             <div id="ban-tin-gia-vang" class="flex min-h-0">
                 <div class="flex flex-1 flex-col rounded-sm border border-[#bcbcbc] bg-white p-5">
@@ -267,7 +267,7 @@
                     <i data-lucide="globe" class="h-5 w-5 text-[#b8860b]"></i>
                     <h3 class="m-0 text-lg font-bold text-[#333]">Giá vàng thế giới trực tiếp</h3>
                 </div>
-                <div class="grid gap-4 lg:grid-rows-3">
+                <div class="grid gap-5 lg:grid-rows-3">
                     {{-- XAU/USD --}}
                     <div class="rounded border border-slate-200 overflow-hidden">
                         <div class="tradingview-widget-container" style="height:350px">
@@ -376,7 +376,7 @@
         </section>
 
         {{-- Insights: Sentiment + Technical + Forecast --}}
-        <section class="grid gap-4 px-5 pb-5 lg:grid-cols-3" id="bieu-do">
+        <section class="grid gap-5 px-5 pb-5 lg:grid-cols-3" id="bieu-do">
             @php
                 $s = $snapshot['sentiment'];
                 $fgColor = match(true) {
@@ -752,7 +752,7 @@
         </section>
 
         {{-- GLOBAL MARKETS + SUPPORT/RESISTANCE --}}
-        <section class="grid gap-4 px-5 pb-5 lg:grid-cols-2">
+        <section class="grid gap-5 px-5 pb-5 lg:grid-cols-2">
             {{-- Global Markets --}}
             <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="globe" class="h-5 w-5 text-[#001061]"></i> Thị trường kim loại quý toàn cầu</h3>
@@ -797,7 +797,7 @@
         </section>
 
         {{-- MACRO FACTORS + CORRELATIONS --}}
-        <section class="grid gap-4 px-5 pb-5 lg:grid-cols-2">
+        <section class="grid gap-5 px-5 pb-5 lg:grid-cols-2">
             {{-- Macro --}}
             <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="landmark" class="h-5 w-5 text-[#333]"></i> Yếu tố vĩ mô tác động</h3>
@@ -906,7 +906,7 @@
         </section>
 
         {{-- Comparisons + Performance --}}
-        <section class="grid gap-4 lg:grid-cols-2 px-5 pb-5" id="so-sanh">
+        <section class="grid gap-5 lg:grid-cols-2 px-5 pb-5" id="so-sanh">
             <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="scale" class="h-5 w-5 text-[#001061]"></i> So sánh giá vàng</h3>
                 <div class="grid gap-2">
@@ -947,7 +947,7 @@
         <section class="px-5 pb-5">
             <div class="rounded-sm border border-[#bcbcbc] bg-white p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="flame" class="h-5 w-5 text-[#e17100]"></i> Biến động & Nổi bật</h3>
-                <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
+                <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
                     @foreach ($snapshot['movers'] as $item)
                         <article class="rounded-sm border border-[#ebebeb] bg-[#f5f5f5] p-3">
                             <span class="inline-flex items-center rounded-full {{ ($item['trend'] ?? 'up') === 'up' ? 'bg-[#e2ffde] text-[#168307]' : (($item['trend'] ?? 'up') === 'down' ? 'bg-[#fff5ea] text-[#e7000b]' : 'bg-[#ebebeb] text-[#666]') }} px-2 py-0.5 text-xs font-semibold">{{ $item['type'] }}</span>
@@ -960,7 +960,7 @@
             </div>
         </section>
         {{-- Quick Actions + Knowledge --}}
-        <section class="grid gap-4 lg:grid-cols-3 px-5 pb-5">
+        <section class="grid gap-5 lg:grid-cols-3 px-5 pb-5">
             <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="zap" class="h-5 w-5 text-[#e17100]"></i> Hành động nhanh</h3>
                 <div class="grid gap-2">

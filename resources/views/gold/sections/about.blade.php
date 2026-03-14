@@ -1,6 +1,6 @@
 <div class="glass-card p-4 md:p-6 article-body">
     <h2 class="text-lg font-bold text-[#001061] mb-4">Ve GoldPrice</h2>
-    <div class="text-sm leading-7 text-slate-700 space-y-4">
+    <div class="text-sm leading-relaxed text-slate-700 space-y-4">
         <p><strong>GoldPrice</strong> la nen tang cap nhat gia vang truc tuyen hang dau tai Viet Nam, cung cap thong tin gia vang SJC, DOJI, PNJ va the gioi (XAU/USD) theo thoi gian thuc.</p>
         <p>Chung toi tong hop du lieu tu cac thuong hieu vang chinh hang, san giao dich quoc te va nguon tin tai chinh uy tin de mang den cho nguoi dung goc nhin toan dien ve thi truong vang.</p>
         <h3 class="text-lg font-bold text-[#001061] mt-6!">Su menh</h3>

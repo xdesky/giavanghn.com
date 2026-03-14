@@ -48,7 +48,7 @@
     <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2">
         <i data-lucide="calendar-range" class="h-5 w-5 text-violet-500"></i> Tóm tắt giá vàng 30 ngày gần nhất
     </h2>
-    <div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 text-sm">
         @if ($sjcVariant)
         <div class="flex items-start gap-2">
             <i data-lucide="circle-dot" class="h-4 w-4 text-amber-500 mt-0.5 shrink-0"></i>

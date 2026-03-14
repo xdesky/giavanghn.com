@@ -11,7 +11,7 @@
 
 @if ($item && $item['price'] > 0)
 {{-- Price hero --}}
-<div class="rounded-2xl border border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-5 md:p-6">
+<div class="rounded-sm border border-blue-200 bg-blue-50 p-5 md:p-6">
     <div class="flex items-center gap-3 mb-3">
         <span class="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700"><i class="block h-2 w-2 rounded-full bg-emerald-500"></i> Trực tuyến</span>
         <span class="text-sm text-slate-500">Cập nhật {{ $item['updatedAt'] ? \Carbon\Carbon::parse($item['updatedAt'])->format('d/m/Y H:i') : now()->format('d/m/Y H:i') }}</span>
@@ -23,7 +23,7 @@
 </div>
 
 {{-- Main chart --}}
-<div class="mt-5 rounded-2xl border border-slate-200 bg-white p-4 md:p-6">
+<div class="rounded-sm border border-slate-200 bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-3">Biểu đồ {{ $item['name'] }}</h2>
     {{-- Period buttons --}}
     <div class="flex flex-wrap gap-2 mb-4">
@@ -46,21 +46,21 @@
     $last = end($prices);
     $change30 = $first > 0 ? round(($last - $first) / $first * 100, 2) : 0;
 @endphp
-<div class="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-    <div class="rounded-2xl border border-slate-200 bg-white p-4 text-center">
+<div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <div class="rounded-sm border border-slate-200 bg-white p-4 text-center">
         <p class="text-xs font-semibold text-slate-500">Giá hiện tại</p>
         <p class="mt-1 text-2xl font-bold text-slate-900 tabular-nums">{{ number_format($item['price'], 2) }}</p>
         <p class="text-xs text-slate-500">{{ $item['unit'] }}</p>
     </div>
-    <div class="rounded-2xl border border-slate-200 bg-white p-4 text-center">
+    <div class="rounded-sm border border-slate-200 bg-white p-4 text-center">
         <p class="text-xs font-semibold text-slate-500">Cao nhất 30 ngày</p>
         <p class="mt-1 text-2xl font-bold text-emerald-600 tabular-nums">{{ number_format($high30, 2) }}</p>
     </div>
-    <div class="rounded-2xl border border-slate-200 bg-white p-4 text-center">
+    <div class="rounded-sm border border-slate-200 bg-white p-4 text-center">
         <p class="text-xs font-semibold text-slate-500">Thấp nhất 30 ngày</p>
         <p class="mt-1 text-2xl font-bold text-rose-600 tabular-nums">{{ number_format($low30, 2) }}</p>
     </div>
-    <div class="rounded-2xl border border-slate-200 bg-white p-4 text-center">
+    <div class="rounded-sm border border-slate-200 bg-white p-4 text-center">
         <p class="text-xs font-semibold text-slate-500">Biến động 30 ngày</p>
         <p class="mt-1 text-2xl font-bold {{ $change30 >= 0 ? 'text-emerald-600' : 'text-rose-600' }} tabular-nums">{{ sprintf('%+.2f%%', $change30) }}</p>
     </div>
@@ -69,7 +69,7 @@
 
 {{-- Price table + high/low --}}
 @if (!empty($item['chartDates']))
-<div class="mt-5 rounded-2xl border border-slate-200 bg-white p-4 md:p-6">
+<div class="rounded-sm border border-slate-200 bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-3">Lịch sử giá {{ $symbolKey }}</h2>
     <div class="overflow-x-auto max-h-80">
         <table class="w-full text-sm">
@@ -97,13 +97,13 @@
 @endif
 
 {{-- Other symbols nav --}}
-<div class="mt-5 rounded-2xl border border-slate-200 bg-white p-4 md:p-6">
+<div class="rounded-sm border border-slate-200 bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-3">Các mã khác</h2>
     <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
         @foreach ($allSymbols as $sym => $sl)
         @if ($sym !== $symbolKey)
         @php $other = $worldData[$sym] ?? null; $otherUp = ($other['changePercent'] ?? 0) >= 0; @endphp
-        <a href="/gia-vang-the-gioi/{{ $sl }}" class="flex items-center justify-between rounded-xl border border-slate-200 px-3 py-2 text-sm transition hover:border-blue-300 hover:bg-blue-50">
+        <a href="/gia-vang-the-gioi/{{ $sl }}" class="flex items-center justify-between rounded-sm border border-slate-200 px-3 py-2 text-sm transition hover:border-blue-300 hover:bg-blue-50">
             <span class="font-semibold text-slate-700">{{ $sym }}</span>
             @if ($other)
             <span class="font-bold tabular-nums {{ $otherUp ? 'text-emerald-600' : 'text-rose-600' }}">{{ number_format($other['price'], 2) }}</span>
@@ -115,7 +115,7 @@
 </div>
 
 @else
-<div class="rounded-2xl border border-slate-200 bg-white p-8 text-center">
+<div class="rounded-sm border border-slate-200 bg-white p-8 text-center">
     <p class="text-lg text-slate-500">Chưa có dữ liệu cho {{ $symbolKey }}. Hệ thống đang thu thập dữ liệu.</p>
     <a href="/gia-vang-the-gioi" class="mt-3 inline-block text-sm font-semibold text-blue-600 hover:underline">← Quay lại tổng hợp</a>
 </div>

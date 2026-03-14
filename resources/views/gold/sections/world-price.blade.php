@@ -9,7 +9,7 @@
 {{-- Hero: XAU/USD --}}
 @if ($usCard)
 @php $uv = $usCard['variants'][$usCard['selected']] ?? collect($usCard['variants'])->first(); @endphp
-<div class="rounded-sm border border-blue-200 bg-gradient-to-br from-blue-50 to-indigo-50 p-5">
+<div class="rounded-sm border border-blue-200 bg-blue-50 p-5">
     <div class="flex items-start justify-between">
         <div>
             <p class="text-sm font-semibold text-blue-800">{{ $usCard['title'] }}</p>
@@ -93,13 +93,13 @@
     <h2 class="flex items-center gap-2 text-lg font-bold text-[#001061] mb-4">
         <i data-lucide="activity" class="h-5 w-5"></i> Yếu tố ảnh hưởng giá vàng
     </h2>
-    <div class="grid gap-3 sm:grid-cols-2">
+    <div class="grid gap-5 sm:grid-cols-2">
         @foreach ($macroFactors as $mf)
             <div class="flex items-start gap-3 rounded-sm border border-slate-200 p-3">
                 <span class="mt-0.5 inline-block h-2.5 w-2.5 rounded-full {{ ($mf['signal'] ?? '') === 'positive' ? 'bg-emerald-500' : (($mf['signal'] ?? '') === 'negative' ? 'bg-rose-500' : 'bg-amber-500') }}"></span>
                 <div>
                     <p class="text-sm font-semibold text-slate-800">{{ $mf['factor'] }}</p>
-                    <p class="text-sm text-slate-600">{{ $mf['value'] }} — {{ $mf['impact'] }}</p>
+                    <p class="text-sm leading-relaxed text-slate-600">{{ $mf['value'] }} — {{ $mf['impact'] }}</p>
                 </div>
             </div>
         @endforeach
