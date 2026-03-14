@@ -712,11 +712,11 @@ if (snapshotElement) {
 
 				return `
 					<tr class="hover:bg-[#f5f5f5] transition">
-						<td class="border-b border-[#ebebeb] p-3 text-left text-sm font-medium">${brand.brand}</td>
-						<td class="border-b border-[#ebebeb] p-3 text-right text-sm font-bold">${numberFormat(brand.buy)}</td>
-						<td class="border-b border-[#ebebeb] p-3 text-right text-sm font-bold">${numberFormat(brand.sell)}</td>
-						<td class="border-b border-[#ebebeb] p-3 text-right text-sm text-[#666]">${numberFormat(brand.sell - brand.buy)}</td>
-						<td class="border-b border-[#ebebeb] p-3 text-right text-sm font-bold ${cssClass}">${brand.change >= 0 ? '+' : ''}${brand.change.toFixed(2)}%</td>
+						<td class="border-b border-[#ebebeb] px-1.5 py-2 sm:p-3 text-left font-medium whitespace-nowrap">${brand.brand}</td>
+						<td class="border-b border-[#ebebeb] px-1.5 py-2 sm:p-3 text-right font-bold whitespace-nowrap">${numberFormat(brand.buy)}</td>
+						<td class="border-b border-[#ebebeb] px-1.5 py-2 sm:p-3 text-right font-bold whitespace-nowrap">${numberFormat(brand.sell)}</td>
+						<td class="border-b border-[#ebebeb] px-1.5 py-2 sm:p-3 text-right text-[#666] hidden sm:table-cell whitespace-nowrap">${numberFormat(brand.sell - brand.buy)}</td>
+						<td class="border-b border-[#ebebeb] px-1.5 py-2 sm:p-3 text-right font-bold whitespace-nowrap ${cssClass}">${brand.change >= 0 ? '+' : ''}${brand.change.toFixed(2)}%</td>
 					</tr>
 				`;
 			})
@@ -943,12 +943,12 @@ if (snapshotElement) {
 			const sign = item.change >= 0 ? '+' : '';
 			const pctSign = item.changePct >= 0 ? '+' : '';
 			const color = item.change >= 0 ? 'text-[#168307]' : 'text-[#e7000b]';
-			return `<div class="flex items-center gap-3 border-b border-[#f0f0f0] py-2.5 last:border-0 text-sm">
-				<span class="shrink-0 w-12 font-mono text-xs text-[#999]">${item.time}</span>
+			return `<div class="flex flex-wrap sm:flex-nowrap items-center gap-x-2 sm:gap-x-3 gap-y-0.5 border-b border-[#f0f0f0] py-2.5 last:border-0 text-sm">
+				<span class="shrink-0 w-10 sm:w-12 font-mono text-xs text-[#999]">${item.time}</span>
 				<span class="shrink-0 font-semibold text-[#001061]">${item.source}</span>
-				<span class="flex-1 truncate text-[#555]">${item.brand}</span>
-				<span class="shrink-0 font-semibold text-[#333]">${sell}tr</span>
-				<span class="shrink-0 w-20 text-right font-semibold ${color}">${sign}${changeK.toLocaleString()}k (${pctSign}${item.changePct.toFixed(2)}%)</span>
+				<span class="w-[calc(100%-6rem)] sm:w-auto sm:flex-1 truncate text-[#555]">${item.brand}</span>
+				<span class="ml-auto shrink-0 font-semibold text-[#333]">${sell}tr</span>
+				<span class="shrink-0 text-right font-semibold ${color}">${sign}${changeK.toLocaleString()}k (${pctSign}${item.changePct.toFixed(2)}%)</span>
 			</div>`;
 		}).join('');
 	};
