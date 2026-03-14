@@ -92,10 +92,8 @@ class GoldPriceController extends Controller
 
         $tagName = $tagMap[$tagSlug] ?? str_replace('-', ' ', $tagSlug);
 
-        // MariaDB stores JSON with unicode escaping — match the encoded form
-        $encoded = trim(json_encode($tagName, JSON_UNESCAPED_SLASHES), '"');
         $articles = AnalysisArticle::whereNotNull('published_at')
-            ->where('tags', 'like', '%' . $encoded . '%')
+            ->whereRaw('JSON_CONTAINS(tags, ?)', [json_encode($tagName)])
             ->orderByDesc('published_at')
             ->paginate(12);
 
