@@ -201,35 +201,35 @@
 
 {{-- FAQ --}}
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="text-xl font-bold text-[#001061] mb-4">Câu hỏi thường gặp</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4 flex items-center gap-2"><i data-lucide="help-circle" class="h-5 w-5"></i> Câu hỏi thường gặp</h2>
     <div class="divide-y divide-slate-200">
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Giá vàng SJC và Phú Quý hôm nay chênh nhau bao nhiêu?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Phú Quý thường có giá bán vàng nhẫn 9999 rẻ hơn. Chênh lệch giá vàng miếng SJC giữa hai nơi thường 0-300.000 VND/lượng. Kiểm tra bảng so sánh phía trên.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Phú Quý thường có giá bán vàng nhẫn 9999 rẻ hơn. Chênh lệch giá vàng miếng SJC giữa hai nơi thường 0-300.000 VND/lượng. Kiểm tra bảng so sánh phía trên.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Nên mua vàng ở SJC hay Phú Quý?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Nếu ưu tiên giá rẻ nhất, Phú Quý thường có mức giá cạnh tranh cho vàng nhẫn 9999. Nếu cần thanh khoản cao nhất và giao dịch vàng miếng SJC, SJC là lựa chọn an toàn.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Nếu ưu tiên giá rẻ nhất, Phú Quý thường có mức giá cạnh tranh cho vàng nhẫn 9999. Nếu cần thanh khoản cao nhất và giao dịch vàng miếng SJC, SJC là lựa chọn an toàn.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Vàng Phú Quý có uy tín không?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Có, Phú Quý là thương hiệu uy tín lâu năm tại Hà Nội. Giá niêm yết minh bạch, được nhiều nhà đầu tư tin tưởng. Phú Quý cũng là đại lý phân phối vàng miếng SJC chính hãng.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Có, Phú Quý là thương hiệu uy tín lâu năm tại Hà Nội. Giá niêm yết minh bạch, được nhiều nhà đầu tư tin tưởng. Phú Quý cũng là đại lý phân phối vàng miếng SJC chính hãng.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Phú Quý có bán vàng miếng SJC không?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Có, Phú Quý kinh doanh vàng miếng SJC chính hãng cùng vàng nhẫn 9999, vàng trang sức. Giá vàng miếng SJC tại Phú Quý thường tương đương hoặc thấp hơn các đại lý lớn.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Có, Phú Quý kinh doanh vàng miếng SJC chính hãng cùng vàng nhẫn 9999, vàng trang sức. Giá vàng miếng SJC tại Phú Quý thường tương đương hoặc thấp hơn các đại lý lớn.</p>
         </details>
     </div>
 </div>

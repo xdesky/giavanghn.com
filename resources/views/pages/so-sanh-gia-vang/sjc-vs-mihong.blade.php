@@ -202,35 +202,35 @@
 
 {{-- FAQ --}}
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="text-xl font-bold text-[#001061] mb-4">Câu hỏi thường gặp</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4 flex items-center gap-2"><i data-lucide="help-circle" class="h-5 w-5"></i> Câu hỏi thường gặp</h2>
     <div class="divide-y divide-slate-200">
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Giá vàng SJC và Mi Hồng hôm nay chênh nhau bao nhiêu?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Chênh lệch giá bán vàng giữa SJC và Mi Hồng thường 0-500.000 VND/lượng. Mi Hồng thường có giá vàng nhẫn 9999 thuộc nhóm rẻ nhất miền Nam.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Chênh lệch giá bán vàng giữa SJC và Mi Hồng thường 0-500.000 VND/lượng. Mi Hồng thường có giá vàng nhẫn 9999 thuộc nhóm rẻ nhất miền Nam.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Tiệm vàng Mi Hồng ở đâu?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Mi Hồng là tiệm vàng truyền thống tại khu vực Chợ Lớn, quận 5, TP.HCM. Đây là một trong những tiệm vàng lâu đời nhất Sài Gòn.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Mi Hồng là tiệm vàng truyền thống tại khu vực Chợ Lớn, quận 5, TP.HCM. Đây là một trong những tiệm vàng lâu đời nhất Sài Gòn.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Vàng Mi Hồng có uy tín không?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Có, Mi Hồng là tiệm vàng uy tín lâu đời tại Chợ Lớn. Quy mô nhỏ hơn tập đoàn lớn nhưng được tin tưởng nhờ giá minh bạch và chất lượng vàng đảm bảo.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Có, Mi Hồng là tiệm vàng uy tín lâu đời tại Chợ Lớn. Quy mô nhỏ hơn tập đoàn lớn nhưng được tin tưởng nhờ giá minh bạch và chất lượng vàng đảm bảo.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Nên mua vàng ở SJC hay Mi Hồng?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Nếu ở TP.HCM và muốn giá tốt nhất cho vàng nhẫn 9999, Mi Hồng là lựa chọn đáng xem xét. Nếu cần thanh khoản cao nhất, vàng miếng SJC là an toàn nhất.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Nếu ở TP.HCM và muốn giá tốt nhất cho vàng nhẫn 9999, Mi Hồng là lựa chọn đáng xem xét. Nếu cần thanh khoản cao nhất, vàng miếng SJC là an toàn nhất.</p>
         </details>
     </div>
 </div>

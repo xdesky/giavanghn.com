@@ -13,6 +13,7 @@ use App\Services\Crawlers\NgocThamCrawler;
 use App\Services\Crawlers\PhuQuyCrawler;
 use App\Services\Crawlers\PnjCrawler;
 use App\Services\Crawlers\SentimentCrawler;
+use App\Services\Crawlers\CryptoCrawler;
 use App\Services\Crawlers\SjcCrawler;
 use App\Services\Crawlers\WorldGoldCrawler;
 use Illuminate\Console\Command;
@@ -45,6 +46,7 @@ class CrawlGoldPrices extends Command
             'news' => NewsCrawler::class,
             'dailystats' => DailyStatsCrawler::class,
             'sentiment' => SentimentCrawler::class,
+            'crypto' => CryptoCrawler::class,
         ];
     }
 

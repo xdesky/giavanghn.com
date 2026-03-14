@@ -209,35 +209,35 @@
 
 {{-- FAQ --}}
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="text-lg font-bold text-[#001061] mb-3 flex items-center gap-2"><i data-lucide="help-circle" class="h-5 w-5 text-amber-500"></i> Câu hỏi thường gặp</h2>
-    <div class="divide-y">
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+    <h2 class="text-lg font-bold text-[#001061] mb-4 flex items-center gap-2"><i data-lucide="help-circle" class="h-5 w-5"></i> Câu hỏi thường gặp</h2>
+    <div class="divide-y divide-slate-200">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Giá vàng SJC ngày mai tăng hay giảm?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Dự báo giá vàng SJC phụ thuộc vào giá XAU/USD quốc tế, tỷ giá USD/VND, chỉ số DXY, chính sách FED và tâm lý thị trường. Xem 3 kịch bản chi tiết ở bảng dự báo phía trên.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Dự báo giá vàng SJC phụ thuộc vào giá XAU/USD quốc tế, tỷ giá USD/VND, chỉ số DXY, chính sách FED và tâm lý thị trường. Xem 3 kịch bản chi tiết ở bảng dự báo phía trên.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Nên mua vàng bây giờ hay đợi?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Nếu đầu tư dài hạn (1-3 năm), biến động ngắn hạn ít quan trọng — áp dụng DCA mua đều đặn. Nếu giao dịch ngắn hạn, cần theo dõi RSI, MACD và lịch kinh tế.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Nếu đầu tư dài hạn (1-3 năm), biến động ngắn hạn ít quan trọng — áp dụng DCA mua đều đặn. Nếu giao dịch ngắn hạn, cần theo dõi RSI, MACD và lịch kinh tế.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Dự báo giá vàng năm 2026 bao nhiêu?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Các tổ chức tài chính lớn dự báo giá vàng tiếp tục tăng trong năm 2026 nhờ chính sách FED nới lỏng, lạm phát dai dẳng và nhu cầu NHTW. Xem chi tiết tại <a href="/du-bao-gia-vang/du-bao-gia-vang-2026" class="text-blue-700 hover:underline">Dự báo giá vàng 2026</a>.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Các tổ chức tài chính lớn dự báo giá vàng tiếp tục tăng trong năm 2026 nhờ chính sách FED nới lỏng, lạm phát dai dẳng và nhu cầu NHTW. Xem chi tiết tại <a href="/du-bao-gia-vang/du-bao-gia-vang-2026" class="text-blue-700 hover:underline">Dự báo giá vàng 2026</a>.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Yếu tố nào ảnh hưởng giá vàng nhiều nhất?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">5 yếu tố chính: (1) Chính sách lãi suất FED; (2) Chỉ số USD (DXY); (3) Lạm phát toàn cầu; (4) Nhu cầu mua vàng NHTW; (5) Rủi ro địa chính trị.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">5 yếu tố chính: (1) Chính sách lãi suất FED; (2) Chỉ số USD (DXY); (3) Lạm phát toàn cầu; (4) Nhu cầu mua vàng NHTW; (5) Rủi ro địa chính trị.</p>
         </details>
     </div>
 </div>

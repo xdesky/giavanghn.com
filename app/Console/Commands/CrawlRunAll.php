@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\CrawlLog;
 use App\Services\Crawlers\BankRateCrawler;
 use App\Services\Crawlers\BaoTinManhHaiCrawler;
+use App\Services\Crawlers\CryptoCrawler;
 use App\Services\Crawlers\BtmcCrawler;
 use App\Services\Crawlers\DailyStatsCrawler;
 use App\Services\Crawlers\DojiCrawler;
@@ -48,6 +49,7 @@ class CrawlRunAll extends Command
         'sentiment' => SentimentCrawler::class,
         'silver' => SilverPriceCrawler::class,
         'bankrate' => BankRateCrawler::class,
+        'crypto' => CryptoCrawler::class,
     ];
 
     public function handle(): int

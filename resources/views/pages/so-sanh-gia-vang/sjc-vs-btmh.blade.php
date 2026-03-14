@@ -202,35 +202,35 @@
 
 {{-- FAQ --}}
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="text-xl font-bold text-[#001061] mb-4">Câu hỏi thường gặp</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4 flex items-center gap-2"><i data-lucide="help-circle" class="h-5 w-5"></i> Câu hỏi thường gặp</h2>
     <div class="divide-y divide-slate-200">
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Giá vàng SJC và Bảo Tín Mạnh Hải chênh nhau bao nhiêu?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Chênh lệch giá bán vàng giữa SJC và BTMH thường 0-400.000 VND/lượng. Vàng nhẫn 9999 BTMH thường rẻ hơn vàng miếng SJC 5-15 triệu/lượng.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Chênh lệch giá bán vàng giữa SJC và BTMH thường 0-400.000 VND/lượng. Vàng nhẫn 9999 BTMH thường rẻ hơn vàng miếng SJC 5-15 triệu/lượng.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Vàng Tiểu Kim Cát là gì?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Tiểu Kim Cát là sản phẩm vàng nhẫn 1 chỉ (3.75g) của Bảo Tín Mạnh Hải, hàm lượng 99.99%. Phù hợp cho chiến lược mua vàng đều đặn (DCA) với số vốn nhỏ.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Tiểu Kim Cát là sản phẩm vàng nhẫn 1 chỉ (3.75g) của Bảo Tín Mạnh Hải, hàm lượng 99.99%. Phù hợp cho chiến lược mua vàng đều đặn (DCA) với số vốn nhỏ.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Bảo Tín Mạnh Hải có uy tín không?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Có, BTMH thuộc "họ Bảo Tín" nổi tiếng tại Hà Nội, kinh doanh vàng bạc lâu năm. Giá niêm yết minh bạch, sản phẩm chính hãng, đáng tin cậy.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Có, BTMH thuộc "họ Bảo Tín" nổi tiếng tại Hà Nội, kinh doanh vàng bạc lâu năm. Giá niêm yết minh bạch, sản phẩm chính hãng, đáng tin cậy.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Nên mua vàng ở SJC hay Bảo Tín Mạnh Hải?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Nếu mua vàng miếng đầu tư lớn, chọn nơi có giá bán thấp hơn. Nếu tích trữ vàng nhỏ lẻ (DCA), BTMH Tiểu Kim Cát là lựa chọn tốt nhờ giá hợp lý và tiện lợi.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Nếu mua vàng miếng đầu tư lớn, chọn nơi có giá bán thấp hơn. Nếu tích trữ vàng nhỏ lẻ (DCA), BTMH Tiểu Kim Cát là lựa chọn tốt nhờ giá hợp lý và tiện lợi.</p>
         </details>
     </div>
 </div>

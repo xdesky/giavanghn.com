@@ -200,24 +200,24 @@
 
 {{-- FAQ --}}
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="flex items-center gap-2 text-lg font-bold text-[#001061] mb-4">
-        <i data-lucide="help-circle" class="h-5 w-5 text-[#ffc300]"></i>
+    <h2 class="text-lg font-bold text-[#001061] mb-4 flex items-center gap-2">
+        <i data-lucide="help-circle" class="h-5 w-5"></i>
         Câu hỏi thường gặp
     </h2>
     <div class="divide-y divide-slate-200">
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-[#001061]">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Giá vàng SJC năm {{ $thisYear }} biến động ra sao?</span>
-                <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180"></i>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">SJC mở đầu {{ number_format($yearOpen, 2) }} triệu, kết thúc {{ number_format($yearClose, 2) }} triệu ({{ sprintf('%+.2f%%', $yearChangePct) }}). Cao nhất {{ number_format($yearHigh, 2) }} triệu, thấp nhất {{ number_format($yearLow, 2) }} triệu. Biên độ dao động {{ number_format($yearHigh - $yearLow, 2) }} triệu/lượng.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">SJC mở đầu {{ number_format($yearOpen, 2) }} triệu, kết thúc {{ number_format($yearClose, 2) }} triệu ({{ sprintf('%+.2f%%', $yearChangePct) }}). Cao nhất {{ number_format($yearHigh, 2) }} triệu, thấp nhất {{ number_format($yearLow, 2) }} triệu. Biên độ dao động {{ number_format($yearHigh - $yearLow, 2) }} triệu/lượng.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-[#001061]">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Tháng nào giá vàng SJC tăng mạnh nhất {{ $thisYear }}?</span>
-                <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180"></i>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">
                 @if ($bestMonth)
                 {{ $bestMonth['label'] }} tăng mạnh nhất ({{ sprintf('%+.2f%%', $bestMonth['changePct']) }}), đóng cửa {{ number_format($bestMonth['close'], 2) }} triệu.
                 @else
@@ -225,21 +225,21 @@
                 @endif
             </p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-[#001061]">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Giá vàng SJC cao nhất năm {{ $thisYear }} bao nhiêu?</span>
-                <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180"></i>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Cao nhất {{ number_format($yearHigh, 2) }} triệu/lượng. Thấp nhất {{ number_format($yearLow, 2) }} triệu. Biên độ dao động {{ number_format($yearHigh - $yearLow, 2) }} triệu.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Cao nhất {{ number_format($yearHigh, 2) }} triệu/lượng. Thấp nhất {{ number_format($yearLow, 2) }} triệu. Biên độ dao động {{ number_format($yearHigh - $yearLow, 2) }} triệu.</p>
         </details>
         @if (!empty($yearFaqExtra))
         @foreach ($yearFaqExtra as $faq)
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-[#001061]">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>{{ $faq['q'] }}</span>
-                <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180"></i>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">{{ $faq['a'] }}</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">{{ $faq['a'] }}</p>
         </details>
         @endforeach
         @endif

@@ -187,31 +187,31 @@
 
 {{-- FAQ --}}
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="flex items-center gap-2 text-lg font-bold text-[#001061] mb-4">
-        <i data-lucide="help-circle" class="h-5 w-5 text-[#ffc300]"></i>
+    <h2 class="text-lg font-bold text-[#001061] mb-4 flex items-center gap-2">
+        <i data-lucide="help-circle" class="h-5 w-5"></i>
         Câu hỏi thường gặp
     </h2>
     <div class="divide-y divide-slate-200">
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-[#001061]">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Giá vàng SJC từ 2020 đến nay biến động ra sao?</span>
-                <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180"></i>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Từ 2020 đến nay, SJC tăng từ {{ number_format($allTimeOpen, 2) }} triệu lên {{ number_format($allTimeClose, 2) }} triệu/lượng ({{ sprintf('%+.2f%%', $allTimePct) }}). Cao nhất {{ number_format($allTimeHigh, 2) }} triệu, thấp nhất {{ number_format($allTimeLow, 2) }} triệu.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Từ 2020 đến nay, SJC tăng từ {{ number_format($allTimeOpen, 2) }} triệu lên {{ number_format($allTimeClose, 2) }} triệu/lượng ({{ sprintf('%+.2f%%', $allTimePct) }}). Cao nhất {{ number_format($allTimeHigh, 2) }} triệu, thấp nhất {{ number_format($allTimeLow, 2) }} triệu.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-[#001061]">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Năm nào giá vàng SJC tăng mạnh nhất?</span>
-                <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180"></i>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Xem bảng so sánh giá vàng SJC theo năm phía trên. Mỗi năm đều ghi nhận các sự kiện kinh tế, chính trị đặc thù tác động đến giá vàng.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Xem bảng so sánh giá vàng SJC theo năm phía trên. Mỗi năm đều ghi nhận các sự kiện kinh tế, chính trị đặc thù tác động đến giá vàng.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-[#001061]">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Giá vàng SJC cao nhất mọi thời đại bao nhiêu?</span>
-                <i data-lucide="chevron-down" class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180"></i>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Giá SJC cao nhất mọi thời đại đạt {{ number_format($allTimeHigh, 2) }} triệu/lượng. Biên độ từ thấp nhất đến cao nhất là {{ number_format($allTimeHigh - $allTimeLow, 2) }} triệu.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Giá SJC cao nhất mọi thời đại đạt {{ number_format($allTimeHigh, 2) }} triệu/lượng. Biên độ từ thấp nhất đến cao nhất là {{ number_format($allTimeHigh - $allTimeLow, 2) }} triệu.</p>
         </details>
     </div>
 </div>

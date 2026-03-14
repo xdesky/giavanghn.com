@@ -203,35 +203,35 @@
 
 {{-- FAQ --}}
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="text-xl font-bold text-[#001061] mb-4">Câu hỏi thường gặp</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4 flex items-center gap-2"><i data-lucide="help-circle" class="h-5 w-5"></i> Câu hỏi thường gặp</h2>
     <div class="divide-y divide-slate-200">
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Giá vàng SJC và Ngọc Thẩm hôm nay chênh nhau bao nhiêu?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Chênh lệch giá bán vàng giữa SJC và Ngọc Thẩm thường 0-500.000 VND/lượng. Ngọc Thẩm có giá cạnh tranh cho vàng nhẫn 9999 tại TP.HCM.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Chênh lệch giá bán vàng giữa SJC và Ngọc Thẩm thường 0-500.000 VND/lượng. Ngọc Thẩm có giá cạnh tranh cho vàng nhẫn 9999 tại TP.HCM.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Ngọc Thẩm có bán vàng ta 990 không?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Có, Ngọc Thẩm là một trong số ít thương hiệu niêm yết giá vàng ta 990. Vàng ta có hàm lượng 99% vàng, là sản phẩm truyền thống phổ biến tại miền Nam.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Có, Ngọc Thẩm là một trong số ít thương hiệu niêm yết giá vàng ta 990. Vàng ta có hàm lượng 99% vàng, là sản phẩm truyền thống phổ biến tại miền Nam.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Vàng Ngọc Thẩm có uy tín không?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Có, Ngọc Thẩm là thương hiệu vàng bạc đá quý uy tín tại TP.HCM, kinh doanh lâu năm. Sản phẩm đa dạng từ vàng miếng SJC đến vàng ta 990, vàng 18K.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Có, Ngọc Thẩm là thương hiệu vàng bạc đá quý uy tín tại TP.HCM, kinh doanh lâu năm. Sản phẩm đa dạng từ vàng miếng SJC đến vàng ta 990, vàng 18K.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Nên mua vàng ở SJC hay Ngọc Thẩm?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Nếu đầu tư vàng miếng SJC, chọn nơi giá rẻ hơn. Nếu cần sản phẩm đa dạng (vàng ta, vàng 18K, trang sức), Ngọc Thẩm có lợi thế hơn SJC.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Nếu đầu tư vàng miếng SJC, chọn nơi giá rẻ hơn. Nếu cần sản phẩm đa dạng (vàng ta, vàng 18K, trang sức), Ngọc Thẩm có lợi thế hơn SJC.</p>
         </details>
     </div>
 </div>

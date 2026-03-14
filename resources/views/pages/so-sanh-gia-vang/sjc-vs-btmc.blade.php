@@ -199,35 +199,35 @@
 
 {{-- FAQ --}}
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="text-xl font-bold text-[#001061] mb-4">Câu hỏi thường gặp</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4 flex items-center gap-2"><i data-lucide="help-circle" class="h-5 w-5"></i> Câu hỏi thường gặp</h2>
     <div class="divide-y divide-slate-200">
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Giá vàng SJC và BTMC hôm nay chênh nhau bao nhiêu?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Chênh lệch giá bán vàng tại SJC và BTMC thường từ 0 đến 500.000 VND/lượng. Kiểm tra bảng so sánh phía trên để xem mức chênh lệch mới nhất.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Chênh lệch giá bán vàng tại SJC và BTMC thường từ 0 đến 500.000 VND/lượng. Kiểm tra bảng so sánh phía trên để xem mức chênh lệch mới nhất.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Nên mua vàng ở SJC hay Bảo Tín Minh Châu?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Nếu ở Hà Nội và mua vàng nhẫn 9999, BTMC có giá cạnh tranh và sản phẩm Rồng Thăng Long đặc trưng. Nếu mua vàng miếng đầu tư lớn, so sánh giá bán và spread để quyết định.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Nếu ở Hà Nội và mua vàng nhẫn 9999, BTMC có giá cạnh tranh và sản phẩm Rồng Thăng Long đặc trưng. Nếu mua vàng miếng đầu tư lớn, so sánh giá bán và spread để quyết định.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Nhẫn Rồng Thăng Long BTMC có tốt không?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Nhẫn Rồng Thăng Long vàng 9999 là sản phẩm uy tín của BTMC, hàm lượng vàng nguyên chất 99.99%. Thanh khoản tốt tại miền Bắc, BTMC cam kết mua lại theo giá niêm yết.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Nhẫn Rồng Thăng Long vàng 9999 là sản phẩm uy tín của BTMC, hàm lượng vàng nguyên chất 99.99%. Thanh khoản tốt tại miền Bắc, BTMC cam kết mua lại theo giá niêm yết.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>BTMC có bán vàng miếng SJC không?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Có, BTMC kinh doanh cả vàng miếng SJC và sản phẩm vàng nhẫn 9999 thương hiệu riêng. Giá vàng miếng SJC tại BTMC thường tương đương các đại lý lớn khác.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Có, BTMC kinh doanh cả vàng miếng SJC và sản phẩm vàng nhẫn 9999 thương hiệu riêng. Giá vàng miếng SJC tại BTMC thường tương đương các đại lý lớn khác.</p>
         </details>
     </div>
 </div>

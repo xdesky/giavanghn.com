@@ -198,35 +198,35 @@
 
 {{-- FAQ --}}
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="text-xl font-bold text-[#001061] mb-4">Câu hỏi thường gặp</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4 flex items-center gap-2"><i data-lucide="help-circle" class="h-5 w-5"></i> Câu hỏi thường gặp</h2>
     <div class="divide-y divide-slate-200">
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Giá vàng SJC và DOJI hôm nay chênh nhau bao nhiêu?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Chênh lệch giá bán vàng SJC và DOJI thường từ 0 đến 500.000 VND/lượng tùy loại sản phẩm. Kiểm tra bảng so sánh phía trên để xem mức chênh mới nhất.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Chênh lệch giá bán vàng SJC và DOJI thường từ 0 đến 500.000 VND/lượng tùy loại sản phẩm. Kiểm tra bảng so sánh phía trên để xem mức chênh mới nhất.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Nên mua vàng ở SJC hay DOJI?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Nếu mua vàng miếng SJC, so sánh giá tại cả hai nơi — DOJI thường có chương trình ưu đãi. Nếu mua vàng nhẫn 9999, DOJI có mẫu mã đa dạng và giá cạnh tranh.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Nếu mua vàng miếng SJC, so sánh giá tại cả hai nơi — DOJI thường có chương trình ưu đãi. Nếu mua vàng nhẫn 9999, DOJI có mẫu mã đa dạng và giá cạnh tranh.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>DOJI có bán vàng miếng SJC không?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Có, DOJI là đại lý phân phối vàng miếng SJC lớn nhất. Ngoài ra DOJI còn kinh doanh vàng nhẫn DOJI 9999 thương hiệu riêng.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Có, DOJI là đại lý phân phối vàng miếng SJC lớn nhất. Ngoài ra DOJI còn kinh doanh vàng nhẫn DOJI 9999 thương hiệu riêng.</p>
         </details>
-        <details class="group py-3">
-            <summary class="flex cursor-pointer items-center justify-between text-sm font-semibold text-slate-800 hover:text-blue-700">
+        <details class="group">
+            <summary class="flex cursor-pointer items-center justify-between py-3 text-sm font-semibold text-slate-800 hover:text-[#001061] transition">
                 <span>Vàng nhẫn DOJI 9999 khác gì vàng miếng SJC?</span>
-                <svg class="h-4 w-4 shrink-0 text-slate-400 transition-transform group-open:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                <i data-lucide="chevron-down" class="h-4 w-4 text-slate-400 transition-transform group-open:rotate-180"></i>
             </summary>
-            <p class="mt-2 text-sm leading-relaxed text-slate-600">Cả hai đều có hàm lượng vàng 99.99%. Vàng miếng SJC là thương hiệu quốc gia, thanh khoản cao, giá cao hơn 5-15 triệu/lượng. Vàng nhẫn DOJI 9999 rẻ hơn, đa dạng trọng lượng, phù hợp mua số lượng nhỏ.</p>
+            <p class="pb-3 text-sm text-slate-600 leading-relaxed">Cả hai đều có hàm lượng vàng 99.99%. Vàng miếng SJC là thương hiệu quốc gia, thanh khoản cao, giá cao hơn 5-15 triệu/lượng. Vàng nhẫn DOJI 9999 rẻ hơn, đa dạng trọng lượng, phù hợp mua số lượng nhỏ.</p>
         </details>
     </div>
 </div>

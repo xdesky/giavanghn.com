@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Models\BankRate;
 use App\Models\BaotinmanhhaiGoldPrice;
 use App\Models\BtmcGoldPrice;
+use App\Models\CryptoPrice;
 use App\Models\DojiGoldPrice;
 use App\Models\ExchangeRate;
 use App\Models\GoldPrice;
@@ -23,6 +24,7 @@ class SidebarService
                 'vangNhan' => $this->getVangNhan(),
                 'theGioi' => $this->getTheGioi(),
                 'bac' => $this->getBac(),
+                'crypto' => $this->getCrypto(),
                 'tyGia' => $this->getTyGia(),
             ];
         });
@@ -219,6 +221,29 @@ class SidebarService
             'buy' => $buy > 0 ? number_format($buy / 1_000_000, 1, ',', '.') : '-',
             'sell' => $sell > 0 ? number_format($sell / 1_000_000, 1, ',', '.') : '-',
         ];
+    }
+
+    private function getCrypto(): array
+    {
+        $order = ['BTC', 'ETH', 'USDT', 'BNB', 'XRP'];
+        $items = [];
+
+        $cryptos = CryptoPrice::latestBySymbol()->get()->keyBy('symbol');
+
+        foreach ($order as $symbol) {
+            $c = $cryptos[$symbol] ?? null;
+            if (!$c) {
+                continue;
+            }
+
+            $items[] = [
+                'symbol' => $symbol,
+                'price' => '$' . number_format($c->price, 2, ',', '.'),
+                'change' => round($c->change_24h, 2),
+            ];
+        }
+
+        return $items;
     }
 
     private function formatChange(float $amount, float $percent): string
