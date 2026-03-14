@@ -20,7 +20,7 @@
            class="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-all no-underline border {{ $period === '10y' ? 'bg-[#001061] text-white border-[#001061] shadow-sm' : 'bg-white text-slate-600 border-slate-300 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700' }}">10 năm</a>
     </div>
 
-    <div id="allBrandsChart" class="w-full" style="height: 380px;">
+    <div id="allBrandsChart" class="w-full" class="h-[280px] sm:h-[380px]">
         <div style="display:grid;height:100%;place-items:center" class="text-sm text-slate-400">
             <span>Đang tải biểu đồ…</span>
         </div>

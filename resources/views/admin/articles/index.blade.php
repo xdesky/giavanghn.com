@@ -22,7 +22,7 @@
 
         <!-- Filters -->
         <div class="bg-white rounded-sm border border-slate-200 p-6 mb-6">
-            <form action="{{ route('admin.articles.index') }}" method="GET" class="flex gap-3">
+            <form action="{{ route('admin.articles.index') }}" method="GET" class="flex flex-wrap gap-3">
                 <input type="text" name="search" value="{{ request('search') }}" 
                        placeholder="Tìm kiếm theo tiêu đề..." 
                        class="px-4 py-2 rounded-sm border border-slate-300 focus:border-blue-500">

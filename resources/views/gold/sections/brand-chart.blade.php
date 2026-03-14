@@ -14,7 +14,7 @@
         <button data-period="6m" class="brand-chart-period rounded-sm border border-slate-200 px-3 py-1 text-xs font-medium text-slate-600 hover:bg-slate-50">6 tháng</button>
     </div>
 
-    <div id="brandPriceChart" class="w-full" style="height: 340px;"></div>
+    <div id="brandPriceChart" class="w-full" class="h-[250px] sm:h-[340px]"></div>
 </div>
 
 <script>

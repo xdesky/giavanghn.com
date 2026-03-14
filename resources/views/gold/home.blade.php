@@ -64,7 +64,7 @@
 
         {{-- Breadcrumb Bar --}}
         <div class="flex flex-wrap items-center justify-between gap-3 px-5 py-4">
-            <div class="flex items-center gap-2">
+            <div class="flex flex-col md:flex-row items-start md:items-center gap-2">
                 <span class="inline-flex items-center gap-2 rounded-full bg-[#ebebeb] px-3 py-1.5 text-sm text-[#333]"><i data-lucide="home" class="h-4 w-4"></i> Giá vàng hôm nay</span>
                 <span class="text-sm text-[#555]">Tổng hợp dữ liệu thị trường, chỉ số kỹ thuật và nhận định bởi chuyên gia trí tuệ nhân tạo</span>
             </div>
@@ -102,17 +102,15 @@
                 {{-- Featured Price Cards --}}
                 <div class="flex flex-col gap-5 md:flex-row" id="phan-tich">
                     {{-- SJC Card --}}
-                    <article class="flex-1 rounded-sm border border-[#bcbcbc] bg-white p-5">
+                    <article class="flex-1 rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                         <div class="flex items-start justify-between">
                             <div class="flex flex-col gap-3">
                                 <h2 class="m-0 text-xl font-bold text-[#333]">{{ $snapshot['sjcCard']['title'] }}</h2>
-                                <label>
-                                    <select id="sjcVariantSelect" aria-label="Chọn loại vàng SJC" class="rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
-                                        @foreach ($snapshot['sjcCard']['variants'] as $key => $variant)
-                                            <option value="{{ $key }}" @selected($snapshot['sjcCard']['selected'] === $key)>{{ $variant['label'] }}</option>
-                                        @endforeach
-                                    </select>
-                                </label>
+                                <select id="sjcVariantSelect" aria-label="Chọn loại vàng SJC" class="max-w-[210px] md:max-w-auto rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
+                                    @foreach ($snapshot['sjcCard']['variants'] as $key => $variant)
+                                        <option value="{{ $key }}" @selected($snapshot['sjcCard']['selected'] === $key)>{{ $variant['label'] }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <span id="sjcTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-sm text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['sjcCard']['trendPercent']) }}</span>
                         </div>
@@ -135,17 +133,15 @@
                     </article>
 
                     {{-- US (World Gold) Card --}}
-                    <article class="flex-1 rounded-sm border border-[#bcbcbc] bg-white p-5">
+                    <article class="flex-1 rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                         <div class="flex items-start justify-between">
                             <div class="flex flex-col gap-3">
                                 <h2 class="m-0 text-xl font-bold text-[#333]">{{ $snapshot['usCard']['title'] }}</h2>
-                                <label>
-                                    <select id="usVariantSelect" aria-label="Chọn loại vàng thế giới" class="rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
-                                        @foreach ($snapshot['usCard']['variants'] as $key => $variant)
-                                            <option value="{{ $key }}" @selected($snapshot['usCard']['selected'] === $key)>{{ $variant['label'] }}</option>
-                                        @endforeach
-                                    </select>
-                                </label>
+                                <select id="usVariantSelect" aria-label="Chọn loại vàng thế giới" class="rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
+                                    @foreach ($snapshot['usCard']['variants'] as $key => $variant)
+                                        <option value="{{ $key }}" @selected($snapshot['usCard']['selected'] === $key)>{{ $variant['label'] }}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <span id="usTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-sm text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['usCard']['trendPercent']) }}</span>
                         </div>
@@ -177,7 +173,7 @@
                         default => 'bg-[#fff5ea] text-[#e17100]',
                     };
                 @endphp
-                <div class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+                <div class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                     <div class="flex flex-wrap items-center gap-3">
                         <i data-lucide="bot" class="h-6 w-6 text-[#001061]"></i>
                         <h3 class="m-0 text-xl font-bold text-[#001061]">Nhận định chuyên gia Ai</h3>
@@ -234,7 +230,7 @@
         <section class="grid gap-5 px-5 pb-5 lg:grid-cols-3 lg:grid-rows-[1fr]">
             {{-- Bản tin cập nhật giá vàng --}}
             <div id="ban-tin-gia-vang" class="flex min-h-0">
-                <div class="flex flex-1 flex-col rounded-sm border border-[#bcbcbc] bg-white p-5">
+                <div class="flex flex-1 flex-col rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                     <div class="mb-4 flex items-center justify-between">
                         <div class="flex items-center gap-2.5">
                             <i data-lucide="radio" class="h-5 w-5 text-[#e7000b]"></i>
@@ -264,7 +260,7 @@
                 </div>
             </div>
             {{-- TradingView World Gold Prices --}}
-            <div class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <div class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <div class="mb-4 flex items-center gap-2.5">
                     <i data-lucide="globe" class="h-5 w-5 text-[#b8860b]"></i>
                     <h3 class="m-0 text-lg font-bold text-[#333]">Giá vàng thế giới trực tiếp</h3>
@@ -272,7 +268,7 @@
                 <div class="grid gap-5 lg:grid-rows-3">
                     {{-- XAU/USD --}}
                     <div class="rounded border border-slate-200 overflow-hidden">
-                        <div class="tradingview-widget-container" style="height:350px">
+                        <div class="tradingview-widget-container h-[250px] sm:h-[350px]">
                             <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
                             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
                             {
@@ -291,7 +287,7 @@
                     </div>
                     {{-- XAG/USD --}}
                     <div class="rounded border border-slate-200 overflow-hidden">
-                        <div class="tradingview-widget-container" style="height:350px">
+                        <div class="tradingview-widget-container h-[250px] sm:h-[350px]">
                             <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
                             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
                             {
@@ -310,7 +306,7 @@
                     </div>
                     {{-- XAU/EUR --}}
                     <div class="rounded border border-slate-200 overflow-hidden">
-                        <div class="tradingview-widget-container" style="height:350px">
+                        <div class="tradingview-widget-container h-[250px] sm:h-[350px]">
                             <div class="tradingview-widget-container__widget" style="height:100%;width:100%"></div>
                             <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-mini-symbol-overview.js" async>
                             {
@@ -330,7 +326,7 @@
                 </div>
             </div>
             {{-- News --}}
-            <div class="rounded-sm border border-[#bcbcbc] bg-white p-5" id="tin-van">
+            <div class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5" id="tin-van">
                 <div class="mb-3 flex items-center justify-between gap-3">
                     <h3 class="m-0 flex items-center gap-2 text-lg font-bold"><i data-lucide="newspaper" class="h-5 w-5 text-[#333]"></i> Tin Vắn Tài Chính & Phân Tích</h3>
                     <a href="/tin-tuc-gia-vang/trong-nuoc" class="inline-flex items-center gap-1 rounded-full border border-[#b8860b] px-3 py-1 text-xs font-semibold text-[#b8860b] transition hover:bg-[#b8860b] hover:text-white">Xem thêm <i data-lucide="arrow-right" class="h-3 w-3"></i></a>
@@ -396,7 +392,7 @@
                     default => ['text-yellow-600', 'border-yellow-200', 'bg-yellow-50'],
                 };
             @endphp
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <h3 class="mb-4 flex items-center gap-2 text-lg font-bold">
                     <i data-lucide="brain" class="h-5 w-5 text-[#001061]"></i>
                     Tâm lý thị trường
@@ -518,7 +514,7 @@
                 @endif
             </article>
 
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="bar-chart-3" class="h-5 w-5 text-[#001061]"></i> Chỉ số kỹ thuật</h3>
                 <ul class="m-0 grid list-none gap-1 p-0">
                     @foreach ($snapshot['technical'] as $item)
@@ -543,7 +539,7 @@
             </article>
 
             {{-- Forecast --}}
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="target" class="h-5 w-5 text-[#e17100]"></i> Dự báo giá vàng SJC</h3>
                 <div class="grid gap-3">
                     @foreach ($snapshot['forecast'] as $fc)
@@ -566,9 +562,9 @@
         </section>
 
         {{-- Remaining Brand Cards --}}
-        <section class="grid gap-5 px-5 pb-5 md:grid-cols-2 xl:grid-cols-4">
+        <section class="grid gap-3 sm:gap-5 px-3 sm:px-5 pb-3 sm:pb-5 md:grid-cols-2 xl:grid-cols-4">
             {{-- SJC Brand Card --}}
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <div class="mb-3 flex items-center justify-between gap-3">
                     <h2 class="m-0 text-lg font-bold">{{ $snapshot['sjcCard']['title'] }}</h2>
                     <span id="sjcBrandTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['sjcCard']['trendPercent']) }}</span>
@@ -584,7 +580,7 @@
                 <p class="mt-1 text-sm text-[#001061]" id="sjcBrandUnitText"></p>
                 <p class="mt-1 text-sm text-[#666]" id="sjcBrandBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="sjcBrandDayChangeText"></p>
-                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
+                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-2 sm:p-3">
                     <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="sjcBrandPointsText"></span>
@@ -594,7 +590,7 @@
                 <a href="/gia-vang-hom-nay/gia-vang-sjc" class="mt-3 block w-full rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-center text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</a>
             </article>
 
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <div class="mb-3 flex items-center justify-between gap-3">
                     <h2 class="m-0 text-lg font-bold">{{ $snapshot['btmcCard']['title'] }}</h2>
                     <span id="btmcTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['btmcCard']['trendPercent']) }}</span>
@@ -610,7 +606,7 @@
                 <p class="mt-1 text-sm text-[#001061]" id="btmcUnitText"></p>
                 <p class="mt-1 text-sm text-[#666]" id="btmcBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="btmcDayChangeText"></p>
-                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
+                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-2 sm:p-3">
                     <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="btmcPointsText"></span>
@@ -620,7 +616,7 @@
                 <a href="/gia-vang-hom-nay/gia-vang-bao-tin-minh-chau" class="mt-3 block w-full rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-center text-sm font-semibold text-[#155dfc] transition hover:bg-gray-50">Xem chi tiết →</a>
             </article>
 
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <div class="mb-3 flex items-center justify-between gap-3">
                     <h2 class="m-0 text-lg font-bold">{{ $snapshot['pnjCard']['title'] }}</h2>
                     <span id="pnjTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['pnjCard']['trendPercent']) }}</span>
@@ -636,7 +632,7 @@
                 <p class="mt-1 text-sm text-[#001061]" id="pnjUnitText"></p>
                 <p class="mt-1 text-sm text-[#666]" id="pnjBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="pnjDayChangeText"></p>
-                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
+                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-2 sm:p-3">
                     <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="pnjPointsText"></span>
@@ -647,7 +643,7 @@
             </article>
 
             {{-- DOJI Card --}}
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <div class="mb-3 flex items-center justify-between gap-3">
                     <h2 class="m-0 text-lg font-bold">{{ $snapshot['dojiCard']['title'] }}</h2>
                     <span id="dojiTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['dojiCard']['trendPercent']) }}</span>
@@ -663,7 +659,7 @@
                 <p class="mt-1 text-sm text-[#001061]" id="dojiUnitText"></p>
                 <p class="mt-1 text-sm text-[#666]" id="dojiBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="dojiDayChangeText"></p>
-                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
+                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-2 sm:p-3">
                     <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="dojiPointsText"></span>
@@ -674,7 +670,7 @@
             </article>
 
             {{-- Phú Quý Card --}}
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <div class="mb-3 flex items-center justify-between gap-3">
                     <h2 class="m-0 text-lg font-bold">{{ $snapshot['phuquyCard']['title'] }}</h2>
                     <span id="phuquyTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['phuquyCard']['trendPercent']) }}</span>
@@ -690,7 +686,7 @@
                 <p class="mt-1 text-sm text-[#001061]" id="phuquyUnitText"></p>
                 <p class="mt-1 text-sm text-[#666]" id="phuquyBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="phuquyDayChangeText"></p>
-                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
+                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-2 sm:p-3">
                     <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="phuquyPointsText"></span>
@@ -701,7 +697,7 @@
             </article>
 
             {{-- Mi Hồng Card --}}
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <div class="mb-3 flex items-center justify-between gap-3">
                     <h2 class="m-0 text-lg font-bold">{{ $snapshot['mihongCard']['title'] }}</h2>
                     <span id="mihongTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['mihongCard']['trendPercent']) }}</span>
@@ -717,7 +713,7 @@
                 <p class="mt-1 text-sm text-[#001061]" id="mihongUnitText"></p>
                 <p class="mt-1 text-sm text-[#666]" id="mihongBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="mihongDayChangeText"></p>
-                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
+                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-2 sm:p-3">
                     <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="mihongPointsText"></span>
@@ -728,7 +724,7 @@
             </article>
 
             {{-- Bảo Tín Mạnh Hải Card --}}
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <div class="mb-3 flex items-center justify-between gap-3">
                     <h2 class="m-0 text-lg font-bold">{{ $snapshot['btmhCard']['title'] }}</h2>
                     <span id="btmhTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['btmhCard']['trendPercent']) }}</span>
@@ -744,7 +740,7 @@
                 <p class="mt-1 text-sm text-[#001061]" id="btmhUnitText"></p>
                 <p class="mt-1 text-sm text-[#666]" id="btmhBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="btmhDayChangeText"></p>
-                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
+                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-2 sm:p-3">
                     <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="btmhPointsText"></span>
@@ -755,7 +751,7 @@
             </article>
 
             {{-- Ngọc Thẩm Card --}}
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <div class="mb-3 flex items-center justify-between gap-3">
                     <h2 class="m-0 text-lg font-bold">{{ $snapshot['ngocthamCard']['title'] }}</h2>
                     <span id="ngocthamTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['ngocthamCard']['trendPercent']) }}</span>
@@ -771,7 +767,7 @@
                 <p class="mt-1 text-sm text-[#001061]" id="ngocthamUnitText"></p>
                 <p class="mt-1 text-sm text-[#666]" id="ngocthamBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="ngocthamDayChangeText"></p>
-                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
+                <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-2 sm:p-3">
                     <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="ngocthamPointsText"></span>
@@ -785,7 +781,7 @@
         {{-- GLOBAL MARKETS + SUPPORT/RESISTANCE --}}
         <section class="grid gap-5 px-5 pb-5 lg:grid-cols-2">
             {{-- Global Markets --}}
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="globe" class="h-5 w-5 text-[#001061]"></i> Thị trường kim loại quý toàn cầu</h3>
                 <div class="overflow-x-auto">
                     <table class="w-full border-collapse text-sm">
@@ -810,7 +806,7 @@
             </article>
 
             {{-- Support / Resistance --}}
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="layers" class="h-5 w-5 text-[#001061]"></i> Hỗ trợ & Kháng cự SJC</h3>
                 <div class="grid gap-2">
                     @foreach ($snapshot['supports'] as $level)
@@ -830,7 +826,7 @@
         {{-- MACRO FACTORS + CORRELATIONS --}}
         <section class="grid gap-5 px-5 pb-5 lg:grid-cols-2">
             {{-- Macro --}}
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="landmark" class="h-5 w-5 text-[#333]"></i> Yếu tố vĩ mô tác động</h3>
                 <div class="grid gap-2">
                     @foreach ($snapshot['macroFactors'] as $macro)
@@ -849,7 +845,7 @@
             </article>
 
             {{-- Correlations --}}
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="git-compare" class="h-5 w-5 text-[#001061]"></i> Tương quan với các tài sản</h3>
                 <div class="grid gap-3">
                     @foreach ($snapshot['correlations'] as $corr)
@@ -874,31 +870,31 @@
         </section>
 
         {{-- Top Brands Table --}}
-        <section class="px-5 pb-5">
-            <div class="rounded-sm border border-[#bcbcbc] bg-white p-5" id="bang-gia">
+        <section class="px-3 sm:px-5 pb-3 sm:pb-5">
+            <div class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5" id="bang-gia">
                 <div class="mb-3 flex items-center justify-between gap-3">
                     <h3 class="m-0 flex items-center gap-2 text-lg font-bold"><i data-lucide="table" class="h-5 w-5 text-[#001061]"></i> Bảng Giá Vàng Các Thương Hiệu</h3>
                     <button class="cursor-pointer rounded-sm text-sm font-semibold text-[#155dfc] transition hover:underline">Xem tất cả →</button>
                 </div>
                 <div class="overflow-x-auto">
-                    <table class="w-full min-w-[760px] border-collapse">
+                    <table class="w-full border-collapse">
                         <thead>
                             <tr class="bg-[#f5f5f5]">
-                                <th class="border-b border-[#bcbcbc] p-3 text-left text-sm font-medium text-[#666]">Thương hiệu</th>
-                                <th class="border-b border-[#bcbcbc] p-3 text-right text-sm font-medium text-[#666]">Mua vào (VND)</th>
-                                <th class="border-b border-[#bcbcbc] p-3 text-right text-sm font-medium text-[#666]">Bán ra (VND)</th>
-                                <th class="border-b border-[#bcbcbc] p-3 text-right text-sm font-medium text-[#666]">Chênh lệch</th>
-                                <th class="border-b border-[#bcbcbc] p-3 text-right text-sm font-medium text-[#666]">Thay đổi</th>
+                                <th class="border-b border-[#bcbcbc] p-2 sm:p-3 text-left text-sm font-medium text-[#666]">Thương hiệu</th>
+                                <th class="border-b border-[#bcbcbc] p-2 sm:p-3 text-right text-sm font-medium text-[#666]">Mua vào</th>
+                                <th class="border-b border-[#bcbcbc] p-2 sm:p-3 text-right text-sm font-medium text-[#666]">Bán ra</th>
+                                <th class="border-b border-[#bcbcbc] p-2 sm:p-3 text-right text-sm font-medium text-[#666] hidden sm:table-cell">Chênh lệch</th>
+                                <th class="border-b border-[#bcbcbc] p-2 sm:p-3 text-right text-sm font-medium text-[#666]">Thay đổi</th>
                             </tr>
                         </thead>
                         <tbody id="topBrandsTableBody">
                             @foreach ($snapshot['topBrands'] as $brand)
                                 <tr class="hover:bg-[#f5f5f5] transition">
-                                    <td class="border-b border-[#ebebeb] p-3 text-left text-sm font-medium">{{ $brand['brand'] }}</td>
-                                    <td class="border-b border-[#ebebeb] p-3 text-right text-sm font-bold">{{ number_format($brand['buy'], 0, ',', '.') }}</td>
-                                    <td class="border-b border-[#ebebeb] p-3 text-right text-sm font-bold">{{ number_format($brand['sell'], 0, ',', '.') }}</td>
-                                    <td class="border-b border-[#ebebeb] p-3 text-right text-sm text-[#666]">{{ number_format($brand['sell'] - $brand['buy'], 0, ',', '.') }}</td>
-                                    <td class="border-b border-[#ebebeb] p-3 text-right text-sm font-bold {{ $brand['change'] >= 0 ? 'text-[#008236]' : 'text-[#e7000b]' }}">{{ sprintf('%+.2f%%', $brand['change']) }}</td>
+                                    <td class="border-b border-[#ebebeb] p-2 sm:p-3 text-left text-sm font-medium">{{ $brand['brand'] }}</td>
+                                    <td class="border-b border-[#ebebeb] p-2 sm:p-3 text-right text-sm font-bold">{{ number_format($brand['buy'], 0, ',', '.') }}</td>
+                                    <td class="border-b border-[#ebebeb] p-2 sm:p-3 text-right text-sm font-bold">{{ number_format($brand['sell'], 0, ',', '.') }}</td>
+                                    <td class="border-b border-[#ebebeb] p-2 sm:p-3 text-right text-sm text-[#666] hidden sm:table-cell">{{ number_format($brand['sell'] - $brand['buy'], 0, ',', '.') }}</td>
+                                    <td class="border-b border-[#ebebeb] p-2 sm:p-3 text-right text-sm font-bold {{ $brand['change'] >= 0 ? 'text-[#008236]' : 'text-[#e7000b]' }}">{{ sprintf('%+.2f%%', $brand['change']) }}</td>
                                 </tr>
                             @endforeach
                         </tbody>
@@ -908,8 +904,8 @@
         </section>
 
         {{-- CENTRAL BANK ACTIVITY --}}
-        <section class="px-5 pb-5">
-            <div class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+        <section class="px-3 sm:px-5 pb-3 sm:pb-5">
+            <div class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="building-2" class="h-5 w-5 text-[#e17100]"></i> Hoạt động mua vàng của NHTW</h3>
                 <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-5">
                     @foreach ($snapshot['centralBanks'] as $cb)
@@ -924,8 +920,8 @@
         </section>
 
         {{-- 7-day Chart --}}
-        <section class="px-5 pb-5">
-            <div class="rounded-sm border border-[#bcbcbc] bg-white p-5" id="bieu-do-30-ngay">
+        <section class="px-3 sm:px-5 pb-3 sm:pb-5">
+            <div class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5" id="bieu-do-30-ngay">
                 <div class="mb-3 flex items-center justify-between gap-3">
                     <h3 class="m-0 flex items-center gap-2 text-lg font-bold"><i data-lucide="chart-line" class="h-5 w-5 text-[#001061]"></i> Biến động giá vàng 30 ngày</h3>
                     <span class="text-xs text-[#555]">Đơn vị: triệu VNĐ/lượng</span>
@@ -938,7 +934,7 @@
 
         {{-- Comparisons + Performance --}}
         <section class="grid gap-5 lg:grid-cols-2 px-5 pb-5" id="so-sanh">
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="scale" class="h-5 w-5 text-[#001061]"></i> So sánh giá vàng</h3>
                 <div class="grid gap-2">
                     @foreach ($snapshot['comparisons'] as $row)
@@ -956,7 +952,7 @@
                 </div>
             </article>
 
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="wallet" class="h-5 w-5 text-[#008236]"></i> Hiệu suất đầu tư (1 lượng SJC)</h3>
                 <div class="grid gap-2">
                     @foreach ($snapshot['performance'] as $row)
@@ -975,8 +971,8 @@
         </section>
 
         {{-- Movers --}}
-        <section class="px-5 pb-5">
-            <div class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+        <section class="px-3 sm:px-5 pb-3 sm:pb-5">
+            <div class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="flame" class="h-5 w-5 text-[#e17100]"></i> Biến động & Nổi bật</h3>
                 <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
                     @foreach ($snapshot['movers'] as $item)
@@ -992,7 +988,7 @@
         </section>
         {{-- Quick Actions + Knowledge --}}
         <section class="grid gap-5 lg:grid-cols-3 px-5 pb-5">
-            <article class="rounded-sm border border-[#bcbcbc] bg-white p-5">
+            <article class="rounded-sm border border-[#bcbcbc] bg-white p-3 sm:p-5">
                 <h3 class="mb-3 flex items-center gap-2 text-lg font-bold"><i data-lucide="zap" class="h-5 w-5 text-[#e17100]"></i> Hành động nhanh</h3>
                 <div class="grid gap-2">
                     @foreach ($snapshot['actions'] as $action)

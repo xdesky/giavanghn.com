@@ -18,7 +18,7 @@
         </div>
         @php $sv = $sjc['variants'][$sjc['selected']] ?? collect($sjc['variants'])->first(); @endphp
         @if ($sv)
-            <p class="mt-2 text-3xl font-bold text-amber-900">{{ number_format($sv['sell'] * 1000000, 0, ',', '.') }} <small class="text-base font-normal text-amber-700">VNĐ</small></p>
+            <p class="mt-2 text-xl sm:text-3xl font-bold text-amber-900">{{ number_format($sv['sell'] * 1000000, 0, ',', '.') }} <small class="text-base font-normal text-amber-700">VNĐ</small></p>
             <div class="mt-2 flex gap-4 text-sm text-amber-800">
                 <span>Mua: <strong>{{ number_format($sv['buy'] * 1000000, 0, ',', '.') }}</strong></span>
                 <span>Bán: <strong>{{ number_format($sv['sell'] * 1000000, 0, ',', '.') }}</strong></span>
@@ -39,7 +39,7 @@
         </div>
         @php $uv = $us['variants'][$us['selected']] ?? collect($us['variants'])->first(); @endphp
         @if ($uv)
-            <p class="mt-2 text-3xl font-bold text-blue-900">{{ number_format($uv['price'], 2) }} <small class="text-base font-normal text-blue-700">USD/oz</small></p>
+            <p class="mt-2 text-xl sm:text-3xl font-bold text-blue-900">{{ number_format($uv['price'], 2) }} <small class="text-base font-normal text-blue-700">USD/oz</small></p>
             <p class="mt-1 text-sm font-semibold {{ str_starts_with($uv['dayChangeLabel'] ?? '', '-') ? 'text-rose-600' : 'text-emerald-600' }}">{{ $uv['dayChangeLabel'] ?? '' }}</p>
         @endif
     </div>

@@ -104,7 +104,7 @@
     <div class="grid gap-3 sm:grid-cols-3">
         <div class="rounded-sm border-2 border-emerald-300 bg-emerald-50 p-4 text-center">
             <p class="text-xs font-bold text-emerald-700 uppercase">Kịch bản tích cực</p>
-            <p class="mt-2 text-2xl font-bold text-emerald-800">{{ number_format($bullPrice, 2) }}</p>
+            <p class="mt-2 text-lg sm:text-2xl font-bold text-emerald-800">{{ number_format($bullPrice, 2) }}</p>
             <p class="text-xs text-slate-500">triệu VND/lượng</p>
             <p class="mt-1 text-sm font-semibold text-emerald-600">+{{ $bullPct }}%</p>
             <p class="mt-1 text-xs text-blue-700">XAU/USD: ~{{ number_format($xauBull) }} USD/oz</p>
@@ -112,7 +112,7 @@
         </div>
         <div class="rounded-sm border-2 border-blue-300 bg-blue-50 p-4 text-center">
             <p class="text-xs font-bold text-blue-700 uppercase">Kịch bản cơ sở</p>
-            <p class="mt-2 text-2xl font-bold text-blue-800">{{ number_format($basePrice, 2) }}</p>
+            <p class="mt-2 text-lg sm:text-2xl font-bold text-blue-800">{{ number_format($basePrice, 2) }}</p>
             <p class="text-xs text-slate-500">triệu VND/lượng</p>
             <p class="mt-1 text-sm font-semibold text-blue-600">+{{ $basePct }}%</p>
             <p class="mt-1 text-xs text-blue-700">XAU/USD: ~{{ number_format($xauBase) }} USD/oz</p>
@@ -120,7 +120,7 @@
         </div>
         <div class="rounded-sm border-2 border-rose-300 bg-rose-50 p-4 text-center">
             <p class="text-xs font-bold text-rose-700 uppercase">Kịch bản tiêu cực</p>
-            <p class="mt-2 text-2xl font-bold text-rose-800">{{ number_format($bearPrice, 2) }}</p>
+            <p class="mt-2 text-lg sm:text-2xl font-bold text-rose-800">{{ number_format($bearPrice, 2) }}</p>
             <p class="text-xs text-slate-500">triệu VND/lượng</p>
             <p class="mt-1 text-sm font-semibold text-rose-600">{{ $bearPct }}%</p>
             <p class="mt-1 text-xs text-blue-700">XAU/USD: ~{{ number_format($xauBear) }} USD/oz</p>
@@ -220,7 +220,7 @@
         <button data-p="1y" class="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-all border bg-[#001061] text-white border-[#001061] shadow-sm">1 năm</button>
     </div>
 
-    <div id="yearly-chart" class="w-full" style="height:380px">
+    <div id="yearly-chart" class="w-full" class="h-[280px] sm:h-[380px]">
         <div style="display:grid;height:100%;place-items:center" class="text-sm text-slate-400">Đang tải biểu đồ…</div>
     </div>
 

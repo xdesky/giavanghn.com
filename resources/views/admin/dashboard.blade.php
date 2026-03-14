@@ -12,10 +12,10 @@
 <body class="m-0 font-sans text-[#333] bg-white min-h-screen">
     @include('gold.partials.header')
 
-    <div class="container-site px-6 py-8">
+    <div class="container-site px-3 sm:px-6 py-6 sm:py-8">
         <div class="max-w-7xl mx-auto">
         <!-- Navigation -->
-        <nav class="mb-8 flex gap-4">
+        <nav class="mb-8 flex flex-wrap gap-3 sm:gap-4">
             <a href="{{ route('admin.dashboard') }}" class="px-4 py-2 rounded-sm bg-blue-600 text-white font-semibold">Dashboard</a>
             <a href="{{ route('admin.users.index') }}" class="px-4 py-2 rounded-sm bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 font-semibold">Quản lý người dùng</a>
             <a href="{{ route('admin.articles.index') }}" class="px-4 py-2 rounded-sm bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 font-semibold">Quản lý bài viết</a>
@@ -27,19 +27,19 @@
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
             <div class="bg-white rounded-sm border border-[#bcbcbc] p-6 shadow-lg">
                 <h3 class="text-sm font-medium text-slate-500 mb-2">Tổng người dùng</h3>
-                <p class="text-3xl font-bold text-blue-900">{{ \App\Models\User::count() }}</p>
+                <p class="text-xl sm:text-3xl font-bold text-blue-900">{{ \App\Models\User::count() }}</p>
             </div>
             <div class="bg-white rounded-sm border border-emerald-100 p-6 shadow-lg">
                 <h3 class="text-sm font-medium text-slate-500 mb-2">Người dùng hoạt động</h3>
-                <p class="text-3xl font-bold text-emerald-900">{{ \App\Models\User::where('is_active', true)->count() }}</p>
+                <p class="text-xl sm:text-3xl font-bold text-emerald-900">{{ \App\Models\User::where('is_active', true)->count() }}</p>
             </div>
             <div class="bg-white rounded-sm border border-amber-100 p-6 shadow-lg">
                 <h3 class="text-sm font-medium text-slate-500 mb-2">Bài viết đã xuất bản</h3>
-                <p class="text-3xl font-bold text-amber-900">{{ \App\Models\AnalysisArticle::whereNotNull('published_at')->count() }}</p>
+                <p class="text-xl sm:text-3xl font-bold text-amber-900">{{ \App\Models\AnalysisArticle::whereNotNull('published_at')->count() }}</p>
             </div>
             <div class="bg-white rounded-sm border border-purple-100 p-6 shadow-lg">
                 <h3 class="text-sm font-medium text-slate-500 mb-2">Đăng ký hôm nay</h3>
-                <p class="text-3xl font-bold text-purple-900">{{ \App\Models\User::whereDate('created_at', today())->count() }}</p>
+                <p class="text-xl sm:text-3xl font-bold text-purple-900">{{ \App\Models\User::whereDate('created_at', today())->count() }}</p>
             </div>
         </div>
 

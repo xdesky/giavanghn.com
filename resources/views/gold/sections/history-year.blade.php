@@ -98,7 +98,7 @@
         </h2>
         <span class="text-[11px] text-slate-400">{{ $dataPoints }} phiên</span>
     </div>
-    <div id="historyYearChart" class="w-full" style="height:380px">
+    <div id="historyYearChart" class="w-full" class="h-[280px] sm:h-[380px]">
         <div class="flex items-center justify-center h-full text-slate-400 text-sm">
             <svg class="animate-spin h-5 w-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
             Đang tải biểu đồ...

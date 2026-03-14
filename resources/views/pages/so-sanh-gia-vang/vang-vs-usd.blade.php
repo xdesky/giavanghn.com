@@ -63,12 +63,12 @@
         <span class="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700"><i class="block h-2 w-2 rounded-full bg-emerald-500"></i> Trực tuyến</span>
         <span class="text-sm text-slate-500">{{ $now }}</span>
     </div>
-    <h2 class="text-2xl font-bold text-[#001061] mb-4">Phân tích tương quan Vàng (XAU) và USD (DXY)</h2>
+    <h2 class="text-lg sm:text-2xl font-bold text-[#001061] mb-4">Phân tích tương quan Vàng (XAU) và USD (DXY)</h2>
 
     <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 mb-4">
         <div class="rounded-sm border-2 border-amber-300 bg-white p-4 text-center">
             <p class="text-sm font-semibold text-amber-700 mb-1">Vàng (XAU/USD)</p>
-            <p class="text-3xl font-bold text-amber-900 tabular-nums">{{ number_format($xauSpot, 2) }}</p>
+            <p class="text-xl sm:text-3xl font-bold text-amber-900 tabular-nums">{{ number_format($xauSpot, 2) }}</p>
             <p class="text-xs text-slate-500 mb-1">USD/Ounce</p>
             <div class="flex items-center justify-center gap-2 text-xs">
                 @if ($xauChange)<span class="font-bold {{ str_starts_with($xauChange, '-') ? 'text-rose-600' : 'text-emerald-600' }}">{{ $xauChange }}</span>@endif
@@ -77,7 +77,7 @@
         </div>
         <div class="rounded-sm border-2 border-emerald-300 bg-white p-4 text-center">
             <p class="text-sm font-semibold text-emerald-700 mb-1">USD Index (DXY)</p>
-            <p class="text-3xl font-bold text-emerald-900 tabular-nums">{{ $dxyValue }}</p>
+            <p class="text-xl sm:text-3xl font-bold text-emerald-900 tabular-nums">{{ $dxyValue }}</p>
             <p class="text-xs text-slate-500 mb-1">Điểm (pts)</p>
             <div class="flex items-center justify-center text-xs">
                 <span class="font-bold {{ str_starts_with($dxyChange, '-') ? 'text-rose-600' : 'text-emerald-600' }}">{{ $dxyChange }}</span>
@@ -85,7 +85,7 @@
         </div>
         <div class="rounded-sm border-2 border-slate-300 bg-white p-4 text-center">
             <p class="text-sm font-semibold text-slate-700 mb-1">Tỷ giá USD/VND</p>
-            <p class="text-3xl font-bold text-slate-900 tabular-nums">{{ number_format($usdVndRate, 0, ',', '.') }}</p>
+            <p class="text-xl sm:text-3xl font-bold text-slate-900 tabular-nums">{{ number_format($usdVndRate, 0, ',', '.') }}</p>
             <p class="text-xs text-slate-500 mb-1">VND</p>
             <div class="flex items-center justify-center text-xs">
                 <span class="font-bold {{ str_starts_with($usdVndChange, '-') ? 'text-rose-600' : 'text-emerald-600' }}">{{ $usdVndChange }}</span>

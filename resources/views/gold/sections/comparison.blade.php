@@ -3,18 +3,18 @@
     <div class="grid gap-5 sm:grid-cols-2 mb-4">
         <div class="rounded-sm border-2 border-blue-200 bg-blue-50 p-4 text-center">
             <p class="text-sm font-medium text-blue-700">{{ $leftName }}</p>
-            <p class="mt-2 text-3xl font-bold text-blue-900">{{ $leftPrice }}</p>
+            <p class="mt-2 text-xl sm:text-3xl font-bold text-blue-900">{{ $leftPrice }}</p>
             <p class="mt-1 text-sm font-bold text-emerald-600">{{ $leftChange }}</p>
         </div>
         <div class="rounded-sm border-2 border-indigo-200 bg-indigo-50 p-4 text-center">
             <p class="text-sm font-medium text-indigo-700">{{ $rightName }}</p>
-            <p class="mt-2 text-3xl font-bold text-indigo-900">{{ $rightPrice }}</p>
+            <p class="mt-2 text-xl sm:text-3xl font-bold text-indigo-900">{{ $rightPrice }}</p>
             <p class="mt-1 text-sm font-bold text-emerald-600">{{ $rightChange }}</p>
         </div>
     </div>
     <div class="rounded-sm border border-amber-200 bg-amber-50 p-4 mb-4">
         <p class="text-sm font-semibold text-amber-900">Chênh lệch hiện tại</p>
-        <p class="mt-1 text-2xl font-bold text-amber-800">{{ $spread }}</p>
+        <p class="mt-1 text-lg sm:text-2xl font-bold text-amber-800">{{ $spread }}</p>
         <p class="mt-1 text-xs text-amber-700">{{ $spreadNote }}</p>
     </div>
     <div class="table-wrap rounded-sm border border-[#bcbcbc]">

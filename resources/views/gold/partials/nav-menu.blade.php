@@ -108,11 +108,11 @@
                             <i data-lucide="chevron-down" class="mobile-chevron h-4 w-4 text-slate-400 transition-transform"></i>
                         </button>
                         <div class="mobile-submenu hidden pl-3">
-                            <a href="/{{ $fullPath }}" class="block px-3 py-5 text-sm text-slate-600 no-underline transition hover:bg-blue-50 hover:text-blue-700">Tất cả {{ $item['title'] }}</a>
+                            <a href="/{{ $fullPath }}" class="block px-3 py-2.5 text-sm text-slate-600 no-underline transition hover:bg-blue-50 hover:text-blue-700">Tất cả {{ $item['title'] }}</a>
                             @foreach ($item['children'] as $childSlug => $child)
                                 @php $childPath = $fullPath . '/' . $childSlug; @endphp
                                 <a href="/{{ $childPath }}"
-                                   class="block px-3 py-5 text-sm no-underline transition hover:bg-blue-50 hover:text-blue-700 {{ ($currentPath ?? '') === $childPath ? 'font-semibold text-blue-700' : 'text-slate-600' }}">{{ $child['title'] }}</a>
+                                   class="block px-3 py-2.5 text-sm no-underline transition hover:bg-blue-50 hover:text-blue-700 {{ ($currentPath ?? '') === $childPath ? 'font-semibold text-blue-700' : 'text-slate-600' }}">{{ $child['title'] }}</a>
                             @endforeach
                         </div>
                     </div>

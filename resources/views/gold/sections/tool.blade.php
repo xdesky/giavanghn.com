@@ -23,7 +23,7 @@
     </div>
     <div class="mt-4 rounded-sm border-2 border-dashed border-blue-200 bg-blue-50/50 p-4 text-center">
         <p class="text-sm text-blue-700 font-medium">Kết quả sẽ hiển thị tại đây</p>
-        <p class="mt-1 text-3xl font-bold text-blue-900">—</p>
+        <p class="mt-1 text-xl sm:text-3xl font-bold text-blue-900">—</p>
     </div>
     @if (!empty($instructions))
     <div class="mt-4 rounded-sm border border-slate-200 p-4">

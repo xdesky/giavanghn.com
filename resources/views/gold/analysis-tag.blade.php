@@ -12,11 +12,11 @@
     @else
         <div class="grid gap-5">
             @foreach ($articles as $article)
-                <a href="/tin-tuc-gia-vang/trong-nuoc/{{ $article->slug }}" class="group flex gap-4 rounded-sm border border-slate-200 bg-white p-4 hover:shadow-md transition">
+                <a href="/tin-tuc-gia-vang/trong-nuoc/{{ $article->slug }}" class="group flex flex-col sm:flex-row gap-3 sm:gap-4 rounded-sm border border-slate-200 bg-white p-3 sm:p-4 hover:shadow-md transition">
                     @if ($article->thumbnail_path)
-                        <img src="{{ asset('storage/' . $article->thumbnail_path) }}" alt="{{ $article->title }}" class="w-32 h-20 object-cover rounded-sm flex-shrink-0" loading="lazy" />
+                        <img src="{{ asset('storage/' . $article->thumbnail_path) }}" alt="{{ $article->title }}" class="w-full h-40 sm:w-32 sm:h-20 object-cover rounded-sm sm:flex-shrink-0" loading="lazy" />
                     @else
-                        <div class="w-32 h-20 bg-gradient-to-br from-amber-100 to-amber-50 rounded-sm flex items-center justify-center flex-shrink-0">
+                        <div class="w-full h-40 sm:w-32 sm:h-20 bg-gradient-to-br from-amber-100 to-amber-50 rounded-sm flex items-center justify-center sm:flex-shrink-0">
                             <span class="text-amber-400 text-2xl">📊</span>
                         </div>
                     @endif

@@ -34,7 +34,7 @@
 @section('page-content')
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <div class="flex items-center justify-between mb-4">
-        <h2 class="text-2xl font-bold text-[#001061] flex items-center gap-2">
+        <h2 class="text-lg sm:text-2xl font-bold text-[#001061] flex items-center gap-2">
             <i data-lucide="gem" class="h-6 w-6 text-amber-500"></i>
             Bảng giá vàng Ngọc Thẩm hôm nay
         </h2>

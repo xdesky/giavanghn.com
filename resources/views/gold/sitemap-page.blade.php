@@ -54,7 +54,7 @@
     <main class="container-site px-6 py-6">
         <section class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6 shadow-lg">
             <p class="text-xs uppercase tracking-wide text-slate-500">Sitemap page</p>
-            <h1 class="mt-2 text-3xl font-bold text-[#001061]">{{ $page['title'] }}</h1>
+            <h1 class="mt-2 text-2xl sm:text-3xl font-bold text-[#001061]">{{ $page['title'] }}</h1>
             <p class="mt-3 text-sm text-slate-600">{{ $page['description'] }}</p>
 
             <nav class="mt-4 flex flex-wrap items-center gap-2 text-sm text-slate-500">

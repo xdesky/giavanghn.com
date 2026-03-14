@@ -10,35 +10,35 @@
     <div class="grid gap-5 sm:grid-cols-2">
         <div class="rounded-sm border border-slate-200 p-3">
             <h3 class="text-sm font-semibold text-[#b8860b] mb-1 flex items-center gap-1"><span class="inline-block w-3 h-0.5 rounded bg-[#b8860b]"></span> SJC</h3>
-            <div id="brandChart_SJC" style="height:200px"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
+            <div id="brandChart_SJC" class="h-[160px] sm:h-[200px]"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
         </div>
         <div class="rounded-sm border border-slate-200 p-3">
             <h3 class="text-sm font-semibold text-[#3b82f6] mb-1 flex items-center gap-1"><span class="inline-block w-3 h-0.5 rounded bg-[#3b82f6]"></span> DOJI</h3>
-            <div id="brandChart_DOJI" style="height:200px"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
+            <div id="brandChart_DOJI" class="h-[160px] sm:h-[200px]"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
         </div>
         <div class="rounded-sm border border-slate-200 p-3">
             <h3 class="text-sm font-semibold text-[#15803d] mb-1 flex items-center gap-1"><span class="inline-block w-3 h-0.5 rounded bg-[#15803d]"></span> PNJ</h3>
-            <div id="brandChart_PNJ" style="height:200px"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
+            <div id="brandChart_PNJ" class="h-[160px] sm:h-[200px]"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
         </div>
         <div class="rounded-sm border border-slate-200 p-3">
             <h3 class="text-sm font-semibold text-[#dc2626] mb-1 flex items-center gap-1"><span class="inline-block w-3 h-0.5 rounded bg-[#dc2626]"></span> BTMC</h3>
-            <div id="brandChart_BTMC" style="height:200px"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
+            <div id="brandChart_BTMC" class="h-[160px] sm:h-[200px]"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
         </div>
         <div class="rounded-sm border border-slate-200 p-3">
             <h3 class="text-sm font-semibold text-[#7c3aed] mb-1 flex items-center gap-1"><span class="inline-block w-3 h-0.5 rounded bg-[#7c3aed]"></span> Phú Quý</h3>
-            <div id="brandChart_PhuQuy" style="height:200px"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
+            <div id="brandChart_PhuQuy" class="h-[160px] sm:h-[200px]"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
         </div>
         <div class="rounded-sm border border-slate-200 p-3">
             <h3 class="text-sm font-semibold text-[#ea580c] mb-1 flex items-center gap-1"><span class="inline-block w-3 h-0.5 rounded bg-[#ea580c]"></span> Mi Hồng</h3>
-            <div id="brandChart_MiHong" style="height:200px"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
+            <div id="brandChart_MiHong" class="h-[160px] sm:h-[200px]"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
         </div>
         <div class="rounded-sm border border-slate-200 p-3">
             <h3 class="text-sm font-semibold text-[#0891b2] mb-1 flex items-center gap-1"><span class="inline-block w-3 h-0.5 rounded bg-[#0891b2]"></span> Bảo Tín MH</h3>
-            <div id="brandChart_BaoTinMH" style="height:200px"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
+            <div id="brandChart_BaoTinMH" class="h-[160px] sm:h-[200px]"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
         </div>
         <div class="rounded-sm border border-slate-200 p-3">
             <h3 class="text-sm font-semibold text-[#be185d] mb-1 flex items-center gap-1"><span class="inline-block w-3 h-0.5 rounded bg-[#be185d]"></span> Ngọc Thẩm</h3>
-            <div id="brandChart_NgocTham" style="height:200px"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
+            <div id="brandChart_NgocTham" class="h-[160px] sm:h-[200px]"><div style="display:grid;height:100%;place-items:center" class="text-xs text-slate-400">Đang tải…</div></div>
         </div>
     </div>
 </div>

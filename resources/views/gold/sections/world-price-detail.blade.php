@@ -31,7 +31,7 @@
         <button data-period="{{ $pKey }}" class="world-period-btn rounded-full border px-4 py-1.5 text-xs font-semibold transition {{ $pKey === '1m' ? 'border-[#b8860b] bg-[#b8860b] text-white' : 'border-[#ccc] bg-white text-[#555] hover:border-[#b8860b] hover:text-[#b8860b]' }}">{{ $pLabel }}</button>
         @endforeach
     </div>
-    <div id="worldPriceAmChart" class="w-full" style="min-height:400px"></div>
+    <div id="worldPriceAmChart" class="w-full" class="min-h-[280px] sm:min-h-[400px]"></div>
 </div>
 
 {{-- Stats grid --}}
@@ -49,20 +49,20 @@
 <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
     <div class="rounded-sm border border-slate-200 bg-white p-4 text-center">
         <p class="text-xs font-semibold text-slate-500">Giá hiện tại</p>
-        <p class="mt-1 text-2xl font-bold text-slate-900 tabular-nums">{{ number_format($item['price'], 2) }}</p>
+        <p class="mt-1 text-lg sm:text-2xl font-bold text-slate-900 tabular-nums">{{ number_format($item['price'], 2) }}</p>
         <p class="text-xs text-slate-500">{{ $item['unit'] }}</p>
     </div>
     <div class="rounded-sm border border-slate-200 bg-white p-4 text-center">
         <p class="text-xs font-semibold text-slate-500">Cao nhất 30 ngày</p>
-        <p class="mt-1 text-2xl font-bold text-emerald-600 tabular-nums">{{ number_format($high30, 2) }}</p>
+        <p class="mt-1 text-lg sm:text-2xl font-bold text-emerald-600 tabular-nums">{{ number_format($high30, 2) }}</p>
     </div>
     <div class="rounded-sm border border-slate-200 bg-white p-4 text-center">
         <p class="text-xs font-semibold text-slate-500">Thấp nhất 30 ngày</p>
-        <p class="mt-1 text-2xl font-bold text-rose-600 tabular-nums">{{ number_format($low30, 2) }}</p>
+        <p class="mt-1 text-lg sm:text-2xl font-bold text-rose-600 tabular-nums">{{ number_format($low30, 2) }}</p>
     </div>
     <div class="rounded-sm border border-slate-200 bg-white p-4 text-center">
         <p class="text-xs font-semibold text-slate-500">Biến động 30 ngày</p>
-        <p class="mt-1 text-2xl font-bold {{ $change30 >= 0 ? 'text-emerald-600' : 'text-rose-600' }} tabular-nums">{{ sprintf('%+.2f%%', $change30) }}</p>
+        <p class="mt-1 text-lg sm:text-2xl font-bold {{ $change30 >= 0 ? 'text-emerald-600' : 'text-rose-600' }} tabular-nums">{{ sprintf('%+.2f%%', $change30) }}</p>
     </div>
 </div>
 @endif

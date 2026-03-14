@@ -28,12 +28,20 @@ if ($article->thumbnail_path) {
 
 @section('page-content')
 <style>
-    .article-body { font-size: 16px; line-height: 1.75; }
+    .article-body { font-size: 16px; line-height: 1.75; overflow-wrap: break-word; word-break: break-word; }
     .article-body figcaption { text-align: center; }
-    .article-body h2 { font-size: 1.5rem; font-weight: 700; color: #0f172a; margin-top: 2rem; margin-bottom: 0.75rem; line-height: 1.3; }
-    .article-body h3 { font-size: 1.25rem; font-weight: 600; color: #1e293b; margin-top: 1.5rem; margin-bottom: 0.5rem; line-height: 1.4; }
+    .article-body h2 { font-size: 1.25rem; font-weight: 700; color: #0f172a; margin-top: 1.5rem; margin-bottom: 0.75rem; line-height: 1.3; }
+    .article-body h3 { font-size: 1.125rem; font-weight: 600; color: #1e293b; margin-top: 1.25rem; margin-bottom: 0.5rem; line-height: 1.4; }
     .article-body a { color: #001061; text-decoration: underline; text-underline-offset: 2px; }
     .article-body a:hover { color: #b8860b; }
+    .article-body img { max-width: 100%; height: auto; border-radius: 4px; }
+    .article-body table { display: block; overflow-x: auto; max-width: 100%; }
+    .article-body iframe { max-width: 100%; }
+    .article-body pre { overflow-x: auto; max-width: 100%; }
+    @media (min-width: 640px) {
+        .article-body h2 { font-size: 1.5rem; margin-top: 2rem; }
+        .article-body h3 { font-size: 1.25rem; margin-top: 1.5rem; }
+    }
 </style>
 <article class="article-body rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-8 prose prose-slate max-w-none">
     <h1 class="text-2xl md:text-3xl font-bold text-slate-900 mb-4">{{ $article->title }}</h1>
@@ -47,7 +55,7 @@ if ($article->thumbnail_path) {
     @endif
 
     @if ($article->content)
-        <div class="not-prose mb-6 rounded-sm border border-blue-200 bg-blue-50 p-4 text-sm text-blue-900">
+        <div class="not-prose mb-6 rounded-sm border border-blue-200 bg-blue-50 p-4 text-sm text-blue-900 break-words">
             {{ Str::words(trim(preg_replace('/\s+/', ' ', strip_tags(preg_replace('/<nav[^>]*>.*?<\/nav>/s', '', $article->content)))), 100, '...') }}
         </div>
     @endif

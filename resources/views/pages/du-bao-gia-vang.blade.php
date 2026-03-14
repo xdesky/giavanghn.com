@@ -76,19 +76,19 @@
     <div class="grid gap-5 sm:grid-cols-3">
         <div class="rounded-sm border border-[#b8860b] bg-[#fffbe6] p-4 text-center">
             <p class="text-xs font-semibold text-[#b8860b] uppercase">SJC bán ra</p>
-            <p class="mt-1 text-2xl font-bold text-[#b8860b]">{{ number_format($sjcSell, 2) }}</p>
+            <p class="mt-1 text-lg sm:text-2xl font-bold text-[#b8860b]">{{ number_format($sjcSell, 2) }}</p>
             <p class="text-xs text-slate-500">triệu/lượng</p>
             <p class="mt-1 text-sm {{ str_contains($sjcChange, '+') ? 'text-emerald-600' : (str_contains($sjcChange, '-') ? 'text-rose-600' : 'text-slate-500') }}">{{ $sjcChange }}</p>
         </div>
         <div class="rounded-sm border border-blue-300 bg-blue-50 p-4 text-center">
             <p class="text-xs font-semibold text-blue-700 uppercase">XAU/USD</p>
-            <p class="mt-1 text-2xl font-bold text-blue-800">{{ number_format($xauSpot, 2) }}</p>
+            <p class="mt-1 text-lg sm:text-2xl font-bold text-blue-800">{{ number_format($xauSpot, 2) }}</p>
             <p class="text-xs text-slate-500">USD/oz</p>
             <p class="mt-1 text-sm {{ str_contains($xauChange, '+') ? 'text-emerald-600' : (str_contains($xauChange, '-') ? 'text-rose-600' : 'text-slate-500') }}">{{ $xauChange }}</p>
         </div>
         <div class="rounded-sm border border-slate-300 bg-slate-50 p-4 text-center">
             <p class="text-xs font-semibold text-slate-600 uppercase">XAU quy đổi VND</p>
-            <p class="mt-1 text-2xl font-bold text-slate-800">{{ number_format($xauQuyDoi, 2) }}</p>
+            <p class="mt-1 text-lg sm:text-2xl font-bold text-slate-800">{{ number_format($xauQuyDoi, 2) }}</p>
             <p class="text-xs text-slate-500">triệu/lượng</p>
             @if($sjcSell > 0)
                 <p class="mt-1 text-sm text-[#b8860b]">Premium: {{ number_format(($sjcSell - $xauQuyDoi), 2) }} tr</p>
@@ -176,7 +176,7 @@
         <button data-p="1y" class="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-all border bg-white text-slate-600 border-slate-300 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700">1 năm</button>
     </div>
 
-    <div id="forecast-chart" class="w-full" style="height:380px">
+    <div id="forecast-chart" class="w-full" class="h-[280px] sm:h-[380px]">
         <div style="display:grid;height:100%;place-items:center" class="text-sm text-slate-400">Đang tải biểu đồ…</div>
     </div>
 

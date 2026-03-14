@@ -77,12 +77,12 @@
         <span class="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-sm font-semibold text-emerald-700"><i class="block h-2 w-2 rounded-full bg-emerald-500"></i> Trực tuyến</span>
         <span class="text-sm text-slate-500">{{ $now }}</span>
     </div>
-    <h2 class="text-2xl font-bold text-[#001061] mb-4">So sánh giá vàng SJC và Bảo Tín Minh Châu hôm nay</h2>
+    <h2 class="text-lg sm:text-2xl font-bold text-[#001061] mb-4">So sánh giá vàng SJC và Bảo Tín Minh Châu hôm nay</h2>
 
     <div class="grid gap-5 sm:grid-cols-2 mb-4">
         <div class="rounded-sm border-2 border-amber-300 bg-white p-4 text-center">
             <p class="text-sm font-semibold text-amber-700 mb-1">SJC (bán ra)</p>
-            <p class="text-3xl font-bold text-amber-900 tabular-nums">{{ number_format($sjcSell * 1e6, 0, ',', '.') }}</p>
+            <p class="text-xl sm:text-3xl font-bold text-amber-900 tabular-nums">{{ number_format($sjcSell * 1e6, 0, ',', '.') }}</p>
             <p class="text-xs text-slate-500 mb-1">VNĐ/Lượng</p>
             <div class="flex items-center justify-center gap-3 text-xs">
                 <span class="text-slate-500">Mua: {{ number_format($sjcBuy * 1e6, 0, ',', '.') }}</span>
@@ -91,7 +91,7 @@
         </div>
         <div class="rounded-sm border-2 border-red-300 bg-white p-4 text-center">
             <p class="text-sm font-semibold text-red-700 mb-1">{{ $otherName }} (bán ra)</p>
-            <p class="text-3xl font-bold text-red-900 tabular-nums">{{ number_format($otherSell * 1e6, 0, ',', '.') }}</p>
+            <p class="text-xl sm:text-3xl font-bold text-red-900 tabular-nums">{{ number_format($otherSell * 1e6, 0, ',', '.') }}</p>
             <p class="text-xs text-slate-500 mb-1">VNĐ/Lượng</p>
             <div class="flex items-center justify-center gap-3 text-xs">
                 <span class="text-slate-500">Mua: {{ number_format($otherBuy * 1e6, 0, ',', '.') }}</span>
@@ -162,7 +162,7 @@
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-slate-900 mb-2">Biểu đồ giá vàng SJC vs {{ $otherName }} (7 ngày)</h2>
     <p class="text-xs text-slate-500 mb-3">So sánh diễn biến giá bán ra giữa SJC và {{ $otherName }} trong 7 ngày gần nhất</p>
-    <div id="brandCompareChart" class="w-full" style="height:360px">
+    <div id="brandCompareChart" class="w-full" class="h-[260px] sm:h-[360px]">
         <div class="flex items-center justify-center h-full text-slate-400">
             <svg class="animate-spin h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
             Đang tải biểu đồ...

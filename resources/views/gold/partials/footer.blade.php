@@ -2,7 +2,7 @@
     {{-- Top accent bar --}}
     <div class="h-1 bg-gradient-to-r from-[#b8860b] via-[#d4a843] to-[#b8860b]"></div>
 
-    <div class="container-site px-6 pb-8 pt-10">
+    <div class="container-site px-4 sm:px-6 pb-6 sm:pb-8 pt-8 sm:pt-10">
         {{-- Brand + columns --}}
         <div class="grid gap-8 md:grid-cols-2 xl:grid-cols-6">
             {{-- Brand --}}

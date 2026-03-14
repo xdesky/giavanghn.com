@@ -14,7 +14,7 @@
         <div>
             <p class="text-sm font-semibold text-blue-800">{{ $usCard['title'] }}</p>
             @if ($uv)
-                <p class="mt-2 text-3xl font-bold text-blue-900">{{ number_format($uv['price'], 2) }} <small class="text-base font-normal text-blue-700">{{ $uv['unit'] ?? 'USD/oz' }}</small></p>
+                <p class="mt-2 text-xl sm:text-3xl font-bold text-blue-900">{{ number_format($uv['price'], 2) }} <small class="text-base font-normal text-blue-700">{{ $uv['unit'] ?? 'USD/oz' }}</small></p>
                 <p class="mt-2 text-sm font-bold {{ str_starts_with($uv['dayChangeLabel'] ?? '', '-') ? 'text-rose-600' : 'text-emerald-600' }}">{{ $uv['dayChangeLabel'] ?? '' }}</p>
             @endif
         </div>

@@ -77,11 +77,11 @@
             @if (!empty($a['image_url']))
                 <a href="{{ $a['url'] }}"@if($isExternal) target="_blank" rel="noopener"@endif class="shrink-0">
                     <img src="{{ $a['image_url'] }}" alt="{{ $a['title'] }}" loading="lazy"
-                         class="w-[120px] h-[80px] rounded object-cover transition-shadow group-hover:shadow-md" itemprop="image">
+                         class="w-20 h-14 sm:w-[120px] sm:h-[80px] rounded object-cover transition-shadow group-hover:shadow-md" itemprop="image">
                 </a>
             @else
                 <a href="{{ $a['url'] ?? '#' }}"@if($isExternal) target="_blank" rel="noopener"@endif class="shrink-0">
-                    <div class="w-[120px] h-[80px] rounded bg-gradient-to-br from-[#001061]/5 to-[#001061]/10 grid place-items-center">
+                    <div class="w-20 h-14 sm:w-[120px] sm:h-[80px] rounded bg-gradient-to-br from-[#001061]/5 to-[#001061]/10 grid place-items-center">
                         <i data-lucide="file-text" class="h-6 w-6 text-[#001061]/25"></i>
                     </div>
                 </a>
