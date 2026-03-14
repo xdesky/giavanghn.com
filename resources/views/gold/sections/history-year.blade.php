@@ -115,7 +115,7 @@
     <div class="overflow-x-auto rounded-sm border border-slate-200">
         <table class="w-full text-sm" itemscope itemtype="https://schema.org/Table">
             <caption class="sr-only" itemprop="about">Bảng giá vàng SJC Open/High/Low/Close theo tháng năm {{ $thisYear }}</caption>
-            <thead class="bg-slate-50">
+            <thead class="bg-[#f5f5f5]">
                 <tr>
                     <th class="p-3 text-left font-semibold text-slate-700">Tháng</th>
                     <th class="p-3 text-right font-semibold text-slate-700">Mở cửa</th>

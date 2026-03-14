@@ -27,9 +27,9 @@
     </div>
 
     <div id="chartStats" class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4" style="display:none;">
-        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Cao nhất</p><p id="statHigh" class="mt-1 text-lg font-bold text-slate-900">—</p></div>
-        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Thấp nhất</p><p id="statLow" class="mt-1 text-lg font-bold text-slate-900">—</p></div>
-        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Trung bình</p><p id="statAvg" class="mt-1 text-lg font-bold text-slate-900">—</p></div>
+        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Cao nhất</p><p id="statHigh" class="mt-1 text-lg font-bold text-[#001061]">—</p></div>
+        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Thấp nhất</p><p id="statLow" class="mt-1 text-lg font-bold text-[#001061]">—</p></div>
+        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Trung bình</p><p id="statAvg" class="mt-1 text-lg font-bold text-[#001061]">—</p></div>
         <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Thay đổi</p><p id="statChange" class="mt-1 text-lg font-bold text-emerald-600">—</p></div>
     </div>
 </div>

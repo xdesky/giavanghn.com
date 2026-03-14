@@ -24,7 +24,7 @@
 
 {{-- Main chart --}}
 <div class="mt-5 rounded-2xl border border-slate-200 bg-white p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-3">Biểu đồ {{ $item['name'] }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-3">Biểu đồ {{ $item['name'] }}</h2>
     {{-- Period buttons --}}
     <div class="flex flex-wrap gap-2 mb-4">
         @foreach (['7d' => '7 ngày', '1m' => '1 tháng', '3m' => '3 tháng', '6m' => '6 tháng', '1y' => '1 năm'] as $pKey => $pLabel)
@@ -70,7 +70,7 @@
 {{-- Price table + high/low --}}
 @if (!empty($item['chartDates']))
 <div class="mt-5 rounded-2xl border border-slate-200 bg-white p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-3">Lịch sử giá {{ $symbolKey }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-3">Lịch sử giá {{ $symbolKey }}</h2>
     <div class="overflow-x-auto max-h-80">
         <table class="w-full text-sm">
             <thead class="sticky top-0 bg-white">
@@ -98,7 +98,7 @@
 
 {{-- Other symbols nav --}}
 <div class="mt-5 rounded-2xl border border-slate-200 bg-white p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-3">Các mã khác</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-3">Các mã khác</h2>
     <div class="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
         @foreach ($allSymbols as $sym => $sl)
         @if ($sym !== $symbolKey)

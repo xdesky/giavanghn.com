@@ -1,11 +1,11 @@
 <div class="glass-card p-4 md:p-6">
     <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-bold text-slate-900">Tong hop bang gia vang hom nay</h2>
+        <h2 class="text-lg font-bold text-[#001061]">Tong hop bang gia vang hom nay</h2>
         <span class="chip">Cap nhat: 10:30</span>
     </div>
-    <div class="table-wrap rounded-sm border border-slate-200">
+    <div class="table-wrap rounded-sm border border-[#bcbcbc]">
         <table class="w-full text-sm">
-            <thead class="bg-slate-50">
+            <thead class="bg-[#f5f5f5]">
                 <tr>
                     <th class="p-3 text-left font-semibold">Thuong hieu</th>
                     <th class="p-3 text-right font-semibold">Mua vao (VND/luong)</th>

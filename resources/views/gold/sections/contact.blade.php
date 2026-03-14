@@ -1,5 +1,5 @@
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">Lien he voi chung toi</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Lien he voi chung toi</h2>
     <div class="grid gap-3 sm:grid-cols-2 mb-4">
         <div class="rounded-sm border border-slate-200 p-4">
             <h3 class="font-bold text-sm">Email</h3>

@@ -4,7 +4,7 @@
 <div class="rounded-sm border border-[#bcbcbc] bg-white">
     <div class="flex items-center gap-2 border-b border-slate-200 px-4 py-3">
         <i data-lucide="flame" class="h-4 w-4 text-[#ffc300]"></i>
-        <h3 class="text-[15px] font-bold text-[#001061]">Tin mới nhất</h3>
+        <h3 class="text-lg font-bold text-[#001061]">Tin mới nhất</h3>
     </div>
     @if (count($sidebarNews) > 0)
         <div class="divide-y divide-slate-100">

@@ -50,7 +50,7 @@ w("$base/gold/page-shell.blade.php", <<<'BLADE'
     <main class="container-main py-6">
         <section class="glass-card p-4 md:p-6">
             <p class="text-xs uppercase tracking-wide text-slate-500">@yield('page-label', 'Trang chuyen muc')</p>
-            <h1 class="mt-2 text-3xl fontbold text-slate-900">{{ $title }}</h1>
+            <h1 class="mt-2 text-2xl font-bold text-[#001061] md:text-3xl">{{ $title }}</h1>
             <p class="mt-3 text-sm text-slate-600">{{ $description }}</p>
             <nav class="mt-4 flex flex-wrap items-center gap-2 text-sm text-slate-500">
                 <a href="{{ route('home') }}" class="text-blue-600 hover:underline">Trang chu</a>
@@ -71,7 +71,7 @@ w("$base/gold/page-shell.blade.php", <<<'BLADE'
                 @yield('page-sidebar')
                 @if (!empty($children))
                 <div class="glass-card p-4">
-                    <h3 class="text-lg font-bold text-slate-900">Chuyen muc con</h3>
+                    <h3 class="text-lg font-bold text-[#001061]">Chuyen muc con</h3>
                     <div class="mt-3 grid gap-2">
                         @foreach ($children as $child)
                         <a href="/{{ $child['path'] }}"
@@ -115,20 +115,20 @@ w("$sec/today-price.blade.php", <<<'BLADE'
     <div class="grid gap-3 sm:grid-cols-2">
         <div class="rounded-sm border border-amber-200 bg-linear-to-br from-amber-50 to-yellow-50 p-4">
             <p class="text-sm font-medium text-amber-800">Vàng SJC 1 Lượng</p>
-            <p class="mt-1 text-3xl fontbold text-amber-900">92,500,000 <small class="text-base font-normal text-amber-700">VND</small></p>
+            <p class="mt-1 text-3xl font-bold text-amber-900">92,500,000 <small class="text-base font-normal text-amber-700">VND</small></p>
             <div class="mt-2 flex gap-4 text-sm"><span>Mua: <strong>91,500,000</strong></span><span>Bán: <strong>92,500,000</strong></span></div>
             <p class="mt-1 text-sm font-bold text-emerald-600">▲ 500,000 (0.54%)</p>
         </div>
         <div class="rounded-sm border border-blue-200 bg-linear-to-br from-blue-50 to-indigo-50 p-4">
             <p class="text-sm font-medium text-blue-800">XAU/USD</p>
-            <p class="mt-1 text-3xl fontbold text-blue-900">2,918.45 <small class="text-base font-normal text-blue-700">USD/oz</small></p>
+            <p class="mt-1 text-3xl font-bold text-blue-900">2,918.45 <small class="text-base font-normal text-blue-700">USD/oz</small></p>
             <div class="mt-2 flex gap-4 text-sm"><span>Mở cửa: <strong>2,906.15</strong></span><span>Cao: <strong>2,925.30</strong></span></div>
             <p class="mt-1 text-sm font-bold text-emerald-600">▲ 12.30 (0.42%)</p>
         </div>
     </div>
-    <div class="mt-4 table-wrap rounded-sm border border-slate-200">
+    <div class="mt-4 table-wrap rounded-sm border border-[#bcbcbc]">
         <table class="w-full text-sm">
-            <thead class="bg-slate-50"><tr><th class="p-3 text-left font-semibold">Thuong hieu</th><th class="p-3 text-right font-semibold">Mua vao</th><th class="p-3 text-right font-semibold">Ban ra</th><th class="p-3 text-right font-semibold">Thay doi</th></tr></thead>
+            <thead class="bg-[#f5f5f5]"><tr><th class="p-3 text-left font-semibold">Thuong hieu</th><th class="p-3 text-right font-semibold">Mua vao</th><th class="p-3 text-right font-semibold">Ban ra</th><th class="p-3 text-right font-semibold">Thay doi</th></tr></thead>
             <tbody class="divide-y divide-slate-100">
                 <tr><td class="p-3 font-medium">SJC 1L</td><td class="p-3 text-right">91,500,000</td><td class="p-3 text-right">92,500,000</td><td class="p-3 text-right font-semibold text-emerald-600">+500,000</td></tr>
                 <tr><td class="p-3 font-medium">DOJI 1L</td><td class="p-3 text-right">91,400,000</td><td class="p-3 text-right">92,400,000</td><td class="p-3 text-right font-semibold text-emerald-600">+400,000</td></tr>
@@ -155,7 +155,7 @@ w("$sec/world-price.blade.php", <<<'BLADE'
     </div>
     <div class="rounded-sm border border-blue-200 bg-linear-to-br from-blue-50 to-indigo-50 p-5">
         <p class="text-sm font-medium text-blue-800">XAU/USD – Gia vang the gioi</p>
-        <p class="mt-1 text-4xl fontbold text-blue-900">2,918.45 <small class="text-lg font-normal text-blue-700">USD/oz</small></p>
+        <p class="mt-1 text-3xl font-bold text-blue-900">2,918.45 <small class="text-lg font-normal text-blue-700">USD/oz</small></p>
         <p class="mt-2 text-sm font-bold text-emerald-600">▲ 12.30 (0.42%) so voi phien truoc</p>
     </div>
     <div class="mt-4 grid gap-3 sm:grid-cols-3">
@@ -206,12 +206,12 @@ BLADE);
 w("$sec/price-table.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
     <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-bold text-slate-900">Tong hop bang gia vang hom nay</h2>
+        <h2 class="text-lg font-bold text-[#001061]">Tong hop bang gia vang hom nay</h2>
         <span class="chip">Cap nhat: 10:30</span>
     </div>
-    <div class="table-wrap rounded-sm border border-slate-200">
+    <div class="table-wrap rounded-sm border border-[#bcbcbc]">
         <table class="w-full text-sm">
-            <thead class="bg-slate-50">
+            <thead class="bg-[#f5f5f5]">
                 <tr>
                     <th class="p-3 text-left font-semibold">Thuong hieu</th>
                     <th class="p-3 text-right font-semibold">Mua vao (VND/luong)</th>
@@ -238,12 +238,12 @@ BLADE);
 w("$sec/price-brand.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
     <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-bold text-slate-900">Bang gia {{ $brandName }} hom nay</h2>
+        <h2 class="text-lg font-bold text-[#001061]">Bang gia {{ $brandName }} hom nay</h2>
         <span class="chip">Cap nhat: 10:30</span>
     </div>
-    <div class="table-wrap rounded-sm border border-slate-200">
+    <div class="table-wrap rounded-sm border border-[#bcbcbc]">
         <table class="w-full text-sm">
-            <thead class="bg-slate-50">
+            <thead class="bg-[#f5f5f5]">
                 <tr><th class="p-3 text-left font-semibold">Loai vang</th><th class="p-3 text-right font-semibold">Mua vao</th><th class="p-3 text-right font-semibold">Ban ra</th><th class="p-3 text-right font-semibold">Thay doi</th></tr>
             </thead>
             <tbody class="divide-y divide-slate-100">
@@ -271,7 +271,7 @@ BLADE);
 w("$sec/chart.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
     <div class="flex items-center justify-between mb-4">
-        <h2 class="text-xl font-bold text-slate-900">Bieu do gia vang {{ $periodLabel }}</h2>
+        <h2 class="text-lg font-bold text-[#001061]">Bieu do gia vang {{ $periodLabel }}</h2>
         <div class="flex gap-1">
             <a href="/bieu-do-gia-vang/bieu-do-gia-vang-hom-nay" class="chip {{ $period === 'today' ? 'positive' : '' }}">Hom nay</a>
             <a href="/bieu-do-gia-vang/bieu-do-gia-vang-7-ngay" class="chip {{ $period === '7d' ? 'positive' : '' }}">7 ngay</a>
@@ -288,9 +288,9 @@ w("$sec/chart.blade.php", <<<'BLADE'
         </svg>
     </div>
     <div class="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
-        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Cao nhat</p><p class="mt-1 text-lg font-bold text-slate-900">92,800,000</p></div>
-        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Thap nhat</p><p class="mt-1 text-lg font-bold text-slate-900">90,200,000</p></div>
-        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Trung binh</p><p class="mt-1 text-lg font-bold text-slate-900">91,500,000</p></div>
+        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Cao nhat</p><p class="mt-1 text-lg font-bold text-[#001061]">92,800,000</p></div>
+        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Thap nhat</p><p class="mt-1 text-lg font-bold text-[#001061]">90,200,000</p></div>
+        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Trung binh</p><p class="mt-1 text-lg font-bold text-[#001061]">91,500,000</p></div>
         <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Thay doi</p><p class="mt-1 text-lg font-bold text-emerald-600">+2.8%</p></div>
     </div>
 </div>
@@ -299,27 +299,27 @@ BLADE);
 // --- comparison ---
 w("$sec/comparison.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">So sanh {{ $leftName }} va {{ $rightName }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">So sanh {{ $leftName }} va {{ $rightName }}</h2>
     <div class="grid gap-3 sm:grid-cols-2 mb-4">
         <div class="rounded-sm border-2 border-blue-200 bg-blue-50 p-4 text-center">
             <p class="text-sm font-medium text-blue-700">{{ $leftName }}</p>
-            <p class="mt-2 text-3xl fontbold text-blue-900">{{ $leftPrice }}</p>
+            <p class="mt-2 text-3xl font-bold text-blue-900">{{ $leftPrice }}</p>
             <p class="mt-1 text-sm font-bold text-emerald-600">{{ $leftChange }}</p>
         </div>
         <div class="rounded-sm border-2 border-indigo-200 bg-indigo-50 p-4 text-center">
             <p class="text-sm font-medium text-indigo-700">{{ $rightName }}</p>
-            <p class="mt-2 text-3xl fontbold text-indigo-900">{{ $rightPrice }}</p>
+            <p class="mt-2 text-3xl font-bold text-indigo-900">{{ $rightPrice }}</p>
             <p class="mt-1 text-sm font-bold text-emerald-600">{{ $rightChange }}</p>
         </div>
     </div>
     <div class="rounded-sm border border-amber-200 bg-amber-50 p-4 mb-4">
         <p class="text-sm font-semibold text-amber-900">Chenh lech hien tai</p>
-        <p class="mt-1 text-2xl fontbold text-amber-800">{{ $spread }}</p>
+        <p class="mt-1 text-2xl font-bold text-amber-800">{{ $spread }}</p>
         <p class="mt-1 text-xs text-amber-700">{{ $spreadNote }}</p>
     </div>
-    <div class="table-wrap rounded-sm border border-slate-200">
+    <div class="table-wrap rounded-sm border border-[#bcbcbc]">
         <table class="w-full text-sm">
-            <thead class="bg-slate-50"><tr><th class="p-3 text-left font-semibold">Chi tieu</th><th class="p-3 text-right font-semibold">{{ $leftName }}</th><th class="p-3 text-right font-semibold">{{ $rightName }}</th></tr></thead>
+            <thead class="bg-[#f5f5f5]"><tr><th class="p-3 text-left font-semibold">Chi tieu</th><th class="p-3 text-right font-semibold">{{ $leftName }}</th><th class="p-3 text-right font-semibold">{{ $rightName }}</th></tr></thead>
             <tbody class="divide-y divide-slate-100">
                 <tr><td class="p-3">Gia hien tai</td><td class="p-3 text-right font-medium">{{ $leftPrice }}</td><td class="p-3 text-right font-medium">{{ $rightPrice }}</td></tr>
                 <tr><td class="p-3">Tang/Giam 24h</td><td class="p-3 text-right">{{ $leftChange }}</td><td class="p-3 text-right">{{ $rightChange }}</td></tr>
@@ -334,21 +334,21 @@ BLADE);
 // --- forecast ---
 w("$sec/forecast.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">Du bao gia vang {{ $periodLabel }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Du bao gia vang {{ $periodLabel }}</h2>
     <div class="grid gap-3 sm:grid-cols-3 mb-4">
         <div class="rounded-sm border-2 border-emerald-200 bg-emerald-50 p-4 text-center">
             <p class="text-xs font-semibold text-emerald-700 uppercase">Kich ban tich cuc</p>
-            <p class="mt-2 text-2xl fontbold text-emerald-800">{{ $bullPrice }}</p>
+            <p class="mt-2 text-2xl font-bold text-emerald-800">{{ $bullPrice }}</p>
             <p class="mt-1 text-sm text-emerald-600">{{ $bullChange }}</p>
         </div>
         <div class="rounded-sm border-2 border-blue-200 bg-blue-50 p-4 text-center">
             <p class="text-xs font-semibold text-blue-700 uppercase">Kich ban co so</p>
-            <p class="mt-2 text-2xl fontbold text-blue-800">{{ $basePrice }}</p>
+            <p class="mt-2 text-2xl font-bold text-blue-800">{{ $basePrice }}</p>
             <p class="mt-1 text-sm text-blue-600">{{ $baseChange }}</p>
         </div>
         <div class="rounded-sm border-2 border-rose-200 bg-rose-50 p-4 text-center">
             <p class="text-xs font-semibold text-rose-700 uppercase">Kich ban tieu cuc</p>
-            <p class="mt-2 text-2xl fontbold text-rose-800">{{ $bearPrice }}</p>
+            <p class="mt-2 text-2xl font-bold text-rose-800">{{ $bearPrice }}</p>
             <p class="mt-1 text-sm text-rose-600">{{ $bearChange }}</p>
         </div>
     </div>
@@ -372,7 +372,7 @@ BLADE);
 // --- news-list ---
 w("$sec/news-list.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">{{ $categoryLabel }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">{{ $categoryLabel }}</h2>
     <div class="flex flex-wrap gap-2 mb-4">
         <a href="/tin-tuc-gia-vang" class="chip {{ $category === 'all' ? 'positive' : '' }}">Tat ca</a>
         <a href="/tin-tuc-gia-vang/tin-thi-truong-vang" class="chip {{ $category === 'market' ? 'positive' : '' }}">Thi truong vang</a>
@@ -398,16 +398,16 @@ BLADE);
 // --- history ---
 w("$sec/history.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">Lich su gia vang {{ $yearLabel }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Lich su gia vang {{ $yearLabel }}</h2>
     <div class="flex flex-wrap gap-2 mb-4">
         <a href="/lich-su-gia-vang/gia-vang-2026" class="chip {{ $year === '2026' ? 'positive' : '' }}">2026</a>
         <a href="/lich-su-gia-vang/gia-vang-2025" class="chip {{ $year === '2025' ? 'positive' : '' }}">2025</a>
         <a href="/lich-su-gia-vang/gia-vang-2024" class="chip {{ $year === '2024' ? 'positive' : '' }}">2024</a>
         <a href="/lich-su-gia-vang/gia-vang-2023" class="chip {{ $year === '2023' ? 'positive' : '' }}">2023</a>
     </div>
-    <div class="table-wrap rounded-sm border border-slate-200">
+    <div class="table-wrap rounded-sm border border-[#bcbcbc]">
         <table class="w-full text-sm">
-            <thead class="bg-slate-50">
+            <thead class="bg-[#f5f5f5]">
                 <tr><th class="p-3 text-left font-semibold">Thang</th><th class="p-3 text-right font-semibold">Mo cua</th><th class="p-3 text-right font-semibold">Cao nhat</th><th class="p-3 text-right font-semibold">Thap nhat</th><th class="p-3 text-right font-semibold">Dong cua</th><th class="p-3 text-right font-semibold">Thay doi</th></tr>
             </thead>
             <tbody class="divide-y divide-slate-100">
@@ -434,7 +434,7 @@ BLADE);
 // --- tool ---
 w("$sec/tool.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">{{ $toolTitle }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">{{ $toolTitle }}</h2>
     <p class="text-sm text-slate-600 mb-4">{{ $toolDesc }}</p>
     <div class="rounded-sm border border-[#bcbcbc] bg-slate-50 p-4">
         <div class="grid gap-3">
@@ -458,7 +458,7 @@ w("$sec/tool.blade.php", <<<'BLADE'
     </div>
     <div class="mt-4 rounded-sm border-2 border-dashed border-blue-200 bg-blue-50/50 p-4 text-center">
         <p class="text-sm text-blue-700 font-medium">Ket qua se hien thi tai day</p>
-        <p class="mt-1 text-3xl fontbold text-blue-900">—</p>
+        <p class="mt-1 text-3xl font-bold text-blue-900">—</p>
     </div>
     @if (!empty($instructions))
     <div class="mt-4 rounded-sm border border-slate-200 p-4">
@@ -476,10 +476,10 @@ BLADE);
 // --- market ---
 w("$sec/market.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">{{ $marketLabel }}</h2>
-    <div class="table-wrap rounded-sm border border-slate-200">
+    <h2 class="text-lg font-bold text-[#001061] mb-4">{{ $marketLabel }}</h2>
+    <div class="table-wrap rounded-sm border border-[#bcbcbc]">
         <table class="w-full text-sm">
-            <thead class="bg-slate-50">
+            <thead class="bg-[#f5f5f5]">
                 <tr>
                     @foreach ($columns as $col)
                     <th class="p-3 {{ $loop->first ? 'text-left' : 'text-right' }} font-semibold">{{ $col }}</th>
@@ -508,7 +508,7 @@ BLADE);
 // --- knowledge ---
 w("$sec/knowledge.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6 article-body">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">{{ $articleTitle }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">{{ $articleTitle }}</h2>
 
     @if (!empty($toc))
     <nav class="mb-4 rounded-sm border border-[#bcbcbc] bg-blue-50 p-4">
@@ -523,7 +523,7 @@ w("$sec/knowledge.blade.php", <<<'BLADE'
 
     @foreach ($sections as $sec)
     <div class="mb-4">
-        <h3 class="text-lg font-bold text-slate-900 mb-2">{{ $sec['heading'] }}</h3>
+        <h3 class="text-lg font-bold text-[#001061] mb-2">{{ $sec['heading'] }}</h3>
         <div class="text-sm leading-7 text-slate-700">{!! $sec['body'] !!}</div>
     </div>
     @endforeach
@@ -538,7 +538,7 @@ BLADE);
 // --- api-doc ---
 w("$sec/api-doc.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">{{ $apiTitle }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">{{ $apiTitle }}</h2>
     <p class="text-sm text-slate-600 mb-4">{{ $apiDesc }}</p>
 
     @foreach ($endpoints as $ep)
@@ -554,7 +554,7 @@ w("$sec/api-doc.blade.php", <<<'BLADE'
                 <p class="text-xs font-semibold text-slate-500 uppercase mb-2">Tham so</p>
                 <div class="table-wrap rounded border border-slate-200">
                     <table class="w-full text-sm">
-                        <thead class="bg-slate-50"><tr><th class="p-2 text-left font-semibold text-xs">Ten</th><th class="p-2 text-left font-semibold text-xs">Kieu</th><th class="p-2 text-left font-semibold text-xs">Mo ta</th></tr></thead>
+                        <thead class="bg-[#f5f5f5]"><tr><th class="p-2 text-left font-semibold text-xs">Ten</th><th class="p-2 text-left font-semibold text-xs">Kieu</th><th class="p-2 text-left font-semibold text-xs">Mo ta</th></tr></thead>
                         <tbody class="divide-y divide-slate-100">
                             @foreach ($ep['params'] as $p)
                             <tr><td class="p-2"><code class="text-xs">{{ $p['name'] }}</code></td><td class="p-2 text-xs text-slate-500">{{ $p['type'] }}</td><td class="p-2 text-xs text-slate-600">{{ $p['desc'] }}</td></tr>
@@ -579,13 +579,13 @@ BLADE);
 // --- about ---
 w("$sec/about.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6 article-body">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">Ve GoldPrice</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Ve GoldPrice</h2>
     <div class="text-sm leading-7 text-slate-700 space-y-4">
         <p><strong>GoldPrice</strong> la nen tang cap nhat gia vang truc tuyen hang dau tai Viet Nam, cung cap thong tin gia vang SJC, DOJI, PNJ va the gioi (XAU/USD) theo thoi gian thuc.</p>
         <p>Chung toi tong hop du lieu tu cac thuong hieu vang chinh hang, san giao dich quoc te va nguon tin tai chinh uy tin de mang den cho nguoi dung goc nhin toan dien ve thi truong vang.</p>
-        <h3 class="text-lg font-bold text-slate-900 mt-6!">Su menh</h3>
+        <h3 class="text-lg font-bold text-[#001061] mt-6!">Su menh</h3>
         <p>Giup nguoi dung Viet Nam tiep can thong tin gia vang chinh xac, nhanh chong va mien phi, ho tro dua ra quyet dinh dau tu sang suot.</p>
-        <h3 class="text-lg font-bold text-slate-900 mt-6!">Tinh nang noi bat</h3>
+        <h3 class="text-lg font-bold text-[#001061] mt-6!">Tinh nang noi bat</h3>
         <ul class="list-disc list-inside space-y-1">
             <li>Cap nhat gia vang trong nuoc va quoc te theo thoi gian thuc</li>
             <li>Bieu do phan tich xu huong da khung thoi gian</li>
@@ -594,7 +594,7 @@ w("$sec/about.blade.php", <<<'BLADE'
             <li>Tin tuc va phan tich chuyen sau ve thi truong vang</li>
             <li>API du lieu cho nha phat trien</li>
         </ul>
-        <h3 class="text-lg font-bold text-slate-900 mt-6!">Lien he hop tac</h3>
+        <h3 class="text-lg font-bold text-[#001061] mt-6!">Lien he hop tac</h3>
         <p>Email: <a href="mailto:contact@goldprice.vn" class="text-blue-600 hover:underline">contact@goldprice.vn</a></p>
     </div>
 </div>
@@ -603,7 +603,7 @@ BLADE);
 // --- contact ---
 w("$sec/contact.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">Lien he voi chung toi</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Lien he voi chung toi</h2>
     <div class="grid gap-3 sm:grid-cols-2 mb-4">
         <div class="rounded-sm border border-slate-200 p-4">
             <h3 class="font-bold text-sm">Email</h3>
@@ -645,22 +645,22 @@ BLADE);
 // --- privacy ---
 w("$sec/privacy.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6 article-body">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">Chinh sach bao mat</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Chinh sach bao mat</h2>
     <p class="text-xs text-slate-400 mb-4">Cap nhat lan cuoi: 01/03/2026</p>
     <div class="text-sm leading-7 text-slate-700 space-y-4">
-        <h3 class="text-lg font-bold text-slate-900">1. Thu thap thong tin</h3>
+        <h3 class="text-lg font-bold text-[#001061]">1. Thu thap thong tin</h3>
         <p>Chung toi thu thap thong tin ca nhan khi ban dang ky nhan ban tin, su dung API hoac gui form lien he. Thong tin bao gom: ho ten, email va noi dung tin nhan.</p>
-        <h3 class="text-lg font-bold text-slate-900">2. Muc dich su dung</h3>
+        <h3 class="text-lg font-bold text-[#001061]">2. Muc dich su dung</h3>
         <ul class="list-disc list-inside space-y-1">
             <li>Gui thong bao cap nhat gia vang theo dang ky</li>
             <li>Xu ly yeu cau ho tro va phan hoi</li>
             <li>Cai thien chat luong dich vu va trai nghiem nguoi dung</li>
         </ul>
-        <h3 class="text-lg font-bold text-slate-900">3. Bao ve thong tin</h3>
+        <h3 class="text-lg font-bold text-[#001061]">3. Bao ve thong tin</h3>
         <p>Du lieu nguoi dung duoc ma hoa va luu tru an toan. Chung toi khong chia se thong tin ca nhan voi ben thu ba ngoai muc dich da neu.</p>
-        <h3 class="text-lg font-bold text-slate-900">4. Cookie</h3>
+        <h3 class="text-lg font-bold text-[#001061]">4. Cookie</h3>
         <p>Website su dung cookie de tang trai nghiem duyet web. Ban co the tat cookie trong trinh duyet nhung mot so tinh nang co the bi anh huong.</p>
-        <h3 class="text-lg font-bold text-slate-900">5. Lien he</h3>
+        <h3 class="text-lg font-bold text-[#001061]">5. Lien he</h3>
         <p>Moi thac mac ve chinh sach bao mat, vui long gui email toi <a href="mailto:privacy@goldprice.vn" class="text-blue-600 hover:underline">privacy@goldprice.vn</a>.</p>
     </div>
 </div>
@@ -669,18 +669,18 @@ BLADE);
 // --- terms ---
 w("$sec/terms.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6 article-body">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">Dieu khoan su dung</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Dieu khoan su dung</h2>
     <p class="text-xs text-slate-400 mb-4">Cap nhat lan cuoi: 01/03/2026</p>
     <div class="text-sm leading-7 text-slate-700 space-y-4">
-        <h3 class="text-lg font-bold text-slate-900">1. Chap nhan dieu khoan</h3>
+        <h3 class="text-lg font-bold text-[#001061]">1. Chap nhan dieu khoan</h3>
         <p>Khi truy cap va su dung GoldPrice, ban dong y tuan thu cac dieu khoan duoi day. Neu khong dong y, vui long ngung su dung dich vu.</p>
-        <h3 class="text-lg font-bold text-slate-900">2. Noi dung va du lieu</h3>
+        <h3 class="text-lg font-bold text-[#001061]">2. Noi dung va du lieu</h3>
         <p>Gia vang va thong tin tren website mang tinh tham khao, khong phai loi khuyen dau tu. Chung toi khong chiu trach nhiem ve quyet dinh dau tu cua ban dua tren du lieu tren website.</p>
-        <h3 class="text-lg font-bold text-slate-900">3. Tai khoan va API</h3>
+        <h3 class="text-lg font-bold text-[#001061]">3. Tai khoan va API</h3>
         <p>Khi su dung API, ban cam ket khong su dung qua muc hoac cho muc dich gay hai. Chung toi co quyen gioi han hoac dong tai khoan vi pham.</p>
-        <h3 class="text-lg font-bold text-slate-900">4. Quyen so huu tri tue</h3>
+        <h3 class="text-lg font-bold text-[#001061]">4. Quyen so huu tri tue</h3>
         <p>Toan bo noi dung, thiet ke va ma nguon thuoc quyen so huu cua GoldPrice. Nghiem cam sao chep hoac phan phoi ma khong duoc phep.</p>
-        <h3 class="text-lg font-bold text-slate-900">5. Thay doi dieu khoan</h3>
+        <h3 class="text-lg font-bold text-[#001061]">5. Thay doi dieu khoan</h3>
         <p>Chung toi co quyen thay doi dieu khoan bat ky luc nao. Nguoi dung se duoc thong bao qua email hoac thong bao tren website.</p>
     </div>
 </div>
@@ -689,9 +689,9 @@ BLADE);
 // --- sidebar-price ---
 w("$sec/sidebar-price.blade.php", <<<'BLADE'
 <div class="glass-card p-4">
-    <h3 class="text-lg font-bold text-slate-900 mb-3">Gia vang the gioi</h3>
+    <h3 class="text-lg font-bold text-[#001061] mb-3">Gia vang the gioi</h3>
     <div class="rounded-sm border border-[#bcbcbc] bg-blue-50 p-3 text-center">
-        <p class="text-2xl fontbold text-blue-900">2,918.45</p>
+        <p class="text-2xl font-bold text-blue-900">2,918.45</p>
         <p class="text-xs text-blue-700">USD/oz &nbsp; <span class="text-emerald-600 font-semibold">+12.30</span></p>
     </div>
     <div class="mt-3 grid gap-2 text-sm">
@@ -705,7 +705,7 @@ BLADE);
 // --- sidebar-tools ---
 w("$sec/sidebar-tools.blade.php", <<<'BLADE'
 <div class="glass-card p-4">
-    <h3 class="text-lg font-bold text-slate-900 mb-3">Cong cu noi bat</h3>
+    <h3 class="text-lg font-bold text-[#001061] mb-3">Cong cu noi bat</h3>
     <div class="grid gap-2">
         <a href="/cong-cu/quy-doi-vang" class="block rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">⚖️ Quy doi vang</a>
         <a href="/cong-cu/tinh-gia-vang" class="block rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">🧮 Tinh gia vang</a>
@@ -717,7 +717,7 @@ BLADE);
 // --- sidebar-news ---
 w("$sec/sidebar-news.blade.php", <<<'BLADE'
 <div class="glass-card p-4">
-    <h3 class="text-lg font-bold text-slate-900 mb-3">Tin moi nhat</h3>
+    <h3 class="text-lg font-bold text-[#001061] mb-3">Tin moi nhat</h3>
     <div class="grid gap-2 text-sm">
         <a href="/tin-tuc-gia-vang/tin-thi-truong-vang" class="block text-blue-700 hover:underline">Gia vang phuc hoi manh nho Fed giu nguyen lai suat</a>
         <a href="/tin-tuc-gia-vang/tin-tai-chinh" class="block text-blue-700 hover:underline">USD suy yeu, vang the gioi vuot dinh cu</a>
@@ -800,7 +800,7 @@ foreach ($periods as $slug => $info) {
 // ---- so-sanh-gia-vang ----
 $pages['so-sanh-gia-vang'] = pg(<<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">So sanh gia vang</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">So sanh gia vang</h2>
     <div class="grid gap-3">
         <a href="/so-sanh-gia-vang/sjc-vs-the-gioi" class="flex items-center justify-between rounded-sm border border-slate-200 p-4 hover:bg-slate-50">
             <div><strong class="text-blue-900">SJC</strong> <span class="text-slate-400">vs</span> <strong class="text-indigo-900">The gioi</strong></div>
@@ -985,7 +985,7 @@ foreach ($historyYears as $slug => $info) {
 // ---- cong-cu ----
 $pages['cong-cu'] = pg(<<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">Bo cong cu gia vang</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Bo cong cu gia vang</h2>
     <div class="grid gap-3 sm:grid-cols-2">
         <a href="/cong-cu/quy-doi-vang" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
             <p class="text-2xl mb-2">⚖️</p>
@@ -1092,7 +1092,7 @@ foreach ($tools as $slug => $t) {
 // ---- thi-truong ----
 $pages['thi-truong'] = pg(<<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">Tong quan thi truong</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Tong quan thi truong</h2>
     <div class="grid gap-3 sm:grid-cols-2">
         <a href="/thi-truong/gia-xang" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
             <p class="text-2xl mb-2">⛽</p>
@@ -1185,7 +1185,7 @@ foreach ($markets as $slug => $m) {
 // ---- kien-thuc-vang ----
 $pages['kien-thuc-vang'] = pg(<<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">Kien thuc ve vang</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Kien thuc ve vang</h2>
     <div class="grid gap-3">
         <a href="/kien-thuc-vang/vang-9999-la-gi" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
             <h3 class="font-bold text-slate-900">Vang 9999 la gi?</h3>
@@ -1287,7 +1287,7 @@ foreach ($articles as $slug => $art) {
 // ---- api ----
 $pages['api'] = pg(<<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">GoldPrice API</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">GoldPrice API</h2>
     <p class="text-sm text-slate-600 mb-4">Truy cap du lieu gia vang theo thoi gian thuc thong qua REST API. Phu hop cho ung dung tai chinh, bot giao dich va bao dien tu.</p>
     <div class="grid gap-3 sm:grid-cols-2">
         <a href="/api/api-gia-vang" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">

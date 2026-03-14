@@ -1,5 +1,5 @@
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">{{ $toolTitle }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">{{ $toolTitle }}</h2>
     <p class="text-sm text-slate-600 mb-4">{{ $toolDesc }}</p>
     <div class="rounded-sm border border-[#bcbcbc] bg-slate-50 p-4">
         <div class="grid gap-3">
@@ -23,7 +23,7 @@
     </div>
     <div class="mt-4 rounded-sm border-2 border-dashed border-blue-200 bg-blue-50/50 p-4 text-center">
         <p class="text-sm text-blue-700 font-medium">Ket qua se hien thi tai day</p>
-        <p class="mt-1 text-3xl fontbold text-blue-900">—</p>
+        <p class="mt-1 text-3xl font-bold text-blue-900">—</p>
     </div>
     @if (!empty($instructions))
     <div class="mt-4 rounded-sm border border-slate-200 p-4">

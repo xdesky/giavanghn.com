@@ -31,10 +31,10 @@
 @endphp
 
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
-    <h2 class="text-xl font-bold text-slate-900 mb-4">{{ $label }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">{{ $label }}</h2>
     <div class="overflow-x-auto rounded-sm border border-slate-200">
         <table class="w-full text-sm">
-            <thead class="bg-slate-50">
+            <thead class="bg-[#f5f5f5]">
                 <tr>
                     @foreach ($dynamicColumns as $col)
                         <th class="p-3 {{ $loop->first ? 'text-left' : 'text-right' }} font-semibold">{{ $col }}</th>

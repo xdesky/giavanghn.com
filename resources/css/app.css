@@ -81,7 +81,7 @@
 .glass-card {
     background: #fff;
     border: 1px solid #bcbcbc;
-    border-radius: 0.25rem;
+    border-radius: 0.125rem;
 }
 
 /* Table wrap */
@@ -96,8 +96,27 @@
 }
 
 /* Article body */
-.article-body h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #0f172a; }
-.article-body h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #0f172a; }
+.article-body h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.75rem; color: #001061; }
+.article-body h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; color: #001061; }
+
+/* Primary button */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.125rem;
+    background: #001061;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.btn-primary:hover {
+    background: #001061e6;
+}
 .article-body p  { margin-bottom: 0.75rem; line-height: 1.7; color: #475569; }
 .article-body ul { padding-left: 1.25rem; margin-bottom: 0.75rem; }
 .article-body li { margin-bottom: 0.25rem; line-height: 1.6; color: #475569; }

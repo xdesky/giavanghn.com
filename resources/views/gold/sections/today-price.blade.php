@@ -95,7 +95,7 @@
 <div class="rounded-sm border {{ $aoColor }} p-4">
     <div class="flex items-center gap-2 mb-2">
         <i data-lucide="bot" class="h-5 w-5 text-[#001061]"></i>
-        <h3 class="font-bold text-slate-900">Nhận định thị trường</h3>
+        <h3 class="font-bold text-[#001061]">Nhận định thị trường</h3>
         <span class="ml-auto inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-xs font-bold {{ $aoColor }}">
             <i data-lucide="{{ $aoIcon }}" class="h-3 w-3"></i> {{ $ao['label'] ?? ucfirst($aoBias) }}
         </span>
