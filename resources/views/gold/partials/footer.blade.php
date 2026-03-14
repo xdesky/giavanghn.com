@@ -8,7 +8,7 @@
             {{-- Brand --}}
             <div class="xl:col-span-2">
                 <a href="/" class="inline-flex items-center gap-2 no-underline">
-                    <img src="/images/logo.svg" alt="giavanghn.com" class="h-9">
+                    <img src="/images/logo.svg" alt="giavanghn.com" class="h-9" width="144" height="36">
                 </a>
                 <p class="mt-3 text-sm leading-relaxed text-slate-300">GiaVangHN là website cập nhật giá vàng SJC, giá vàng DOJI, giá vàng PNJ, giá vàng Phú Quý, Bảo Tín Minh Châu, giá vàng Thế Giới nhanh và chính xác số 1 tại Việt Nam.</p>
                 {{-- Social icons --}}
@@ -30,7 +30,7 @@
 
             {{-- Giá vàng trong nước --}}
             <div>
-                <h5 class="mb-3 text-sm font-bold uppercase tracking-wider text-[#d4a843]">Giá vàng trong nước</h5>
+                <h4 class="mb-3 text-sm font-bold uppercase tracking-wider text-[#d4a843]">Giá vàng trong nước</h4>
                 <ul class="grid list-none gap-2 p-0 text-sm">
                     <li><a href="/gia-vang-hom-nay" class="text-slate-300 no-underline transition hover:text-[#d4a843]">Giá vàng hôm nay</a></li>
                     <li><a href="/gia-vang-hom-nay/gia-vang-sjc" class="text-slate-300 no-underline transition hover:text-[#d4a843]">Giá vàng SJC</a></li>
@@ -43,7 +43,7 @@
 
             {{-- Giá vàng thế giới --}}
             <div>
-                <h5 class="mb-3 text-sm font-bold uppercase tracking-wider text-[#d4a843]">Giá vàng thế giới</h5>
+                <h4 class="mb-3 text-sm font-bold uppercase tracking-wider text-[#d4a843]">Giá vàng thế giới</h4>
                 <ul class="grid list-none gap-2 p-0 text-sm">
                     <li><a href="/gia-vang-the-gioi" class="text-slate-300 no-underline transition hover:text-[#d4a843]">Giá vàng thế giới</a></li>
                     <li><a href="/gia-vang-the-gioi/xau-usd" class="text-slate-300 no-underline transition hover:text-[#d4a843]">Giá vàng XAU/USD</a></li>
@@ -56,7 +56,7 @@
 
             {{-- Tin tức & Phân tích --}}
             <div>
-                <h5 class="mb-3 text-sm font-bold uppercase tracking-wider text-[#d4a843]">Tin tức & Phân tích</h5>
+                <h4 class="mb-3 text-sm font-bold uppercase tracking-wider text-[#d4a843]">Tin tức & Phân tích</h4>
                 <ul class="grid list-none gap-2 p-0 text-sm">
                     <li><a href="/tin-tuc-gia-vang" class="text-slate-300 no-underline transition hover:text-[#d4a843]">Tin tức giá vàng</a></li>
                     <li><a href="/tin-tuc-gia-vang/trong-nuoc" class="text-slate-300 no-underline transition hover:text-[#d4a843]">Tin giá vàng trong nước</a></li>
@@ -68,7 +68,7 @@
 
             {{-- Về chúng tôi --}}
             <div>
-                <h5 class="mb-3 text-sm font-bold uppercase tracking-wider text-[#d4a843]">Về chúng tôi</h5>
+                <h4 class="mb-3 text-sm font-bold uppercase tracking-wider text-[#d4a843]">Về chúng tôi</h4>
                 <ul class="grid list-none gap-2 p-0 text-sm">
                     <li><a href="/gioi-thieu" class="text-slate-300 no-underline transition hover:text-[#d4a843]">Giới thiệu</a></li>
                     <li><a href="/lien-he" class="text-slate-300 no-underline transition hover:text-[#d4a843]">Liên hệ</a></li>

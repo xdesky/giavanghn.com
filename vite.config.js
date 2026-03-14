@@ -10,6 +10,15 @@ export default defineConfig({
         }),
         tailwindcss(),
     ],
+    build: {
+        target: 'es2020',
+        cssMinify: 'lightningcss',
+        rollupOptions: {
+            output: {
+                manualChunks: undefined,
+            },
+        },
+    },
     server: {
         watch: {
             ignored: ['**/storage/framework/views/**'],

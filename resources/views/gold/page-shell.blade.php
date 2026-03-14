@@ -24,15 +24,16 @@
     <meta name="twitter:description" content="{{ $description }}">
     <meta name="twitter:image" content="{{ url('/images/og-gold-price.jpg') }}">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/images/logo.svg" as="image" type="image/svg+xml">
 
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script>
+    (function(){var d=false;function l(){if(d)return;d=true;
+    ['https://cdn.amcharts.com/lib/5/index.js','https://cdn.amcharts.com/lib/5/xy.js','https://cdn.amcharts.com/lib/5/themes/Animated.js'].forEach(function(u){var s=document.createElement('script');s.src=u;s.async=false;document.head.appendChild(s)});
+    }if('requestIdleCallback' in window){requestIdleCallback(l)}else{setTimeout(l,1500)}
+    ['scroll','touchstart','mouseover','keydown'].forEach(function(e){document.addEventListener(e,l,{once:true,passive:true})})})();
+    </script>
+    <script src="https://unpkg.com/lucide@0.477.0" defer></script>
 
     @stack('head')
 </head>

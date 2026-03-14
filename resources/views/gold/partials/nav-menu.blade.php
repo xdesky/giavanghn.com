@@ -34,9 +34,9 @@
     <div class="ml-auto flex items-center gap-2">
         @auth
             <div class="group relative">
-                <button class="flex items-center gap-1.5 px-3 py-3 text-sm font-medium text-white no-underline transition hover:text-[#ffc300]">
+                <button class="flex items-center gap-1.5 px-3 py-3 text-sm font-medium text-white no-underline transition hover:text-[#ffc300]" aria-label="Tài khoản">
                     @if(Auth::user()->avatar)
-                        <img src="{{ Auth::user()->avatar }}" alt="" class="h-8 w-8 rounded-full object-cover ring-2 ring-white/30">
+                        <img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->name }}" class="h-8 w-8 rounded-full object-cover ring-2 ring-white/30" width="32" height="32">
                     @else
                         <span class="grid h-8 w-8 place-items-center rounded-full bg-[#ffc300] text-sm font-bold text-slate-900 ring-2 ring-white/30">{{ mb_substr(Auth::user()->name, 0, 1) }}</span>
                     @endif

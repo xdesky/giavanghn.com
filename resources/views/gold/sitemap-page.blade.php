@@ -21,12 +21,10 @@
     <meta name="twitter:title" content="{{ $page['title'] }} - GoldPrice">
     <meta name="twitter:description" content="{{ $page['description'] }}">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/images/logo.svg" as="image" type="image/svg+xml">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://unpkg.com/lucide@0.477.0" defer></script>
 
     {{-- BreadcrumbList Schema --}}
     <script type="application/ld+json">

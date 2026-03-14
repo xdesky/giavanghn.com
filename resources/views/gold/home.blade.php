@@ -21,15 +21,16 @@
     <meta name="twitter:title" content="Giá vàng hôm nay - Cập nhật giá vàng SJC, 9999, PNJ mới nhất | giavanghn.com">
     <meta name="twitter:description" content="Giá vàng hôm nay cập nhật liên tục: vàng SJC, vàng 9999, PNJ, DOJI và giá vàng thế giới. Xem biểu đồ giá vàng realtime, phân tích xu hướng và dự báo thị trường vàng mới nhất.">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preload" href="/images/logo.svg" as="image" type="image/svg+xml">
 
-    <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
-    <script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script>
+    (function(){var d=false;function l(){if(d)return;d=true;
+    ['https://cdn.amcharts.com/lib/5/index.js','https://cdn.amcharts.com/lib/5/xy.js','https://cdn.amcharts.com/lib/5/themes/Animated.js'].forEach(function(u){var s=document.createElement('script');s.src=u;s.async=false;document.head.appendChild(s)});
+    }if('requestIdleCallback' in window){requestIdleCallback(l)}else{setTimeout(l,1500)}
+    ['scroll','touchstart','mouseover','keydown'].forEach(function(e){document.addEventListener(e,l,{once:true,passive:true})})})();
+    </script>
+    <script src="https://unpkg.com/lucide@0.477.0" defer></script>
 
     {{-- Organization + WebSite Schema --}}
     <script type="application/ld+json">
@@ -65,12 +66,12 @@
         <div class="flex flex-wrap items-center justify-between gap-3 px-5 py-4">
             <div class="flex items-center gap-2">
                 <span class="inline-flex items-center gap-2 rounded-full bg-[#ebebeb] px-3 py-1.5 text-sm text-[#333]"><i data-lucide="home" class="h-4 w-4"></i> Giá vàng hôm nay</span>
-                <span class="text-sm text-[#666]">Tổng hợp dữ liệu thị trường, chỉ số kỹ thuật và nhận định bởi chuyên gia trí tuệ nhân tạo</span>
+                <span class="text-sm text-[#555]">Tổng hợp dữ liệu thị trường, chỉ số kỹ thuật và nhận định bởi chuyên gia trí tuệ nhân tạo</span>
             </div>
             <div class="flex flex-wrap items-center gap-3">
                 <span class="inline-flex items-center gap-2 text-xs"><i class="block h-2.5 w-2.5 rounded-full bg-[#168307] animate-pulse"></i><span class="text-[#168307]">Dữ liệu real-time</span></span>
-                <span class="inline-flex items-center gap-2 text-xs text-[#666]"><i data-lucide="clock" class="h-3 w-3"></i> <span id="liveClock">--:--:--</span></span>
-                <span class="inline-flex items-center gap-2 text-xs text-[#666]"><i data-lucide="refresh-cw" class="h-3 w-3"></i> Cập nhật: <span id="updatedAtText">{{ $updatedAt }}</span></span>
+                <span class="inline-flex items-center gap-2 text-xs text-[#555]"><i data-lucide="clock" class="h-3 w-3"></i> <span id="liveClock">--:--:--</span></span>
+                <span class="inline-flex items-center gap-2 text-xs text-[#555]"><i data-lucide="refresh-cw" class="h-3 w-3"></i> Cập nhật: <span id="updatedAtText">{{ $updatedAt }}</span></span>
                 <button id="openSubscribeBtn" class="cursor-pointer rounded-full bg-[#00a63e] px-3 py-1.5 text-sm font-semibold text-white transition hover:brightness-110 inline-flex items-center gap-2"><i data-lucide="bell" class="h-5 w-5"></i> Đăng ký nhận thông tin</button>
             </div>
         </div>
@@ -83,6 +84,7 @@
                 <div class="flex flex-col gap-3 md:flex-row md:items-center md:justify-between" id="historyLookup">
                     <h1 class="m-0 text-xl font-bold text-[#001061] md:text-2xl">Giá vàng hôm nay</h1>
                     <div class="flex items-center gap-2">
+                        <label for="historyDatePicker" class="sr-only">Chọn ngày xem giá</label>
                         <div class="inline-flex items-center rounded-sm border border-[#666] pl-3 pr-2 py-2">
                             <input type="date" id="historyDatePicker" class="border-none bg-transparent text-sm text-[#333] focus:outline-none" value="{{ now()->format('Y-m-d') }}" min="2026-01-02" max="{{ now()->format('Y-m-d') }}">
                         </div>
@@ -105,7 +107,7 @@
                             <div class="flex flex-col gap-3">
                                 <h2 class="m-0 text-xl font-bold text-[#333]">{{ $snapshot['sjcCard']['title'] }}</h2>
                                 <label>
-                                    <select id="sjcVariantSelect" class="rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
+                                    <select id="sjcVariantSelect" aria-label="Chọn loại vàng SJC" class="rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
                                         @foreach ($snapshot['sjcCard']['variants'] as $key => $variant)
                                             <option value="{{ $key }}" @selected($snapshot['sjcCard']['selected'] === $key)>{{ $variant['label'] }}</option>
                                         @endforeach
@@ -123,7 +125,7 @@
                             </div>
                             <div class="flex flex-1 flex-col items-end justify-center">
                                 <svg id="sjcHeroMiniChart" class="h-20 w-full" viewBox="0 0 200 80" preserveAspectRatio="none"></svg>
-                                <span class="mt-1 text-xs text-[#666]" id="sjcHeroPointsText"></span>
+                                <span class="mt-1 text-xs text-[#555]" id="sjcHeroPointsText"></span>
                             </div>
                         </div>
                         <a href="/gia-vang-hom-nay/gia-vang-sjc" class="mt-4 flex items-center justify-end gap-2">
@@ -138,7 +140,7 @@
                             <div class="flex flex-col gap-3">
                                 <h2 class="m-0 text-xl font-bold text-[#333]">{{ $snapshot['usCard']['title'] }}</h2>
                                 <label>
-                                    <select id="usVariantSelect" class="rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
+                                    <select id="usVariantSelect" aria-label="Chọn loại vàng thế giới" class="rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
                                         @foreach ($snapshot['usCard']['variants'] as $key => $variant)
                                             <option value="{{ $key }}" @selected($snapshot['usCard']['selected'] === $key)>{{ $variant['label'] }}</option>
                                         @endforeach
@@ -155,7 +157,7 @@
                             </div>
                             <div class="flex flex-1 flex-col items-end justify-center">
                                 <svg id="usHeroMiniChart" class="h-20 w-full" viewBox="0 0 200 80" preserveAspectRatio="none"></svg>
-                                <span class="mt-1 text-xs text-[#666]" id="usHeroPointsText"></span>
+                                <span class="mt-1 text-xs text-[#555]" id="usHeroPointsText"></span>
                             </div>
                         </div>
                         <a href="/gia-vang-the-gioi/xau-usd" class="mt-4 flex items-center justify-end gap-2">
@@ -222,9 +224,9 @@
         <section class="grid gap-5 px-5 pb-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6" id="statsGrid">
             @foreach ($snapshot['statCards'] as $card)
                 <article class="rounded-sm border border-[#bcbcbc] bg-white p-4 shadow-lg">
-                    <h3 class="m-0 text-xs font-medium text-[#666] uppercase tracking-wide">{{ $card['title'] }}</h3>
+                    <h3 class="m-0 text-xs font-medium text-[#555] uppercase tracking-wide">{{ $card['title'] }}</h3>
                     <p class="mt-2 text-2xl font-bold">{{ $card['value'] }}</p>
-                    <p class="mt-1 text-xs text-[#666]">{{ $card['unit'] }}</p>
+                    <p class="mt-1 text-xs text-[#555]">{{ $card['unit'] }}</p>
                     <p class="mt-2 text-sm font-bold {{ $card['trend'] === 'down' ? 'text-[#e7000b]' : ($card['trend'] === 'up' ? 'text-[#008236]' : 'text-[#666]') }}">{{ $card['delta'] }}</p>
                 </article>
             @endforeach
@@ -346,7 +348,7 @@
                         <article class="flex items-start gap-3 bg-white">
                             @if (!empty($news['image_url']))
                                 <a href="{{ $news['url'] ?? '#' }}"@if($isExternal) target="_blank" rel="noopener"@endif class="shrink-0">
-                                    <img src="{{ $news['image_url'] }}" alt="" class="shrink-0 w-16 h-16 rounded-sm object-cover">
+                                    <img src="{{ $news['image_url'] }}" alt="{{ $news['title'] }}" class="shrink-0 w-16 h-16 rounded-sm object-cover" width="64" height="64" loading="lazy">
                                 </a>
                             @else
                                 <div class="shrink-0 w-16 h-16 rounded-sm bg-linear-to-br from-slate-100 to-slate-200 grid place-items-center text-xl">{{ $emoji }}</div>
@@ -359,7 +361,7 @@
                                         {{ $news['title'] }}
                                     @endif
                                 </h3>
-                                <div class="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-400">
+                                <div class="mt-1 flex flex-wrap items-center gap-2 text-xs text-slate-500">
                                     <span>{{ $news['time'] }}</span>
                                     <span class="rounded-full bg-slate-100 px-2 py-0.5 text-[11px] text-slate-600">{{ $news['tag'] }}</span>
                                     @if (!empty($news['source']))
@@ -409,7 +411,7 @@
                     <div class="relative h-5 rounded-full" style="background: linear-gradient(to right, #22c55e, #84cc16, #eab308, #f97316, #ef4444)">
                         <div class="absolute top-1/2 -translate-x-1/2 -translate-y-1/2 h-7 w-2 rounded-sm bg-white ring-2 ring-slate-600 shadow" style="left: {{ $s['fearGreedIndex'] }}%"></div>
                     </div>
-                    <div class="mt-1.5 flex justify-between text-xs text-[#666]">
+                    <div class="mt-1.5 flex justify-between text-xs text-[#555]">
                         <span>0 - Sợ hãi</span>
                         <span>50</span>
                         <span>100 - Tham lam</span>
@@ -477,12 +479,12 @@
                 {{-- Chú thích cách tính --}}
                 @if(isset($s['scores']))
                 <details class="mt-4 group">
-                    <summary class="flex cursor-pointer items-center gap-1.5 text-xs font-medium text-[#666] hover:text-[#333] transition-colors select-none">
+                    <summary class="flex cursor-pointer items-center gap-1.5 text-xs font-medium text-[#555] hover:text-[#333] transition-colors select-none">
                         <i data-lucide="chevron-right" class="h-3.5 w-3.5 transition-transform group-open:rotate-90"></i>
                         <i data-lucide="info" class="h-3 w-3"></i>
                         Cách tính chỉ số
                     </summary>
-                    <div class="mt-3 space-y-2.5 rounded-sm bg-[#f5f5f5] p-3 text-xs text-[#666]">
+                    <div class="mt-3 space-y-2.5 rounded-sm bg-[#f5f5f5] p-3 text-xs text-[#555]">
                         @php
                             $scores = $s['scores'];
                             $components = [
@@ -548,7 +550,7 @@
                         <div class="rounded-sm border border-[#ebebeb] bg-[#f5f5f5] p-3">
                             <div class="flex items-baseline justify-between">
                                 <strong class="text-sm">{{ $fc['period'] }}</strong>
-                                <span class="text-xs text-[#666]">Độ tin cậy: {{ $fc['confidence'] }}%</span>
+                                <span class="text-xs text-[#555]">Độ tin cậy: {{ $fc['confidence'] }}%</span>
                             </div>
                             <p class="mt-1 text-lg font-bold text-[#001061]">{{ $fc['range'] }}</p>
                             <div class="mt-1 flex items-center gap-2">
@@ -572,7 +574,7 @@
                     <span id="sjcBrandTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['sjcCard']['trendPercent']) }}</span>
                 </div>
                 <label>
-                    <select id="sjcBrandVariantSelect" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
+                    <select id="sjcBrandVariantSelect" aria-label="Chọn loại vàng SJC" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
                         @foreach ($snapshot['sjcCard']['variants'] as $key => $variant)
                             <option value="{{ $key }}" @selected($snapshot['sjcCard']['selected'] === $key)>{{ $variant['label'] }}</option>
                         @endforeach
@@ -583,7 +585,7 @@
                 <p class="mt-1 text-sm text-[#666]" id="sjcBrandBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="sjcBrandDayChangeText"></p>
                 <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
-                    <div class="mb-2 flex justify-between text-xs text-[#666]">
+                    <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="sjcBrandPointsText"></span>
                     </div>
@@ -598,7 +600,7 @@
                     <span id="btmcTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['btmcCard']['trendPercent']) }}</span>
                 </div>
                 <label>
-                    <select id="btmcVariantSelect" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
+                    <select id="btmcVariantSelect" aria-label="Chọn loại vàng Bảo Tín Minh Châu" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
                         @foreach ($snapshot['btmcCard']['variants'] as $key => $variant)
                             <option value="{{ $key }}" @selected($snapshot['btmcCard']['selected'] === $key)>{{ $variant['label'] }}</option>
                         @endforeach
@@ -609,7 +611,7 @@
                 <p class="mt-1 text-sm text-[#666]" id="btmcBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="btmcDayChangeText"></p>
                 <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
-                    <div class="mb-2 flex justify-between text-xs text-[#666]">
+                    <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="btmcPointsText"></span>
                     </div>
@@ -624,7 +626,7 @@
                     <span id="pnjTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['pnjCard']['trendPercent']) }}</span>
                 </div>
                 <label>
-                    <select id="pnjVariantSelect" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
+                    <select id="pnjVariantSelect" aria-label="Chọn loại vàng PNJ" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
                         @foreach ($snapshot['pnjCard']['variants'] as $key => $variant)
                             <option value="{{ $key }}" @selected($snapshot['pnjCard']['selected'] === $key)>{{ $variant['label'] }}</option>
                         @endforeach
@@ -635,7 +637,7 @@
                 <p class="mt-1 text-sm text-[#666]" id="pnjBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="pnjDayChangeText"></p>
                 <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
-                    <div class="mb-2 flex justify-between text-xs text-[#666]">
+                    <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="pnjPointsText"></span>
                     </div>
@@ -651,7 +653,7 @@
                     <span id="dojiTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['dojiCard']['trendPercent']) }}</span>
                 </div>
                 <label>
-                    <select id="dojiVariantSelect" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
+                    <select id="dojiVariantSelect" aria-label="Chọn loại vàng DOJI" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
                         @foreach ($snapshot['dojiCard']['variants'] as $key => $variant)
                             <option value="{{ $key }}" @selected($snapshot['dojiCard']['selected'] === $key)>{{ $variant['label'] }}</option>
                         @endforeach
@@ -662,7 +664,7 @@
                 <p class="mt-1 text-sm text-[#666]" id="dojiBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="dojiDayChangeText"></p>
                 <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
-                    <div class="mb-2 flex justify-between text-xs text-[#666]">
+                    <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="dojiPointsText"></span>
                     </div>
@@ -678,7 +680,7 @@
                     <span id="phuquyTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['phuquyCard']['trendPercent']) }}</span>
                 </div>
                 <label>
-                    <select id="phuquyVariantSelect" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
+                    <select id="phuquyVariantSelect" aria-label="Chọn loại vàng Phú Quý" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
                         @foreach ($snapshot['phuquyCard']['variants'] as $key => $variant)
                             <option value="{{ $key }}" @selected($snapshot['phuquyCard']['selected'] === $key)>{{ $variant['label'] }}</option>
                         @endforeach
@@ -689,7 +691,7 @@
                 <p class="mt-1 text-sm text-[#666]" id="phuquyBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="phuquyDayChangeText"></p>
                 <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
-                    <div class="mb-2 flex justify-between text-xs text-[#666]">
+                    <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="phuquyPointsText"></span>
                     </div>
@@ -705,7 +707,7 @@
                     <span id="mihongTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['mihongCard']['trendPercent']) }}</span>
                 </div>
                 <label>
-                    <select id="mihongVariantSelect" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
+                    <select id="mihongVariantSelect" aria-label="Chọn loại vàng Mi Hồng" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
                         @foreach ($snapshot['mihongCard']['variants'] as $key => $variant)
                             <option value="{{ $key }}" @selected($snapshot['mihongCard']['selected'] === $key)>{{ $variant['label'] }}</option>
                         @endforeach
@@ -716,7 +718,7 @@
                 <p class="mt-1 text-sm text-[#666]" id="mihongBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="mihongDayChangeText"></p>
                 <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
-                    <div class="mb-2 flex justify-between text-xs text-[#666]">
+                    <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="mihongPointsText"></span>
                     </div>
@@ -732,7 +734,7 @@
                     <span id="btmhTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['btmhCard']['trendPercent']) }}</span>
                 </div>
                 <label>
-                    <select id="btmhVariantSelect" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
+                    <select id="btmhVariantSelect" aria-label="Chọn loại vàng Bảo Tín Mạnh Hải" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
                         @foreach ($snapshot['btmhCard']['variants'] as $key => $variant)
                             <option value="{{ $key }}" @selected($snapshot['btmhCard']['selected'] === $key)>{{ $variant['label'] }}</option>
                         @endforeach
@@ -743,7 +745,7 @@
                 <p class="mt-1 text-sm text-[#666]" id="btmhBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="btmhDayChangeText"></p>
                 <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
-                    <div class="mb-2 flex justify-between text-xs text-[#666]">
+                    <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="btmhPointsText"></span>
                     </div>
@@ -759,7 +761,7 @@
                     <span id="ngocthamTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-xs font-semibold text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['ngocthamCard']['trendPercent']) }}</span>
                 </div>
                 <label>
-                    <select id="ngocthamVariantSelect" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
+                    <select id="ngocthamVariantSelect" aria-label="Chọn loại vàng Ngọc Thẩm" class="w-full rounded-sm border border-[#666] bg-white px-3 py-2 text-sm text-[#333]">
                         @foreach ($snapshot['ngocthamCard']['variants'] as $key => $variant)
                             <option value="{{ $key }}" @selected($snapshot['ngocthamCard']['selected'] === $key)>{{ $variant['label'] }}</option>
                         @endforeach
@@ -770,7 +772,7 @@
                 <p class="mt-1 text-sm text-[#666]" id="ngocthamBuySellText"></p>
                 <p class="mt-2 font-bold text-[#008236]" id="ngocthamDayChangeText"></p>
                 <div class="mt-3 rounded-sm border border-[#bcbcbc] bg-white/70 p-3">
-                    <div class="mb-2 flex justify-between text-xs text-[#666]">
+                    <div class="mb-2 flex justify-between text-xs text-[#555]">
                         <span>Biến động 7 ngày</span>
                         <span id="ngocthamPointsText"></span>
                     </div>
@@ -816,7 +818,7 @@
                         <div class="flex items-center justify-between rounded-sm border {{ $isSupport ? 'border-[#168307] bg-[#e2ffde]' : 'border-[#e7000b] bg-[#fff5ea]' }} px-4 py-2">
                             <div>
                                 <strong class="block text-sm {{ $isSupport ? 'text-[#168307]' : 'text-[#e7000b]' }}">{{ $level['level'] }}</strong>
-                                <small class="text-xs text-[#666]">{{ $level['type'] }}</small>
+                                <small class="text-xs text-[#555]">{{ $level['type'] }}</small>
                             </div>
                             <span class="text-lg font-bold {{ $isSupport ? 'text-[#168307]' : 'text-[#e7000b]' }}">{{ $level['price'] }}</span>
                         </div>
@@ -839,7 +841,7 @@
                                     <strong class="text-sm">{{ $macro['factor'] }}</strong>
                                     <span class="text-sm font-bold text-[#001061]">{{ $macro['value'] }}</span>
                                 </div>
-                                <p class="mt-1 text-xs text-[#666]">{{ $macro['impact'] }}</p>
+                                <p class="mt-1 text-xs text-[#555]">{{ $macro['impact'] }}</p>
                             </div>
                         </div>
                     @endforeach
@@ -864,7 +866,7 @@
                             <div class="mt-1 h-2 rounded-full bg-[#ebebeb]">
                                 <div class="h-full rounded-full {{ $barColor }}" style="width: {{ $absVal * 100 }}%"></div>
                             </div>
-                            <p class="mt-1 text-xs text-[#666]">{{ $corr['note'] }}</p>
+                            <p class="mt-1 text-xs text-[#555]">{{ $corr['note'] }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -914,7 +916,7 @@
                         <div class="rounded-sm border border-[#ebebeb] bg-[#f5f5f5] p-3">
                             <h4 class="m-0 text-sm font-bold text-[#333]">{{ $cb['bank'] }}</h4>
                             <p class="mt-2 text-lg font-bold {{ $cb['trend'] === 'up' ? 'text-[#008236]' : 'text-[#666]' }}">{{ $cb['action'] }}</p>
-                            <p class="mt-1 text-xs text-[#666]">{{ $cb['period'] }}</p>
+                            <p class="mt-1 text-xs text-[#555]">{{ $cb['period'] }}</p>
                         </div>
                     @endforeach
                 </div>
@@ -926,7 +928,7 @@
             <div class="rounded-sm border border-[#bcbcbc] bg-white p-5" id="bieu-do-30-ngay">
                 <div class="mb-3 flex items-center justify-between gap-3">
                     <h3 class="m-0 flex items-center gap-2 text-lg font-bold"><i data-lucide="chart-line" class="h-5 w-5 text-[#001061]"></i> Biến động giá vàng 30 ngày</h3>
-                    <span class="text-xs text-[#666]">Đơn vị: triệu VNĐ/lượng</span>
+                    <span class="text-xs text-[#555]">Đơn vị: triệu VNĐ/lượng</span>
                 </div>
                 <div class="rounded-sm border border-[#bcbcbc] bg-[#f5f5f5] p-3">
                     <div id="chart24hAmChart" class="h-[400px] w-full"></div>
@@ -943,11 +945,11 @@
                         <div class="flex justify-between gap-3 rounded-sm border border-[#ebebeb] bg-[#f5f5f5] p-2">
                             <div>
                                 <strong class="block text-sm">{{ $row['title'] }}</strong>
-                                <small class="mt-1 block text-xs text-[#666]">{{ $row['subtitle'] }}</small>
+                                <small class="mt-1 block text-xs text-[#555]">{{ $row['subtitle'] }}</small>
                             </div>
                             <div class="text-right">
                                 <strong class="block text-[#001061]">{{ $row['value'] }}</strong>
-                                <small class="mt-1 block text-xs text-[#666]">{{ $row['note'] }}</small>
+                                <small class="mt-1 block text-xs text-[#555]">{{ $row['note'] }}</small>
                             </div>
                         </div>
                     @endforeach
@@ -981,7 +983,7 @@
                         <article class="rounded-sm border border-[#ebebeb] bg-[#f5f5f5] p-3">
                             <span class="inline-flex items-center rounded-full {{ ($item['trend'] ?? 'up') === 'up' ? 'bg-[#e2ffde] text-[#168307]' : (($item['trend'] ?? 'up') === 'down' ? 'bg-[#fff5ea] text-[#e7000b]' : 'bg-[#ebebeb] text-[#666]') }} px-2 py-0.5 text-xs font-semibold">{{ $item['type'] }}</span>
                             <h4 class="mt-2 m-0 text-sm font-bold">{{ $item['name'] }}</h4>
-                            <p class="mt-1 text-xs text-[#666]">{{ $item['price'] }}</p>
+                            <p class="mt-1 text-xs text-[#555]">{{ $item['price'] }}</p>
                             <strong class="text-sm {{ ($item['trend'] ?? 'up') === 'up' ? 'text-[#008236]' : (($item['trend'] ?? 'up') === 'down' ? 'text-[#e7000b]' : 'text-[#666]') }}">{{ $item['extra'] }}</strong>
                         </article>
                     @endforeach
@@ -1009,7 +1011,7 @@
                     @foreach ($snapshot['knowledge'] as $item)
                         <a href="{{ $item['url'] ?? '#' }}" class="block rounded-sm border border-[#ebebeb] bg-[#f5f5f5] p-3 transition hover:bg-[#ebebeb]">
                             <h4 class="m-0 text-sm font-bold">{{ $item['title'] }}</h4>
-                            <p class="mt-1 text-xs text-[#666]">{{ $item['desc'] }}</p>
+                            <p class="mt-1 text-xs text-[#555]">{{ $item['desc'] }}</p>
                         </a>
                     @endforeach
                 </div>
