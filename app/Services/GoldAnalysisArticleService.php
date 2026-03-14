@@ -700,8 +700,8 @@ class GoldAnalysisArticleService
             }
         }
 
-        $title = 'Bang gia vang - ' . $at->format('d/m/Y H:i');
-        $subTitle = $triggerType === 'daily' ? 'Ban tin theo ngay' : 'Cap nhat bien dong gia';
+        $title = 'Bảng giá vàng - ' . $at->format('d/m/Y H:i');
+        $subTitle = $triggerType === 'daily' ? 'Bản tin theo ngày' : 'Cập nhật biến động giá';
 
         if ($fontPath) {
             imagettftext($img, 18, 0, 40, 48, $titleColor, $fontPath, $title);
@@ -721,10 +721,10 @@ class GoldAnalysisArticleService
         imageline($img, $tableX, $tableY + $rowH, $tableX + $tableW, $tableY + $rowH, $line);
 
         if ($fontPath) {
-            imagettftext($img, 13, 0, $tableX + 16, $tableY + 34, $titleColor, $fontPath, 'Thuong hieu');
-            imagettftext($img, 13, 0, $tableX + 430, $tableY + 34, $titleColor, $fontPath, 'Mua vao (VND)');
-            imagettftext($img, 13, 0, $tableX + 670, $tableY + 34, $titleColor, $fontPath, 'Ban ra (VND)');
-            imagettftext($img, 13, 0, $tableX + 905, $tableY + 34, $titleColor, $fontPath, 'Thay doi');
+            imagettftext($img, 13, 0, $tableX + 16, $tableY + 34, $titleColor, $fontPath, 'Thương hiệu');
+            imagettftext($img, 13, 0, $tableX + 430, $tableY + 34, $titleColor, $fontPath, 'Mua vào (VND)');
+            imagettftext($img, 13, 0, $tableX + 670, $tableY + 34, $titleColor, $fontPath, 'Bán ra (VND)');
+            imagettftext($img, 13, 0, $tableX + 905, $tableY + 34, $titleColor, $fontPath, 'Thay đổi');
         } else {
             imagestring($img, 4, $tableX + 16, $tableY + 18, 'Thuong hieu', $titleColor);
             imagestring($img, 4, $tableX + 430, $tableY + 18, 'Mua vao (VND)', $titleColor);
@@ -758,7 +758,7 @@ class GoldAnalysisArticleService
             }
         }
 
-        $footerText = 'GiaVangHN - Cap nhat tu dong ' . $at->format('d/m/Y H:i');
+        $footerText = 'GiaVangHN - Cập nhật tự động ' . $at->format('d/m/Y H:i');
         if ($fontPath) {
             imagettftext($img, 10, 0, 40, 608, $muted, $fontPath, $footerText);
         } else {

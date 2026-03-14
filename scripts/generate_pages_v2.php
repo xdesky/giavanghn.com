@@ -35,7 +35,7 @@ w("$base/gold/page-shell.blade.php", <<<'BLADE'
         <div class="top-nav-inner container-main">
             <a href="{{ route('home') }}" class="brand-link">
                 <span class="brand-logo">G</span>
-                <span><strong>GoldPrice</strong><small>Thong tin gia vang</small></span>
+                <span><strong>GoldPrice</strong><small>Thông tin giá vàng</small></span>
             </a>
             <nav class="nav-menu">
                 <a href="{{ route('home') }}">Dashboard</a>
@@ -49,11 +49,11 @@ w("$base/gold/page-shell.blade.php", <<<'BLADE'
 
     <main class="container-main py-6">
         <section class="glass-card p-4 md:p-6">
-            <p class="text-xs uppercase tracking-wide text-slate-500">@yield('page-label', 'Trang chuyen muc')</p>
+            <p class="text-xs uppercase tracking-wide text-slate-500">@yield('page-label', 'Trang chuyên mục')</p>
             <h1 class="mt-2 text-2xl font-bold text-[#001061] md:text-3xl">{{ $title }}</h1>
             <p class="mt-3 text-sm leading-relaxed text-slate-600">{{ $description }}</p>
             <nav class="mt-4 flex flex-wrap items-center gap-2 text-sm text-slate-500">
-                <a href="{{ route('home') }}" class="text-blue-600 hover:underline">Trang chu</a>
+                <a href="{{ route('home') }}" class="text-blue-600 hover:underline">Trang chủ</a>
                 @foreach ($breadcrumbs as $item)
                     <span>/</span>
                     @if ($loop->last)
@@ -71,7 +71,7 @@ w("$base/gold/page-shell.blade.php", <<<'BLADE'
                 @yield('page-sidebar')
                 @if (!empty($children))
                 <div class="glass-card p-4">
-                    <h3 class="text-lg font-bold text-[#001061]">Chuyen muc con</h3>
+                    <h3 class="text-lg font-bold text-[#001061]">Chuyên mục con</h3>
                     <div class="mt-3 grid gap-2">
                         @foreach ($children as $child)
                         <a href="/{{ $child['path'] }}"
@@ -86,12 +86,12 @@ w("$base/gold/page-shell.blade.php", <<<'BLADE'
 
     <footer class="footer-wrap">
         <div class="container-main footer-bottom">
-            <span>&copy; 2026 GoldPrice. Moi quyen duoc bao luu.</span>
+            <span>&copy; 2026 GoldPrice. Mọi quyền được bảo lưu.</span>
             <div>
-                <a href="/gioi-thieu">Gioi thieu</a>
-                <a href="/lien-he">Lien he</a>
-                <a href="/chinh-sach-bao-mat">Bao mat</a>
-                <a href="/dieu-khoan-su-dung">Dieu khoan</a>
+                <a href="/gioi-thieu">Giới thiệu</a>
+                <a href="/lien-he">Liên hệ</a>
+                <a href="/chinh-sach-bao-mat">Bảo mật</a>
+                <a href="/dieu-khoan-su-dung">Điều khoản</a>
             </div>
         </div>
     </footer>
@@ -109,8 +109,8 @@ $sec = "$base/gold/sections";
 w("$sec/today-price.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
     <div class="flex items-center gap-3 mb-4">
-        <span class="live-badge"><i></i> Truc tuyen</span>
-        <span class="text-sm text-slate-500">Cap nhat lien tuc</span>
+        <span class="live-badge"><i></i> Trực tuyến</span>
+        <span class="text-sm text-slate-500">Cập nhật liên tục</span>
     </div>
     <div class="grid gap-5 sm:grid-cols-2">
         <div class="rounded-sm border border-amber-200 bg-linear-to-br from-amber-50 to-yellow-50 p-4">
@@ -128,20 +128,20 @@ w("$sec/today-price.blade.php", <<<'BLADE'
     </div>
     <div class="mt-4 table-wrap rounded-sm border border-[#bcbcbc]">
         <table class="w-full text-sm">
-            <thead class="bg-[#f5f5f5]"><tr><th class="p-3 text-left font-semibold">Thuong hieu</th><th class="p-3 text-right font-semibold">Mua vao</th><th class="p-3 text-right font-semibold">Ban ra</th><th class="p-3 text-right font-semibold">Thay doi</th></tr></thead>
+            <thead class="bg-[#f5f5f5]"><tr><th class="p-3 text-left font-semibold">Thương hiệu</th><th class="p-3 text-right font-semibold">Mua vào</th><th class="p-3 text-right font-semibold">Bán ra</th><th class="p-3 text-right font-semibold">Thay đổi</th></tr></thead>
             <tbody class="divide-y divide-slate-100">
                 <tr><td class="p-3 font-medium">SJC 1L</td><td class="p-3 text-right">91,500,000</td><td class="p-3 text-right">92,500,000</td><td class="p-3 text-right font-semibold text-emerald-600">+500,000</td></tr>
                 <tr><td class="p-3 font-medium">DOJI 1L</td><td class="p-3 text-right">91,400,000</td><td class="p-3 text-right">92,400,000</td><td class="p-3 text-right font-semibold text-emerald-600">+400,000</td></tr>
                 <tr><td class="p-3 font-medium">PNJ 1L</td><td class="p-3 text-right">91,300,000</td><td class="p-3 text-right">92,300,000</td><td class="p-3 text-right font-semibold text-emerald-600">+300,000</td></tr>
-                <tr><td class="p-3 font-medium">Phu Quy</td><td class="p-3 text-right">91,200,000</td><td class="p-3 text-right">92,200,000</td><td class="p-3 text-right font-semibold text-emerald-600">+200,000</td></tr>
-                <tr><td class="p-3 font-medium">Mi Hong</td><td class="p-3 text-right">91,100,000</td><td class="p-3 text-right">92,100,000</td><td class="p-3 text-right font-semibold text-emerald-600">+100,000</td></tr>
-                <tr><td class="p-3 font-medium">Bao Tin Minh Chau</td><td class="p-3 text-right">91,350,000</td><td class="p-3 text-right">92,350,000</td><td class="p-3 text-right font-semibold text-emerald-600">+350,000</td></tr>
+                <tr><td class="p-3 font-medium">Phú Quý</td><td class="p-3 text-right">91,200,000</td><td class="p-3 text-right">92,200,000</td><td class="p-3 text-right font-semibold text-emerald-600">+200,000</td></tr>
+                <tr><td class="p-3 font-medium">Mỹ Hưng</td><td class="p-3 text-right">91,100,000</td><td class="p-3 text-right">92,100,000</td><td class="p-3 text-right font-semibold text-emerald-600">+100,000</td></tr>
+                <tr><td class="p-3 font-medium">Bảo Tín Minh Châu</td><td class="p-3 text-right">91,350,000</td><td class="p-3 text-right">92,350,000</td><td class="p-3 text-right font-semibold text-emerald-600">+350,000</td></tr>
             </tbody>
         </table>
     </div>
     <div class="mt-4 rounded-sm border border-[#bcbcbc] bg-blue-50 p-4">
-        <h3 class="font-bold text-blue-900">Nhan dinh thi truong</h3>
-        <p class="mt-2 text-sm leading-relaxed text-blue-800">Gia vang trong nuoc tang nhe theo da phuc hoi cua thi truong quoc te. Dong USD suy yeu, lo ngai lam phat va cang thang dia chinh tri la cac yeu to ho tro. Du bao dao dong 91.0 – 93.0 trieu/luong trong phien hom nay.</p>
+        <h3 class="font-bold text-blue-900">Nhận định thị trường</h3>
+        <p class="mt-2 text-sm leading-relaxed text-blue-800">Giá vàng trong nước tăng nhẹ theo đà phục hồi của thị trường quốc tế. Đồng USD suy yếu, lo ngại lạm phát và căng thẳng địa chính trị là các yếu tố hỗ trợ. Dự báo dao động 91.0 – 93.0 triệu/lượng trong phiên hôm nay.</p>
     </div>
 </div>
 BLADE);
@@ -150,13 +150,13 @@ BLADE);
 w("$sec/world-price.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
     <div class="flex items-center gap-3 mb-4">
-        <span class="live-badge"><i></i> Truc tuyen</span>
-        <span class="text-sm text-slate-500">Du lieu tu thi truong quoc te</span>
+        <span class="live-badge"><i></i> Trực tuyến</span>
+        <span class="text-sm text-slate-500">Dữ liệu từ thị trường quốc tế</span>
     </div>
     <div class="rounded-sm border border-blue-200 bg-linear-to-br from-blue-50 to-indigo-50 p-5">
-        <p class="text-sm font-medium text-blue-800">XAU/USD – Gia vang the gioi</p>
+        <p class="text-sm font-medium text-blue-800">XAU/USD – Giá vàng thế giới</p>
         <p class="mt-1 text-3xl font-bold text-blue-900">2,918.45 <small class="text-lg font-normal text-blue-700">USD/oz</small></p>
-        <p class="mt-2 text-sm font-bold text-emerald-600">▲ 12.30 (0.42%) so voi phien truoc</p>
+        <p class="mt-2 text-sm font-bold text-emerald-600">▲ 12.30 (0.42%) so với phiên trước</p>
     </div>
     <div class="mt-4 grid gap-5 sm:grid-cols-3">
         <div class="rounded-sm border border-slate-200 p-3 text-center">
@@ -181,21 +181,21 @@ w("$sec/world-price.blade.php", <<<'BLADE'
     </div>
     <div class="mt-4 grid gap-5 sm:grid-cols-2">
         <div class="rounded-sm border border-slate-200 p-3">
-            <h4 class="font-semibold text-sm">Yeu to anh huong</h4>
+            <h4 class="font-semibold text-sm">Yếu tố ảnh hưởng</h4>
             <ul class="mt-2 space-y-1 text-sm leading-relaxed text-slate-600">
-                <li>• Chi so USD (DXY) giam 0.3%</li>
-                <li>• Loi suat trai phieu My ha</li>
-                <li>• Cang thang dia chinh tri leo thang</li>
-                <li>• Nhu cau tru an toan tang</li>
+                <li>• Chỉ số USD (DXY) giảm 0.3%</li>
+                <li>• Lợi suất trái phiếu Mỹ hạ</li>
+                <li>• Căng thẳng địa chính trị leo thang</li>
+                <li>• Nhu cầu trú ẩn an toàn tăng</li>
             </ul>
         </div>
         <div class="rounded-sm border border-slate-200 p-3">
-            <h4 class="font-semibold text-sm">Phien giao dich</h4>
+            <h4 class="font-semibold text-sm">Phiên giao dịch</h4>
             <ul class="mt-2 space-y-1 text-sm leading-relaxed text-slate-600">
-                <li>Mo cua: <strong>2,906.15</strong></li>
-                <li>Cao nhat: <strong>2,925.30</strong></li>
-                <li>Thap nhat: <strong>2,901.60</strong></li>
-                <li>Khoi luong: <strong>185,420 lots</strong></li>
+                <li>Mở cửa: <strong>2,906.15</strong></li>
+                <li>Cao nhất: <strong>2,925.30</strong></li>
+                <li>Thấp nhất: <strong>2,901.60</strong></li>
+                <li>Khối lượng: <strong>185,420 lots</strong></li>
             </ul>
         </div>
     </div>
@@ -206,31 +206,31 @@ BLADE);
 w("$sec/price-table.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
     <div class="flex items-center justify-between mb-4">
-        <h2 class="text-lg font-bold text-[#001061]">Tong hop bang gia vang hom nay</h2>
-        <span class="chip">Cap nhat: 10:30</span>
+        <h2 class="text-lg font-bold text-[#001061]">Tổng hợp bảng giá vàng hôm nay</h2>
+        <span class="chip">Cập nhật: 10:30</span>
     </div>
     <div class="table-wrap rounded-sm border border-[#bcbcbc]">
         <table class="w-full text-sm">
             <thead class="bg-[#f5f5f5]">
                 <tr>
-                    <th class="p-3 text-left font-semibold">Thuong hieu</th>
-                    <th class="p-3 text-right font-semibold">Mua vao (VND/luong)</th>
-                    <th class="p-3 text-right font-semibold">Ban ra (VND/luong)</th>
-                    <th class="p-3 text-right font-semibold">Chenh lech</th>
-                    <th class="p-3 text-right font-semibold">Thay doi</th>
+                    <th class="p-3 text-left font-semibold">Thương hiệu</th>
+                    <th class="p-3 text-right font-semibold">Mua vào (VND/lượng)</th>
+                    <th class="p-3 text-right font-semibold">Bán ra (VND/lượng)</th>
+                    <th class="p-3 text-right font-semibold">Chênh lệch</th>
+                    <th class="p-3 text-right font-semibold">Thay đổi</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-slate-100">
                 <tr><td class="p-3 font-medium"><a href="/bang-gia-vang/gia-vang-sjc" class="text-blue-700 hover:underline">SJC</a></td><td class="p-3 text-right">91,500,000</td><td class="p-3 text-right">92,500,000</td><td class="p-3 text-right text-slate-500">1,000,000</td><td class="p-3 text-right font-semibold text-emerald-600">+500,000</td></tr>
                 <tr><td class="p-3 font-medium"><a href="/bang-gia-vang/gia-vang-doji" class="text-blue-700 hover:underline">DOJI</a></td><td class="p-3 text-right">91,400,000</td><td class="p-3 text-right">92,400,000</td><td class="p-3 text-right text-slate-500">1,000,000</td><td class="p-3 text-right font-semibold text-emerald-600">+400,000</td></tr>
                 <tr><td class="p-3 font-medium"><a href="/bang-gia-vang/gia-vang-pnj" class="text-blue-700 hover:underline">PNJ</a></td><td class="p-3 text-right">91,300,000</td><td class="p-3 text-right">92,300,000</td><td class="p-3 text-right text-slate-500">1,000,000</td><td class="p-3 text-right font-semibold text-emerald-600">+300,000</td></tr>
-                <tr><td class="p-3 font-medium"><a href="/bang-gia-vang/gia-vang-phu-quy" class="text-blue-700 hover:underline">Phu Quy</a></td><td class="p-3 text-right">91,200,000</td><td class="p-3 text-right">92,200,000</td><td class="p-3 text-right text-slate-500">1,000,000</td><td class="p-3 text-right font-semibold text-emerald-600">+200,000</td></tr>
-                <tr><td class="p-3 font-medium"><a href="/bang-gia-vang/gia-vang-mi-hong" class="text-blue-700 hover:underline">Mi Hong</a></td><td class="p-3 text-right">91,100,000</td><td class="p-3 text-right">92,100,000</td><td class="p-3 text-right text-slate-500">1,000,000</td><td class="p-3 text-right font-semibold text-emerald-600">+100,000</td></tr>
-                <tr><td class="p-3 font-medium"><a href="/bang-gia-vang/gia-vang-bao-tin-minh-chau" class="text-blue-700 hover:underline">Bao Tin Minh Chau</a></td><td class="p-3 text-right">91,350,000</td><td class="p-3 text-right">92,350,000</td><td class="p-3 text-right text-slate-500">1,000,000</td><td class="p-3 text-right font-semibold text-emerald-600">+350,000</td></tr>
+                <tr><td class="p-3 font-medium"><a href="/bang-gia-vang/gia-vang-phu-quy" class="text-blue-700 hover:underline">Phú Quý</a></td><td class="p-3 text-right">91,200,000</td><td class="p-3 text-right">92,200,000</td><td class="p-3 text-right text-slate-500">1,000,000</td><td class="p-3 text-right font-semibold text-emerald-600">+200,000</td></tr>
+                <tr><td class="p-3 font-medium"><a href="/bang-gia-vang/gia-vang-mi-hong" class="text-blue-700 hover:underline">Mỹ Hưng</a></td><td class="p-3 text-right">91,100,000</td><td class="p-3 text-right">92,100,000</td><td class="p-3 text-right text-slate-500">1,000,000</td><td class="p-3 text-right font-semibold text-emerald-600">+100,000</td></tr>
+                <tr><td class="p-3 font-medium"><a href="/bang-gia-vang/gia-vang-bao-tin-minh-chau" class="text-blue-700 hover:underline">Bảo Tín Minh Châu</a></td><td class="p-3 text-right">91,350,000</td><td class="p-3 text-right">92,350,000</td><td class="p-3 text-right text-slate-500">1,000,000</td><td class="p-3 text-right font-semibold text-emerald-600">+350,000</td></tr>
             </tbody>
         </table>
     </div>
-    <p class="mt-3 text-xs text-slate-400">Gia mang tinh tham khao. Du lieu cap nhat tu cac thuong hieu chinh hang.</p>
+    <p class="mt-3 text-xs text-slate-400">Giá mang tính tham khảo. Dữ liệu cập nhật từ các thương hiệu chính hãng.</p>
 </div>
 BLADE);
 
@@ -238,31 +238,31 @@ BLADE);
 w("$sec/price-brand.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
     <div class="flex items-center justify-between mb-4">
-        <h2 class="text-lg font-bold text-[#001061]">Bang gia {{ $brandName }} hom nay</h2>
-        <span class="chip">Cap nhat: 10:30</span>
+        <h2 class="text-lg font-bold text-[#001061]">Bảng giá {{ $brandName }} hôm nay</h2>
+        <span class="chip">Cập nhật: 10:30</span>
     </div>
     <div class="table-wrap rounded-sm border border-[#bcbcbc]">
         <table class="w-full text-sm">
             <thead class="bg-[#f5f5f5]">
-                <tr><th class="p-3 text-left font-semibold">Loai vang</th><th class="p-3 text-right font-semibold">Mua vao</th><th class="p-3 text-right font-semibold">Ban ra</th><th class="p-3 text-right font-semibold">Thay doi</th></tr>
+                <tr><th class="p-3 text-left font-semibold">Loại vàng</th><th class="p-3 text-right font-semibold">Mua vào</th><th class="p-3 text-right font-semibold">Bán ra</th><th class="p-3 text-right font-semibold">Thay đổi</th></tr>
             </thead>
             <tbody class="divide-y divide-slate-100">
-                <tr><td class="p-3 font-medium">Vang mieng 1 luong</td><td class="p-3 text-right">91,500,000</td><td class="p-3 text-right">92,500,000</td><td class="p-3 text-right font-semibold text-emerald-600">+500,000</td></tr>
-                <tr><td class="p-3 font-medium">Vang mieng 5 chi</td><td class="p-3 text-right">91,300,000</td><td class="p-3 text-right">92,300,000</td><td class="p-3 text-right font-semibold text-emerald-600">+300,000</td></tr>
-                <tr><td class="p-3 font-medium">Vang mieng 2 chi</td><td class="p-3 text-right">91,200,000</td><td class="p-3 text-right">92,200,000</td><td class="p-3 text-right font-semibold text-emerald-600">+200,000</td></tr>
-                <tr><td class="p-3 font-medium">Vang mieng 1 chi</td><td class="p-3 text-right">91,100,000</td><td class="p-3 text-right">92,100,000</td><td class="p-3 text-right font-semibold text-emerald-600">+100,000</td></tr>
-                <tr><td class="p-3 font-medium">Nhan tron 9999</td><td class="p-3 text-right">82,500,000</td><td class="p-3 text-right">83,600,000</td><td class="p-3 text-right font-semibold text-emerald-600">+400,000</td></tr>
+                <tr><td class="p-3 font-medium">Vàng miếng 1 lượng</td><td class="p-3 text-right">91,500,000</td><td class="p-3 text-right">92,500,000</td><td class="p-3 text-right font-semibold text-emerald-600">+500,000</td></tr>
+                <tr><td class="p-3 font-medium">Vàng miếng 5 chỉ</td><td class="p-3 text-right">91,300,000</td><td class="p-3 text-right">92,300,000</td><td class="p-3 text-right font-semibold text-emerald-600">+300,000</td></tr>
+                <tr><td class="p-3 font-medium">Vàng miếng 2 chỉ</td><td class="p-3 text-right">91,200,000</td><td class="p-3 text-right">92,200,000</td><td class="p-3 text-right font-semibold text-emerald-600">+200,000</td></tr>
+                <tr><td class="p-3 font-medium">Vàng miếng 1 chỉ</td><td class="p-3 text-right">91,100,000</td><td class="p-3 text-right">92,100,000</td><td class="p-3 text-right font-semibold text-emerald-600">+100,000</td></tr>
+                <tr><td class="p-3 font-medium">Nhẫn tròn 9999</td><td class="p-3 text-right">82,500,000</td><td class="p-3 text-right">83,600,000</td><td class="p-3 text-right font-semibold text-emerald-600">+400,000</td></tr>
                 <tr><td class="p-3 font-medium">Vang 24K</td><td class="p-3 text-right">82,300,000</td><td class="p-3 text-right">83,400,000</td><td class="p-3 text-right font-semibold text-emerald-600">+350,000</td></tr>
             </tbody>
         </table>
     </div>
     <div class="mt-4 chart-placeholder rounded-sm border border-[#bcbcbc] bg-slate-50 p-4">
-        <p class="text-xs text-slate-500 mb-2">Bien dong gia {{ $brandName }} trong ngay</p>
+        <p class="text-xs text-slate-500 mb-2">Biến động giá {{ $brandName }} trong ngày</p>
         <svg viewBox="0 0 600 100" class="w-full h-24"><polyline fill="none" stroke="#f59e0b" stroke-width="2" points="0,60 60,55 120,50 180,45 240,48 300,42 360,38 420,35 480,33 540,30 600,28"/></svg>
     </div>
     <div class="mt-4 rounded-sm border border-amber-100 bg-amber-50 p-4">
-        <h3 class="font-bold text-amber-900">Gioi thieu {{ $brandName }}</h3>
-        <p class="mt-2 text-sm leading-relaxed text-amber-800">{{ $brandName }} la mot trong nhung thuong hieu vang uy tin hang dau tai Viet Nam, cung cap da dang san pham vang mieng, vang nhan va vang trang suc chat luong cao. Gia duoc cap nhat lien tuc trong ngay giao dich.</p>
+        <h3 class="font-bold text-amber-900">Giới thiệu {{ $brandName }}</h3>
+        <p class="mt-2 text-sm leading-relaxed text-amber-800">{{ $brandName }} là một trong những thương hiệu vàng uy tín hàng đầu tại Việt Nam, cung cấp đa dạng sản phẩm vàng miếng, vàng nhẫn và vàng trang sức chất lượng cao. Giá được cập nhật liên tục trong ngày giao dịch.</p>
     </div>
 </div>
 BLADE);
@@ -271,13 +271,13 @@ BLADE);
 w("$sec/chart.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
     <div class="flex items-center justify-between mb-4">
-        <h2 class="text-lg font-bold text-[#001061]">Bieu do gia vang {{ $periodLabel }}</h2>
+        <h2 class="text-lg font-bold text-[#001061]">Biểu đồ giá vàng {{ $periodLabel }}</h2>
         <div class="flex gap-1">
-            <a href="/bieu-do-gia-vang/bieu-do-gia-vang-hom-nay" class="chip {{ $period === 'today' ? 'positive' : '' }}">Hom nay</a>
-            <a href="/bieu-do-gia-vang/bieu-do-gia-vang-7-ngay" class="chip {{ $period === '7d' ? 'positive' : '' }}">7 ngay</a>
-            <a href="/bieu-do-gia-vang/bieu-do-gia-vang-30-ngay" class="chip {{ $period === '30d' ? 'positive' : '' }}">30 ngay</a>
-            <a href="/bieu-do-gia-vang/bieu-do-gia-vang-1-nam" class="chip {{ $period === '1y' ? 'positive' : '' }}">1 nam</a>
-            <a href="/bieu-do-gia-vang/bieu-do-gia-vang-10-nam" class="chip {{ $period === '10y' ? 'positive' : '' }}">10 nam</a>
+            <a href="/bieu-do-gia-vang/bieu-do-gia-vang-hom-nay" class="chip {{ $period === 'today' ? 'positive' : '' }}">Hôm nay</a>
+            <a href="/bieu-do-gia-vang/bieu-do-gia-vang-7-ngay" class="chip {{ $period === '7d' ? 'positive' : '' }}">7 ngày</a>
+            <a href="/bieu-do-gia-vang/bieu-do-gia-vang-30-ngay" class="chip {{ $period === '30d' ? 'positive' : '' }}">30 ngày</a>
+            <a href="/bieu-do-gia-vang/bieu-do-gia-vang-1-nam" class="chip {{ $period === '1y' ? 'positive' : '' }}">1 năm</a>
+            <a href="/bieu-do-gia-vang/bieu-do-gia-vang-10-nam" class="chip {{ $period === '10y' ? 'positive' : '' }}">10 năm</a>
         </div>
     </div>
     <div class="chart-placeholder rounded-sm border border-[#bcbcbc] bg-slate-50 p-4">
@@ -288,10 +288,10 @@ w("$sec/chart.blade.php", <<<'BLADE'
         </svg>
     </div>
     <div class="mt-4 grid grid-cols-2 gap-5 sm:grid-cols-4">
-        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Cao nhat</p><p class="mt-1 text-lg font-bold text-[#001061]">92,800,000</p></div>
-        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Thap nhat</p><p class="mt-1 text-lg font-bold text-[#001061]">90,200,000</p></div>
-        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Trung binh</p><p class="mt-1 text-lg font-bold text-[#001061]">91,500,000</p></div>
-        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Thay doi</p><p class="mt-1 text-lg font-bold text-emerald-600">+2.8%</p></div>
+        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Cao nhất</p><p class="mt-1 text-lg font-bold text-[#001061]">92,800,000</p></div>
+        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Thấp nhất</p><p class="mt-1 text-lg font-bold text-[#001061]">90,200,000</p></div>
+        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Trung bình</p><p class="mt-1 text-lg font-bold text-[#001061]">91,500,000</p></div>
+        <div class="rounded-sm border border-slate-200 p-3 text-center"><p class="text-xs text-slate-500">Thay đổi</p><p class="mt-1 text-lg font-bold text-emerald-600">+2.8%</p></div>
     </div>
 </div>
 BLADE);
@@ -299,7 +299,7 @@ BLADE);
 // --- comparison ---
 w("$sec/comparison.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">So sanh {{ $leftName }} va {{ $rightName }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">So sánh {{ $leftName }} và {{ $rightName }}</h2>
     <div class="grid gap-5 sm:grid-cols-2 mb-4">
         <div class="rounded-sm border-2 border-blue-200 bg-blue-50 p-4 text-center">
             <p class="text-sm font-medium text-blue-700">{{ $leftName }}</p>
@@ -313,18 +313,18 @@ w("$sec/comparison.blade.php", <<<'BLADE'
         </div>
     </div>
     <div class="rounded-sm border border-amber-200 bg-amber-50 p-4 mb-4">
-        <p class="text-sm font-semibold text-amber-900">Chenh lech hien tai</p>
+        <p class="text-sm font-semibold text-amber-900">Chênh lệch hiện tại</p>
         <p class="mt-1 text-2xl font-bold text-amber-800">{{ $spread }}</p>
         <p class="mt-1 text-xs text-amber-700">{{ $spreadNote }}</p>
     </div>
     <div class="table-wrap rounded-sm border border-[#bcbcbc]">
         <table class="w-full text-sm">
-            <thead class="bg-[#f5f5f5]"><tr><th class="p-3 text-left font-semibold">Chi tieu</th><th class="p-3 text-right font-semibold">{{ $leftName }}</th><th class="p-3 text-right font-semibold">{{ $rightName }}</th></tr></thead>
+            <thead class="bg-[#f5f5f5]"><tr><th class="p-3 text-left font-semibold">Chỉ tiêu</th><th class="p-3 text-right font-semibold">{{ $leftName }}</th><th class="p-3 text-right font-semibold">{{ $rightName }}</th></tr></thead>
             <tbody class="divide-y divide-slate-100">
-                <tr><td class="p-3">Gia hien tai</td><td class="p-3 text-right font-medium">{{ $leftPrice }}</td><td class="p-3 text-right font-medium">{{ $rightPrice }}</td></tr>
-                <tr><td class="p-3">Tang/Giam 24h</td><td class="p-3 text-right">{{ $leftChange }}</td><td class="p-3 text-right">{{ $rightChange }}</td></tr>
-                <tr><td class="p-3">Cao nhat 30 ngay</td><td class="p-3 text-right">{{ $leftHigh ?? 'N/A' }}</td><td class="p-3 text-right">{{ $rightHigh ?? 'N/A' }}</td></tr>
-                <tr><td class="p-3">Thap nhat 30 ngay</td><td class="p-3 text-right">{{ $leftLow ?? 'N/A' }}</td><td class="p-3 text-right">{{ $rightLow ?? 'N/A' }}</td></tr>
+                <tr><td class="p-3">Giá hiện tại</td><td class="p-3 text-right font-medium">{{ $leftPrice }}</td><td class="p-3 text-right font-medium">{{ $rightPrice }}</td></tr>
+                <tr><td class="p-3">Tăng/Giảm 24h</td><td class="p-3 text-right">{{ $leftChange }}</td><td class="p-3 text-right">{{ $rightChange }}</td></tr>
+                <tr><td class="p-3">Cao nhất 30 ngày</td><td class="p-3 text-right">{{ $leftHigh ?? 'N/A' }}</td><td class="p-3 text-right">{{ $rightHigh ?? 'N/A' }}</td></tr>
+                <tr><td class="p-3">Thấp nhất 30 ngày</td><td class="p-3 text-right">{{ $leftLow ?? 'N/A' }}</td><td class="p-3 text-right">{{ $rightLow ?? 'N/A' }}</td></tr>
             </tbody>
         </table>
     </div>
@@ -334,26 +334,26 @@ BLADE);
 // --- forecast ---
 w("$sec/forecast.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">Du bao gia vang {{ $periodLabel }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Dự báo giá vàng {{ $periodLabel }}</h2>
     <div class="grid gap-5 sm:grid-cols-3 mb-4">
         <div class="rounded-sm border-2 border-emerald-200 bg-emerald-50 p-4 text-center">
-            <p class="text-xs font-semibold text-emerald-700 uppercase">Kich ban tich cuc</p>
+            <p class="text-xs font-semibold text-emerald-700 uppercase">Kịch bản tích cực</p>
             <p class="mt-2 text-2xl font-bold text-emerald-800">{{ $bullPrice }}</p>
             <p class="mt-1 text-sm text-emerald-600">{{ $bullChange }}</p>
         </div>
         <div class="rounded-sm border-2 border-blue-200 bg-blue-50 p-4 text-center">
-            <p class="text-xs font-semibold text-blue-700 uppercase">Kich ban co so</p>
+            <p class="text-xs font-semibold text-blue-700 uppercase">Kịch bản cơ sở</p>
             <p class="mt-2 text-2xl font-bold text-blue-800">{{ $basePrice }}</p>
             <p class="mt-1 text-sm text-blue-600">{{ $baseChange }}</p>
         </div>
         <div class="rounded-sm border-2 border-rose-200 bg-rose-50 p-4 text-center">
-            <p class="text-xs font-semibold text-rose-700 uppercase">Kich ban tieu cuc</p>
+            <p class="text-xs font-semibold text-rose-700 uppercase">Kịch bản tiêu cực</p>
             <p class="mt-2 text-2xl font-bold text-rose-800">{{ $bearPrice }}</p>
             <p class="mt-1 text-sm text-rose-600">{{ $bearChange }}</p>
         </div>
     </div>
     <div class="rounded-sm border border-slate-200 p-4 mb-4">
-        <h3 class="font-bold text-sm mb-3">Cac yeu to quyet dinh</h3>
+        <h3 class="font-bold text-sm mb-3">Các yếu tố quyết định</h3>
         <div class="grid gap-2">
             @foreach ($factors as $f)
             <div class="flex items-center justify-between text-sm">
@@ -374,11 +374,11 @@ w("$sec/news-list.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-4">{{ $categoryLabel }}</h2>
     <div class="flex flex-wrap gap-2 mb-4">
-        <a href="/tin-tuc-gia-vang" class="chip {{ $category === 'all' ? 'positive' : '' }}">Tat ca</a>
-        <a href="/tin-tuc-gia-vang/tin-thi-truong-vang" class="chip {{ $category === 'market' ? 'positive' : '' }}">Thi truong vang</a>
-        <a href="/tin-tuc-gia-vang/tin-tai-chinh" class="chip {{ $category === 'finance' ? 'positive' : '' }}">Tai chinh</a>
-        <a href="/tin-tuc-gia-vang/tin-kinh-te" class="chip {{ $category === 'economy' ? 'positive' : '' }}">Kinh te</a>
-        <a href="/tin-tuc-gia-vang/tin-the-gioi" class="chip {{ $category === 'world' ? 'positive' : '' }}">The gioi</a>
+        <a href="/tin-tuc-gia-vang" class="chip {{ $category === 'all' ? 'positive' : '' }}">Tất cả</a>
+        <a href="/tin-tuc-gia-vang/tin-thi-truong-vang" class="chip {{ $category === 'market' ? 'positive' : '' }}">Thị trường vàng</a>
+        <a href="/tin-tuc-gia-vang/tin-tai-chinh" class="chip {{ $category === 'finance' ? 'positive' : '' }}">Tài chính</a>
+        <a href="/tin-tuc-gia-vang/tin-kinh-te" class="chip {{ $category === 'economy' ? 'positive' : '' }}">Kinh tế</a>
+        <a href="/tin-tuc-gia-vang/tin-the-gioi" class="chip {{ $category === 'world' ? 'positive' : '' }}">Thế giới</a>
     </div>
     <div class="grid gap-3">
         @foreach ($articles as $a)
@@ -398,7 +398,7 @@ BLADE);
 // --- history ---
 w("$sec/history.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">Lich su gia vang {{ $yearLabel }}</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Lịch sử giá vàng {{ $yearLabel }}</h2>
     <div class="flex flex-wrap gap-2 mb-4">
         <a href="/lich-su-gia-vang/gia-vang-2026" class="chip {{ $year === '2026' ? 'positive' : '' }}">2026</a>
         <a href="/lich-su-gia-vang/gia-vang-2025" class="chip {{ $year === '2025' ? 'positive' : '' }}">2025</a>
@@ -408,7 +408,7 @@ w("$sec/history.blade.php", <<<'BLADE'
     <div class="table-wrap rounded-sm border border-[#bcbcbc]">
         <table class="w-full text-sm">
             <thead class="bg-[#f5f5f5]">
-                <tr><th class="p-3 text-left font-semibold">Thang</th><th class="p-3 text-right font-semibold">Mo cua</th><th class="p-3 text-right font-semibold">Cao nhat</th><th class="p-3 text-right font-semibold">Thap nhat</th><th class="p-3 text-right font-semibold">Dong cua</th><th class="p-3 text-right font-semibold">Thay doi</th></tr>
+                <tr><th class="p-3 text-left font-semibold">Tháng</th><th class="p-3 text-right font-semibold">Mở cửa</th><th class="p-3 text-right font-semibold">Cao nhất</th><th class="p-3 text-right font-semibold">Thấp nhất</th><th class="p-3 text-right font-semibold">Đóng cửa</th><th class="p-3 text-right font-semibold">Thay đổi</th></tr>
             </thead>
             <tbody class="divide-y divide-slate-100">
                 @foreach ($months as $m)
@@ -425,7 +425,7 @@ w("$sec/history.blade.php", <<<'BLADE'
         </table>
     </div>
     <div class="mt-4 chart-placeholder rounded-sm border border-[#bcbcbc] bg-slate-50 p-4">
-        <p class="text-xs text-slate-500 mb-2">Bieu do gia vang {{ $yearLabel }}</p>
+        <p class="text-xs text-slate-500 mb-2">Biểu đồ giá vàng {{ $yearLabel }}</p>
         <svg viewBox="0 0 700 150" class="w-full h-36"><polyline fill="none" stroke="#6366f1" stroke-width="2.5" stroke-linejoin="round" points="0,120 58,110 116,100 175,105 233,90 291,85 350,75 408,70 466,60 525,55 583,50 641,45 700,40"/></svg>
     </div>
 </div>
@@ -454,15 +454,15 @@ w("$sec/tool.blade.php", <<<'BLADE'
             </div>
             @endforeach
         </div>
-        <button class="btn-primary mt-4 w-full py-3" onclick="alert('Tinh nang dang phat trien')">{{ $buttonLabel ?? 'Tinh toan' }}</button>
+        <button class="btn-primary mt-4 w-full py-3" onclick="alert('Tính năng đang phát triển')">{{ $buttonLabel ?? 'Tính toán' }}</button>
     </div>
     <div class="mt-4 rounded-sm border-2 border-dashed border-blue-200 bg-blue-50/50 p-4 text-center">
-        <p class="text-sm text-blue-700 font-medium">Ket qua se hien thi tai day</p>
+        <p class="text-sm text-blue-700 font-medium">Kết quả sẽ hiển thị tại đây</p>
         <p class="mt-1 text-3xl font-bold text-blue-900">—</p>
     </div>
     @if (!empty($instructions))
     <div class="mt-4 rounded-sm border border-slate-200 p-4">
-        <h3 class="font-bold text-sm mb-2">Huong dan su dung</h3>
+        <h3 class="font-bold text-sm mb-2">Hướng dẫn sử dụng</h3>
         <ul class="space-y-1 text-sm leading-relaxed text-slate-600">
             @foreach ($instructions as $inst)
             <li>• {{ $inst }}</li>
@@ -498,10 +498,10 @@ w("$sec/market.blade.php", <<<'BLADE'
         </table>
     </div>
     <div class="mt-4 chart-placeholder rounded-sm border border-[#bcbcbc] bg-slate-50 p-4">
-        <p class="text-xs text-slate-500 mb-2">Bieu do {{ $marketLabel }} 30 ngay</p>
+        <p class="text-xs text-slate-500 mb-2">Biểu đồ {{ $marketLabel }} 30 ngày</p>
         <svg viewBox="0 0 600 120" class="w-full h-28"><polyline fill="none" stroke="#8b5cf6" stroke-width="2" stroke-linejoin="round" points="0,90 60,85 120,80 180,75 240,70 300,65 360,60 420,55 480,50 540,48 600,45"/></svg>
     </div>
-    <p class="mt-3 text-xs text-slate-400">Du lieu mang tinh tham khao, cap nhat tu cac san giao dich chinh thuc.</p>
+    <p class="mt-3 text-xs text-slate-400">Dữ liệu mang tính tham khảo, cập nhật từ các sàn giao dịch chính thức.</p>
 </div>
 BLADE);
 
@@ -512,7 +512,7 @@ w("$sec/knowledge.blade.php", <<<'BLADE'
 
     @if (!empty($toc))
     <nav class="mb-4 rounded-sm border border-[#bcbcbc] bg-blue-50 p-4">
-        <p class="font-semibold text-sm text-blue-900 mb-2">Noi dung chinh</p>
+        <p class="font-semibold text-sm text-blue-900 mb-2">Nội dung chính</p>
         <ol class="list-decimal list-inside space-y-1 text-sm text-blue-700">
             @foreach ($toc as $item)
             <li>{{ $item }}</li>
@@ -529,8 +529,8 @@ w("$sec/knowledge.blade.php", <<<'BLADE'
     @endforeach
 
     <div class="mt-6 rounded-sm border border-amber-200 bg-amber-50 p-4">
-        <p class="font-bold text-amber-900 text-sm">Luu y</p>
-        <p class="mt-1 text-sm text-amber-800">Thong tin tren mang tinh chat tham khao va giao duc. Hay tham khao y kien chuyen gia truoc khi dua ra quyet dinh dau tu.</p>
+        <p class="font-bold text-amber-900 text-sm">Lưu ý</p>
+        <p class="mt-1 text-sm text-amber-800">Thông tin trên mang tính chất tham khảo và giáo dục. Hãy tham khảo ý kiến chuyên gia trước khi đưa ra quyết định đầu tư.</p>
     </div>
 </div>
 BLADE);
@@ -551,10 +551,10 @@ w("$sec/api-doc.blade.php", <<<'BLADE'
             <p class="text-sm leading-relaxed text-slate-600">{{ $ep['desc'] }}</p>
             @if (!empty($ep['params']))
             <div class="mt-3">
-                <p class="text-xs font-semibold text-slate-500 uppercase mb-2">Tham so</p>
+                <p class="text-xs font-semibold text-slate-500 uppercase mb-2">Tham số</p>
                 <div class="table-wrap rounded border border-slate-200">
                     <table class="w-full text-sm">
-                        <thead class="bg-[#f5f5f5]"><tr><th class="p-2 text-left font-semibold text-xs">Ten</th><th class="p-2 text-left font-semibold text-xs">Kieu</th><th class="p-2 text-left font-semibold text-xs">Mo ta</th></tr></thead>
+                        <thead class="bg-[#f5f5f5]"><tr><th class="p-2 text-left font-semibold text-xs">Tên</th><th class="p-2 text-left font-semibold text-xs">Kiểu</th><th class="p-2 text-left font-semibold text-xs">Mô tả</th></tr></thead>
                         <tbody class="divide-y divide-slate-100">
                             @foreach ($ep['params'] as $p)
                             <tr><td class="p-2"><code class="text-xs">{{ $p['name'] }}</code></td><td class="p-2 text-xs text-slate-500">{{ $p['type'] }}</td><td class="p-2 text-xs text-slate-600">{{ $p['desc'] }}</td></tr>
@@ -579,22 +579,22 @@ BLADE);
 // --- about ---
 w("$sec/about.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6 article-body">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">Ve GoldPrice</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Về GoldPrice</h2>
     <div class="text-sm leading-relaxed text-slate-700 space-y-4">
-        <p><strong>GoldPrice</strong> la nen tang cap nhat gia vang truc tuyen hang dau tai Viet Nam, cung cap thong tin gia vang SJC, DOJI, PNJ va the gioi (XAU/USD) theo thoi gian thuc.</p>
-        <p>Chung toi tong hop du lieu tu cac thuong hieu vang chinh hang, san giao dich quoc te va nguon tin tai chinh uy tin de mang den cho nguoi dung goc nhin toan dien ve thi truong vang.</p>
-        <h3 class="text-lg font-bold text-[#001061] mt-6!">Su menh</h3>
-        <p>Giup nguoi dung Viet Nam tiep can thong tin gia vang chinh xac, nhanh chong va mien phi, ho tro dua ra quyet dinh dau tu sang suot.</p>
-        <h3 class="text-lg font-bold text-[#001061] mt-6!">Tinh nang noi bat</h3>
+        <p><strong>GoldPrice</strong> là nền tảng cập nhật giá vàng trực tuyến hàng đầu tại Việt Nam, cung cấp thông tin giá vàng SJC, DOJI, PNJ và thế giới (XAU/USD) theo thời gian thực.</p>
+        <p>Chúng tôi tổng hợp dữ liệu từ các thương hiệu vàng chính hãng, sàn giao dịch quốc tế và nguồn tin tài chính uy tín để mang đến cho người dùng góc nhìn toàn diện về thị trường vàng.</p>
+        <h3 class="text-lg font-bold text-[#001061] mt-6!">Sứ mệnh</h3>
+        <p>Giúp người dùng Việt Nam tiếp cận thông tin giá vàng chính xác, nhanh chóng và miễn phí, hỗ trợ đưa ra quyết định đầu tư sáng suốt.</p>
+        <h3 class="text-lg font-bold text-[#001061] mt-6!">Tính năng nổi bật</h3>
         <ul class="list-disc list-inside space-y-1">
-            <li>Cap nhat gia vang trong nuoc va quoc te theo thoi gian thuc</li>
-            <li>Bieu do phan tich xu huong da khung thoi gian</li>
-            <li>So sanh gia giua cac thuong hieu va kenh dau tu</li>
-            <li>Cong cu tinh toan va quy doi vang tien loi</li>
-            <li>Tin tuc va phan tich chuyen sau ve thi truong vang</li>
-            <li>API du lieu cho nha phat trien</li>
+            <li>Cập nhật giá vàng trong nước và quốc tế theo thời gian thực</li>
+            <li>Biểu đồ phân tích xu hướng đa khung thời gian</li>
+            <li>So sánh giá giữa các thương hiệu và kênh đầu tư</li>
+            <li>Công cụ tính toán và quy đổi vàng tiện lợi</li>
+            <li>Tin tức và phân tích chuyên sâu về thị trường vàng</li>
+            <li>API dữ liệu cho nhà phát triển</li>
         </ul>
-        <h3 class="text-lg font-bold text-[#001061] mt-6!">Lien he hop tac</h3>
+        <h3 class="text-lg font-bold text-[#001061] mt-6!">Liên hệ hợp tác</h3>
         <p>Email: <a href="mailto:contact@goldprice.vn" class="text-blue-600 hover:underline">contact@goldprice.vn</a></p>
     </div>
 </div>
@@ -603,7 +603,7 @@ BLADE);
 // --- contact ---
 w("$sec/contact.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">Lien he voi chung toi</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Liên hệ với chúng tôi</h2>
     <div class="grid gap-5 sm:grid-cols-2 mb-4">
         <div class="rounded-sm border border-slate-200 p-4">
             <h3 class="font-bold text-sm">Email</h3>
@@ -614,30 +614,30 @@ w("$sec/contact.blade.php", <<<'BLADE'
             <p class="mt-1 text-sm text-blue-600">1900 xxxx xx</p>
         </div>
     </div>
-    <form class="rounded-sm border border-[#bcbcbc] bg-slate-50 p-4 grid gap-3" onsubmit="event.preventDefault();alert('Cam on ban da gop y!')">
+    <form class="rounded-sm border border-[#bcbcbc] bg-slate-50 p-4 grid gap-3" onsubmit="event.preventDefault();alert('Cảm ơn bạn đã góp ý!')">
         <div>
-            <label class="block text-sm font-medium text-slate-700 mb-1">Ho va ten</label>
-            <input type="text" required class="w-full rounded-sm border border-blue-200 px-3 py-2.5 text-sm" placeholder="Nguyen Van A">
+            <label class="block text-sm font-medium text-slate-700 mb-1">Họ và tên</label>
+            <input type="text" required class="w-full rounded-sm border border-blue-200 px-3 py-2.5 text-sm" placeholder="Nguyễn Văn A">
         </div>
         <div>
             <label class="block text-sm font-medium text-slate-700 mb-1">Email</label>
             <input type="email" required class="w-full rounded-sm border border-blue-200 px-3 py-2.5 text-sm" placeholder="email@example.com">
         </div>
         <div>
-            <label class="block text-sm font-medium text-slate-700 mb-1">Chu de</label>
+            <label class="block text-sm font-medium text-slate-700 mb-1">Chủ đề</label>
             <select class="w-full rounded-sm border border-blue-200 bg-white px-3 py-2.5 text-sm">
-                <option>Gop y noi dung</option>
-                <option>Hop tac quang cao</option>
-                <option>Yeu cau API</option>
-                <option>Bao loi</option>
-                <option>Khac</option>
+                <option>Góp ý nội dung</option>
+                <option>Hợp tác quảng cáo</option>
+                <option>Yêu cầu API</option>
+                <option>Báo lỗi</option>
+                <option>Khác</option>
             </select>
         </div>
         <div>
-            <label class="block text-sm font-medium text-slate-700 mb-1">Noi dung</label>
-            <textarea rows="5" required class="w-full rounded-sm border border-blue-200 px-3 py-2.5 text-sm" placeholder="Viet noi dung tai day..."></textarea>
+            <label class="block text-sm font-medium text-slate-700 mb-1">Nội dung</label>
+            <textarea rows="5" required class="w-full rounded-sm border border-blue-200 px-3 py-2.5 text-sm" placeholder="Viết nội dung tại đây..."></textarea>
         </div>
-        <button type="submit" class="btn-primary py-3">Gui tin nhan</button>
+        <button type="submit" class="btn-primary py-3">Gửi tin nhắn</button>
     </form>
 </div>
 BLADE);
@@ -645,23 +645,23 @@ BLADE);
 // --- privacy ---
 w("$sec/privacy.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6 article-body">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">Chinh sach bao mat</h2>
-    <p class="text-xs text-slate-400 mb-4">Cap nhat lan cuoi: 01/03/2026</p>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Chính sách bảo mật</h2>
+    <p class="text-xs text-slate-400 mb-4">Cập nhật lần cuối: 01/03/2026</p>
     <div class="text-sm leading-relaxed text-slate-700 space-y-4">
-        <h3 class="text-lg font-bold text-[#001061]">1. Thu thap thong tin</h3>
-        <p>Chung toi thu thap thong tin ca nhan khi ban dang ky nhan ban tin, su dung API hoac gui form lien he. Thong tin bao gom: ho ten, email va noi dung tin nhan.</p>
-        <h3 class="text-lg font-bold text-[#001061]">2. Muc dich su dung</h3>
+        <h3 class="text-lg font-bold text-[#001061]">1. Thu thập thông tin</h3>
+        <p>Chúng tôi thu thập thông tin cá nhân khi bạn đăng ký nhận bản tin, sử dụng API hoặc gửi form liên hệ. Thông tin bao gồm: họ tên, email và nội dung tin nhắn.</p>
+        <h3 class="text-lg font-bold text-[#001061]">2. Mục đích sử dụng</h3>
         <ul class="list-disc list-inside space-y-1">
-            <li>Gui thong bao cap nhat gia vang theo dang ky</li>
-            <li>Xu ly yeu cau ho tro va phan hoi</li>
-            <li>Cai thien chat luong dich vu va trai nghiem nguoi dung</li>
+            <li>Gửi thông báo cập nhật giá vàng theo đăng ký</li>
+            <li>Xử lý yêu cầu hỗ trợ và phản hồi</li>
+            <li>Cải thiện chất lượng dịch vụ và trải nghiệm người dùng</li>
         </ul>
-        <h3 class="text-lg font-bold text-[#001061]">3. Bao ve thong tin</h3>
-        <p>Du lieu nguoi dung duoc ma hoa va luu tru an toan. Chung toi khong chia se thong tin ca nhan voi ben thu ba ngoai muc dich da neu.</p>
+        <h3 class="text-lg font-bold text-[#001061]">3. Bảo vệ thông tin</h3>
+        <p>Dữ liệu người dùng được mã hoá và lưu trữ an toàn. Chúng tôi không chia sẻ thông tin cá nhân với bên thứ ba ngoài mục đích đã nêu.</p>
         <h3 class="text-lg font-bold text-[#001061]">4. Cookie</h3>
-        <p>Website su dung cookie de tang trai nghiem duyet web. Ban co the tat cookie trong trinh duyet nhung mot so tinh nang co the bi anh huong.</p>
-        <h3 class="text-lg font-bold text-[#001061]">5. Lien he</h3>
-        <p>Moi thac mac ve chinh sach bao mat, vui long gui email toi <a href="mailto:privacy@goldprice.vn" class="text-blue-600 hover:underline">privacy@goldprice.vn</a>.</p>
+        <p>Website sử dụng cookie để tăng trải nghiệm duyệt web. Bạn có thể tắt cookie trong trình duyệt nhưng một số tính năng có thể bị ảnh hưởng.</p>
+        <h3 class="text-lg font-bold text-[#001061]">5. Liên hệ</h3>
+        <p>Mọi thắc mắc về chính sách bảo mật, vui lòng gửi email tới <a href="mailto:privacy@goldprice.vn" class="text-blue-600 hover:underline">privacy@goldprice.vn</a>.</p>
     </div>
 </div>
 BLADE);
@@ -669,19 +669,19 @@ BLADE);
 // --- terms ---
 w("$sec/terms.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6 article-body">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">Dieu khoan su dung</h2>
-    <p class="text-xs text-slate-400 mb-4">Cap nhat lan cuoi: 01/03/2026</p>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Điều khoản sử dụng</h2>
+    <p class="text-xs text-slate-400 mb-4">Cập nhật lần cuối: 01/03/2026</p>
     <div class="text-sm leading-relaxed text-slate-700 space-y-4">
-        <h3 class="text-lg font-bold text-[#001061]">1. Chap nhan dieu khoan</h3>
-        <p>Khi truy cap va su dung GoldPrice, ban dong y tuan thu cac dieu khoan duoi day. Neu khong dong y, vui long ngung su dung dich vu.</p>
-        <h3 class="text-lg font-bold text-[#001061]">2. Noi dung va du lieu</h3>
-        <p>Gia vang va thong tin tren website mang tinh tham khao, khong phai loi khuyen dau tu. Chung toi khong chiu trach nhiem ve quyet dinh dau tu cua ban dua tren du lieu tren website.</p>
-        <h3 class="text-lg font-bold text-[#001061]">3. Tai khoan va API</h3>
-        <p>Khi su dung API, ban cam ket khong su dung qua muc hoac cho muc dich gay hai. Chung toi co quyen gioi han hoac dong tai khoan vi pham.</p>
-        <h3 class="text-lg font-bold text-[#001061]">4. Quyen so huu tri tue</h3>
-        <p>Toan bo noi dung, thiet ke va ma nguon thuoc quyen so huu cua GoldPrice. Nghiem cam sao chep hoac phan phoi ma khong duoc phep.</p>
-        <h3 class="text-lg font-bold text-[#001061]">5. Thay doi dieu khoan</h3>
-        <p>Chung toi co quyen thay doi dieu khoan bat ky luc nao. Nguoi dung se duoc thong bao qua email hoac thong bao tren website.</p>
+        <h3 class="text-lg font-bold text-[#001061]">1. Chấp nhận điều khoản</h3>
+        <p>Khi truy cập và sử dụng GoldPrice, bạn đồng ý tuân thủ các điều khoản dưới đây. Nếu không đồng ý, vui lòng ngừng sử dụng dịch vụ.</p>
+        <h3 class="text-lg font-bold text-[#001061]">2. Nội dung và dữ liệu</h3>
+        <p>Giá vàng và thông tin trên website mang tính tham khảo, không phải lời khuyên đầu tư. Chúng tôi không chịu trách nhiệm về quyết định đầu tư của bạn dựa trên dữ liệu trên website.</p>
+        <h3 class="text-lg font-bold text-[#001061]">3. Tài khoản và API</h3>
+        <p>Khi sử dụng API, bạn cam kết không sử dụng quá mức hoặc cho mục đích gây hại. Chúng tôi có quyền giới hạn hoặc đóng tài khoản vi phạm.</p>
+        <h3 class="text-lg font-bold text-[#001061]">4. Quyền sở hữu trí tuệ</h3>
+        <p>Toàn bộ nội dung, thiết kế và mã nguồn thuộc quyền sở hữu của GoldPrice. Nghiêm cấm sao chép hoặc phân phối mà không được phép.</p>
+        <h3 class="text-lg font-bold text-[#001061]">5. Thay đổi điều khoản</h3>
+        <p>Chúng tôi có quyền thay đổi điều khoản bất kỳ lúc nào. Người dùng sẽ được thông báo qua email hoặc thông báo trên website.</p>
     </div>
 </div>
 BLADE);
@@ -689,7 +689,7 @@ BLADE);
 // --- sidebar-price ---
 w("$sec/sidebar-price.blade.php", <<<'BLADE'
 <div class="glass-card p-4">
-    <h3 class="text-lg font-bold text-[#001061] mb-3">Gia vang the gioi</h3>
+    <h3 class="text-lg font-bold text-[#001061] mb-3">Giá vàng thế giới</h3>
     <div class="rounded-sm border border-[#bcbcbc] bg-blue-50 p-3 text-center">
         <p class="text-2xl font-bold text-blue-900">2,918.45</p>
         <p class="text-xs text-blue-700">USD/oz &nbsp; <span class="text-emerald-600 font-semibold">+12.30</span></p>
@@ -705,11 +705,11 @@ BLADE);
 // --- sidebar-tools ---
 w("$sec/sidebar-tools.blade.php", <<<'BLADE'
 <div class="glass-card p-4">
-    <h3 class="text-lg font-bold text-[#001061] mb-3">Cong cu noi bat</h3>
+    <h3 class="text-lg font-bold text-[#001061] mb-3">Công cụ nổi bật</h3>
     <div class="grid gap-2">
-        <a href="/cong-cu/quy-doi-vang" class="block rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">⚖️ Quy doi vang</a>
-        <a href="/cong-cu/tinh-gia-vang" class="block rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">🧮 Tinh gia vang</a>
-        <a href="/cong-cu/tinh-lai-dau-tu-vang" class="block rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">📈 Tinh lai dau tu</a>
+        <a href="/cong-cu/quy-doi-vang" class="block rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">⚖️ Quy đổi vàng</a>
+        <a href="/cong-cu/tinh-gia-vang" class="block rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">🧮 Tính giá vàng</a>
+        <a href="/cong-cu/tinh-lai-dau-tu-vang" class="block rounded-sm border border-[#bcbcbc] bg-white px-3 py-2 text-sm text-blue-700 hover:bg-blue-50">📈 Tính lãi đầu tư</a>
     </div>
 </div>
 BLADE);
@@ -717,11 +717,11 @@ BLADE);
 // --- sidebar-news ---
 w("$sec/sidebar-news.blade.php", <<<'BLADE'
 <div class="glass-card p-4">
-    <h3 class="text-lg font-bold text-[#001061] mb-3">Tin moi nhat</h3>
+    <h3 class="text-lg font-bold text-[#001061] mb-3">Tin mới nhất</h3>
     <div class="grid gap-2 text-sm">
-        <a href="/tin-tuc-gia-vang/tin-thi-truong-vang" class="block text-blue-700 hover:underline">Gia vang phuc hoi manh nho Fed giu nguyen lai suat</a>
-        <a href="/tin-tuc-gia-vang/tin-tai-chinh" class="block text-blue-700 hover:underline">USD suy yeu, vang the gioi vuot dinh cu</a>
-        <a href="/tin-tuc-gia-vang/tin-kinh-te" class="block text-blue-700 hover:underline">Lam phat Eurozone tang bat ngo, ho tro gia vang</a>
+        <a href="/tin-tuc-gia-vang/tin-thi-truong-vang" class="block text-blue-700 hover:underline">Giá vàng phục hồi mạnh nhờ Fed giữ nguyên lãi suất</a>
+        <a href="/tin-tuc-gia-vang/tin-tai-chinh" class="block text-blue-700 hover:underline">USD suy yếu, vàng thế giới vượt đỉnh cũ</a>
+        <a href="/tin-tuc-gia-vang/tin-kinh-te" class="block text-blue-700 hover:underline">Lạm phát Eurozone tăng bất ngờ, hỗ trợ giá vàng</a>
     </div>
 </div>
 BLADE);
@@ -745,14 +745,14 @@ function pg(string $body, string $label = '', string $sidebar = ''): string {
 // ---- gia-vang-hom-nay ----
 $pages['gia-vang-hom-nay'] = pg(
     "@include('gold.sections.today-price')",
-    'Cap nhat gia vang',
+    'Cập nhật giá vàng',
     "@include('gold.sections.sidebar-price')\n@include('gold.sections.sidebar-tools')"
 );
 
 // ---- bang-gia-vang ----
 $pages['bang-gia-vang'] = pg(
     "@include('gold.sections.price-table')",
-    'Bang gia',
+    'Bảng giá',
     "@include('gold.sections.sidebar-price')"
 );
 
@@ -760,14 +760,14 @@ $brands = [
     'gia-vang-sjc'              => 'SJC',
     'gia-vang-doji'             => 'DOJI',
     'gia-vang-pnj'              => 'PNJ',
-    'gia-vang-phu-quy'          => 'Phu Quy',
-    'gia-vang-mi-hong'          => 'Mi Hong',
-    'gia-vang-bao-tin-minh-chau'=> 'Bao Tin Minh Chau',
+    'gia-vang-phu-quy'          => 'Phú Quý',
+    'gia-vang-mi-hong'          => 'Mỹ Hưng',
+    'gia-vang-bao-tin-minh-chau'=> 'Bảo Tín Minh Châu',
 ];
 foreach ($brands as $slug => $name) {
     $pages["bang-gia-vang/$slug"] = pg(
         "@include('gold.sections.price-brand', ['brandName' => '$name'])",
-        'Bang gia',
+        'Bảng giá',
         "@include('gold.sections.sidebar-price')"
     );
 }
@@ -775,24 +775,24 @@ foreach ($brands as $slug => $name) {
 // ---- gia-vang-the-gioi ----
 $pages['gia-vang-the-gioi'] = pg(
     "@include('gold.sections.world-price')",
-    'Quoc te',
+    'Quốc tế',
     "@include('gold.sections.sidebar-price')"
 );
 
 // ---- bieu-do-gia-vang ----
 $periods = [
-    ''                            => ['all',   'tong hop'],
-    'bieu-do-gia-vang-hom-nay'    => ['today', 'hom nay'],
-    'bieu-do-gia-vang-7-ngay'     => ['7d',    '7 ngay'],
-    'bieu-do-gia-vang-30-ngay'    => ['30d',   '30 ngay'],
-    'bieu-do-gia-vang-1-nam'      => ['1y',    '1 nam'],
-    'bieu-do-gia-vang-10-nam'     => ['10y',   '10 nam'],
+    ''                            => ['all',   'tổng hợp'],
+    'bieu-do-gia-vang-hom-nay'    => ['today', 'hôm nay'],
+    'bieu-do-gia-vang-7-ngay'     => ['7d',    '7 ngày'],
+    'bieu-do-gia-vang-30-ngay'    => ['30d',   '30 ngày'],
+    'bieu-do-gia-vang-1-nam'      => ['1y',    '1 năm'],
+    'bieu-do-gia-vang-10-nam'     => ['10y',   '10 năm'],
 ];
 foreach ($periods as $slug => $info) {
     $path = $slug === '' ? 'bieu-do-gia-vang' : "bieu-do-gia-vang/$slug";
     $pages[$path] = pg(
         "@include('gold.sections.chart', ['period' => '{$info[0]}', 'periodLabel' => '{$info[1]}'])",
-        'Bieu do',
+        'Biểu đồ',
         "@include('gold.sections.sidebar-price')"
     );
 }
@@ -800,30 +800,30 @@ foreach ($periods as $slug => $info) {
 // ---- so-sanh-gia-vang ----
 $pages['so-sanh-gia-vang'] = pg(<<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">So sanh gia vang</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">So sánh giá vàng</h2>
     <div class="grid gap-5">
         <a href="/so-sanh-gia-vang/sjc-vs-the-gioi" class="flex items-center justify-between rounded-sm border border-slate-200 p-4 hover:bg-slate-50">
-            <div><strong class="text-blue-900">SJC</strong> <span class="text-slate-400">vs</span> <strong class="text-indigo-900">The gioi</strong></div>
-            <span class="text-sm text-amber-700 font-semibold">Chenh: 18.5 trieu</span>
+            <div><strong class="text-blue-900">SJC</strong> <span class="text-slate-400">vs</span> <strong class="text-indigo-900">Thế giới</strong></div>
+            <span class="text-sm text-amber-700 font-semibold">Chênh: 18.5 triệu</span>
         </a>
         <a href="/so-sanh-gia-vang/sjc-vs-pnj" class="flex items-center justify-between rounded-sm border border-slate-200 p-4 hover:bg-slate-50">
             <div><strong class="text-blue-900">SJC</strong> <span class="text-slate-400">vs</span> <strong class="text-indigo-900">PNJ</strong></div>
-            <span class="text-sm text-amber-700 font-semibold">Chenh: 200,000</span>
+            <span class="text-sm text-amber-700 font-semibold">Chênh: 200,000</span>
         </a>
         <a href="/so-sanh-gia-vang/vang-vs-usd" class="flex items-center justify-between rounded-sm border border-slate-200 p-4 hover:bg-slate-50">
-            <div><strong class="text-blue-900">Vang</strong> <span class="text-slate-400">vs</span> <strong class="text-indigo-900">USD</strong></div>
-            <span class="text-sm text-amber-700 font-semibold">Tuong quan: 0.85</span>
+            <div><strong class="text-blue-900">Vàng</strong> <span class="text-slate-400">vs</span> <strong class="text-indigo-900">USD</strong></div>
+            <span class="text-sm text-amber-700 font-semibold">Tương quan: 0.85</span>
         </a>
     </div>
 </div>
-BLADE, 'So sanh', "@include('gold.sections.sidebar-price')");
+BLADE, 'So sánh', "@include('gold.sections.sidebar-price')");
 
 $comparisons = [
     'sjc-vs-the-gioi' => [
-        'SJC', 'Gia the gioi (quy doi)',
+        'SJC', 'Giá thế giới (quy đổi)',
         '92,500,000 VND', '74,000,000 VND',
         '+500,000', '+312,000',
-        '18,500,000 VND', 'Chenh lech do thue, phi va cung cau noi dia',
+        '18,500,000 VND', 'Chênh lệch do thuế, phí và cung cầu nội địa',
         '93,200,000 VND', '74,800,000 VND',
         '89,500,000 VND', '72,100,000 VND',
     ],
@@ -831,15 +831,15 @@ $comparisons = [
         'SJC', 'PNJ',
         '92,500,000 VND', '92,300,000 VND',
         '+500,000', '+300,000',
-        '200,000 VND', 'Chenh lech nho do canh tranh truc tiep giua thuong hieu',
+        '200,000 VND', 'Chênh lệch nhỏ do cạnh tranh trực tiếp giữa thương hiệu',
         '93,200,000 VND', '93,000,000 VND',
         '89,500,000 VND', '89,300,000 VND',
     ],
     'vang-vs-usd' => [
-        'Vang (XAU)', 'USD (DXY)',
+        'Vàng (XAU)', 'USD (DXY)',
         '2,918.45 USD', '103.25 pts',
         '+12.30', '-0.32',
-        'Tuong quan nghich', 'Khi USD yeu, vang thuong tang va nguoc lai',
+        'Tương quan nghịch', 'Khi USD yếu, vàng thường tăng và ngược lại',
         '2,950.00 USD', '104.80 pts',
         '2,850.00 USD', '101.50 pts',
     ],
@@ -860,7 +860,7 @@ foreach ($comparisons as $slug => $d) {
        ."    'leftLow'     => '{$d[10]}',\n"
        ."    'rightLow'    => '{$d[11]}',\n"
        ."])",
-        'So sanh',
+        'So sánh',
         "@include('gold.sections.sidebar-price')"
     );
 }
@@ -868,28 +868,28 @@ foreach ($comparisons as $slug => $d) {
 // ---- du-bao-gia-vang ----
 $forecasts = [
     '' => [
-        'tong hop', '93,000,000', '+0.5%', '92,500,000', 'Di ngang', '91,000,000', '-1.6%',
-        'Phan tich tong hop cac kich ban du bao gia vang tu ngan han den dai han. Du lieu tu nhieu nguon phan tich ky thuat va co ban.',
+        'tổng hợp', '93,000,000', '+0.5%', '92,500,000', 'Đi ngang', '91,000,000', '-1.6%',
+        'Phân tích tổng hợp các kịch bản dự báo giá vàng từ ngắn hạn đến dài hạn. Dữ liệu từ nhiều nguồn phân tích kỹ thuật và cơ bản.',
     ],
     'du-bao-gia-vang-tuan' => [
-        'tuan nay', '93,200,000', '+0.8%', '92,800,000', '+0.3%', '91,500,000', '-1.1%',
-        'Gia vang duoc du bao tang nhe trong tuan nay nho ky vong Fed giu lai suat on dinh va dong USD suy yeu. Rui ro giam gia den tu bao cao viec lam My tot hon ky vong.',
+        'tuần này', '93,200,000', '+0.8%', '92,800,000', '+0.3%', '91,500,000', '-1.1%',
+        'Giá vàng được dự báo tăng nhẹ trong tuần này nhờ kỳ vọng Fed giữ lãi suất ổn định và đồng USD suy yếu. Rủi ro giảm giá đến từ báo cáo việc làm Mỹ tốt hơn kỳ vọng.',
     ],
     'du-bao-gia-vang-thang' => [
-        'thang nay', '95,000,000', '+2.7%', '93,500,000', '+1.1%', '90,000,000', '-2.7%',
-        'Xu huong tang trung han duoc ho tro boi nhu cau mua vao cua ngan hang trung uong va lo ngai lam phat. Kich ban tieu cuc neu Fed tang lai suat bat ngo.',
+        'tháng này', '95,000,000', '+2.7%', '93,500,000', '+1.1%', '90,000,000', '-2.7%',
+        'Xu hướng tăng trung hạn được hỗ trợ bởi nhu cầu mua vào của ngân hàng trung ương và lo ngại lạm phát. Kịch bản tiêu cực nếu Fed tăng lãi suất bất ngờ.',
     ],
     'du-bao-gia-vang-2026' => [
-        'nam 2026', '100,000,000', '+8.1%', '95,000,000', '+2.7%', '85,000,000', '-8.1%',
-        'Nam 2026, gia vang duoc ky vong duy tri xu huong tang dai han nho cac yeu to: bat on dia chinh tri, lam phat toan cau va chinh sach tien te noi long. Goldman Sachs du bao XAU/USD dat 3,100 USD/oz cuoi nam.',
+        'năm 2026', '100,000,000', '+8.1%', '95,000,000', '+2.7%', '85,000,000', '-8.1%',
+        'Năm 2026, giá vàng được kỳ vọng duy trì xu hướng tăng dài hạn nhờ các yếu tố: bất ổn địa chính trị, lạm phát toàn cầu và chính sách tiền tệ nới lỏng. Goldman Sachs dự báo XAU/USD đạt 3,100 USD/oz cuối năm.',
     ],
 ];
 $forecastFactors = [
-    ['name'=>'Chinh sach Fed','impact'=>'positive','label'=>'Ho tro tang'],
-    ['name'=>'Chi so USD (DXY)','impact'=>'positive','label'=>'Dang giam'],
-    ['name'=>'Lam phat toan cau','impact'=>'positive','label'=>'Van cao'],
-    ['name'=>'Nhu cau NHTW','impact'=>'positive','label'=>'Tang manh'],
-    ['name'=>'Rui ro dia chinh tri','impact'=>'neutral','label'=>'Trung binh'],
+    ['name'=>'Chính sách Fed','impact'=>'positive','label'=>'Hỗ trợ tăng'],
+    ['name'=>'Chỉ số USD (DXY)','impact'=>'positive','label'=>'Đang giảm'],
+    ['name'=>'Lạm phát toàn cầu','impact'=>'positive','label'=>'Vẫn cao'],
+    ['name'=>'Nhu cầu NHTW','impact'=>'positive','label'=>'Tăng mạnh'],
+    ['name'=>'Rủi ro địa chính trị','impact'=>'neutral','label'=>'Trung bình'],
 ];
 foreach ($forecasts as $slug => $d) {
     $path = $slug === '' ? 'du-bao-gia-vang' : "du-bao-gia-vang/$slug";
@@ -911,18 +911,18 @@ foreach ($forecasts as $slug => $d) {
        ."    'analysis'    => '{$d[7]}',\n"
        ."    'factors'     => $factorsPhp,\n"
        ."])",
-        'Du bao',
+        'Dự báo',
         "@include('gold.sections.sidebar-price')\n@include('gold.sections.sidebar-news')"
     );
 }
 
 // ---- tin-tuc-gia-vang ----
 $newsArticles = [
-    ['icon'=>'📊','title'=>'Gia vang phuc hoi manh sau phien giam sau','excerpt'=>'Gia vang SJC tang 500,000 dong/luong trong phien sang nay sau khi thi truong quoc te phat tin hieu tich cuc tu chinh sach Fed.','date'=>'07/03/2026'],
-    ['icon'=>'💰','title'=>'USD suy yeu day gia vang the gioi len dinh moi','excerpt'=>'Chi so DXY giam 0.3%, ho tro gia vang XAU/USD vuot moc 2,920 USD/oz lan dau trong tuan.','date'=>'06/03/2026'],
-    ['icon'=>'🏦','title'=>'Ngan hang trung uong cac nuoc tiep tuc mua vang','excerpt'=>'Theo du lieu WGC, quy I/2026, cac NHTW mua rong 280 tan vang, tang 15% so voi cung ky nam truoc.','date'=>'05/03/2026'],
-    ['icon'=>'🌍','title'=>'Cang thang dia chinh tri day nhu cau tru an toan','excerpt'=>'Tinh hinh bat on o Trung Dong va bien Dong lam tang nhu cau vang nhu tai san tru an toan an toan.','date'=>'04/03/2026'],
-    ['icon'=>'📈','title'=>'Phan tich ky thuat: Vang hinh thanh dang nen tang','excerpt'=>'Mau hinh gia hien tai cho thay vang dang tich luy trong vung 2,900-2,930 truoc khi co dot pha lon.','date'=>'03/03/2026'],
+    ['icon'=>'📊','title'=>'Giá vàng phục hồi mạnh sau phiên giảm sâu','excerpt'=>'Giá vàng SJC tăng 500,000 đồng/lượng trong phiên sáng nay sau khi thị trường quốc tế phát tín hiệu tích cực từ chính sách Fed.','date'=>'07/03/2026'],
+    ['icon'=>'💰','title'=>'USD suy yếu đẩy giá vàng thế giới lên đỉnh mới','excerpt'=>'Chỉ số DXY giảm 0.3%, hỗ trợ giá vàng XAU/USD vượt mốc 2,920 USD/oz lần đầu trong tuần.','date'=>'06/03/2026'],
+    ['icon'=>'🏦','title'=>'Ngân hàng trung ương các nước tiếp tục mua vàng','excerpt'=>'Theo dữ liệu WGC, quý I/2026, các NHTW mua ròng 280 tấn vàng, tăng 15% so với cùng kỳ năm trước.','date'=>'05/03/2026'],
+    ['icon'=>'🌍','title'=>'Căng thẳng địa chính trị đẩy nhu cầu trú ẩn an toàn','excerpt'=>'Tình hình bất ổn ở Trung Đông và biển Đông làm tăng nhu cầu vàng như tài sản trú ẩn an toàn.','date'=>'04/03/2026'],
+    ['icon'=>'📈','title'=>'Phân tích kỹ thuật: Vàng hình thành đáy nền tảng','excerpt'=>'Mẫu hình giá hiện tại cho thấy vàng đang tích luỹ trong vùng 2,900-2,930 trước khi có đột phá lớn.','date'=>'03/03/2026'],
 ];
 $newsPhp = "[\n";
 foreach ($newsArticles as $a) {
@@ -931,11 +931,11 @@ foreach ($newsArticles as $a) {
 $newsPhp .= "    ]";
 
 $newsCategories = [
-    ''                     => ['all',     'Tin tuc gia vang moi nhat'],
-    'tin-thi-truong-vang'  => ['market',  'Tin thi truong vang'],
-    'tin-tai-chinh'        => ['finance', 'Tin tai chinh'],
-    'tin-kinh-te'          => ['economy', 'Tin kinh te'],
-    'tin-the-gioi'         => ['world',   'Tin the gioi'],
+    ''                     => ['all',     'Tin tức giá vàng mới nhất'],
+    'tin-thi-truong-vang'  => ['market',  'Tin thị trường vàng'],
+    'tin-tai-chinh'        => ['finance', 'Tin tài chính'],
+    'tin-kinh-te'          => ['economy', 'Tin kinh tế'],
+    'tin-the-gioi'         => ['world',   'Tin thế giới'],
 ];
 foreach ($newsCategories as $slug => $info) {
     $path = $slug === '' ? 'tin-tuc-gia-vang' : "tin-tuc-gia-vang/$slug";
@@ -945,16 +945,16 @@ foreach ($newsCategories as $slug => $info) {
        ."    'categoryLabel' => '{$info[1]}',\n"
        ."    'articles'      => $newsPhp,\n"
        ."])",
-        'Tin tuc',
+        'Tin tức',
         "@include('gold.sections.sidebar-price')\n@include('gold.sections.sidebar-news')"
     );
 }
 
 // ---- lich-su-gia-vang ----
 $sampleMonths = [
-    ['label'=>'Thang 1','open'=>'89,000,000','high'=>'90,500,000','low'=>'88,200,000','close'=>'90,000,000','change'=>'+1,000,000'],
-    ['label'=>'Thang 2','open'=>'90,000,000','high'=>'91,800,000','low'=>'89,500,000','close'=>'91,200,000','change'=>'+1,200,000'],
-    ['label'=>'Thang 3','open'=>'91,200,000','high'=>'92,800,000','low'=>'90,800,000','close'=>'92,500,000','change'=>'+1,300,000'],
+    ['label'=>'Tháng 1','open'=>'89,000,000','high'=>'90,500,000','low'=>'88,200,000','close'=>'90,000,000','change'=>'+1,000,000'],
+    ['label'=>'Tháng 2','open'=>'90,000,000','high'=>'91,800,000','low'=>'89,500,000','close'=>'91,200,000','change'=>'+1,200,000'],
+    ['label'=>'Tháng 3','open'=>'91,200,000','high'=>'92,800,000','low'=>'90,800,000','close'=>'92,500,000','change'=>'+1,300,000'],
 ];
 $monthsPhp = "[\n";
 foreach ($sampleMonths as $m) {
@@ -963,11 +963,11 @@ foreach ($sampleMonths as $m) {
 $monthsPhp .= "    ]";
 
 $historyYears = [
-    ''              => ['all',  'tong hop'],
-    'gia-vang-2026' => ['2026', 'nam 2026'],
-    'gia-vang-2025' => ['2025', 'nam 2025'],
-    'gia-vang-2024' => ['2024', 'nam 2024'],
-    'gia-vang-2023' => ['2023', 'nam 2023'],
+    ''              => ['all',  'tổng hợp'],
+    'gia-vang-2026' => ['2026', 'năm 2026'],
+    'gia-vang-2025' => ['2025', 'năm 2025'],
+    'gia-vang-2024' => ['2024', 'năm 2024'],
+    'gia-vang-2023' => ['2023', 'năm 2023'],
 ];
 foreach ($historyYears as $slug => $info) {
     $path = $slug === '' ? 'lich-su-gia-vang' : "lich-su-gia-vang/$slug";
@@ -977,7 +977,7 @@ foreach ($historyYears as $slug => $info) {
        ."    'yearLabel' => '{$info[1]}',\n"
        ."    'months'    => $monthsPhp,\n"
        ."])",
-        'Lich su',
+        'Lịch sử',
         "@include('gold.sections.sidebar-price')"
     );
 }
@@ -985,76 +985,76 @@ foreach ($historyYears as $slug => $info) {
 // ---- cong-cu ----
 $pages['cong-cu'] = pg(<<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">Bo cong cu gia vang</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Bộ công cụ giá vàng</h2>
     <div class="grid gap-5 sm:grid-cols-2">
         <a href="/cong-cu/quy-doi-vang" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
             <p class="text-2xl mb-2">⚖️</p>
-            <h3 class="font-bold text-slate-900">Quy doi vang</h3>
-            <p class="mt-1 text-sm text-slate-500">Quy doi giua luong, chi, gram, ounce</p>
+            <h3 class="font-bold text-slate-900">Quy đổi vàng</h3>
+            <p class="mt-1 text-sm text-slate-500">Quy đổi giữa lượng, chỉ, gram, ounce</p>
         </a>
         <a href="/cong-cu/tinh-gia-vang" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
             <p class="text-2xl mb-2">🧮</p>
-            <h3 class="font-bold text-slate-900">Tinh gia vang</h3>
-            <p class="mt-1 text-sm text-slate-500">Tinh gia tri vang theo khoi luong</p>
+            <h3 class="font-bold text-slate-900">Tính giá vàng</h3>
+            <p class="mt-1 text-sm text-slate-500">Tính giá trị vàng theo khối lượng</p>
         </a>
         <a href="/cong-cu/tinh-lai-dau-tu-vang" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
             <p class="text-2xl mb-2">📈</p>
-            <h3 class="font-bold text-slate-900">Tinh lai dau tu vang</h3>
-            <p class="mt-1 text-sm text-slate-500">Tinh loi nhuan, lo tren khoan dau tu</p>
+            <h3 class="font-bold text-slate-900">Tính lãi đầu tư vàng</h3>
+            <p class="mt-1 text-sm text-slate-500">Tính lợi nhuận, lỗ trên khoản đầu tư</p>
         </a>
         <a href="/cong-cu/doi-vang-sang-usd" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
             <p class="text-2xl mb-2">💱</p>
-            <h3 class="font-bold text-slate-900">Doi vang sang USD</h3>
-            <p class="mt-1 text-sm text-slate-500">Quy doi gia vang VND sang USD</p>
+            <h3 class="font-bold text-slate-900">Đổi vàng sang USD</h3>
+            <p class="mt-1 text-sm text-slate-500">Quy đổi giá vàng VND sang USD</p>
         </a>
     </div>
 </div>
-BLADE, 'Cong cu', "@include('gold.sections.sidebar-price')");
+BLADE, 'Công cụ', "@include('gold.sections.sidebar-price')");
 
 // Tool sub-pages
 $tools = [
     'quy-doi-vang' => [
-        'Quy doi don vi vang',
-        'Chuyen doi nhanh giua cac don vi: luong, chi, gram, ounce troy.',
+        'Quy đổi đơn vị vàng',
+        'Chuyển đổi nhanh giữa các đơn vị: lượng, chỉ, gram, ounce troy.',
         [
-            ['label'=>'Gia tri','type'=>'number','placeholder'=>'1','default'=>'1'],
-            ['label'=>'Tu don vi','options'=>['Luong','Chi','Gram','Ounce troy']],
-            ['label'=>'Sang don vi','options'=>['Gram','Chi','Luong','Ounce troy']],
+            ['label'=>'Giá trị','type'=>'number','placeholder'=>'1','default'=>'1'],
+            ['label'=>'Từ đơn vị','options'=>['Lượng','Chỉ','Gram','Ounce troy']],
+            ['label'=>'Sang đơn vị','options'=>['Gram','Chỉ','Lượng','Ounce troy']],
         ],
-        'Quy doi',
-        ['1 luong = 37.5 gram','1 luong = 10 chi','1 ounce troy = 31.1035 gram','1 luong = 1.2057 ounce troy'],
+        'Quy đổi',
+        ['1 lượng = 37.5 gram','1 lượng = 10 chỉ','1 ounce troy = 31.1035 gram','1 lượng = 1.2057 ounce troy'],
     ],
     'tinh-gia-vang' => [
-        'Tinh gia vang theo khoi luong',
-        'Nhap khoi luong va don gia de tinh tong gia tri vang.',
+        'Tính giá vàng theo khối lượng',
+        'Nhập khối lượng và đơn giá để tính tổng giá trị vàng.',
         [
-            ['label'=>'Khoi luong','type'=>'number','placeholder'=>'1','default'=>'1'],
-            ['label'=>'Don vi','options'=>['Luong','Chi','Gram']],
-            ['label'=>'Don gia (VND/luong)','type'=>'number','placeholder'=>'92500000','default'=>'92500000'],
+            ['label'=>'Khối lượng','type'=>'number','placeholder'=>'1','default'=>'1'],
+            ['label'=>'Đơn vị','options'=>['Lượng','Chỉ','Gram']],
+            ['label'=>'Đơn giá (VND/lượng)','type'=>'number','placeholder'=>'92500000','default'=>'92500000'],
         ],
-        'Tinh gia',
-        ['Nhap khoi luong vang ban muon tinh','Chon don vi phu hop','Nhap don gia hien tai hoac don gia ban mua','Ket qua = Khoi luong x Don gia (quy ve luong)'],
+        'Tính giá',
+        ['Nhập khối lượng vàng bạn muốn tính','Chọn đơn vị phù hợp','Nhập đơn giá hiện tại hoặc đơn giá bạn mua','Kết quả = Khối lượng x Đơn giá (quy về lượng)'],
     ],
     'tinh-lai-dau-tu-vang' => [
-        'Tinh lai dau tu vang',
-        'Tinh loi nhuan hoac lo tu khoan dau tu vang cua ban.',
+        'Tính lãi đầu tư vàng',
+        'Tính lợi nhuận hoặc lỗ từ khoản đầu tư vàng của bạn.',
         [
-            ['label'=>'Gia mua vao (VND/luong)','type'=>'number','placeholder'=>'85000000','default'=>'85000000'],
-            ['label'=>'Gia hien tai (VND/luong)','type'=>'number','placeholder'=>'92500000','default'=>'92500000'],
-            ['label'=>'So luong (luong)','type'=>'number','placeholder'=>'1','default'=>'1'],
+            ['label'=>'Giá mua vào (VND/lượng)','type'=>'number','placeholder'=>'85000000','default'=>'85000000'],
+            ['label'=>'Giá hiện tại (VND/lượng)','type'=>'number','placeholder'=>'92500000','default'=>'92500000'],
+            ['label'=>'Số lượng (lượng)','type'=>'number','placeholder'=>'1','default'=>'1'],
         ],
-        'Tinh lai/lo',
-        ['Nhap gia ban da mua vang','Nhap gia vang hien tai','Nhap so luong luong da mua','Loi nhuan = (Gia hien tai - Gia mua) x So luong'],
+        'Tính lãi/lỗ',
+        ['Nhập giá bạn đã mua vàng','Nhập giá vàng hiện tại','Nhập số lượng lượng đã mua','Lợi nhuận = (Giá hiện tại - Giá mua) x Số lượng'],
     ],
     'doi-vang-sang-usd' => [
-        'Doi gia vang VND sang USD',
-        'Quy doi gia vang tu VND sang USD theo ty gia hien tai.',
+        'Đổi giá vàng VND sang USD',
+        'Quy đổi giá vàng từ VND sang USD theo tỷ giá hiện tại.',
         [
-            ['label'=>'Gia vang (VND)','type'=>'number','placeholder'=>'92500000','default'=>'92500000'],
-            ['label'=>'Ty gia USD/VND','type'=>'number','placeholder'=>'25400','default'=>'25400'],
+            ['label'=>'Giá vàng (VND)','type'=>'number','placeholder'=>'92500000','default'=>'92500000'],
+            ['label'=>'Tỷ giá USD/VND','type'=>'number','placeholder'=>'25400','default'=>'25400'],
         ],
-        'Quy doi',
-        ['Nhap gia vang tinh bang VND','Nhap ty gia USD/VND hien tai','Ket qua = Gia VND / Ty gia','So sanh voi gia quoc te de thay chenh lech'],
+        'Quy đổi',
+        ['Nhập giá vàng tính bằng VND','Nhập tỷ giá USD/VND hiện tại','Kết quả = Giá VND / Tỷ giá','So sánh với giá quốc tế để thấy chênh lệch'],
     ],
 ];
 foreach ($tools as $slug => $t) {
@@ -1084,7 +1084,7 @@ foreach ($tools as $slug => $t) {
        ."    'buttonLabel'  => '{$t[3]}',\n"
        ."    'instructions' => $instPhp,\n"
        ."])",
-        'Cong cu',
+        'Công cụ',
         "@include('gold.sections.sidebar-tools')"
     );
 }
@@ -1092,47 +1092,47 @@ foreach ($tools as $slug => $t) {
 // ---- thi-truong ----
 $pages['thi-truong'] = pg(<<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">Tong quan thi truong</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Tổng quan thị trường</h2>
     <div class="grid gap-5 sm:grid-cols-2">
         <a href="/thi-truong/gia-xang" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
             <p class="text-2xl mb-2">⛽</p>
-            <h3 class="font-bold text-slate-900">Gia xang</h3>
-            <p class="mt-1 text-sm text-slate-500">Cap nhat gia xang dau trong nuoc</p>
+            <h3 class="font-bold text-slate-900">Giá xăng</h3>
+            <p class="mt-1 text-sm text-slate-500">Cập nhật giá xăng dầu trong nước</p>
         </a>
         <a href="/thi-truong/ty-gia-ngoai-te" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
             <p class="text-2xl mb-2">💵</p>
-            <h3 class="font-bold text-slate-900">Ty gia ngoai te</h3>
-            <p class="mt-1 text-sm text-slate-500">Ty gia cac dong tien chinh</p>
+            <h3 class="font-bold text-slate-900">Tỷ giá ngoại tệ</h3>
+            <p class="mt-1 text-sm text-slate-500">Tỷ giá các đồng tiền chính</p>
         </a>
         <a href="/thi-truong/gia-bac" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
             <p class="text-2xl mb-2">🥈</p>
-            <h3 class="font-bold text-slate-900">Gia bac</h3>
-            <p class="mt-1 text-sm text-slate-500">Gia bac the gioi va trong nuoc</p>
+            <h3 class="font-bold text-slate-900">Giá bạc</h3>
+            <p class="mt-1 text-sm text-slate-500">Giá bạc thế giới và trong nước</p>
         </a>
         <a href="/thi-truong/gia-kim-loai" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
             <p class="text-2xl mb-2">🔩</p>
-            <h3 class="font-bold text-slate-900">Gia kim loai</h3>
-            <p class="mt-1 text-sm text-slate-500">Bac, platinum, palladium va dong</p>
+            <h3 class="font-bold text-slate-900">Giá kim loại</h3>
+            <p class="mt-1 text-sm text-slate-500">Bạc, platinum, palladium và đồng</p>
         </a>
     </div>
 </div>
-BLADE, 'Thi truong', "@include('gold.sections.sidebar-price')");
+BLADE, 'Thị trường', "@include('gold.sections.sidebar-price')");
 
 $markets = [
     'gia-xang' => [
-        'Gia xang dau hom nay',
-        ['San pham', 'Gia (VND/lit)', 'Thay doi'],
+        'Giá xăng dầu hôm nay',
+        ['Sản phẩm', 'Giá (VND/lít)', 'Thay đổi'],
         [
             ['RON 95-III', '23,650', '+320'],
             ['RON 95-V', '23,150', '+280'],
             ['E5 RON 92', '22,450', '+250'],
             ['DO 0.05S', '20,980', '+180'],
-            ['Dau hoa', '20,350', '+150'],
+            ['Dầu hoả', '20,350', '+150'],
         ],
     ],
     'ty-gia-ngoai-te' => [
-        'Ty gia ngoai te hom nay',
-        ['Ngoai te', 'Mua TM', 'Mua CK', 'Ban'],
+        'Tỷ giá ngoại tệ hôm nay',
+        ['Ngoại tệ', 'Mua TM', 'Mua CK', 'Bán'],
         [
             ['USD', '25,150', '25,250', '25,480'],
             ['EUR', '26,950', '27,150', '27,680'],
@@ -1143,24 +1143,24 @@ $markets = [
         ],
     ],
     'gia-bac' => [
-        'Gia bac hom nay',
-        ['San pham', 'Gia (VND/luong)', 'Thay doi'],
+        'Giá bạc hôm nay',
+        ['Sản phẩm', 'Giá (VND/lượng)', 'Thay đổi'],
         [
-            ['Bac 999 (The gioi)', '32.45 USD/oz', '+0.28'],
-            ['Bac 999 Viet Nam', '1,050,000', '+15,000'],
-            ['Bac 925 (trang suc)', '890,000', '+12,000'],
-            ['Bac thanh (1kg)', '28,500,000', '+380,000'],
+            ['Bạc 999 (Thế giới)', '32.45 USD/oz', '+0.28'],
+            ['Bạc 999 Việt Nam', '1,050,000', '+15,000'],
+            ['Bạc 925 (trang sức)', '890,000', '+12,000'],
+            ['Bạc thanh (1kg)', '28,500,000', '+380,000'],
         ],
     ],
     'gia-kim-loai' => [
-        'Gia kim loai quy hom nay',
-        ['Kim loai', 'Gia (USD/oz)', 'Thay doi', '% 30 ngay'],
+        'Giá kim loại quý hôm nay',
+        ['Kim loại', 'Giá (USD/oz)', 'Thay đổi', '% 30 ngày'],
         [
-            ['Vang (XAU)', '2,918.45', '+12.30', '+2.8%'],
-            ['Bac (XAG)', '32.45', '+0.28', '+3.1%'],
+            ['Vàng (XAU)', '2,918.45', '+12.30', '+2.8%'],
+            ['Bạc (XAG)', '32.45', '+0.28', '+3.1%'],
             ['Platinum (XPT)', '985.60', '+5.40', '+1.5%'],
             ['Palladium (XPD)', '975.30', '-8.20', '-2.1%'],
-            ['Dong (HG)', '4.15', '+0.03', '+1.2%'],
+            ['Đồng (HG)', '4.15', '+0.03', '+1.2%'],
         ],
     ],
 ];
@@ -1177,7 +1177,7 @@ foreach ($markets as $slug => $m) {
        ."    'columns'     => $colsPhp,\n"
        ."    'rows'        => $rowsPhp,\n"
        ."])",
-        'Thi truong',
+        'Thị trường',
         "@include('gold.sections.sidebar-price')"
     );
 }
@@ -1185,83 +1185,83 @@ foreach ($markets as $slug => $m) {
 // ---- kien-thuc-vang ----
 $pages['kien-thuc-vang'] = pg(<<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">Kien thuc ve vang</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Kiến thức về vàng</h2>
     <div class="grid gap-5">
         <a href="/kien-thuc-vang/vang-9999-la-gi" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
-            <h3 class="font-bold text-slate-900">Vang 9999 la gi?</h3>
-            <p class="mt-1 text-sm text-slate-500">Tim hieu ve vang 4 so 9 va cach phan biet voi cac loai vang khac tren thi truong.</p>
+            <h3 class="font-bold text-slate-900">Vàng 9999 là gì?</h3>
+            <p class="mt-1 text-sm text-slate-500">Tìm hiểu về vàng 4 số 9 và cách phân biệt với các loại vàng khác trên thị trường.</p>
         </a>
         <a href="/kien-thuc-vang/vang-sjc-la-gi" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
-            <h3 class="font-bold text-slate-900">Vang SJC la gi?</h3>
-            <p class="mt-1 text-sm text-slate-500">Lich su hinh thanh, dac diem va vi tri cua vang SJC trong thi truong Viet Nam.</p>
+            <h3 class="font-bold text-slate-900">Vàng SJC là gì?</h3>
+            <p class="mt-1 text-sm text-slate-500">Lịch sử hình thành, đặc điểm và vị trí của vàng SJC trong thị trường Việt Nam.</p>
         </a>
         <a href="/kien-thuc-vang/nen-mua-vang-nao" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
-            <h3 class="font-bold text-slate-900">Nen mua vang nao?</h3>
-            <p class="mt-1 text-sm text-slate-500">So sanh vang mieng, vang nhan, vang trang suc de chon loai phu hop voi muc dich.</p>
+            <h3 class="font-bold text-slate-900">Nên mua vàng nào?</h3>
+            <p class="mt-1 text-sm text-slate-500">So sánh vàng miếng, vàng nhẫn, vàng trang sức để chọn loại phù hợp với mục đích.</p>
         </a>
         <a href="/kien-thuc-vang/cach-dau-tu-vang" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
-            <h3 class="font-bold text-slate-900">Cach dau tu vang hieu qua</h3>
-            <p class="mt-1 text-sm text-slate-500">Huong dan chien luoc dau tu vang cho nguoi moi bat dau.</p>
+            <h3 class="font-bold text-slate-900">Cách đầu tư vàng hiệu quả</h3>
+            <p class="mt-1 text-sm text-slate-500">Hướng dẫn chiến lược đầu tư vàng cho người mới bắt đầu.</p>
         </a>
     </div>
 </div>
-BLADE, 'Kien thuc', "@include('gold.sections.sidebar-price')");
+BLADE, 'Kiến thức', "@include('gold.sections.sidebar-price')");
 
 $articles = [
     'vang-9999-la-gi' => [
-        'Vang 9999 la gi?',
-        ['The nao la vang 9999?', 'Dac diem cua vang 9999', 'Phan biet vang 9999 va cac loai khac', 'Gia tri dau tu cua vang 9999'],
+        'Vàng 9999 là gì?',
+        ['Thế nào là vàng 9999?', 'Đặc điểm của vàng 9999', 'Phân biệt vàng 9999 và các loại khác', 'Giá trị đầu tư của vàng 9999'],
         [
-            ['heading'=>'The nao la vang 9999?',
-             'body'=>'<p>Vang 9999 (hay vang 4 so 9) la loai vang co do tinh khiet cao nhat, dat 99.99% vang nguyen chat. Day la tieu chuan cao nhat trong nganh cong nghiep vang tren toan the gioi.</p><p class="mt-2">O Viet Nam, vang 9999 duoc giao dich pho bien duoi dang vang mieng (SJC, DOJI, PNJ) va vang nhan tron.</p>'],
-            ['heading'=>'Dac diem cua vang 9999',
-             'body'=>'<ul class="list-disc list-inside space-y-1 mt-1"><li>Do tinh khiet: 99.99%</li><li>Mau sac: Vang dam, bong</li><li>Do mem: Mem hon vang 18K, 14K</li><li>Khong bi oxy hoa hay bien mau</li><li>De dang kiem dinh bang phuong phap hoa hoc va dien tu</li></ul>'],
-            ['heading'=>'Phan biet vang 9999 va cac loai khac',
-             'body'=>'<p>Vang 9999 khac voi vang 24K (99.9%), vang 18K (75%), vang 14K (58.5%). Do tinh khiet cao hon nen vang 9999 co gia tri dau tu tot hon nhung it phu hop lam trang suc do mem.</p>'],
-            ['heading'=>'Gia tri dau tu cua vang 9999',
-             'body'=>'<p>Vang 9999 duoc xem la kenh dau tu an toan, bao toan gia tri truoc lam phat. Nha dau tu thuong mua vang 9999 duoi dang vang mieng SJC hoac vang nhan de tich tru tai san dai han.</p>'],
+            ['heading'=>'Thế nào là vàng 9999?',
+             'body'=>'<p>Vàng 9999 (hay vàng 4 số 9) là loại vàng có độ tinh khiết cao nhất, đạt 99.99% vàng nguyên chất. Đây là tiêu chuẩn cao nhất trong ngành công nghiệp vàng trên toàn thế giới.</p><p class="mt-2">Ở Việt Nam, vàng 9999 được giao dịch phổ biến dưới dạng vàng miếng (SJC, DOJI, PNJ) và vàng nhẫn tròn.</p>'],
+            ['heading'=>'Đặc điểm của vàng 9999',
+             'body'=>'<ul class="list-disc list-inside space-y-1 mt-1"><li>Độ tinh khiết: 99.99%</li><li>Màu sắc: Vàng đậm, bóng</li><li>Độ mềm: Mềm hơn vàng 18K, 14K</li><li>Không bị oxy hóa hay biến màu</li><li>Dễ dàng kiểm định bằng phương pháp hóa học và điện tử</li></ul>'],
+            ['heading'=>'Phân biệt vàng 9999 và các loại khác',
+             'body'=>'<p>Vàng 9999 khác với vàng 24K (99.9%), vàng 18K (75%), vàng 14K (58.5%). Độ tinh khiết cao hơn nên vàng 9999 có giá trị đầu tư tốt hơn nhưng ít phù hợp làm trang sức do mềm.</p>'],
+            ['heading'=>'Giá trị đầu tư của vàng 9999',
+             'body'=>'<p>Vàng 9999 được xem là kênh đầu tư an toàn, bảo toàn giá trị trước lạm phát. Nhà đầu tư thường mua vàng 9999 dưới dạng vàng miếng SJC hoặc vàng nhẫn để tích trữ tài sản dài hạn.</p>'],
         ],
     ],
     'vang-sjc-la-gi' => [
-        'Vang SJC la gi?',
-        ['Gioi thieu vang SJC', 'Lich su hinh thanh', 'Vi tri tren thi truong', 'Cach mua ban vang SJC'],
+        'Vàng SJC là gì?',
+        ['Giới thiệu vàng SJC', 'Lịch sử hình thành', 'Vị trí trên thị trường', 'Cách mua bán vàng SJC'],
         [
-            ['heading'=>'Gioi thieu vang SJC',
-             'body'=>'<p>Vang SJC la thuong hieu vang mieng do Cong ty TNHH MTV Vang Bac Da Quy Sai Gon (SJC) san xuat. Day la thuong hieu vang duoc Nha nuoc uy quyen san xuat doc quyen khu 1 luong tai Viet Nam.</p>'],
-            ['heading'=>'Lich su hinh thanh',
-             'body'=>'<p>SJC duoc thanh lap nam 1988, tro thanh don vi san xuat vang mieng lon nhat Viet Nam. Tu nam 2012, theo Nghi dinh 24, SJC la thuong hieu vang mieng quoc gia duy nhat.</p>'],
-            ['heading'=>'Vi tri tren thi truong',
-             'body'=>'<p>Vang SJC chiem thi phan lon nhat trong giao dich vang mieng tai Viet Nam. Gia vang SJC thuong cao hon cac thuong hieu khac va gia quoc te quy doi do tinh khan hiem va thuong hieu manh.</p>'],
-            ['heading'=>'Cach mua ban vang SJC',
-             'body'=>'<p>Ban co the mua ban vang SJC tai cac cua hang SJC, ngan hang (Vietcombank, BIDV, Eximbank...) va cac dai ly uy quyen tren toan quoc. Can mang theo CMND/CCCD khi giao dich.</p>'],
+            ['heading'=>'Giới thiệu vàng SJC',
+             'body'=>'<p>Vàng SJC là thương hiệu vàng miếng do Công ty TNHH MTV Vàng Bạc Đá Quý Sài Gòn (SJC) sản xuất. Đây là thương hiệu vàng được Nhà nước ủy quyền sản xuất độc quyền khối 1 lượng tại Việt Nam.</p>'],
+            ['heading'=>'Lịch sử hình thành',
+             'body'=>'<p>SJC được thành lập năm 1988, trở thành đơn vị sản xuất vàng miếng lớn nhất Việt Nam. Từ năm 2012, theo Nghị định 24, SJC là thương hiệu vàng miếng quốc gia duy nhất.</p>'],
+            ['heading'=>'Vị trí trên thị trường',
+             'body'=>'<p>Vàng SJC chiếm thị phần lớn nhất trong giao dịch vàng miếng tại Việt Nam. Giá vàng SJC thường cao hơn các thương hiệu khác và giá quốc tế quy đổi do tính khan hiếm và thương hiệu mạnh.</p>'],
+            ['heading'=>'Cách mua bán vàng SJC',
+             'body'=>'<p>Bạn có thể mua bán vàng SJC tại các cửa hàng SJC, ngân hàng (Vietcombank, BIDV, Eximbank...) và các đại lý ủy quyền trên toàn quốc. Cần mang theo CMND/CCCD khi giao dịch.</p>'],
         ],
     ],
     'nen-mua-vang-nao' => [
-        'Nen mua vang nao?',
-        ['Cac loai vang pho bien', 'Vang mieng vs Vang nhan', 'Vang trang suc co nen mua?', 'Loi khuyen chon vang'],
+        'Nên mua vàng nào?',
+        ['Các loại vàng phổ biến', 'Vàng miếng vs Vàng nhẫn', 'Vàng trang sức có nên mua?', 'Lời khuyên chọn vàng'],
         [
-            ['heading'=>'Cac loai vang pho bien',
-             'body'=>'<p>Tren thi truong Viet Nam co 3 loai vang chinh:</p><ul class="list-disc list-inside space-y-1 mt-1"><li><strong>Vang mieng SJC</strong>: Vang mieng quoc gia, do tinh khiet 99.99%</li><li><strong>Vang nhan 9999</strong>: Vang tron, de giao dich, gia sat the gioi hon</li><li><strong>Vang trang suc</strong>: 18K-24K, co them phi gia cong</li></ul>'],
-            ['heading'=>'Vang mieng vs Vang nhan',
-             'body'=>'<p><strong>Vang mieng SJC</strong> co gia cao hon do thuong hieu va tinh khan hiem, phu hop tich tru lon. <strong>Vang nhan 9999</strong> co gia gan voi gia quoc te hon, phu hop giao dich linh hoat va dau tu ngan han.</p>'],
-            ['heading'=>'Vang trang suc co nen mua?',
-             'body'=>'<p>Vang trang suc khong nen mua de dau tu vi khi ban lai se bi tru phi gia cong (thuong 500,000 - 2,000,000 dong/chi). Chi nen mua de su dung va deo.</p>'],
-            ['heading'=>'Loi khuyen chon vang',
-             'body'=>'<p><strong>Dau tu dai han</strong>: Vang mieng SJC<br><strong>Dau tu linh hoat</strong>: Vang nhan 9999<br><strong>Su dung ca nhan</strong>: Vang trang suc 18K-24K<br>Luon mua tai cua hang uy tin va giu hoa don, chung chi.</p>'],
+            ['heading'=>'Các loại vàng phổ biến',
+             'body'=>'<p>Trên thị trường Việt Nam có 3 loại vàng chính:</p><ul class="list-disc list-inside space-y-1 mt-1"><li><strong>Vàng miếng SJC</strong>: Vàng miếng quốc gia, độ tinh khiết 99.99%</li><li><strong>Vàng nhẫn 9999</strong>: Vàng tròn, dễ giao dịch, giá sát thế giới hơn</li><li><strong>Vàng trang sức</strong>: 18K-24K, có thêm phí gia công</li></ul>'],
+            ['heading'=>'Vàng miếng vs Vàng nhẫn',
+             'body'=>'<p><strong>Vàng miếng SJC</strong> có giá cao hơn do thương hiệu và tính khan hiếm, phù hợp tích trữ lớn. <strong>Vàng nhẫn 9999</strong> có giá gần với giá quốc tế hơn, phù hợp giao dịch linh hoạt và đầu tư ngắn hạn.</p>'],
+            ['heading'=>'Vàng trang sức có nên mua?',
+             'body'=>'<p>Vàng trang sức không nên mua để đầu tư vì khi bán lại sẽ bị trừ phí gia công (thường 500,000 - 2,000,000 đồng/chỉ). Chỉ nên mua để sử dụng và đeo.</p>'],
+            ['heading'=>'Lời khuyên chọn vàng',
+             'body'=>'<p><strong>Đầu tư dài hạn</strong>: Vàng miếng SJC<br><strong>Đầu tư linh hoạt</strong>: Vàng nhẫn 9999<br><strong>Sử dụng cá nhân</strong>: Vàng trang sức 18K-24K<br>Luôn mua tại cửa hàng uy tín và giữ hóa đơn, chứng chỉ.</p>'],
         ],
     ],
     'cach-dau-tu-vang' => [
-        'Cach dau tu vang hieu qua',
-        ['Tai sao nen dau tu vang?', 'Cac hinh thuc dau tu vang', 'Chien luoc DCA', 'Nhung sai lam can tranh'],
+        'Cách đầu tư vàng hiệu quả',
+        ['Tại sao nên đầu tư vàng?', 'Các hình thức đầu tư vàng', 'Chiến lược DCA', 'Những sai lầm cần tránh'],
         [
-            ['heading'=>'Tai sao nen dau tu vang?',
-             'body'=>'<p>Vang la tai san tru an toan, bao toan gia tri truoc lam phat va bat on kinh te. Trong 20 nam qua, gia vang tang trung binh 8-10%/nam, vuot xa gui tiet kiem.</p>'],
-            ['heading'=>'Cac hinh thuc dau tu vang',
-             'body'=>'<ul class="list-disc list-inside space-y-1 mt-1"><li><strong>Mua vang vat chat</strong>: Vang mieng, vang nhan - an toan, don gian</li><li><strong>Tai khoan vang</strong>: Mo tai ngan hang, giao dich online</li><li><strong>ETF vang</strong>: Quy ETF theo doi gia vang (SPDR, iShares)</li><li><strong>Huan tien vang</strong>: Mua ban quyen chon tren san quoc te</li></ul>'],
-            ['heading'=>'Chien luoc DCA',
-             'body'=>'<p><strong>Dollar Cost Averaging (DCA)</strong> la chien luoc mua vang dinh ky voi so tien co dinh (vi du: moi thang mua 1 chi). Giup giam rui ro mua dinh va lay gia trung binh tot trong dai han.</p>'],
-            ['heading'=>'Nhung sai lam can tranh',
-             'body'=>'<ul class="list-disc list-inside space-y-1 mt-1"><li>Mua duoi khi gia tang nong (FOMO)</li><li>Dau tu toan bo von vao vang</li><li>Khong da dang hoa danh muc</li><li>Mua ban theo tin don, khong phan tich</li><li>Khong tinh phi chenh lech mua-ban</li></ul>'],
+            ['heading'=>'Tại sao nên đầu tư vàng?',
+             'body'=>'<p>Vàng là tài sản trú ẩn an toàn, bảo toàn giá trị trước lạm phát và bất ổn kinh tế. Trong 20 năm qua, giá vàng tăng trung bình 8-10%/năm, vượt xa gửi tiết kiệm.</p>'],
+            ['heading'=>'Các hình thức đầu tư vàng',
+             'body'=>'<ul class="list-disc list-inside space-y-1 mt-1"><li><strong>Mua vàng vật chất</strong>: Vàng miếng, vàng nhẫn - an toàn, đơn giản</li><li><strong>Tài khoản vàng</strong>: Mở tại ngân hàng, giao dịch online</li><li><strong>ETF vàng</strong>: Quỹ ETF theo dõi giá vàng (SPDR, iShares)</li><li><strong>Huân tiền vàng</strong>: Mua bán quyền chọn trên sàn quốc tế</li></ul>'],
+            ['heading'=>'Chiến lược DCA',
+             'body'=>'<p><strong>Dollar Cost Averaging (DCA)</strong> là chiến lược mua vàng định kỳ với số tiền cố định (ví dụ: mỗi tháng mua 1 chỉ). Giúp giảm rủi ro mua đỉnh và lấy giá trung bình tốt trong dài hạn.</p>'],
+            ['heading'=>'Những sai lầm cần tránh',
+             'body'=>'<ul class="list-disc list-inside space-y-1 mt-1"><li>Mua đuổi khi giá tăng nóng (FOMO)</li><li>Đầu tư toàn bộ vốn vào vàng</li><li>Không đa dạng hóa danh mục</li><li>Mua bán theo tin đồn, không phân tích</li><li>Không tính phí chênh lệch mua-bán</li></ul>'],
         ],
     ],
 ];
@@ -1279,7 +1279,7 @@ foreach ($articles as $slug => $art) {
        ."    'toc'          => $tocPhp,\n"
        ."    'sections'     => $secPhp,\n"
        ."])",
-        'Kien thuc',
+        'Kiến thức',
         "@include('gold.sections.sidebar-price')\n@include('gold.sections.sidebar-news')"
     );
 }
@@ -1288,19 +1288,19 @@ foreach ($articles as $slug => $art) {
 $pages['api'] = pg(<<<'BLADE'
 <div class="glass-card p-4 md:p-6">
     <h2 class="text-lg font-bold text-[#001061] mb-4">GoldPrice API</h2>
-    <p class="text-sm leading-relaxed text-slate-600 mb-4">Truy cap du lieu gia vang theo thoi gian thuc thong qua REST API. Phu hop cho ung dung tai chinh, bot giao dich va bao dien tu.</p>
+    <p class="text-sm leading-relaxed text-slate-600 mb-4">Truy cập dữ liệu giá vàng theo thời gian thực thông qua REST API. Phù hợp cho ứng dụng tài chính, bot giao dịch và báo điện tử.</p>
     <div class="grid gap-5 sm:grid-cols-2">
         <a href="/api/api-gia-vang" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
-            <h3 class="font-bold text-slate-900">API Gia vang</h3>
-            <p class="mt-1 text-sm text-slate-500">Endpoints lay du lieu gia vang real-time</p>
+            <h3 class="font-bold text-slate-900">API Giá vàng</h3>
+            <p class="mt-1 text-sm text-slate-500">Endpoints lấy dữ liệu giá vàng real-time</p>
         </a>
         <a href="/api/tai-lieu-api" class="rounded-sm border border-slate-200 p-4 hover:bg-slate-50 block">
-            <h3 class="font-bold text-slate-900">Tai lieu API</h3>
-            <p class="mt-1 text-sm text-slate-500">Huong dan tich hop va vi du code</p>
+            <h3 class="font-bold text-slate-900">Tài liệu API</h3>
+            <p class="mt-1 text-sm text-slate-500">Hướng dẫn tích hợp và ví dụ code</p>
         </a>
     </div>
     <div class="mt-4 rounded-sm border border-[#bcbcbc] bg-blue-50 p-4">
-        <h3 class="font-bold text-sm text-blue-900">Bat dau nhanh</h3>
+        <h3 class="font-bold text-sm text-blue-900">Bắt đầu nhanh</h3>
         <pre class="mt-2 rounded-sm bg-slate-900 p-3 text-xs text-green-400 overflow-x-auto"><code>GET /dashboard-api/snapshot
 Content-Type: application/json</code></pre>
     </div>
@@ -1315,41 +1315,41 @@ $apiResponseSample = str_replace("'", "\\'", $apiResponseSample);
 
 $apiPages = [
     'api-gia-vang' => [
-        'API Gia vang',
-        'Danh sach endpoint lay du lieu gia vang theo thoi gian thuc.',
+        'API Giá vàng',
+        'Danh sách endpoint lấy dữ liệu giá vàng theo thời gian thực.',
         [
             [
                 'method' => 'GET',
                 'path'   => '/dashboard-api/snapshot',
-                'desc'   => 'Lay toan bo du lieu gia vang hien tai (trong nuoc + the gioi).',
+                'desc'   => 'Lấy toàn bộ dữ liệu giá vàng hiện tại (trong nước + thế giới).',
                 'params' => [],
                 'response' => $apiResponseSample,
             ],
         ],
     ],
     'tai-lieu-api' => [
-        'Tai lieu API',
-        'Huong dan tich hop GoldPrice API vao ung dung cua ban.',
+        'Tài liệu API',
+        'Hướng dẫn tích hợp GoldPrice API vào ứng dụng của bạn.',
         [
             [
                 'method' => 'GET',
                 'path'   => '/dashboard-api/snapshot',
-                'desc'   => 'Endpoint chinh de lay gia vang. Khong can xac thuc. Rate limit: 60 req/min.',
+                'desc'   => 'Endpoint chính để lấy giá vàng. Không cần xác thực. Rate limit: 60 req/min.',
                 'params' => [
-                    ['name'=>'format','type'=>'string','desc'=>'Dinh dang tra ve: json (mac dinh)'],
+                    ['name'=>'format','type'=>'string','desc'=>'Định dạng trả về: json (mặc định)'],
                 ],
                 'response' => "// JavaScript fetch\nconst res = await fetch('/dashboard-api/snapshot');\nconst data = await res.json();\nconsole.log(data.usCard.price);",
             ],
             [
                 'method' => 'POST',
                 'path'   => '/dashboard-api/subscribe',
-                'desc'   => 'Dang ky nhan thong bao gia vang qua email.',
+                'desc'   => 'Đăng ký nhận thông báo giá vàng qua email.',
                 'params' => [
-                    ['name'=>'name','type'=>'string','desc'=>'Ten nguoi dang ky'],
-                    ['name'=>'email','type'=>'string','desc'=>'Dia chi email'],
-                    ['name'=>'channels','type'=>'array','desc'=>'Kenh nhan tin: email, sms'],
+                    ['name'=>'name','type'=>'string','desc'=>'Tên người đăng ký'],
+                    ['name'=>'email','type'=>'string','desc'=>'Địa chỉ email'],
+                    ['name'=>'channels','type'=>'array','desc'=>'Kênh nhận tin: email, sms'],
                 ],
-                'response' => '{"ok": true, "message": "Dang ky thanh cong"}',
+                'response' => '{"ok": true, "message": "Đăng ký thành công"}',
             ],
         ],
     ],
@@ -1385,10 +1385,10 @@ foreach ($apiPages as $slug => $ap) {
 }
 
 // ---- static pages ----
-$pages['gioi-thieu'] = pg("@include('gold.sections.about')", 'Gioi thieu');
-$pages['lien-he']    = pg("@include('gold.sections.contact')", 'Lien he');
-$pages['chinh-sach-bao-mat'] = pg("@include('gold.sections.privacy')", 'Chinh sach');
-$pages['dieu-khoan-su-dung'] = pg("@include('gold.sections.terms')", 'Phap ly');
+$pages['gioi-thieu'] = pg("@include('gold.sections.about')", 'Giới thiệu');
+$pages['lien-he']    = pg("@include('gold.sections.contact')", 'Liên hệ');
+$pages['chinh-sach-bao-mat'] = pg("@include('gold.sections.privacy')", 'Chính sách');
+$pages['dieu-khoan-su-dung'] = pg("@include('gold.sections.terms')", 'Pháp lý');
 
 // ============================================================
 // 4) WRITE PAGE FILES

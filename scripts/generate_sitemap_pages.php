@@ -19,7 +19,7 @@ $flatten = function (array $nodes, string $prefix = '') use (&$flatten): array {
         $entry = [
             'path' => $fullPath,
             'title' => $meta['title'] ?? ucwords(str_replace('-', ' ', $slug)),
-            'description' => $meta['description'] ?? 'Noi dung dang duoc cap nhat theo sitemap.',
+            'description' => $meta['description'] ?? 'Nội dung đang được cập nhật theo sitemap.',
             'children' => [],
         ];
 

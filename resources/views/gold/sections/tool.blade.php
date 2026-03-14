@@ -19,15 +19,15 @@
             </div>
             @endforeach
         </div>
-        <button class="btn-primary mt-4 w-full py-3" onclick="alert('Tinh nang dang phat trien')">{{ $buttonLabel ?? 'Tinh toan' }}</button>
+        <button class="btn-primary mt-4 w-full py-3" onclick="alert('Tính năng đang phát triển')">{{ $buttonLabel ?? 'Tính toán' }}</button>
     </div>
     <div class="mt-4 rounded-sm border-2 border-dashed border-blue-200 bg-blue-50/50 p-4 text-center">
-        <p class="text-sm text-blue-700 font-medium">Ket qua se hien thi tai day</p>
+        <p class="text-sm text-blue-700 font-medium">Kết quả sẽ hiển thị tại đây</p>
         <p class="mt-1 text-3xl font-bold text-blue-900">—</p>
     </div>
     @if (!empty($instructions))
     <div class="mt-4 rounded-sm border border-slate-200 p-4">
-        <h3 class="font-bold text-sm mb-2">Huong dan su dung</h3>
+        <h3 class="font-bold text-sm mb-2">Hướng dẫn sử dụng</h3>
         <ul class="space-y-1 text-sm leading-relaxed text-slate-600">
             @foreach ($instructions as $inst)
             <li>• {{ $inst }}</li>

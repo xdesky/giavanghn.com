@@ -1,16 +1,16 @@
 @extends('gold.page-shell')
 
-@section('page-label', 'Kien thuc')
+@section('page-label', 'Kiến thức')
 
 @section('page-content')
 @include('gold.sections.knowledge', [
-    'articleTitle' => 'Nen mua vang nao?',
-    'toc'          => ['Cac loai vang pho bien','Vang mieng vs Vang nhan','Vang trang suc co nen mua?','Loi khuyen chon vang'],
+    'articleTitle' => 'Nên mua vàng nào?',
+    'toc'          => ['Các loại vàng phổ biến','Vàng miếng vs Vàng nhẫn','Vàng trang sức có nên mua?','Lời khuyên chọn vàng'],
     'sections'     => [
-        ['heading'=>'Cac loai vang pho bien','body'=>'<p>Tren thi truong Viet Nam co 3 loai vang chinh:</p><ul class=\"list-disc list-inside space-y-1 mt-1\"><li><strong>Vang mieng SJC</strong>: Vang mieng quoc gia, do tinh khiet 99.99%</li><li><strong>Vang nhan 9999</strong>: Vang tron, de giao dich, gia sat the gioi hon</li><li><strong>Vang trang suc</strong>: 18K-24K, co them phi gia cong</li></ul>'],
-        ['heading'=>'Vang mieng vs Vang nhan','body'=>'<p><strong>Vang mieng SJC</strong> co gia cao hon do thuong hieu va tinh khan hiem, phu hop tich tru lon. <strong>Vang nhan 9999</strong> co gia gan voi gia quoc te hon, phu hop giao dich linh hoat va dau tu ngan han.</p>'],
-        ['heading'=>'Vang trang suc co nen mua?','body'=>'<p>Vang trang suc khong nen mua de dau tu vi khi ban lai se bi tru phi gia cong (thuong 500,000 - 2,000,000 dong/chi). Chi nen mua de su dung va deo.</p>'],
-        ['heading'=>'Loi khuyen chon vang','body'=>'<p><strong>Dau tu dai han</strong>: Vang mieng SJC<br><strong>Dau tu linh hoat</strong>: Vang nhan 9999<br><strong>Su dung ca nhan</strong>: Vang trang suc 18K-24K<br>Luon mua tai cua hang uy tin va giu hoa don, chung chi.</p>'],
+        ['heading'=>'Các loại vàng phổ biến','body'=>'<p>Trên thị trường Việt Nam có 3 loại vàng chính:</p><ul class=\"list-disc list-inside space-y-1 mt-1\"><li><strong>Vàng miếng SJC</strong>: Vàng miếng quốc gia, độ tinh khiết 99.99%</li><li><strong>Vàng nhẫn 9999</strong>: Vàng tròn, dễ giao dịch, giá sát thế giới hơn</li><li><strong>Vàng trang sức</strong>: 18K-24K, có thêm phí gia công</li></ul>'],
+        ['heading'=>'Vàng miếng vs Vàng nhẫn','body'=>'<p><strong>Vàng miếng SJC</strong> có giá cao hơn do thương hiệu và tính khan hiếm, phù hợp tích trữ lớn. <strong>Vàng nhẫn 9999</strong> có giá gần với giá quốc tế hơn, phù hợp giao dịch linh hoạt và đầu tư ngắn hạn.</p>'],
+        ['heading'=>'Vàng trang sức có nên mua?','body'=>'<p>Vàng trang sức không nên mua để đầu tư vì khi bán lại sẽ bị trừ phí gia công (thường 500,000 - 2,000,000 đồng/chỉ). Chỉ nên mua để sử dụng và đeo.</p>'],
+        ['heading'=>'Lời khuyên chọn vàng','body'=>'<p><strong>Đầu tư dài hạn</strong>: Vàng miếng SJC<br><strong>Đầu tư linh hoạt</strong>: Vàng nhẫn 9999<br><strong>Sử dụng cá nhân</strong>: Vàng trang sức 18K-24K<br>Luôn mua tại cửa hàng uy tín và giữ hóa đơn, chứng chỉ.</p>'],
     ],
 ])
 @endsection

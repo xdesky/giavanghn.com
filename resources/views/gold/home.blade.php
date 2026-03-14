@@ -65,7 +65,7 @@
         <div class="flex flex-wrap items-center justify-between gap-3 px-5 py-4">
             <div class="flex items-center gap-2">
                 <span class="inline-flex items-center gap-2 rounded-full bg-[#ebebeb] px-3 py-1.5 text-sm text-[#333]"><i data-lucide="home" class="h-4 w-4"></i> Giá vàng hôm nay</span>
-                <span class="text-sm text-[#666]">Tổng hợp dữ liệu thị trường, chỉ số kỹ thuật và nhận định chuyên gia trí tuệ nhân tạo</span>
+                <span class="text-sm text-[#666]">Tổng hợp dữ liệu thị trường, chỉ số kỹ thuật và nhận định bởi chuyên gia trí tuệ nhân tạo</span>
             </div>
             <div class="flex flex-wrap items-center gap-3">
                 <span class="inline-flex items-center gap-2 text-xs"><i class="block h-2.5 w-2.5 rounded-full bg-[#168307] animate-pulse"></i><span class="text-[#168307]">Dữ liệu real-time</span></span>
@@ -114,7 +114,7 @@
                             </div>
                             <span id="sjcTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-sm text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['sjcCard']['trendPercent']) }}</span>
                         </div>
-                        <div class="flex gap-4">
+                        <div class="flex gap-4 mt-3">
                             <div class="flex flex-col gap-2">
                                 <p class="text-2xl font-bold leading-none text-[#001061] md:text-3xl xl:text-[40px]" id="sjcPriceText"></p>
                                 <p class="text-base font-medium text-[#001061] md:text-lg xl:text-[22px]" id="sjcUnitText"></p>
@@ -147,7 +147,7 @@
                             </div>
                             <span id="usTrendPercent" class="inline-flex items-center rounded-full bg-[#e2ffde] px-2 py-1 text-sm text-[#168307]">{{ sprintf('%+.2f%%', $snapshot['usCard']['trendPercent']) }}</span>
                         </div>
-                        <div class="flex gap-4">
+                        <div class="flex gap-4 mt-3">
                             <div class="flex flex-col gap-2">
                                 <p class="text-2xl font-bold leading-none text-[#001061] md:text-3xl xl:text-[40px]" id="usPriceText"></p>
                                 <p class="text-base font-medium text-[#001061] md:text-lg xl:text-[22px]" id="usUnitText"></p>

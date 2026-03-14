@@ -1,11 +1,11 @@
 @extends('gold.page-shell')
 
-@section('page-label', 'Thi truong')
+@section('page-label', 'Thị trường')
 
 @section('page-content')
 @include('gold.sections.market', [
-    'marketLabel' => 'Ty gia ngoai te hom nay',
-    'columns'     => ['Ngoai te','Mua TM','Mua CK','Ban'],
+    'marketLabel' => 'Tỷ giá ngoại tệ hôm nay',
+    'columns'     => ['Ngoại tệ','Mua TM','Mua CK','Bán'],
     'rows'        => [
         ['USD','25,150','25,250','25,480'],
         ['EUR','26,950','27,150','27,680'],

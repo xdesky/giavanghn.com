@@ -1,16 +1,16 @@
 @extends('gold.page-shell')
 
-@section('page-label', 'Kien thuc')
+@section('page-label', 'Kiến thức')
 
 @section('page-content')
 @include('gold.sections.knowledge', [
-    'articleTitle' => 'Vang 9999 la gi?',
-    'toc'          => ['The nao la vang 9999?','Dac diem cua vang 9999','Phan biet vang 9999 va cac loai khac','Gia tri dau tu cua vang 9999'],
+    'articleTitle' => 'Vàng 9999 là gì?',
+    'toc'          => ['Thế nào là vàng 9999?','Đặc điểm của vàng 9999','Phân biệt vàng 9999 và các loại khác','Giá trị đầu tư của vàng 9999'],
     'sections'     => [
-        ['heading'=>'The nao la vang 9999?','body'=>'<p>Vang 9999 (hay vang 4 so 9) la loai vang co do tinh khiet cao nhat, dat 99.99% vang nguyen chat. Day la tieu chuan cao nhat trong nganh cong nghiep vang tren toan the gioi.</p><p class=\"mt-2\">O Viet Nam, vang 9999 duoc giao dich pho bien duoi dang vang mieng (SJC, DOJI, PNJ) va vang nhan tron.</p>'],
-        ['heading'=>'Dac diem cua vang 9999','body'=>'<ul class=\"list-disc list-inside space-y-1 mt-1\"><li>Do tinh khiet: 99.99%</li><li>Mau sac: Vang dam, bong</li><li>Do mem: Mem hon vang 18K, 14K</li><li>Khong bi oxy hoa hay bien mau</li><li>De dang kiem dinh bang phuong phap hoa hoc va dien tu</li></ul>'],
-        ['heading'=>'Phan biet vang 9999 va cac loai khac','body'=>'<p>Vang 9999 khac voi vang 24K (99.9%), vang 18K (75%), vang 14K (58.5%). Do tinh khiet cao hon nen vang 9999 co gia tri dau tu tot hon nhung it phu hop lam trang suc do mem.</p>'],
-        ['heading'=>'Gia tri dau tu cua vang 9999','body'=>'<p>Vang 9999 duoc xem la kenh dau tu an toan, bao toan gia tri truoc lam phat. Nha dau tu thuong mua vang 9999 duoi dang vang mieng SJC hoac vang nhan de tich tru tai san dai han.</p>'],
+        ['heading'=>'Thế nào là vàng 9999?','body'=>'<p>Vàng 9999 (hay vàng 4 số 9) là loại vàng có độ tinh khiết cao nhất, đạt 99.99% vàng nguyên chất. Đây là tiêu chuẩn cao nhất trong ngành công nghiệp vàng trên toàn thế giới.</p><p class=\"mt-2\">Ở Việt Nam, vàng 9999 được giao dịch phổ biến dưới dạng vàng miếng (SJC, DOJI, PNJ) và vàng nhẫn trơn.</p>'],
+        ['heading'=>'Đặc điểm của vàng 9999','body'=>'<ul class=\"list-disc list-inside space-y-1 mt-1\"><li>Độ tinh khiết: 99.99%</li><li>Màu sắc: Vàng đậm, bóng</li><li>Độ mềm: Mềm hơn vàng 18K, 14K</li><li>Không bị oxy hóa hay biến màu</li><li>Dễ dàng kiểm định bằng phương pháp hóa học và điện tử</li></ul>'],
+        ['heading'=>'Phân biệt vàng 9999 và các loại khác','body'=>'<p>Vàng 9999 khác với vàng 24K (99.9%), vàng 18K (75%), vàng 14K (58.5%). Độ tinh khiết cao hơn nên vàng 9999 có giá trị đầu tư tốt hơn nhưng ít phù hợp làm trang sức do mềm.</p>'],
+        ['heading'=>'Giá trị đầu tư của vàng 9999','body'=>'<p>Vàng 9999 được xem là kênh đầu tư an toàn, bảo toàn giá trị trước lạm phát. Nhà đầu tư thường mua vàng 9999 dưới dạng vàng miếng SJC hoặc vàng nhẫn để tích trữ tài sản dài hạn.</p>'],
     ],
 ])
 @endsection

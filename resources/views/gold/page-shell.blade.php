@@ -46,7 +46,7 @@
     <main class="container-site px-5 py-6">
         {{-- Breadcrumb --}}
         <nav class="mb-4 flex flex-wrap items-center gap-2 text-sm text-slate-500">
-            <a href="{{ route('home') }}" class="text-blue-600 no-underline hover:underline">
+            <a href="{{ route('home') }}" class="flex items-center gap-1 text-blue-600 no-underline hover:underline">
                 <i data-lucide="home" class="inline h-4 w-4"></i> Trang chủ
             </a>
             @foreach ($breadcrumbs as $item)
@@ -54,7 +54,7 @@
                 @if ($loop->last)
                     <span class="font-semibold text-slate-800">{{ $item['title'] }}</span>
                 @else
-                    <a href="/{{ $item['path'] }}" class="text-blue-600 no-underline hover:underline">{{ $item['title'] }}</a>
+                    <a href="/{{ $item['path'] }}" class="flex items-center gap-1 text-blue-600 no-underline hover:underline">{{ $item['title'] }}</a>
                 @endif
             @endforeach
         </nav>

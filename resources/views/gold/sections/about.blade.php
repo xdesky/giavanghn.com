@@ -1,20 +1,20 @@
 <div class="glass-card p-4 md:p-6 article-body">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">Ve GoldPrice</h2>
+    <h2 class="text-lg font-bold text-[#001061] mb-4">Về GoldPrice</h2>
     <div class="text-sm leading-relaxed text-slate-700 space-y-4">
-        <p><strong>GoldPrice</strong> la nen tang cap nhat gia vang truc tuyen hang dau tai Viet Nam, cung cap thong tin gia vang SJC, DOJI, PNJ va the gioi (XAU/USD) theo thoi gian thuc.</p>
-        <p>Chung toi tong hop du lieu tu cac thuong hieu vang chinh hang, san giao dich quoc te va nguon tin tai chinh uy tin de mang den cho nguoi dung goc nhin toan dien ve thi truong vang.</p>
-        <h3 class="text-lg font-bold text-[#001061] mt-6!">Su menh</h3>
-        <p>Giup nguoi dung Viet Nam tiep can thong tin gia vang chinh xac, nhanh chong va mien phi, ho tro dua ra quyet dinh dau tu sang suot.</p>
-        <h3 class="text-lg font-bold text-[#001061] mt-6!">Tinh nang noi bat</h3>
+        <p><strong>GoldPrice</strong> là nền tảng cập nhật giá vàng trực tuyến hàng đầu tại Việt Nam, cung cấp thông tin giá vàng SJC, DOJI, PNJ và thế giới (XAU/USD) theo thời gian thực.</p>
+        <p>Chúng tôi tổng hợp dữ liệu từ các thương hiệu vàng chính hãng, sàn giao dịch quốc tế và nguồn tin tài chính uy tín để mang đến cho người dùng góc nhìn toàn diện về thị trường vàng.</p>
+        <h3 class="text-lg font-bold text-[#001061] mt-6!">Sứ mệnh</h3>
+        <p>Giúp người dùng Việt Nam tiếp cận thông tin giá vàng chính xác, nhanh chóng và miễn phí, hỗ trợ đưa ra quyết định đầu tư sáng suốt.</p>
+        <h3 class="text-lg font-bold text-[#001061] mt-6!">Tính năng nổi bật</h3>
         <ul class="list-disc list-inside space-y-1">
-            <li>Cap nhat gia vang trong nuoc va quoc te theo thoi gian thuc</li>
-            <li>Bieu do phan tich xu huong da khung thoi gian</li>
-            <li>So sanh gia giua cac thuong hieu va kenh dau tu</li>
-            <li>Cong cu tinh toan va quy doi vang tien loi</li>
-            <li>Tin tuc va phan tich chuyen sau ve thi truong vang</li>
-            <li>API du lieu cho nha phat trien</li>
+            <li>Cập nhật giá vàng trong nước và quốc tế theo thời gian thực</li>
+            <li>Biểu đồ phân tích xu hướng đa khung thời gian</li>
+            <li>So sánh giá giữa các thương hiệu và kênh đầu tư</li>
+            <li>Công cụ tính toán và quy đổi vàng tiện lợi</li>
+            <li>Tin tức và phân tích chuyên sâu về thị trường vàng</li>
+            <li>API dữ liệu cho nhà phát triển</li>
         </ul>
-        <h3 class="text-lg font-bold text-[#001061] mt-6!">Lien he hop tac</h3>
+        <h3 class="text-lg font-bold text-[#001061] mt-6!">Liên hệ hợp tác</h3>
         <p>Email: <a href="mailto:contact@goldprice.vn" class="text-blue-600 hover:underline">contact@goldprice.vn</a></p>
     </div>
 </div>

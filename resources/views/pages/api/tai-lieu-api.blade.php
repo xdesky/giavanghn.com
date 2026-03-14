@@ -4,15 +4,15 @@
 
 @section('page-content')
 @include('gold.sections.api-doc', [
-    'apiTitle'  => 'Tai lieu API',
-    'apiDesc'   => 'Huong dan tich hop GoldPrice API vao ung dung cua ban.',
+    'apiTitle'  => 'Tài liệu API',
+    'apiDesc'   => 'Hướng dẫn tích hợp GoldPrice API vào ứng dụng của bạn.',
     'endpoints' => [
         [
             'method'   => 'GET',
             'path'     => '/dashboard-api/snapshot',
-            'desc'     => 'Endpoint chinh de lay gia vang. Khong can xac thuc. Rate limit: 60 req/min.',
+            'desc'     => 'Endpoint chính để lấy giá vàng. Không cần xác thực. Rate limit: 60 req/min.',
             'params'   => [
-                ['name'=>'format','type'=>'string','desc'=>'Dinh dang tra ve: json (mac dinh)'],
+                ['name'=>'format','type'=>'string','desc'=>'Định dạng trả về: json (mặc định)'],
             ],
             'response' => '// JavaScript fetch
 const res = await fetch(\'/dashboard-api/snapshot\');
@@ -22,13 +22,13 @@ console.log(data.usCard.price);',
         [
             'method'   => 'POST',
             'path'     => '/dashboard-api/subscribe',
-            'desc'     => 'Dang ky nhan thong bao gia vang qua email.',
+            'desc'     => 'Đăng ký nhận thông báo giá vàng qua email.',
             'params'   => [
-                ['name'=>'name','type'=>'string','desc'=>'Ten nguoi dang ky'],
-                ['name'=>'email','type'=>'string','desc'=>'Dia chi email'],
-                ['name'=>'channels','type'=>'array','desc'=>'Kenh nhan tin: email, sms'],
+                ['name'=>'name','type'=>'string','desc'=>'Tên người đăng ký'],
+                ['name'=>'email','type'=>'string','desc'=>'Địa chỉ email'],
+                ['name'=>'channels','type'=>'array','desc'=>'Kênh nhận tin: email, sms'],
             ],
-            'response' => '{\"ok\": true, \"message\": \"Dang ky thanh cong\"}',
+            'response' => '{\"ok\": true, \"message\": \"Đăng ký thành công\"}',
         ],
     ],
 ])

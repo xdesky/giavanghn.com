@@ -1,22 +1,22 @@
 @extends('gold.page-shell')
 
-@section('page-label', 'Cong cu')
+@section('page-label', 'Công cụ')
 
 @section('page-content')
 @include('gold.sections.tool', [
-    'toolTitle'    => 'Tinh lai dau tu vang',
-    'toolDesc'     => 'Tinh loi nhuan hoac lo tu khoan dau tu vang cua ban.',
+    'toolTitle'    => 'Tính lãi đầu tư vàng',
+    'toolDesc'     => 'Tính lợi nhuận hoặc lỗ từ khoản đầu tư vàng của bạn.',
     'fields'       => [
-        ['label'=>'Gia mua vao (VND/luong)','type'=>'number','placeholder'=>'85000000','default'=>'85000000',],
-        ['label'=>'Gia hien tai (VND/luong)','type'=>'number','placeholder'=>'92500000','default'=>'92500000',],
-        ['label'=>'So luong (luong)','type'=>'number','placeholder'=>'1','default'=>'1',],
+        ['label'=>'Giá mua vào (VND/lượng)','type'=>'number','placeholder'=>'85000000','default'=>'85000000',],
+        ['label'=>'Giá hiện tại (VND/lượng)','type'=>'number','placeholder'=>'92500000','default'=>'92500000',],
+        ['label'=>'Số lượng (lượng)','type'=>'number','placeholder'=>'1','default'=>'1',],
     ],
-    'buttonLabel'  => 'Tinh lai/lo',
+    'buttonLabel'  => 'Tính lãi/lỗ',
     'instructions' => [
-        'Nhap gia ban da mua vang',
-        'Nhap gia vang hien tai',
-        'Nhap so luong luong da mua',
-        'Loi nhuan = (Gia hien tai - Gia mua) x So luong',
+        'Nhập giá bạn đã mua vàng',
+        'Nhập giá vàng hiện tại',
+        'Nhập số lượng lượng đã mua',
+        'Lợi nhuận = (Giá hiện tại - Giá mua) x Số lượng',
     ],
 ])
 @endsection

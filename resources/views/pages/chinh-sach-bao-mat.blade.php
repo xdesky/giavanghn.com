@@ -1,6 +1,6 @@
 @extends('gold.page-shell')
 
-@section('page-label', 'Chinh sach')
+@section('page-label', 'Chính sách')
 
 @section('page-content')
 @include('gold.sections.privacy')

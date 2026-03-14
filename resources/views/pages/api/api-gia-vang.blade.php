@@ -4,13 +4,13 @@
 
 @section('page-content')
 @include('gold.sections.api-doc', [
-    'apiTitle'  => 'API Gia vang',
-    'apiDesc'   => 'Danh sach endpoint lay du lieu gia vang theo thoi gian thuc.',
+    'apiTitle'  => 'API Giá vàng',
+    'apiDesc'   => 'Danh sách endpoint lấy dữ liệu giá vàng theo thời gian thực.',
     'endpoints' => [
         [
             'method'   => 'GET',
             'path'     => '/dashboard-api/snapshot',
-            'desc'     => 'Lay toan bo du lieu gia vang hien tai (trong nuoc + the gioi).',
+            'desc'     => 'Lấy toàn bộ dữ liệu giá vàng hiện tại (trong nước + thế giới).',
             'params'   => [
             ],
             'response' => '{

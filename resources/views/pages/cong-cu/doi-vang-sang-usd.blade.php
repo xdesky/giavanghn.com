@@ -1,21 +1,21 @@
 @extends('gold.page-shell')
 
-@section('page-label', 'Cong cu')
+@section('page-label', 'Công cụ')
 
 @section('page-content')
 @include('gold.sections.tool', [
-    'toolTitle'    => 'Doi gia vang VND sang USD',
-    'toolDesc'     => 'Quy doi gia vang tu VND sang USD theo ty gia hien tai.',
+    'toolTitle'    => 'Đổi giá vàng VND sang USD',
+    'toolDesc'     => 'Quy đổi giá vàng từ VND sang USD theo tỷ giá hiện tại.',
     'fields'       => [
-        ['label'=>'Gia vang (VND)','type'=>'number','placeholder'=>'92500000','default'=>'92500000',],
-        ['label'=>'Ty gia USD/VND','type'=>'number','placeholder'=>'25400','default'=>'25400',],
+        ['label'=>'Giá vàng (VND)','type'=>'number','placeholder'=>'92500000','default'=>'92500000',],
+        ['label'=>'Tỷ giá USD/VND','type'=>'number','placeholder'=>'25400','default'=>'25400',],
     ],
-    'buttonLabel'  => 'Quy doi',
+    'buttonLabel'  => 'Quy đổi',
     'instructions' => [
-        'Nhap gia vang tinh bang VND',
-        'Nhap ty gia USD/VND hien tai',
-        'Ket qua = Gia VND / Ty gia',
-        'So sanh voi gia quoc te de thay chenh lech',
+        'Nhập giá vàng tính bằng VND',
+        'Nhập tỷ giá USD/VND hiện tại',
+        'Kết quả = Giá VND / Tỷ giá',
+        'So sánh với giá quốc tế để thấy chênh lệch',
     ],
 ])
 @endsection
