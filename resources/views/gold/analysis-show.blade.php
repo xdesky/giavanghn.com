@@ -57,7 +57,7 @@ if ($article->thumbnail_path) {
     @if (!empty($article->tags))
         <div class="not-prose mt-6 flex flex-wrap gap-2">
             @foreach ($article->tags as $tag)
-                <a href="/phan-tich/tag/{{ Str::slug($tag) }}" class="inline-block rounded-full border border-slate-300 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700 no-underline hover:bg-[#001061] hover:text-white hover:border-[#001061] transition">{{ $tag }}</a>
+                <a href="/tin-tuc-gia-vang/trong-nuoc/tag/{{ Str::slug($tag) }}" class="inline-block rounded-full border border-slate-300 bg-slate-50 px-3 py-1 text-xs font-medium text-slate-700 no-underline hover:bg-[#001061] hover:text-white hover:border-[#001061] transition">{{ $tag }}</a>
             @endforeach
         </div>
     @endif
@@ -73,7 +73,7 @@ if ($article->thumbnail_path) {
     <h2 class="text-lg font-bold text-slate-900 mb-4">Bài viết liên quan</h2>
     <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         @foreach ($relatedArticles as $related)
-            <a href="/phan-tich/{{ $related->slug }}" class="group block rounded-sm border border-slate-200 bg-white shadow-sm hover:shadow-md transition overflow-hidden">
+            <a href="/tin-tuc-gia-vang/trong-nuoc/{{ $related->slug }}" class="group block rounded-sm border border-slate-200 bg-white shadow-sm hover:shadow-md transition overflow-hidden">
                 @if ($related->thumbnail_path)
                     <img src="{{ asset('storage/' . $related->thumbnail_path) }}" alt="{{ $related->title }}" class="w-full h-40 object-cover" loading="lazy" />
                 @else
@@ -97,7 +97,7 @@ if ($article->thumbnail_path) {
     <h3 class="text-lg font-bold text-slate-900 mb-3">Bài phân tích gần đây</h3>
     <div class="grid gap-2">
         @foreach ($recentArticles as $recent)
-            <a href="/phan-tich/{{ $recent->slug }}" class="block rounded-sm border border-slate-100 px-3 py-2 text-sm {{ $recent->id === $article->id ? 'bg-blue-50 font-semibold text-blue-700' : 'text-slate-700 hover:bg-slate-50' }}">
+            <a href="/tin-tuc-gia-vang/trong-nuoc/{{ $recent->slug }}" class="block rounded-sm border border-slate-100 px-3 py-2 text-sm {{ $recent->id === $article->id ? 'bg-blue-50 font-semibold text-blue-700' : 'text-slate-700 hover:bg-slate-50' }}">
                 {{ Str::limit($recent->title, 80) }}
                 <span class="block text-xs text-slate-400 mt-0.5">{{ $recent->published_at?->diffForHumans() }}</span>
             </a>

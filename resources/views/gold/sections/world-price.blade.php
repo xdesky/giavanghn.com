@@ -72,11 +72,14 @@
         document.addEventListener('DOMContentLoaded', function() {
             if (!window.am5) return;
             var root = am5.Root.new('worldChartXauUsd');
+            if (root._logo) root._logo.dispose();
             root.setThemes([am5themes_Animated.new(root)]);
             var chart = root.container.children.push(am5xy.XYChart.new(root, { panX: false, panY: false, wheelY: 'none' }));
             var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, { categoryField: 'date', renderer: am5xy.AxisRendererX.new(root, { minGridDistance: 60 }) }));
+            xAxis.get('renderer').labels.template.setAll({ fontSize: 10, fill: am5.color(0x64748b) });
             xAxis.data.setAll(@json(collect($xauDetail['chartDates'])->map(fn($d) => ['date' => $d])->toArray()));
             var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, { renderer: am5xy.AxisRendererY.new(root, {}) }));
+            yAxis.get('renderer').labels.template.setAll({ fontSize: 10, fill: am5.color(0x64748b) });
             var series = chart.series.push(am5xy.LineSeries.new(root, { name: 'XAU/USD', xAxis: xAxis, yAxis: yAxis, valueYField: 'price', categoryXField: 'date', stroke: am5.color('#3b82f6'), tooltip: am5.Tooltip.new(root, { labelText: '{categoryX}: {valueY}' }) }));
             series.strokes.template.setAll({ strokeWidth: 2 });
             var chartData = @json(collect($xauDetail['chartDates'])->zip($xauDetail['chartPrices'])->map(fn($pair) => ['date' => $pair[0], 'price' => $pair[1]])->toArray());

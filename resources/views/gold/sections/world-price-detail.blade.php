@@ -161,11 +161,13 @@ document.addEventListener('DOMContentLoaded', function() {
             dateFormats: { month: 'MM/yyyy', day: 'dd/MM' },
             periodChangeDateFormats: { month: 'MM/yyyy', day: 'dd/MM' },
         }));
+        xAxis.get('renderer').labels.template.setAll({ fontSize: 10, fill: am5.color(0x64748b) });
 
         var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(chartRoot, {
             renderer: am5xy.AxisRendererY.new(chartRoot, {}),
             numberFormat: '#,###.##',
         }));
+        yAxis.get('renderer').labels.template.setAll({ fontSize: 10, fill: am5.color(0x64748b) });
 
         var cursor = chart.set('cursor', am5xy.XYCursor.new(chartRoot, { behavior: 'zoomX', xAxis: xAxis }));
         cursor.lineY.set('visible', false);

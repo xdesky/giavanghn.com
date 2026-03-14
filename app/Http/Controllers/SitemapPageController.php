@@ -150,10 +150,9 @@ class SitemapPageController extends Controller
             return $this->buildDomesticNews($path);
         }
 
-        $query = NewsArticle::goldRelated()->orderByDesc('published_at');
-
+        // "Tin tức giá vàng thế giới"
         if (str_contains($path, '/the-gioi')) {
-            // "Tin tức giá vàng thế giới" — world/international
+            $query = NewsArticle::goldRelated()->orderByDesc('published_at');
             $query->where(function ($q): void {
                 $q->where('tag', 'Quốc tế')
                     ->orWhere('title', 'like', '%thế giới%')
@@ -161,31 +160,27 @@ class SitemapPageController extends Controller
                     ->orWhere('title', 'like', '%XAU%')
                     ->orWhere('title', 'like', '%USD%');
             });
+
+            $paginator = $query->paginate(12)->withPath('/' . $path);
+
+            $items = $paginator->getCollection()->map(function (NewsArticle $article): array {
+                return [
+                    'icon' => match ($article->impact) { 'positive' => '📈', 'negative' => '📉', default => '📰' },
+                    'title' => $article->title,
+                    'excerpt' => $article->summary ?: mb_strimwidth($article->title, 0, 160, '...'),
+                    'date' => optional($article->published_at)?->diffForHumans() ?? '',
+                    'url' => $article->url,
+                    'tag' => $article->tag,
+                    'impact' => $article->impact,
+                    'source' => $article->source,
+                    'image_url' => $article->image_url,
+                ];
+            })->all();
+
+            return ['items' => $items, 'paginator' => $paginator];
         }
 
-        $paginator = $query->paginate(12)->withPath('/' . $path);
-
-        $items = $paginator->getCollection()->map(function (NewsArticle $article): array {
-            $icon = match ($article->impact) {
-                'positive' => '📈',
-                'negative' => '📉',
-                default => '📰',
-            };
-
-            return [
-                'icon' => $icon,
-                'title' => $article->title,
-                'excerpt' => $article->summary ?: mb_strimwidth($article->title, 0, 160, '...'),
-                'date' => optional($article->published_at)?->diffForHumans() ?? '',
-                'url' => $article->url,
-                'tag' => $article->tag,
-                'impact' => $article->impact,
-                'source' => $article->source,
-                'image_url' => $article->image_url,
-            ];
-        })->all();
-
-        return ['items' => $items, 'paginator' => $paginator];
+        return ['items' => [], 'paginator' => new \Illuminate\Pagination\LengthAwarePaginator([], 0, 12)];
     }
 
     /**
@@ -205,7 +200,7 @@ class SitemapPageController extends Controller
                 'excerpt' => $a->summary ?: \Illuminate\Support\Str::words(strip_tags($a->content), 30, '...'),
                 'published_at' => $a->published_at,
                 'date' => optional($a->published_at)?->diffForHumans() ?? '',
-                'url' => '/phan-tich/' . $a->slug,
+                'url' => '/tin-tuc-gia-vang/trong-nuoc/' . $a->slug,
                 'tag' => 'Phân tích',
                 'impact' => null,
                 'source' => 'giavanghn',

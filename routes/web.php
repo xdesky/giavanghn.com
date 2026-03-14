@@ -65,8 +65,8 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::post('/news/bulk-destroy', [NewsManagementController::class, 'bulkDestroy'])->name('news.bulk-destroy');
 });
 
-Route::get('/phan-tich/tag/{tagSlug}', [GoldPriceController::class, 'analysisByTag'])->name('analysis.tag');
-Route::get('/phan-tich/{slug}', [GoldPriceController::class, 'showAnalysis'])->name('analysis.show');
+Route::get('/tin-tuc-gia-vang/trong-nuoc/tag/{tagSlug}', [GoldPriceController::class, 'analysisByTag'])->name('analysis.tag');
+Route::get('/tin-tuc-gia-vang/trong-nuoc/{slug}', [GoldPriceController::class, 'showAnalysis'])->name('analysis.show');
 
 Route::prefix('dashboard-api')->group(function (): void {
 	Route::get('/snapshot', [GoldPriceController::class, 'snapshot'])->name('dashboard.snapshot');

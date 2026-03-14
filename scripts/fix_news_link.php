@@ -7,6 +7,6 @@ $app->make(\Illuminate\Contracts\Console\Kernel::class)->bootstrap();
 $newSlug = \App\Models\AnalysisArticle::latest('published_at')->value('slug');
 
 $updated = \App\Models\NewsArticle::where('url', 'like', '%gia-vang-giam-manh%')
-    ->update(['url' => '/phan-tich/' . $newSlug]);
+    ->update(['url' => '/tin-tuc-gia-vang/trong-nuoc/' . $newSlug]);
 
-echo "Updated {$updated} news article(s) to point to: /phan-tich/{$newSlug}\n";
+echo "Updated {$updated} news article(s) to point to: /tin-tuc-gia-vang/trong-nuoc/{$newSlug}\n";

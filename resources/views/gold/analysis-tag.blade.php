@@ -12,7 +12,7 @@
     @else
         <div class="grid gap-5">
             @foreach ($articles as $article)
-                <a href="/phan-tich/{{ $article->slug }}" class="group flex gap-4 rounded-sm border border-slate-200 bg-white p-4 hover:shadow-md transition">
+                <a href="/tin-tuc-gia-vang/trong-nuoc/{{ $article->slug }}" class="group flex gap-4 rounded-sm border border-slate-200 bg-white p-4 hover:shadow-md transition">
                     @if ($article->thumbnail_path)
                         <img src="{{ asset('storage/' . $article->thumbnail_path) }}" alt="{{ $article->title }}" class="w-32 h-20 object-cover rounded-sm flex-shrink-0" loading="lazy" />
                     @else
@@ -63,7 +63,7 @@
         @endphp
         @foreach ($popularTags as $pTag)
             @php $pSlug = Str::slug($pTag); @endphp
-            <a href="/phan-tich/tag/{{ $pSlug }}"
+            <a href="/tin-tuc-gia-vang/trong-nuoc/tag/{{ $pSlug }}"
                class="inline-block rounded-full border px-3 py-1 text-xs font-medium transition
                       {{ $tagSlug === $pSlug ? 'bg-[#001061] text-white border-[#001061]' : 'bg-slate-50 text-slate-700 border-slate-300 hover:bg-[#001061] hover:text-white hover:border-[#001061]' }}">{{ $pTag }}</a>
         @endforeach

@@ -372,13 +372,13 @@ BLADE);
 // --- news-list ---
 w("$sec/news-list.blade.php", <<<'BLADE'
 <div class="glass-card p-4 md:p-6">
-    <h2 class="text-lg font-bold text-[#001061] mb-4">{{ $categoryLabel }}</h2>
-    <div class="flex flex-wrap gap-2 mb-4">
-        <a href="/tin-tuc-gia-vang" class="chip {{ $category === 'all' ? 'positive' : '' }}">Tất cả</a>
-        <a href="/tin-tuc-gia-vang/tin-thi-truong-vang" class="chip {{ $category === 'market' ? 'positive' : '' }}">Thị trường vàng</a>
-        <a href="/tin-tuc-gia-vang/tin-tai-chinh" class="chip {{ $category === 'finance' ? 'positive' : '' }}">Tài chính</a>
-        <a href="/tin-tuc-gia-vang/tin-kinh-te" class="chip {{ $category === 'economy' ? 'positive' : '' }}">Kinh tế</a>
-        <a href="/tin-tuc-gia-vang/tin-the-gioi" class="chip {{ $category === 'world' ? 'positive' : '' }}">Thế giới</a>
+    <div class="flex items-center justify-between mb-4">
+        <h2 class="text-lg font-bold text-[#001061]">{{ $categoryLabel }}</h2>
+        <div class="flex gap-1">
+            <a href="/tin-tuc-gia-vang" class="chip {{ $category === 'all' ? 'positive' : '' }}">Tất cả</a>
+            <a href="/tin-tuc-gia-vang/trong-nuoc" class="chip {{ $category === 'domestic' ? 'positive' : '' }}">Trong nước</a>
+            <a href="/tin-tuc-gia-vang/the-gioi" class="chip {{ $category === 'world' ? 'positive' : '' }}">Thế giới</a>
+        </div>
     </div>
     <div class="grid gap-3">
         @foreach ($articles as $a)
@@ -719,9 +719,9 @@ w("$sec/sidebar-news.blade.php", <<<'BLADE'
 <div class="glass-card p-4">
     <h3 class="text-lg font-bold text-[#001061] mb-3">Tin mới nhất</h3>
     <div class="grid gap-2 text-sm">
-        <a href="/tin-tuc-gia-vang/tin-thi-truong-vang" class="block text-blue-700 hover:underline">Giá vàng phục hồi mạnh nhờ Fed giữ nguyên lãi suất</a>
-        <a href="/tin-tuc-gia-vang/tin-tai-chinh" class="block text-blue-700 hover:underline">USD suy yếu, vàng thế giới vượt đỉnh cũ</a>
-        <a href="/tin-tuc-gia-vang/tin-kinh-te" class="block text-blue-700 hover:underline">Lạm phát Eurozone tăng bất ngờ, hỗ trợ giá vàng</a>
+        <a href="/tin-tuc-gia-vang/trong-nuoc" class="block text-blue-700 hover:underline">Giá vàng phục hồi mạnh nhờ Fed giữ nguyên lãi suất</a>
+        <a href="/tin-tuc-gia-vang/trong-nuoc" class="block text-blue-700 hover:underline">USD suy yếu, vàng thế giới vượt đỉnh cũ</a>
+        <a href="/tin-tuc-gia-vang/trong-nuoc" class="block text-blue-700 hover:underline">Lạm phát Eurozone tăng bất ngờ, hỗ trợ giá vàng</a>
     </div>
 </div>
 BLADE);
@@ -931,11 +931,9 @@ foreach ($newsArticles as $a) {
 $newsPhp .= "    ]";
 
 $newsCategories = [
-    ''                     => ['all',     'Tin tức giá vàng mới nhất'],
-    'tin-thi-truong-vang'  => ['market',  'Tin thị trường vàng'],
-    'tin-tai-chinh'        => ['finance', 'Tin tài chính'],
-    'tin-kinh-te'          => ['economy', 'Tin kinh tế'],
-    'tin-the-gioi'         => ['world',   'Tin thế giới'],
+    ''           => ['all',      'Tin tức giá vàng mới nhất'],
+    'trong-nuoc' => ['domestic', 'Tin tức giá vàng trong nước'],
+    'the-gioi'   => ['world',   'Tin tức giá vàng thế giới'],
 ];
 foreach ($newsCategories as $slug => $info) {
     $path = $slug === '' ? 'tin-tuc-gia-vang' : "tin-tuc-gia-vang/$slug";

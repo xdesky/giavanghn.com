@@ -5,7 +5,7 @@ $app->make('Illuminate\Contracts\Console\Kernel')->bootstrap();
 
 // Fix giavanghn news URLs to point to actual analysis article slugs
 $giavanghnNews = App\Models\NewsArticle::where('source', 'giavanghn')
-    ->where('url', 'like', '/phan-tich/%')
+    ->where('url', 'like', '/tin-tuc-gia-vang/trong-nuoc/%')
     ->get();
 
 foreach ($giavanghnNews as $n) {
@@ -16,7 +16,7 @@ foreach ($giavanghnNews as $n) {
         ->first();
 
     if ($article) {
-        $correctUrl = '/phan-tich/' . $article->slug;
+        $correctUrl = '/tin-tuc-gia-vang/trong-nuoc/' . $article->slug;
         if ($n->url !== $correctUrl) {
             echo "FIXING #" . $n->id . PHP_EOL;
             echo "  OLD: " . $n->url . PHP_EOL;

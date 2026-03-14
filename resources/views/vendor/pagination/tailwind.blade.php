@@ -1,5 +1,5 @@
 @if ($paginator->hasPages())
-    <nav role="navigation" aria-label="{{ __('Pagination Navigation') }}">
+    <nav role="navigation" class="w-full" aria-label="{{ __('Pagination Navigation') }}">
 
         {{-- Mobile: Prev/Next buttons --}}
         <div class="flex gap-2 items-center justify-center sm:hidden">
@@ -25,7 +25,7 @@
         </div>
 
         {{-- Desktop: Full pagination --}}
-        <div class="hidden sm:flex-1 sm:flex sm:flex-col sm:gap-2 sm:items-center">
+        <div class="hidden sm:flex-1 sm:flex flex-col md:flex-row md:justify-between sm:gap-2 sm:items-center">
 
             <p class="text-sm text-slate-500 leading-5">
                 Hiển thị

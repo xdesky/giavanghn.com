@@ -25,7 +25,7 @@ if ($article) {
     echo "Has <table>: " . (str_contains($article->content, '<table') ? 'yes' : 'no') . PHP_EOL;
     echo "Has TOC: " . (str_contains($article->content, 'Mục lục') ? 'yes' : 'no') . PHP_EOL;
     echo "Has internal links: " . (preg_match_all('/<a href="\/[^"]*"/', $article->content) ?: 0) . PHP_EOL;
-    echo PHP_EOL . "URL: /phan-tich/" . $article->slug . PHP_EOL;
+    echo PHP_EOL . "URL: /tin-tuc-gia-vang/trong-nuoc/" . $article->slug . PHP_EOL;
 } else {
     echo "Failed to generate article\n";
 }

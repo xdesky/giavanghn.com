@@ -90,7 +90,7 @@ class GoldAnalysisArticleService
 
     private function syncNewsEntry(AnalysisArticle $article, string $triggerType, Carbon $at): void
     {
-        $url = '/phan-tich/' . $article->slug;
+        $url = '/tin-tuc-gia-vang/trong-nuoc/' . $article->slug;
         $tag = match ($triggerType) {
             'daily' => 'Phân tích',
             'summary' => 'Tổng hợp',
@@ -100,7 +100,7 @@ class GoldAnalysisArticleService
         // Update existing giavanghn news for same date, or create new one
         $existing = NewsArticle::where('source', 'giavanghn')
             ->whereDate('published_at', $at->toDateString())
-            ->where('url', 'like', '/phan-tich/%')
+            ->where('url', 'like', '/tin-tuc-gia-vang/trong-nuoc/%')
             ->first();
 
         if ($existing) {
