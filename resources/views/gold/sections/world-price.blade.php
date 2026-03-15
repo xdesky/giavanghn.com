@@ -61,30 +61,34 @@
 </div>
 @endif
 
-{{-- Biểu đồ XAU/USD 30 ngày --}}
-@if ($xauDetail && count($xauDetail['chartDates'] ?? []) > 1)
+{{-- Biểu đồ XAU/USD 24 giờ --}}
+@if ($usCard && count($usCard['chart24hPoints'] ?? []) > 1)
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="flex items-center gap-2 text-lg font-bold text-[#001061] mb-4">
-        <i data-lucide="chart-line" class="h-5 w-5"></i> Biểu đồ XAU/USD 30 ngày
+        <i data-lucide="chart-line" class="h-5 w-5"></i> Biểu đồ XAU/USD 24 giờ
     </h2>
     <div id="worldChartXauUsd" class="h-72 w-full"></div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             if (!window.am5) return;
+            var el = document.getElementById('worldChartXauUsd');
+            if (!el) return;
+            el.innerHTML = '';
             var root = am5.Root.new('worldChartXauUsd');
             if (root._logo) root._logo.dispose();
             root.setThemes([am5themes_Animated.new(root)]);
             var chart = root.container.children.push(am5xy.XYChart.new(root, { panX: false, panY: false, wheelY: 'none' }));
-            var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, { categoryField: 'date', renderer: am5xy.AxisRendererX.new(root, { minGridDistance: 60 }) }));
-            xAxis.get('renderer').labels.template.setAll({ fontSize: 10, fill: am5.color(0x64748b) });
-            xAxis.data.setAll(@json(collect($xauDetail['chartDates'])->map(fn($d) => ['date' => $d])->toArray()));
-            var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, { renderer: am5xy.AxisRendererY.new(root, {}) }));
+            var xAxis = chart.xAxes.push(am5xy.CategoryAxis.new(root, { categoryField: 'time', renderer: am5xy.AxisRendererX.new(root, { minGridDistance: 60 }) }));
+            xAxis.get('renderer').labels.template.setAll({ fontSize: 10, fill: am5.color(0x64748b), rotation: -45, centerY: am5.p50, centerX: am5.p100 });
+            var chartData = @json(collect($usCard['chart24hLabels'])->zip($usCard['chart24hPoints'])->map(fn($pair) => ['time' => $pair[0], 'price' => $pair[1]])->toArray());
+            xAxis.data.setAll(chartData);
+            var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, { renderer: am5xy.AxisRendererY.new(root, {}), extraMin: 0.01, extraMax: 0.01 }));
             yAxis.get('renderer').labels.template.setAll({ fontSize: 10, fill: am5.color(0x64748b) });
-            var series = chart.series.push(am5xy.LineSeries.new(root, { name: 'XAU/USD', xAxis: xAxis, yAxis: yAxis, valueYField: 'price', categoryXField: 'date', stroke: am5.color('#3b82f6'), tooltip: am5.Tooltip.new(root, { labelText: '{categoryX}: {valueY}', getFillFromSprite: false, getStrokeFromSprite: false }) }));
+            var series = chart.series.push(am5xy.LineSeries.new(root, { name: 'XAU/USD', xAxis: xAxis, yAxis: yAxis, valueYField: 'price', categoryXField: 'time', stroke: am5.color('#3b82f6'), tooltip: am5.Tooltip.new(root, { labelText: '{categoryX}: ${valueY}', getFillFromSprite: false, getStrokeFromSprite: false }) }));
             series.get('tooltip').get('background').setAll({ fill: am5.color(0x0f172a), fillOpacity: 0.92, stroke: am5.color(0x0f172a) });
             series.get('tooltip').label.setAll({ fill: am5.color(0xffffff), fontSize: 12 });
-            series.strokes.template.setAll({ strokeWidth: 1 });
-            var chartData = @json(collect($xauDetail['chartDates'])->zip($xauDetail['chartPrices'])->map(fn($pair) => ['date' => $pair[0], 'price' => $pair[1]])->toArray());
+            series.strokes.template.setAll({ strokeWidth: 1.5 });
+            series.fills.template.setAll({ visible: true, fillOpacity: 0.08 });
             series.data.setAll(chartData);
             chart.appear(500);
         });

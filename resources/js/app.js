@@ -124,7 +124,7 @@ if (snapshotElement) {
 		const first = dates[0];
 		const last = dates[dates.length - 1];
 		const mid = dates[Math.floor(dates.length / 2)];
-		container.innerHTML = `<span>${first}</span><span>${mid}</span><span>${last}</span>`;
+		container.innerHTML = `<span>${first}</span> | <span>${mid}</span> | <span>${last}</span>`;
 	};
 
 	const drawLine = (svg, points, color, dates, valueFmt) => {
@@ -134,8 +134,17 @@ if (snapshotElement) {
 
 		const width = svg.viewBox.baseVal.width || 500;
 		const height = svg.viewBox.baseVal.height || 80;
-		const max = Math.max(...points);
-		const min = Math.min(...points);
+		let max = Math.max(...points);
+		let min = Math.min(...points);
+
+		// Ensure a minimum Y range (0.5% of avg) so tiny fluctuations don't get amplified into zigzags
+		const avg = (max + min) / 2;
+		const minRange = avg * 0.005;
+		if (max - min < minRange) {
+			max = avg + minRange / 2;
+			min = avg - minRange / 2;
+		}
+
 		const step = points.length > 1 ? width / (points.length - 1) : width;
 
 		const mapY = (value) => {
