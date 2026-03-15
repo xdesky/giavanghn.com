@@ -85,3 +85,12 @@
         </div>
     </div>
 </footer>
+
+{{-- Back to Top --}}
+<button id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Lên đầu trang"
+    class="fixed bottom-6 right-6 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-[#001061] text-white shadow-lg transition-all duration-300 hover:bg-[#d4a843] opacity-0 pointer-events-none translate-y-4">
+    <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
+</button>
+<script>
+(function(){var b=document.getElementById('backToTop');window.addEventListener('scroll',function(){if(window.scrollY>400){b.classList.remove('opacity-0','pointer-events-none','translate-y-4');b.classList.add('opacity-100')}else{b.classList.add('opacity-0','pointer-events-none','translate-y-4');b.classList.remove('opacity-100')}},{passive:true})})();
+</script>
