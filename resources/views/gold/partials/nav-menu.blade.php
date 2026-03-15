@@ -103,12 +103,15 @@
 
                 @if ($hasChildren)
                     <div class="mobile-group">
-                        <button class="mobile-toggle flex w-full items-center justify-between px-3 py-2.5 text-left text-sm font-semibold transition hover:bg-blue-50 {{ $isActive ? 'text-blue-700' : 'text-slate-900' }}">
-                            {{ $item['title'] }}
-                            <i data-lucide="chevron-down" class="mobile-chevron h-4 w-4 text-slate-400 transition-transform"></i>
-                        </button>
+                        <div class="flex items-center">
+                            <a href="/{{ $fullPath }}" class="flex-1 px-3 py-2.5 text-sm font-semibold no-underline transition hover:bg-blue-50 {{ $isActive ? 'text-blue-700' : 'text-slate-900' }}">
+                                {{ $item['title'] }}
+                            </a>
+                            <button class="mobile-toggle grid h-9 w-9 shrink-0 place-items-center rounded-sm transition hover:bg-blue-50" aria-label="Mở menu con">
+                                <i data-lucide="chevron-down" class="mobile-chevron h-4 w-4 text-slate-400 transition-transform"></i>
+                            </button>
+                        </div>
                         <div class="mobile-submenu hidden pl-3">
-                            <a href="/{{ $fullPath }}" class="block px-3 py-2.5 text-sm text-slate-600 no-underline transition hover:bg-blue-50 hover:text-blue-700">Tất cả {{ $item['title'] }}</a>
                             @foreach ($item['children'] as $childSlug => $child)
                                 @php $childPath = $fullPath . '/' . $childSlug; @endphp
                                 <a href="/{{ $childPath }}"

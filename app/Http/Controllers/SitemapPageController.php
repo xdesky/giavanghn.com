@@ -180,7 +180,24 @@ class SitemapPageController extends Controller
             return ['items' => $items, 'paginator' => $paginator];
         }
 
-        return ['items' => [], 'paginator' => new \Illuminate\Pagination\LengthAwarePaginator([], 0, 12)];
+        // Default: return recent news for sidebar on non-news pages
+        $recentItems = NewsArticle::goldRelated()
+            ->orderByDesc('published_at')
+            ->limit(5)
+            ->get()
+            ->map(fn (NewsArticle $n) => [
+                'icon' => match ($n->impact) { 'positive' => '📈', 'negative' => '📉', default => '📰' },
+                'title' => $n->title,
+                'excerpt' => $n->summary ?: mb_strimwidth($n->title, 0, 160, '...'),
+                'date' => optional($n->published_at)?->diffForHumans() ?? '',
+                'url' => $n->url,
+                'tag' => $n->tag,
+                'impact' => $n->impact,
+                'source' => $n->source,
+                'image_url' => $n->image_url,
+            ])->all();
+
+        return ['items' => $recentItems, 'paginator' => new \Illuminate\Pagination\LengthAwarePaginator([], 0, 12)];
     }
 
     /**

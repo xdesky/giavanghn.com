@@ -1284,7 +1284,8 @@ if (snapshotElement) {
 
 	drawer.querySelectorAll('.mobile-toggle').forEach((btn) => {
 		btn.addEventListener('click', () => {
-			const sub = btn.nextElementSibling;
+			const group = btn.closest('.mobile-group');
+			const sub = group?.querySelector('.mobile-submenu');
 			const chevron = btn.querySelector('.mobile-chevron');
 			if (!sub) return;
 			const isOpen = !sub.classList.contains('hidden');
