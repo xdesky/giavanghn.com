@@ -259,12 +259,13 @@ class DashboardService
             ];
         }
 
-        $weekSell = $this->weekSeries('gold_prices', 'sell_price', fn($q) => $q->where('source', 'sjc'));
-        $weekBuy = $this->weekSeries('gold_prices', 'buy_price', fn($q) => $q->where('source', 'sjc'));
+        $weekSell = $this->weekSeries('gold_prices', 'sell_price', fn($q) => $q->where('source', 'sjc')->where('brand', $defaultBrand));
+        $weekBuy = $this->weekSeries('gold_prices', 'buy_price', fn($q) => $q->where('source', 'sjc')->where('brand', $defaultBrand));
 
-        // 24h intraday prices for SJC (fallback to last 30 records if 24h window is sparse)
+        // 24h intraday prices for SJC default brand only (avoid mixing brands with different prices)
         $sjcIntraday = \DB::table('gold_prices')
             ->where('source', 'sjc')
+            ->where('brand', $defaultBrand)
             ->where('sell_price', '>', 0)
             ->where('created_at', '>=', now()->subHours(24))
             ->orderBy('created_at')
@@ -273,6 +274,7 @@ class DashboardService
         if ($sjcIntraday->count() < 3) {
             $sjcIntraday = \DB::table('gold_prices')
                 ->where('source', 'sjc')
+                ->where('brand', $defaultBrand)
                 ->where('sell_price', '>', 0)
                 ->orderByDesc('created_at')
                 ->limit(30)
