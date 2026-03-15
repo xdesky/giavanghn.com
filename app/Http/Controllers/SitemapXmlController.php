@@ -10,19 +10,21 @@ class SitemapXmlController extends Controller
     public function index(): Response
     {
         $baseUrl = rtrim(config('app.url'), '/');
+        $now = now()->toW3cString();
 
         $urls = [];
 
         // Homepage — highest priority, changes frequently
         $urls[] = [
             'loc' => $baseUrl . '/',
+            'lastmod' => $now,
             'changefreq' => 'always',
             'priority' => '1.0',
         ];
 
         // All pages from gold_sitemap config
         $sitemap = config('gold_sitemap', []);
-        $this->collectSitemapUrls($sitemap, '', $baseUrl, $urls);
+        $this->collectSitemapUrls($sitemap, '', $baseUrl, $now, $urls);
 
         // Published analysis articles
         $articles = AnalysisArticle::whereNotNull('published_at')
@@ -46,7 +48,7 @@ class SitemapXmlController extends Controller
         ]);
     }
 
-    private function collectSitemapUrls(array $nodes, string $prefix, string $baseUrl, array &$urls): void
+    private function collectSitemapUrls(array $nodes, string $prefix, string $baseUrl, string $now, array &$urls): void
     {
         foreach ($nodes as $slug => $meta) {
             $fullPath = $prefix === '' ? $slug : $prefix . '/' . $slug;
@@ -54,12 +56,13 @@ class SitemapXmlController extends Controller
 
             $urls[] = [
                 'loc' => $baseUrl . '/' . $fullPath,
+                'lastmod' => $now,
                 'changefreq' => $isParent ? 'daily' : 'weekly',
                 'priority' => $prefix === '' ? '0.8' : '0.6',
             ];
 
             if ($isParent) {
-                $this->collectSitemapUrls($meta['children'], $fullPath, $baseUrl, $urls);
+                $this->collectSitemapUrls($meta['children'], $fullPath, $baseUrl, $now, $urls);
             }
         }
     }
