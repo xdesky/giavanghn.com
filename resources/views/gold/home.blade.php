@@ -1001,6 +1001,7 @@
         <form method="dialog" class="grid gap-3 p-4" id="subscribeForm">
             <h3 class="m-0 text-xl font-bold">Đăng ký nhận thông tin giá</h3>
             <p class="m-0">Nhập thông tin để nhận biến động giá vàng theo email.</p>
+            <div id="subscribeError" class="hidden rounded-sm bg-rose-50 border border-rose-200 px-3 py-2 text-sm text-rose-700 font-semibold"></div>
             <label class="text-sm text-[#333]">
                 Họ tên
                 <input type="text" name="name" placeholder="Nguyen Van A" class="mt-1 w-full rounded-sm border border-[#bcbcbc] px-3 py-2">
@@ -1060,5 +1061,6 @@
             containers.forEach(c => observer.observe(c));
         })();
     </script>
+    <div id="toast" style="position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(200px);z-index:100001;padding:.75rem 1.5rem;border-radius:6px;color:#fff;font-size:.875rem;font-weight:600;box-shadow:0 4px 12px rgba(0,0,0,.15);transition:transform .3s ease;pointer-events:none;max-width:90vw;text-align:center"></div>
 </body>
 </html>

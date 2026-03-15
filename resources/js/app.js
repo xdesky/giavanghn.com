@@ -39,12 +39,12 @@ if (snapshotElement) {
 		}
 
 		toast.textContent = message;
-		toast.style.background = isError ? '#b91c1c' : '#1e293b';
-		toast.style.transform = 'translateY(0)';
+		toast.style.background = isError ? '#b91c1c' : '#16a34a';
+		toast.style.transform = 'translateX(-50%) translateY(0)';
 
 		window.setTimeout(() => {
-			toast.style.transform = '';
-		}, 2300);
+			toast.style.transform = 'translateX(-50%) translateY(200px)';
+		}, 5000);
 	};
 
 	const numberFormat = (number) => new Intl.NumberFormat('vi-VN').format(number);
@@ -840,11 +840,11 @@ if (snapshotElement) {
 			}
 
 			if (!silent) {
-				showToast('Da cap nhat du lieu tu dong.');
+				showToast('Đã cập nhật dữ liệu tự động.');
 			}
 		} catch (error) {
 			if (!silent) {
-				showToast(error.message || 'Loi tai du lieu.', true);
+				showToast(error.message || 'Lỗi tải dữ liệu.', true);
 			}
 		}
 	};
@@ -853,7 +853,7 @@ if (snapshotElement) {
 		document.querySelectorAll('[data-action]').forEach((button) => {
 			button.addEventListener('click', () => {
 				const action = button.getAttribute('data-action');
-				showToast(`Da mo: ${action}`);
+				showToast(`Đã mở: ${action}`);
 			});
 		});
 	};
@@ -863,6 +863,7 @@ if (snapshotElement) {
 		const openBtn = document.getElementById('openSubscribeBtn');
 		const closeBtn = document.getElementById('closeSubscribeBtn');
 		const form = document.getElementById('subscribeForm');
+		const subscribeError = document.getElementById('subscribeError');
 
 		if (!modal || !openBtn || !closeBtn || !form) {
 			return;
@@ -874,10 +875,15 @@ if (snapshotElement) {
 		form.addEventListener('submit', async (event) => {
 			event.preventDefault();
 
+			if (subscribeError) {
+				subscribeError.classList.add('hidden');
+				subscribeError.textContent = '';
+			}
+
 			const submitBtn = form.querySelector('button[type="submit"]');
 			if (submitBtn) {
 				submitBtn.disabled = true;
-				submitBtn.textContent = 'Dang gui...';
+				submitBtn.textContent = 'Đang gửi…';
 			}
 
 			try {
@@ -892,19 +898,25 @@ if (snapshotElement) {
 				});
 
 				if (!response.ok) {
-					throw new Error('Dang ky that bai. Vui long kiem tra email.');
+					const err = await response.json().catch(() => null);
+					throw new Error(err?.message || 'Đăng ký thất bại. Vui lòng kiểm tra email.');
 				}
 
 				const payload = await response.json();
 				modal.close();
 				form.reset();
-				showToast(payload.message || 'Dang ky thanh cong.');
+				showToast(payload.message || 'Đăng ký nhận báo giá thành công!');
 			} catch (error) {
-				showToast(error.message || 'Co loi xay ra.', true);
+				if (subscribeError) {
+					subscribeError.textContent = error.message || 'Có lỗi xảy ra. Vui lòng thử lại.';
+					subscribeError.classList.remove('hidden');
+				} else {
+					showToast(error.message || 'Có lỗi xảy ra. Vui lòng thử lại.', true);
+				}
 			} finally {
 				if (submitBtn) {
 					submitBtn.disabled = false;
-					submitBtn.textContent = 'Xac nhan dang ky';
+					submitBtn.textContent = 'Xác nhận đăng ký';
 				}
 			}
 		});

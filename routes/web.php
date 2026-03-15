@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\SocialLoginController;
 use App\Http\Controllers\Admin\UserManagementController;
 use App\Http\Controllers\Admin\ArticleManagementController;
 use App\Http\Controllers\Admin\NewsManagementController;
+use App\Http\Controllers\Admin\SubscriberManagementController;
 use App\Http\Controllers\GoldPriceController;
 use App\Http\Controllers\SitemapPageController;
 use Illuminate\Support\Facades\Route;
@@ -63,6 +64,15 @@ Route::middleware(['auth', 'role:admin'])->prefix('admin')->name('admin.')->grou
     Route::get('/news', [NewsManagementController::class, 'index'])->name('news.index');
     Route::delete('/news/{news}', [NewsManagementController::class, 'destroy'])->name('news.destroy');
     Route::post('/news/bulk-destroy', [NewsManagementController::class, 'bulkDestroy'])->name('news.bulk-destroy');
+
+    // Subscriber Management
+    Route::get('/subscribers', [SubscriberManagementController::class, 'index'])->name('subscribers.index');
+    Route::post('/subscribers/bulk-destroy', [SubscriberManagementController::class, 'bulkDestroy'])->name('subscribers.bulkDestroy');
+    Route::get('/subscribers/push', [SubscriberManagementController::class, 'pushForm'])->name('subscribers.push');
+    Route::post('/subscribers/push', [SubscriberManagementController::class, 'pushSend'])->name('subscribers.pushSend');
+    Route::get('/subscribers/push/{log}', [SubscriberManagementController::class, 'pushShow'])->name('subscribers.pushShow');
+    Route::post('/subscribers/{subscriber}/toggle-status', [SubscriberManagementController::class, 'toggleStatus'])->name('subscribers.toggle');
+    Route::delete('/subscribers/{subscriber}', [SubscriberManagementController::class, 'destroy'])->name('subscribers.destroy');
 });
 
 Route::get('/tin-tuc-gia-vang/trong-nuoc/tag/{tagSlug}', [GoldPriceController::class, 'analysisByTag'])->name('analysis.tag');
@@ -72,6 +82,9 @@ Route::prefix('dashboard-api')->group(function (): void {
 	Route::get('/snapshot', [GoldPriceController::class, 'snapshot'])->name('dashboard.snapshot');
 	Route::post('/subscribe', [GoldPriceController::class, 'subscribe'])->name('dashboard.subscribe');
 });
+
+// Unsubscribe
+Route::get('/unsubscribe/{token}', [GoldPriceController::class, 'unsubscribe'])->name('unsubscribe');
 
 $sitemap = config('gold_sitemap', []);
 

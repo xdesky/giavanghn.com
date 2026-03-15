@@ -17,13 +17,15 @@
         <nav class="mb-8 flex flex-wrap gap-3 sm:gap-4">
             <a href="{{ route('admin.dashboard') }}" class="px-4 py-2 rounded-sm bg-blue-600 text-white font-semibold">Dashboard</a>
             <a href="{{ route('admin.users.index') }}" class="px-4 py-2 rounded-sm bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 font-semibold">Quản lý người dùng</a>
+            <a href="{{ route('admin.subscribers.index') }}" class="px-4 py-2 rounded-sm bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 font-semibold">Subscriber</a>
+            <a href="{{ route('admin.subscribers.push') }}" class="px-4 py-2 rounded-sm bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 font-semibold">Push thông báo</a>
             <a href="{{ route('admin.articles.index') }}" class="px-4 py-2 rounded-sm bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 font-semibold">Quản lý bài viết</a>
             <a href="{{ route('admin.news.index') }}" class="px-4 py-2 rounded-sm bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 font-semibold">Quản lý tin tức</a>
             <a href="{{ route('home') }}" class="px-4 py-2 rounded-sm bg-white border border-slate-300 text-slate-700 hover:bg-slate-50 font-semibold">Xem trang chủ</a>
         </nav>
 
         <!-- Stats Cards -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
             <div class="bg-white rounded-sm border border-[#bcbcbc] p-6 shadow-lg">
                 <h3 class="text-sm font-medium text-slate-500 mb-2">Tổng người dùng</h3>
                 <p class="text-xl sm:text-3xl font-bold text-blue-900">{{ \App\Models\User::count() }}</p>
@@ -40,6 +42,10 @@
                 <h3 class="text-sm font-medium text-slate-500 mb-2">Đăng ký hôm nay</h3>
                 <p class="text-xl sm:text-3xl font-bold text-purple-900">{{ \App\Models\User::whereDate('created_at', today())->count() }}</p>
             </div>
+            <a href="{{ route('admin.subscribers.index') }}" class="bg-white rounded-sm border border-teal-100 p-6 shadow-lg no-underline block hover:shadow-xl transition">
+                <h3 class="text-sm font-medium text-slate-500 mb-2">Subscriber</h3>
+                <p class="text-xl sm:text-3xl font-bold text-teal-900">{{ \App\Models\Subscriber::where('active', true)->count() }}</p>
+            </a>
         </div>
 
         <!-- Recent Users -->

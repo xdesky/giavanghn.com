@@ -130,25 +130,48 @@ class GoldPriceController extends Controller
             'email' => ['required', 'email', 'max:120'],
             'name' => ['nullable', 'string', 'max:80'],
             'markets' => ['nullable', 'array'],
-            'markets.*' => ['string', 'in:us,sjc,24k,9999'],
+            'markets.*' => ['string', 'in:sjc,doji,pnj,phuquy,btmc,mihong,xau-usd,xag-usd,xpt-usd,xpd-usd'],
         ]);
 
-        Subscriber::updateOrCreate(
-            ['email' => $validated['email']],
-            [
-                'name' => $validated['name'] ?? 'Khách hàng',
-                'markets' => $validated['markets'] ?? ['us', 'sjc'],
-                'active' => true,
-            ]
-        );
+        if (Subscriber::where('email', $validated['email'])->exists()) {
+            return response()->json([
+                'message' => 'Email này đã được đăng ký. Vui lòng chọn email khác.',
+            ], 422);
+        }
+
+        Subscriber::create([
+            'email' => $validated['email'],
+            'name' => $validated['name'] ?? 'Khách hàng',
+            'markets' => $validated['markets'] ?? ['sjc'],
+            'active' => true,
+        ]);
 
         return response()->json([
             'message' => 'Đăng ký nhận báo giá thành công.',
             'subscription' => [
                 'email' => $validated['email'],
                 'name' => $validated['name'] ?? 'Khách hàng',
-                'markets' => $validated['markets'] ?? ['us', 'sjc'],
+                'markets' => $validated['markets'] ?? ['sjc'],
             ],
+        ]);
+    }
+
+    public function unsubscribe(string $token)
+    {
+        $subscriber = Subscriber::where('unsubscribe_token', $token)->first();
+
+        if (!$subscriber) {
+            return response()->view('emails.unsubscribe-result', [
+                'success' => false,
+                'message' => 'Liên kết hủy đăng ký không hợp lệ hoặc đã hết hạn.',
+            ], 404);
+        }
+
+        $subscriber->update(['active' => false]);
+
+        return view('emails.unsubscribe-result', [
+            'success' => true,
+            'message' => 'Bạn đã hủy đăng ký nhận thông báo giá vàng thành công.',
         ]);
     }
 
