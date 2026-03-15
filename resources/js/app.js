@@ -174,8 +174,17 @@ if (snapshotElement) {
 		const width = svg.viewBox.baseVal.width || 500;
 		const height = svg.viewBox.baseVal.height || 80;
 		const all = [...sellPoints, ...buyPoints];
-		const max = Math.max(...all);
-		const min = Math.min(...all);
+		let max = Math.max(...all);
+		let min = Math.min(...all);
+
+		// Ensure a minimum Y range so tiny fluctuations don't get amplified into zigzags
+		const avg = (max + min) / 2;
+		const minRange = avg * 0.005;
+		if (max - min < minRange) {
+			max = avg + minRange / 2;
+			min = avg - minRange / 2;
+		}
+
 		const len = Math.min(sellPoints.length, buyPoints.length);
 		const step = len > 1 ? width / (len - 1) : width;
 
@@ -606,8 +615,24 @@ if (snapshotElement) {
 		if (sjcBuySellEl) sjcBuySellEl.textContent = `Mua: ${variant.buy.toFixed(2)}tr | Bán: ${variant.sell.toFixed(2)}tr`;
 		applyDayChangeColor(document.getElementById('sjcDayChangeText'), variant.dayChangeLabel);
 		document.getElementById('sjcTrendPercent').textContent = `${snapshot.sjcCard.trendPercent >= 0 ? '+' : ''}${snapshot.sjcCard.trendPercent.toFixed(2)}%`;
-		// Hero mini chart — weekly buy/sell (same pattern as other brand cards)
-		renderBuySellMiniChart(snapshot.sjcCard, 'sjcHeroPointsText', 'sjcHeroMiniChart', '#15803d', '#dc2626');
+
+		// Hero mini chart — 24h intraday sell/buy
+		const sjcHeroChart = document.getElementById('sjcHeroMiniChart');
+		const sjc24hSell = snapshot.sjcCard.chart24hSellPoints || [];
+		const sjc24hBuy = snapshot.sjcCard.chart24hBuyPoints || [];
+		const sjc24hLabels = snapshot.sjcCard.chart24hLabels || [];
+		if (sjcHeroChart && sjc24hSell.length >= 2 && sjc24hBuy.length >= 2) {
+			drawDualLine(sjcHeroChart, sjc24hSell, sjc24hBuy, '#15803d', '#dc2626', sjc24hLabels);
+			const sjcHeroPts = document.getElementById('sjcHeroPointsText');
+			if (sjcHeroPts) {
+				const sellLast = sjc24hSell[sjc24hSell.length - 1];
+				const buyLast = sjc24hBuy[sjc24hBuy.length - 1];
+				sjcHeroPts.textContent = `Bán: ${sellLast.toFixed(2)} | Mua: ${buyLast.toFixed(2)} (triệu)`;
+			}
+		} else {
+			// Fallback to weekly data
+			renderBuySellMiniChart(snapshot.sjcCard, 'sjcHeroPointsText', 'sjcHeroMiniChart', '#15803d', '#dc2626');
+		}
 	};
 
 	const renderSjcBrandCard = () => {

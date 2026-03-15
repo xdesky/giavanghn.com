@@ -117,17 +117,28 @@ class DashboardService
         $weekDates = $weekData->keys()->map(fn($d) => \Carbon\Carbon::parse($d)->format('d/m'))->toArray();
         $weekPrices = $weekData->values()->map(fn($v) => round((float) $v, 2))->toArray();
 
-        // 24h intraday prices
+        // 24h intraday prices (fallback to last 30 records if 24h window is sparse)
         $intraday = \DB::table('world_prices')
             ->where('symbol', 'XAU/USD')
             ->where('created_at', '>=', now()->subHours(24))
             ->orderBy('created_at')
             ->get(['price', 'created_at']);
 
+        if ($intraday->count() < 3) {
+            $intraday = \DB::table('world_prices')
+                ->where('symbol', 'XAU/USD')
+                ->where('price', '>', 0)
+                ->orderByDesc('created_at')
+                ->limit(30)
+                ->get(['price', 'created_at'])
+                ->sortBy('created_at')
+                ->values();
+        }
+
         $chart24hPoints = $intraday->map(fn($r) => round((float) $r->price, 2))->toArray();
         $chart24hLabels = $intraday->map(function ($r) {
             $at = \Carbon\Carbon::parse($r->created_at);
-            return $at->format('H:i') . ($at->isToday() ? '' : ' (' . $at->format('d/m') . ')');
+            return $at->isToday() ? $at->format('H:i') : $at->format('H:i d/m');
         })->toArray();
 
         if (empty($chart24hPoints)) {
@@ -190,7 +201,7 @@ class DashboardService
 
         return [
             'values' => $rows->values()->map(fn($v) => round(((float) $v / 1_000_000) * $multiplier, 2))->toArray(),
-            'dates' => $rows->keys()->toArray(),
+            'dates' => $rows->keys()->map(fn($d) => \Carbon\Carbon::parse($d)->format('d/m'))->toArray(),
         ];
     }
 
@@ -251,6 +262,32 @@ class DashboardService
         $weekSell = $this->weekSeries('gold_prices', 'sell_price', fn($q) => $q->where('source', 'sjc'));
         $weekBuy = $this->weekSeries('gold_prices', 'buy_price', fn($q) => $q->where('source', 'sjc'));
 
+        // 24h intraday prices for SJC (fallback to last 30 records if 24h window is sparse)
+        $sjcIntraday = \DB::table('gold_prices')
+            ->where('source', 'sjc')
+            ->where('sell_price', '>', 0)
+            ->where('created_at', '>=', now()->subHours(24))
+            ->orderBy('created_at')
+            ->get(['sell_price', 'buy_price', 'created_at']);
+
+        if ($sjcIntraday->count() < 3) {
+            $sjcIntraday = \DB::table('gold_prices')
+                ->where('source', 'sjc')
+                ->where('sell_price', '>', 0)
+                ->orderByDesc('created_at')
+                ->limit(30)
+                ->get(['sell_price', 'buy_price', 'created_at'])
+                ->sortBy('created_at')
+                ->values();
+        }
+
+        $sjc24hSellPoints = $sjcIntraday->map(fn($r) => round((float) $r->sell_price / 1_000_000, 2))->toArray();
+        $sjc24hBuyPoints = $sjcIntraday->map(fn($r) => round((float) $r->buy_price / 1_000_000, 2))->toArray();
+        $sjc24hLabels = $sjcIntraday->map(function ($r) {
+            $at = \Carbon\Carbon::parse($r->created_at);
+            return $at->isToday() ? $at->format('H:i') : $at->format('H:i d/m');
+        })->toArray();
+
         return [
             'title' => 'Giá Vàng SJC',
             'trendPercent' => round($change, 2),
@@ -260,6 +297,9 @@ class DashboardService
             'weekSellPoints' => $weekSell['values'],
             'weekBuyPoints' => $weekBuy['values'],
             'weekDates' => $weekSell['dates'],
+            'chart24hSellPoints' => $sjc24hSellPoints,
+            'chart24hBuyPoints' => $sjc24hBuyPoints,
+            'chart24hLabels' => $sjc24hLabels,
         ];
     }
 
