@@ -14,7 +14,7 @@
         <button data-period="6m" class="brand-chart-period rounded-sm border border-slate-200 px-3 py-1 text-xs font-medium text-slate-600 hover:bg-slate-50">6 tháng</button>
     </div>
 
-    <div id="brandPriceChart" class="w-full" class="h-[250px] sm:h-[340px]"></div>
+    <div id="brandPriceChart" class="w-full h-[250px] sm:h-[340px]"></div>
 </div>
 
 <script>
@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }));
         sellSeries.get('tooltip').get('background').setAll({ fill: am5.color(0x0f172a), fillOpacity: 0.92, stroke: am5.color(0x0f172a) });
         sellSeries.get('tooltip').label.setAll({ fill: am5.color(0xffffff), fontSize: 12 });
-        sellSeries.strokes.template.setAll({ strokeWidth: 2.5 });
+        sellSeries.strokes.template.setAll({ strokeWidth: 1 });
         sellSeries.fills.template.setAll({ fillOpacity: 0.08, visible: true });
 
         // Mua vào (buy) line — blue
@@ -95,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
             valueYField: 'buy', valueXField: 'dateTs',
             stroke: am5.color(0x3b82f6), fill: am5.color(0x3b82f6),
         }));
-        buySeries.strokes.template.setAll({ strokeWidth: 2 });
+        buySeries.strokes.template.setAll({ strokeWidth: 1 });
 
         var chartData = data.map(function (p) {
             return { dateTs: new Date(p.date).getTime(), sell: p.sell, buy: p.buy };

@@ -162,7 +162,7 @@
 <div class="rounded-sm border border-[#bcbcbc] bg-white p-4 md:p-6">
     <h2 class="text-lg font-bold text-slate-900 mb-2">Biểu đồ giá vàng SJC vs {{ $otherName }} (7 ngày)</h2>
     <p class="text-xs text-slate-500 mb-3">So sánh diễn biến giá bán ra giữa SJC và {{ $otherName }} trong 7 ngày gần nhất</p>
-    <div id="brandCompareChart" class="w-full" class="h-[260px] sm:h-[360px]">
+    <div id="brandCompareChart" class="w-full h-[260px] sm:h-[360px]">
         <div class="flex items-center justify-center h-full text-slate-400">
             <svg class="animate-spin h-6 w-6 mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path></svg>
             Đang tải biểu đồ...
@@ -262,8 +262,8 @@ $compareLinks = [
 
 @push('scripts')
 <script>
-document.addEventListener('DOMContentLoaded', function () {
-    if (!window.am5 || !window.am5xy) { document.getElementById('brandCompareChart').innerHTML = '<p class="text-center text-slate-400 py-8">Đang tải thư viện biểu đồ...</p>'; return; }
+(function initChart(retries) {
+    if (!window.am5 || !window.am5xy) { if (retries < 50) { setTimeout(function(){ initChart(retries + 1); }, 200); } return; }
     Promise.all([
         fetch('/api/v1/brand-chart?brand=sjc&period=7d').then(function(r){return r.json();}),
         fetch('/api/v1/brand-chart?brand={{ $otherSlug }}&period=7d').then(function(r){return r.json();})
@@ -278,8 +278,10 @@ document.addEventListener('DOMContentLoaded', function () {
         var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, { baseInterval:{timeUnit:'day',count:1}, renderer:am5xy.AxisRendererX.new(root,{minGridDistance:60}), dateFormats:{day:'dd/MM'}, periodChangeDateFormats:{day:'dd/MM'} }));
         var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, { renderer:am5xy.AxisRendererY.new(root,{}), numberFormat:'#,###.##' }));
         function addSeries(name, data, color) {
-            var s = chart.series.push(am5xy.LineSeries.new(root, { name:name, xAxis:xAxis, yAxis:yAxis, valueYField:'value', valueXField:'dateTs', stroke:am5.color(color), tooltip:am5.Tooltip.new(root,{labelText:name+': {valueY.formatNumber("#,###.##")} tr'}) }));
-            s.strokes.template.setAll({strokeWidth:2.5});
+            var s = chart.series.push(am5xy.LineSeries.new(root, { name:name, xAxis:xAxis, yAxis:yAxis, valueYField:'value', valueXField:'dateTs', stroke:am5.color(color), tooltip:am5.Tooltip.new(root,{labelText:name+': {valueY.formatNumber("#,###.##")} tr', getFillFromSprite:false, getStrokeFromSprite:false}) }));
+            s.get('tooltip').get('background').setAll({fill:am5.color(0x0f172a), fillOpacity:0.92, stroke:am5.color(0x0f172a)});
+            s.get('tooltip').label.setAll({fill:am5.color(0xffffff), fontSize:12});
+            s.strokes.template.setAll({strokeWidth:1});
             s.data.setAll(data.map(function(d){ return {dateTs:new Date(d.date).getTime(), value:d.sell}; }));
             return s;
         }
@@ -291,7 +293,7 @@ document.addEventListener('DOMContentLoaded', function () {
         chart.set('cursor', am5xy.XYCursor.new(root, {}));
         chart.appear(800, 100);
     }).catch(function(){ document.getElementById('brandCompareChart').innerHTML = '<p class="text-center text-slate-400 py-8">Không thể tải dữ liệu biểu đồ</p>'; });
-});
+})(0);
 </script>
 @endpush
 

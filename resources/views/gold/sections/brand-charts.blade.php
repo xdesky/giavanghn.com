@@ -116,7 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }));
             series.get('tooltip').get('background').setAll({ fill: am5.color(0x0f172a), fillOpacity: 0.9, stroke: am5.color(0x0f172a) });
             series.get('tooltip').label.setAll({ fill: am5.color(0xffffff), fontSize: 11 });
-            series.strokes.template.setAll({ strokeWidth: 2 });
+            series.strokes.template.setAll({ strokeWidth: 1 });
 
             series.fills.template.setAll({ fillOpacity: 0.08, visible: true });
 

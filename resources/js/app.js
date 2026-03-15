@@ -496,6 +496,8 @@ if (snapshotElement) {
 			x: window.am5.percent(50),
 			marginBottom: 8,
 		}));
+		legend.labels.template.setAll({ fontSize: 12, oversizedBehavior: 'none' });
+		legend.markers.template.setAll({ width: 12, height: 12 });
 		legend.data.setAll([sellSeries, buySeries]);
 
 		const scrollbar = window.am5.Scrollbar.new(sjcYearChartRoot, { orientation: 'horizontal' });

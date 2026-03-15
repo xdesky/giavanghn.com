@@ -66,9 +66,9 @@ return [
     ],
     'tin-tuc-gia-vang' => [
         'title' => 'Tin tức giá vàng',
-        'description' => 'Cập nhật tin tức giá vàng mới nhất từ giavanghn.',
+        'description' => 'Cập nhật tin tức giá vàng mới nhất từ các nguồn uy tín và tin cậy.',
         'children' => [
-            'trong-nuoc' => ['title' => 'Tin tức giá vàng trong nước', 'description' => 'Tin tức giá vàng trong nước từ các báo uy tín.'],
+            'trong-nuoc' => ['title' => 'Tin tức giá vàng trong nước', 'description' => 'Tin tức giá vàng trong nước từ các nguồn uy tín và tin cậy.'],
             'the-gioi' => ['title' => 'Tin tức giá vàng thế giới', 'description' => 'Cập nhật tin tức giá vàng thế giới, XAU/USD và thị trường quốc tế.'],
         ],
     ],
@@ -117,7 +117,7 @@ return [
     ],
     'gioi-thieu' => [
         'title' => 'Giới thiệu',
-        'description' => 'Thông tin về nền tảng GoldPrice và định hướng phát triển.',
+        'description' => 'Thông tin về nền tảng giavanghn.com và định hướng phát triển.',
     ],
     'lien-he' => [
         'title' => 'Liên hệ',

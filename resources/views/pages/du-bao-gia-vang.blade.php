@@ -176,7 +176,7 @@
         <button data-p="1y" class="inline-flex items-center rounded-full px-4 py-1.5 text-sm font-medium transition-all border bg-white text-slate-600 border-slate-300 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700">1 năm</button>
     </div>
 
-    <div id="forecast-chart" class="w-full" class="h-[280px] sm:h-[380px]">
+    <div id="forecast-chart" class="w-full h-[280px] sm:h-[380px]">
         <div style="display:grid;height:100%;place-items:center" class="text-sm text-slate-400">Đang tải biểu đồ…</div>
     </div>
 
@@ -334,8 +334,8 @@
             }));
             s.get('tooltip').get('background').setAll({ fill: am5.color(0x0f172a), fillOpacity: 0.92, stroke: am5.color(0x0f172a) });
             s.get('tooltip').label.setAll({ fill: am5.color(0xffffff), fontSize: 12 });
-            if (dashed) s.strokes.template.setAll({ strokeWidth: 2.5, strokeDasharray: [6, 3] });
-            else s.strokes.template.setAll({ strokeWidth: 2.5 });
+            if (dashed) s.strokes.template.setAll({ strokeWidth: 1, strokeDasharray: [6, 3] });
+            else s.strokes.template.setAll({ strokeWidth: 1 });
             s.data.setAll(chartData);
             return s;
         }

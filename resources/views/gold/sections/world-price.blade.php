@@ -80,8 +80,10 @@
             xAxis.data.setAll(@json(collect($xauDetail['chartDates'])->map(fn($d) => ['date' => $d])->toArray()));
             var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, { renderer: am5xy.AxisRendererY.new(root, {}) }));
             yAxis.get('renderer').labels.template.setAll({ fontSize: 10, fill: am5.color(0x64748b) });
-            var series = chart.series.push(am5xy.LineSeries.new(root, { name: 'XAU/USD', xAxis: xAxis, yAxis: yAxis, valueYField: 'price', categoryXField: 'date', stroke: am5.color('#3b82f6'), tooltip: am5.Tooltip.new(root, { labelText: '{categoryX}: {valueY}' }) }));
-            series.strokes.template.setAll({ strokeWidth: 2 });
+            var series = chart.series.push(am5xy.LineSeries.new(root, { name: 'XAU/USD', xAxis: xAxis, yAxis: yAxis, valueYField: 'price', categoryXField: 'date', stroke: am5.color('#3b82f6'), tooltip: am5.Tooltip.new(root, { labelText: '{categoryX}: {valueY}', getFillFromSprite: false, getStrokeFromSprite: false }) }));
+            series.get('tooltip').get('background').setAll({ fill: am5.color(0x0f172a), fillOpacity: 0.92, stroke: am5.color(0x0f172a) });
+            series.get('tooltip').label.setAll({ fill: am5.color(0xffffff), fontSize: 12 });
+            series.strokes.template.setAll({ strokeWidth: 1 });
             var chartData = @json(collect($xauDetail['chartDates'])->zip($xauDetail['chartPrices'])->map(fn($pair) => ['date' => $pair[0], 'price' => $pair[1]])->toArray());
             series.data.setAll(chartData);
             chart.appear(500);
