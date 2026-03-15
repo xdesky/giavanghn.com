@@ -9,7 +9,10 @@ use App\Http\Controllers\Admin\NewsManagementController;
 use App\Http\Controllers\Admin\SubscriberManagementController;
 use App\Http\Controllers\GoldPriceController;
 use App\Http\Controllers\SitemapPageController;
+use App\Http\Controllers\SitemapXmlController;
 use Illuminate\Support\Facades\Route;
+
+Route::get('/sitemap.xml', [SitemapXmlController::class, 'index'])->name('sitemap.xml');
 
 Route::get('/', [GoldPriceController::class, 'index'])->name('home');
 
