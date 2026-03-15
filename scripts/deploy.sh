@@ -27,6 +27,9 @@ rm -rf node_modules
 # Migrate
 php artisan migrate --force
 
+# Storage link
+php artisan storage:link 2>/dev/null || true
+
 # Optimize
 php artisan config:cache
 php artisan route:cache
